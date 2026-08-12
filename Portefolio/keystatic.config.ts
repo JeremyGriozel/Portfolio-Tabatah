@@ -1,14 +1,12 @@
 import { collection, config, fields } from '@keystatic/core';
 
-const useLocalStorage = import.meta.env.DEV && import.meta.env.MODE !== 'keystatic-github';
+const useLocalStorage =
+  import.meta.env.DEV &&
+  import.meta.env.MODE !== 'keystatic-cloud';
 
 const storage = useLocalStorage
-	? ({ kind: 'local' } as const)
-	: ({
-			kind: 'github',
-			repo: 'JeremyGriozel/Portfolio-Tabatah',
-			pathPrefix: 'Portefolio',
-		} as const);
+  ? ({ kind: 'local' } as const)
+  : ({ kind: 'cloud' } as const);
 
 const imageAspects = [
 	{ label: 'Automatique', value: 'auto' },
@@ -46,6 +44,9 @@ const projectImage = (label: string) =>
 
 export default config({
 	storage,
+	cloud: {
+    	project: 'jeremy-tabatah/portfolio-tabatah',
+  	},
 	ui: {
 		brand: { name: 'Portfolio — Administration' },
 	},
