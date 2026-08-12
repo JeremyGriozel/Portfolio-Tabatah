@@ -6,7 +6,10 @@ const useLocalStorage =
 
 const storage = useLocalStorage
   ? ({ kind: 'local' } as const)
-  : ({ kind: 'cloud' } as const);
+  : ({
+      kind: 'cloud',
+      pathPrefix: 'Portefolio',
+    } as const);
 
 const imageAspects = [
 	{ label: 'Automatique', value: 'auto' },
