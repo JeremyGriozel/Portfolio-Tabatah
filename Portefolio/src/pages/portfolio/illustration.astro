@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectArchive from '../../components/portfolio/ProjectArchive.astro';
+import { portfolioCategories, portfolioContent } from '../../data/portfolio';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const category = portfolioCategories.find((item) => item.slug === 'illustration')!;
+const projects = await getCollection(
+	'projects',
+	({ data }) => data.published && data.category === category.slug,
+);
+---
+
+<BaseLayout title={category.label} description={category.description}>
+	<ProjectArchive
+		projects={projects}
+		categories={portfolioCategories}
+		eyebrow={portfolioContent.index.eyebrow}
+		title={category.label}
+		description={category.description}
+		currentCategory={category.slug}
+		filtersLabel={portfolioContent.filtersLabel}
+		allProjectsLabel={portfolioContent.allProjectsLabel}
+		emptyMessage={portfolioContent.emptyMessage}
+	/>
+</BaseLayout>

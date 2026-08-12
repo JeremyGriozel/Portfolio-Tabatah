@@ -1,0 +1,41 @@
+---
+import { navigationItems } from '../../data/navigation';
+import { siteConfig } from '../../data/site';
+
+const currentYear = new Date().getFullYear();
+const footerLinks = navigationItems.flatMap((item) => [item, ...(item.children ?? [])]);
+---
+
+<footer class="site-footer">
+	<div class="container">
+		<div class="site-footer__grid">
+			<div class="site-footer__identity">
+				<p class="site-footer__name">{siteConfig.name}</p>
+				<p class="site-footer__message">{siteConfig.footer.message}</p>
+				<p class="site-footer__heading">{siteConfig.footer.contactLabel}</p>
+				<a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+				{siteConfig.showPhone && siteConfig.phone && (
+					<a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}>{siteConfig.phone}</a>
+				)}
+			</div>
+			<nav aria-label={siteConfig.footer.navigationLabel}>
+				<p class="site-footer__heading">{siteConfig.footer.navigationLabel}</p>
+				<ul class="site-footer__links">
+					{footerLinks.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+				</ul>
+			</nav>
+			<div>
+				<p class="site-footer__heading">{siteConfig.footer.socialsLabel}</p>
+				<ul class="site-footer__links">
+					{siteConfig.socials.map((social) => (
+						<li><a href={social.href} target="_blank" rel="noreferrer">{social.label}</a></li>
+					))}
+				</ul>
+			</div>
+		</div>
+		<div class="site-footer__bottom">
+			<p>© {currentYear} {siteConfig.name}</p>
+			<p>{siteConfig.footer.legal}</p>
+		</div>
+	</div>
+</footer>

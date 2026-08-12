@@ -1,0 +1,30 @@
+---
+interface Props {
+	src: string;
+	alt: string;
+	caption?: string;
+	aspect?: 'auto' | 'portrait' | 'landscape' | 'square' | 'wide';
+	rounded?: boolean;
+	loading?: 'eager' | 'lazy';
+	width?: number;
+	height?: number;
+}
+
+const {
+	src,
+	alt,
+	caption,
+	aspect = 'landscape',
+	rounded = true,
+	loading = 'lazy',
+	width = 1600,
+	height = 1200,
+} = Astro.props;
+---
+
+<figure class:list={['image-frame', `image-frame__figure--${aspect}`]}>
+	<div class:list={['image-frame__media', `image-frame--${aspect}`, rounded && 'image-frame--rounded']}>
+		<img src={src} alt={alt} loading={loading} width={width} height={height} decoding="async" />
+	</div>
+	{caption && <figcaption>{caption}</figcaption>}
+</figure>

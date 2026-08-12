@@ -1,0 +1,31 @@
+---
+import type { SiteConfig } from '../../data/site';
+
+interface Props {
+	site: SiteConfig;
+	labels: {
+		title: string;
+		emailLabel: string;
+		phoneLabel: string;
+		locationLabel: string;
+		socialsLabel: string;
+	};
+}
+
+const { site, labels } = Astro.props;
+---
+
+<aside class="contact-info flow">
+	<h2>{labels.title}</h2>
+	<dl class="contact-info__list">
+		<div><dt>{labels.emailLabel}</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+		{site.showPhone && site.phone && <div><dt>{labels.phoneLabel}</dt><dd><a href={`tel:${site.phone.replace(/\s/g, '')}`}>{site.phone}</a></dd></div>}
+		<div><dt>{labels.locationLabel}</dt><dd>{site.location}</dd></div>
+		<div>
+			<dt>{labels.socialsLabel}</dt>
+			<dd class="cluster">
+				{site.socials.map((social) => <a href={social.href} target="_blank" rel="noreferrer">{social.label}</a>)}
+			</dd>
+		</div>
+	</dl>
+</aside>

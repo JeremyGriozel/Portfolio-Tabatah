@@ -1,0 +1,35 @@
+---
+import Button from '../components/ui/Button.astro';
+import SectionTitle from '../components/ui/SectionTitle.astro';
+import { siteConfig } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const { cv } = siteConfig.pages;
+---
+
+<BaseLayout title={cv.title} description={cv.intro}>
+	<section class="archive-header container cv-page">
+		<SectionTitle title={cv.title} description={cv.intro} headingLevel="h1" />
+		<div class="cv-actions cluster">
+			<Button href={siteConfig.cvPath} target="_blank">{cv.openLabel}</Button>
+			<Button href={siteConfig.cvPath} variant="secondary" download>{cv.downloadLabel}</Button>
+		</div>
+		<nav class="cv-related-links cluster" aria-label="Liens complémentaires">
+			<a href={cv.portfolioLink.href}>{cv.portfolioLink.label}</a>
+			<a href={cv.contactLink.href}>{cv.contactLink.label}</a>
+		</nav>
+		<object class="cv-frame" data={siteConfig.cvPath} type="application/pdf">
+			<div class="cv-fallback flow">
+				<p>{cv.fallbackText}</p>
+				<p><a href={siteConfig.cvPath} target="_blank">{cv.openLabel}</a> · <a href={siteConfig.cvPath} download>{cv.downloadLabel}</a></p>
+			</div>
+		</object>
+		<div class="cv-mobile-panel flow">
+			<p>{cv.mobileText}</p>
+			<div class="cluster">
+				<Button href={siteConfig.cvPath} target="_blank">{cv.openLabel}</Button>
+				<Button href={siteConfig.cvPath} variant="secondary" download>{cv.downloadLabel}</Button>
+			</div>
+		</div>
+	</section>
+</BaseLayout>

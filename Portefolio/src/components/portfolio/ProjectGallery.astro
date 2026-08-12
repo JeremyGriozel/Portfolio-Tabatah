@@ -1,0 +1,33 @@
+---
+import ImageFrame from '../ui/ImageFrame.astro';
+
+interface GalleryImage {
+	src: string;
+	alt: string;
+	caption?: string;
+	aspect?: 'auto' | 'portrait' | 'landscape' | 'square' | 'wide';
+	width?: number;
+	height?: number;
+}
+
+interface Props {
+	images: GalleryImage[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class:list={['project-gallery', images.length > 1 && 'project-gallery--split']}>
+	{images.map((image) => (
+		<div class="project-gallery__item">
+			<ImageFrame
+				src={image.src}
+				alt={image.alt}
+				caption={image.caption}
+				aspect={image.aspect ?? 'auto'}
+				width={image.width}
+				height={image.height}
+			/>
+		</div>
+	))}
+</div>

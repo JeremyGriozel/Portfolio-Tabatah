@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ImageFrame from '../components/ui/ImageFrame.astro';
+import Tag from '../components/ui/Tag.astro';
+import ProjectGallery from '../components/portfolio/ProjectGallery.astro';
+import ProjectHeader from '../components/portfolio/ProjectHeader.astro';
+import ProjectNavigation from '../components/portfolio/ProjectNavigation.astro';
+import { portfolioCategories, portfolioContent } from '../data/portfolio';
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+	project: CollectionEntry<'projects'>;
+	previousProject?: CollectionEntry<'projects'>;
+	nextProject?: CollectionEntry<'projects'>;
+}
+
+const { project, previousProject, nextProject } = Astro.props;
+const { title, shortDescription, detailedDescription, cover, gallery, tools } = project.data;
+---
+
+<BaseLayout title={title} description={shortDescription}>
+	<ProjectHeader
+		project={project}
+		categories={portfolioCategories}
+		backLabel={portfolioContent.project.backLabel}
+	/>
+	<div class="project-cover container">
+		<ImageFrame
+			src={cover.src}
+			alt={cover.alt}
+			aspect={cover.aspect ?? 'wide'}
+			width={cover.width}
+			height={cover.height}
+			loading="eager"
+		/>
+	</div>
+
+	{(detailedDescription || tools.length > 0) && (
+		<section class="section container project-details">
+			{detailedDescription && (
+				<div class="project-details__copy flow">
+					<h2>{portfolioContent.project.detailsTitle}</h2>
+					<p>{detailedDescription}</p>
+				</div>
+			)}
+			{tools.length > 0 && (
+				<aside class="project-details__aside flow">
+					<h3>{portfolioContent.project.toolsTitle}</h3>
+					<ul class="tag-list">{tools.map((tool) => <li><Tag label={tool} /></li>)}</ul>
+				</aside>
+			)}
+		</section>
+	)}
+
+	{gallery.length > 0 && (
+		<section class="section container">
+			<h2 class="section-title">{portfolioContent.project.galleryTitle}</h2>
+			<ProjectGallery images={gallery} />
+		</section>
+	)}
+
+	<ProjectNavigation
+		{previousProject}
+		{nextProject}
+		title={portfolioContent.project.navigationTitle}
+		previousLabel={portfolioContent.project.previousLabel}
+		nextLabel={portfolioContent.project.nextLabel}
+	/>
+</BaseLayout>

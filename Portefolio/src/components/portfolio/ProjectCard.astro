@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ImageFrame from '../ui/ImageFrame.astro';
+
+interface Props {
+	project: CollectionEntry<'projects'>;
+	categoryLabel?: string;
+}
+
+const { project, categoryLabel = project.data.category } = Astro.props;
+const { title, shortDescription, cover, date, slug } = project.data;
+const projectPath = `/portfolio/${slug}/`;
+const formattedYear = date
+	? new Intl.DateTimeFormat('fr-FR', { year: 'numeric' }).format(date)
+	: undefined;
+---
+
+<article class:list={['project-card', `project-card--${cover.aspect ?? 'auto'}`]}>
+	<a class="project-card__image-link" href={projectPath} aria-label={`Voir le projet ${title}`}>
+		<ImageFrame
+			src={cover.src}
+			alt={cover.alt}
+			aspect={cover.aspect ?? 'auto'}
+			width={cover.width}
+			height={cover.height}
+		/>
+	</a>
+	<div class="project-card__meta">
+		<span>{categoryLabel}</span>
+		{date && formattedYear && <time datetime={date.toISOString()}>{formattedYear}</time>}
+	</div>
+	<h3 class="project-card__title"><a href={projectPath}>{title}</a></h3>
+	{shortDescription && <p class="project-card__description">{shortDescription}</p>}
+</article>

@@ -1,0 +1,31 @@
+---
+interface Props {
+	href?: string;
+	variant?: 'primary' | 'secondary' | 'light' | 'text';
+	size?: 'default' | 'small';
+	type?: 'button' | 'submit' | 'reset';
+	target?: '_blank' | '_self';
+	download?: boolean | string;
+	ariaLabel?: string;
+}
+
+const {
+	href,
+	variant = 'primary',
+	size = 'default',
+	type = 'button',
+	target,
+	download,
+	ariaLabel,
+} = Astro.props;
+
+const Element = href ? 'a' : 'button';
+const className = ['button', `button--${variant}`, size === 'small' && 'button--small'].filter(Boolean);
+const elementAttributes = href
+	? { href, target, download, rel: target === '_blank' ? 'noreferrer' : undefined }
+	: { type };
+---
+
+<Element class:list={className} aria-label={ariaLabel} {...elementAttributes}>
+	<slot />
+</Element>

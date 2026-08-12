@@ -1,0 +1,511 @@
+:root {
+	/* Typographies : deux familles maximum */
+	--font-heading: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+	--font-body: "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+	--font-size-label: 0.75rem;
+	--font-size-small: 0.875rem;
+	--font-size-body: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+	--font-size-h3: clamp(1.4rem, 1.2rem + 0.7vw, 1.9rem);
+	--font-size-h2: clamp(2.1rem, 1.65rem + 1.8vw, 3.4rem);
+	--font-size-h1: clamp(2.8rem, 2rem + 3.2vw, 5.25rem);
+	--font-size-display: clamp(3.4rem, 2.2rem + 5vw, 6.75rem);
+	--line-height-body: 1.65;
+	--line-height-heading: 0.98;
+	--letter-spacing-heading: -0.04em;
+	--letter-spacing-label: 0.14em;
+
+	/* Échelle d’espacement principale */
+	--space-xs: 0.375rem;
+	--space-sm: 0.75rem;
+	--space-md: 1rem;
+	--space-lg: 1.5rem;
+	--space-xl: 2rem;
+	--space-2xl: 3rem;
+	--space-3xl: clamp(4rem, 7vw, 6rem);
+	--space-4xl: clamp(6rem, 11vw, 10rem);
+	--section-spacing: var(--space-4xl);
+
+	/* Alias conservés pour les composants existants */
+	--space-1: var(--space-xs);
+	--space-2: var(--space-sm);
+	--space-3: var(--space-md);
+	--space-4: var(--space-lg);
+	--space-5: var(--space-xl);
+	--space-6: var(--space-2xl);
+	--space-7: var(--space-3xl);
+	--space-8: var(--space-4xl);
+
+	/* Dimensions structurelles */
+	--container-width: 84rem;
+	--container-gutter: clamp(1.25rem, 4vw, 4rem);
+	--content-width: 46rem;
+	--project-narrow-width: 48rem;
+	--grid-min-width: 17rem;
+	--header-height: 5.25rem;
+	--header-height-mobile: 4.5rem;
+	--control-height: 3rem;
+	--control-height-small: 2.5rem;
+
+	/* Formes, lignes et profondeur */
+	--radius-small: 0.125rem;
+	--radius-medium: 0.5rem;
+	--radius-large: 1.25rem;
+	--radius-pill: 999px;
+	--border-width: 1px;
+	--focus-width: 3px;
+	--shadow-soft: 0 1.25rem 3.5rem var(--color-shadow);
+	--header-blur: 0.85rem;
+
+	/* Mouvement */
+	--duration-fast: 180ms;
+	--duration-medium: 360ms;
+	--duration-slow: 700ms;
+	--duration-stagger: 70ms;
+	--ease-standard: cubic-bezier(0.2, 0.65, 0.3, 1);
+	--image-hover-scale: 1.018;
+	--hover-lift: -0.125rem;
+
+	/* Alias sémantiques utilisés dans les composants */
+	--color-background: var(--color-page);
+	--color-surface-muted: var(--color-surface-alt);
+	--color-header-background: var(--section-header-background);
+	--color-hero-background: var(--section-home-background);
+	--color-about-background: var(--section-about-background);
+	--color-cta-background: var(--section-contact-background);
+	--color-footer-background: var(--section-footer-background);
+	--font-display: var(--font-heading);
+	--transition-fast: var(--duration-fast) var(--ease-standard);
+}
+
+html,
+html[data-theme='default'] {
+	color-scheme: light;
+	--color-page: #f3f1eb;
+	--color-surface: #fcfbf7;
+	--color-surface-alt: #e5e4dc;
+	--color-text: #191c19;
+	--color-text-muted: #62655f;
+	--color-primary: #b7462d;
+	--color-primary-hover: #8d321f;
+	--color-secondary: #284a40;
+	--color-accent: #c79738;
+	--color-border: #c9c7bd;
+	--color-inverse: #fdfbf5;
+	--color-focus: #1e6a59;
+	--color-shadow: rgb(24 28 24 / 12%);
+	--color-footer-muted: #c9cec8;
+	--color-footer-border: #53635c;
+	--color-footer-text: #fdfbf5;
+	--section-header-background: rgb(243 241 235 / 94%);
+	--section-home-background: #e6ded2;
+	--section-about-background: #dce3dc;
+	--section-expertise-background: #e8e1d6;
+	--section-projects-background: #f8f7f2;
+	--section-cv-background: #f3f1eb;
+	--section-contact-background: #d6c4b1;
+	--section-footer-background: #1e2924;
+}
+
+/* Dark Academia : cuir, bois sombre, papier ancien et laiton */
+html[data-theme='dark-academia'] {
+	color-scheme: dark;
+	--font-heading: Baskerville, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+	--letter-spacing-heading: -0.025em;
+	--radius-small: 0;
+	--radius-medium: 0.25rem;
+	--radius-large: 0.5rem;
+	--radius-pill: 0.25rem;
+	--color-page: #18140f;
+	--color-surface: #211c15;
+	--color-surface-alt: #2c251b;
+	--color-text: #ece1c6;
+	--color-text-muted: #b4a88f;
+	--color-primary: #c18a54;
+	--color-primary-hover: #d6a56f;
+	--color-secondary: #8d9975;
+	--color-accent: #9e4f3f;
+	--color-border: #504536;
+	--color-inverse: #17130f;
+	--color-focus: #e0b56e;
+	--color-shadow: rgb(0 0 0 / 36%);
+	--color-footer-muted: #aa9d83;
+	--color-footer-border: #443a2d;
+	--color-footer-text: #ece1c6;
+	--section-header-background: rgb(24 20 15 / 95%);
+	--section-home-background: #3a2f22;
+	--section-about-background: #22271d;
+	--section-expertise-background: #2c251a;
+	--section-projects-background: #1c1812;
+	--section-cv-background: #18140f;
+	--section-contact-background: #4a241f;
+	--section-footer-background: #0f0d0a;
+}
+
+/* Light Academia : papier ivoire, sépia, olive et lumière naturelle */
+html[data-theme='light-academia'] {
+	color-scheme: light;
+	--font-heading: Baskerville, "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+	--letter-spacing-heading: -0.025em;
+	--radius-small: 0;
+	--radius-medium: 0.25rem;
+	--radius-large: 0.5rem;
+	--radius-pill: 0.25rem;
+	--color-page: #f1eadc;
+	--color-surface: #fbf6eb;
+	--color-surface-alt: #e1d5bf;
+	--color-text: #332a22;
+	--color-text-muted: #756b5e;
+	--color-primary: #7a4b2e;
+	--color-primary-hover: #5d3822;
+	--color-secondary: #4d5a45;
+	--color-accent: #a47b3c;
+	--color-border: #c9bda8;
+	--color-inverse: #fffaf0;
+	--color-focus: #765024;
+	--color-shadow: rgb(63 48 32 / 14%);
+	--color-footer-muted: #d8ccb8;
+	--color-footer-border: #746650;
+	--color-footer-text: #fff8e8;
+	--section-header-background: rgb(241 234 220 / 95%);
+	--section-home-background: #cdbb99;
+	--section-about-background: #e6dcc8;
+	--section-expertise-background: #d9ccb4;
+	--section-projects-background: #fbf6eb;
+	--section-cv-background: #f1eadc;
+	--section-contact-background: #d9c59f;
+	--section-footer-background: #3b3429;
+}
+
+/* Downtown Girl : béton, noir éditorial et bordeaux */
+html[data-theme='downtown-girl'] {
+	color-scheme: light;
+	--font-heading: "Arial Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--letter-spacing-heading: -0.055em;
+	--radius-small: 0;
+	--radius-medium: 0;
+	--radius-large: 0;
+	--radius-pill: 0;
+	--color-page: #dedbd6;
+	--color-surface: #f3f1ed;
+	--color-surface-alt: #c9c5bf;
+	--color-text: #171719;
+	--color-text-muted: #5c5a5e;
+	--color-primary: #7b1e2b;
+	--color-primary-hover: #57151f;
+	--color-secondary: #303033;
+	--color-accent: #b84b3e;
+	--color-border: #aaa59e;
+	--color-inverse: #f8f6f1;
+	--color-focus: #7b1e2b;
+	--color-shadow: rgb(18 18 20 / 18%);
+	--color-footer-muted: #bdb9b3;
+	--color-footer-border: #4d4c4e;
+	--color-footer-text: #f3f1ed;
+	--section-header-background: rgb(222 219 214 / 95%);
+	--section-home-background: #7b1e2b;
+	--section-about-background: #c9c5bf;
+	--section-expertise-background: #b7b1aa;
+	--section-projects-background: #e7e4df;
+	--section-cv-background: #dedbd6;
+	--section-contact-background: #c98d94;
+	--section-footer-background: #171719;
+}
+
+/* Old Money : vert club, marine, crème et or patiné */
+html[data-theme='old-money'] {
+	color-scheme: light;
+	--font-heading: Didot, "Bodoni MT", Baskerville, Georgia, serif;
+	--letter-spacing-heading: -0.03em;
+	--radius-small: 0;
+	--radius-medium: 0.25rem;
+	--radius-large: 0.5rem;
+	--radius-pill: 0.25rem;
+	--color-page: #f5f0e4;
+	--color-surface: #fffaf0;
+	--color-surface-alt: #dfe4d6;
+	--color-text: #162a22;
+	--color-text-muted: #657168;
+	--color-primary: #123d31;
+	--color-primary-hover: #0a2c23;
+	--color-secondary: #253b59;
+	--color-accent: #9a7336;
+	--color-border: #bdc4b7;
+	--color-inverse: #fffaf0;
+	--color-focus: #9a7336;
+	--color-shadow: rgb(20 43 34 / 15%);
+	--color-footer-muted: #cbd3c7;
+	--color-footer-border: #405d52;
+	--color-footer-text: #fffaf0;
+	--section-header-background: rgb(245 240 228 / 95%);
+	--section-home-background: #123d31;
+	--section-about-background: #dfe4d6;
+	--section-expertise-background: #cbd5c2;
+	--section-projects-background: #fbf7ee;
+	--section-cv-background: #f5f0e4;
+	--section-contact-background: #d7c49e;
+	--section-footer-background: #102820;
+}
+
+/* Vintage : papier jauni, tomate, moutarde et vert rétro */
+html[data-theme='vintage'] {
+	color-scheme: light;
+	--font-heading: Rockwell, "Courier New", Georgia, serif;
+	--font-body: Georgia, "Times New Roman", serif;
+	--letter-spacing-heading: -0.025em;
+	--radius-small: 0.2rem;
+	--radius-medium: 0.45rem;
+	--radius-large: 0.75rem;
+	--radius-pill: 0.35rem;
+	--color-page: #efe0c4;
+	--color-surface: #fff4df;
+	--color-surface-alt: #d8c09a;
+	--color-text: #3c291f;
+	--color-text-muted: #765f4c;
+	--color-primary: #a6402d;
+	--color-primary-hover: #7c2c1f;
+	--color-secondary: #3f6657;
+	--color-accent: #d09b3d;
+	--color-border: #bca581;
+	--color-inverse: #fff8e8;
+	--color-focus: #6a3c2b;
+	--color-shadow: rgb(74 45 28 / 18%);
+	--color-footer-muted: #d5c3a7;
+	--color-footer-border: #725645;
+	--color-footer-text: #fff4df;
+	--section-header-background: rgb(239 224 196 / 95%);
+	--section-home-background: #d09b3d;
+	--section-about-background: #dcc9a8;
+	--section-expertise-background: #d8b58f;
+	--section-projects-background: #f7e9cf;
+	--section-cv-background: #efe0c4;
+	--section-contact-background: #ce8063;
+	--section-footer-background: #3c291f;
+}
+
+/* Cottage Core : crème, sauge, bois et rose fané */
+html[data-theme='cottage-core'] {
+	color-scheme: light;
+	--font-heading: Georgia, "Times New Roman", serif;
+	--font-body: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+	--letter-spacing-heading: -0.03em;
+	--radius-small: 0.35rem;
+	--radius-medium: 0.75rem;
+	--radius-large: 1.5rem;
+	--radius-pill: 999px;
+	--color-page: #f6f0df;
+	--color-surface: #fffaf0;
+	--color-surface-alt: #dce4cf;
+	--color-text: #31402e;
+	--color-text-muted: #6b7863;
+	--color-primary: #5c7651;
+	--color-primary-hover: #3f593a;
+	--color-secondary: #7c5c45;
+	--color-accent: #bd6f78;
+	--color-border: #bcc8ae;
+	--color-inverse: #fffaf0;
+	--color-focus: #7c5c45;
+	--color-shadow: rgb(49 64 46 / 13%);
+	--color-footer-muted: #cbd7c2;
+	--color-footer-border: #60705a;
+	--color-footer-text: #fffaf0;
+	--section-header-background: rgb(246 240 223 / 95%);
+	--section-home-background: #8ea77e;
+	--section-about-background: #e1e8d5;
+	--section-expertise-background: #d8c9ad;
+	--section-projects-background: #fbf6e9;
+	--section-cv-background: #f6f0df;
+	--section-contact-background: #e4c1bd;
+	--section-footer-background: #354630;
+}
+
+/* Y2K : chrome clair, bleu électrique, lilas et rose numérique */
+html[data-theme='y2k'] {
+	color-scheme: light;
+	--font-heading: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+	--font-body: Verdana, Geneva, sans-serif;
+	--letter-spacing-heading: -0.055em;
+	--radius-small: 0.5rem;
+	--radius-medium: 1rem;
+	--radius-large: 2rem;
+	--radius-pill: 999px;
+	--color-page: #e9e8f1;
+	--color-surface: #f8f7ff;
+	--color-surface-alt: #cfd3e8;
+	--color-text: #151329;
+	--color-text-muted: #625e7a;
+	--color-primary: #3647d9;
+	--color-primary-hover: #2432a8;
+	--color-secondary: #8735bf;
+	--color-accent: #ef4fa0;
+	--color-border: #aeb4d0;
+	--color-inverse: #ffffff;
+	--color-focus: #db2c8c;
+	--color-shadow: rgb(54 71 217 / 18%);
+	--color-footer-muted: #c7c5dc;
+	--color-footer-border: #56516f;
+	--color-footer-text: #f8f7ff;
+	--section-header-background: rgb(233 232 241 / 94%);
+	--section-home-background: #93a3ff;
+	--section-about-background: #d5d2f2;
+	--section-expertise-background: #c5d9f5;
+	--section-projects-background: #f5f3fc;
+	--section-cv-background: #e9e8f1;
+	--section-contact-background: #efacd2;
+	--section-footer-background: #18152f;
+}
+
+/* Gothic : noir d’encre, pierre, pourpre et argent fané */
+html[data-theme='gothic'] {
+	color-scheme: dark;
+	--font-heading: Garamond, Baskerville, "Times New Roman", serif;
+	--font-body: Georgia, "Times New Roman", serif;
+	--letter-spacing-heading: -0.02em;
+	--radius-small: 0;
+	--radius-medium: 0;
+	--radius-large: 0;
+	--radius-pill: 0;
+	--color-page: #100e11;
+	--color-surface: #19161b;
+	--color-surface-alt: #242027;
+	--color-text: #e4dce2;
+	--color-text-muted: #a99da6;
+	--color-primary: #b64a57;
+	--color-primary-hover: #d05c69;
+	--color-secondary: #b89dbd;
+	--color-accent: #7d2635;
+	--color-border: #403943;
+	--color-inverse: #120f12;
+	--color-focus: #d16a75;
+	--color-shadow: rgb(0 0 0 / 40%);
+	--color-footer-muted: #9d919a;
+	--color-footer-border: #39323b;
+	--color-footer-text: #e4dce2;
+	--section-header-background: rgb(16 14 17 / 95%);
+	--section-home-background: #34161e;
+	--section-about-background: #201a24;
+	--section-expertise-background: #291b22;
+	--section-projects-background: #141116;
+	--section-cv-background: #100e11;
+	--section-contact-background: #36141e;
+	--section-footer-background: #09070a;
+}
+
+/* Soft Girl : rose poudré, crème et lilas tendre */
+html[data-theme='soft-girl'] {
+	color-scheme: light;
+	--font-heading: Georgia, "Times New Roman", serif;
+	--font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--letter-spacing-heading: -0.035em;
+	--radius-small: 0.5rem;
+	--radius-medium: 1rem;
+	--radius-large: 2rem;
+	--radius-pill: 999px;
+	--color-page: #fff4f7;
+	--color-surface: #fffafb;
+	--color-surface-alt: #f5dce7;
+	--color-text: #493440;
+	--color-text-muted: #806773;
+	--color-primary: #a9436d;
+	--color-primary-hover: #823252;
+	--color-secondary: #76578f;
+	--color-accent: #df86a7;
+	--color-border: #dfc0ce;
+	--color-inverse: #fffafd;
+	--color-focus: #76578f;
+	--color-shadow: rgb(169 67 109 / 14%);
+	--color-footer-muted: #e2cbd5;
+	--color-footer-border: #765766;
+	--color-footer-text: #fff7fa;
+	--section-header-background: rgb(255 244 247 / 95%);
+	--section-home-background: #efb8ce;
+	--section-about-background: #f8e1ea;
+	--section-expertise-background: #e6d8ee;
+	--section-projects-background: #fff9fb;
+	--section-cv-background: #fff4f7;
+	--section-contact-background: #e9bfd4;
+	--section-footer-background: #4f3845;
+}
+
+/* Ethereal : brume, pervenche, argent et lumière froide */
+html[data-theme='ethereal'] {
+	color-scheme: light;
+	--font-heading: Palatino, "Palatino Linotype", "Iowan Old Style", Georgia, serif;
+	--font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--letter-spacing-heading: -0.035em;
+	--radius-small: 0.4rem;
+	--radius-medium: 0.9rem;
+	--radius-large: 2rem;
+	--radius-pill: 999px;
+	--color-page: #f2f4f7;
+	--color-surface: #fbfcff;
+	--color-surface-alt: #e1e5ee;
+	--color-text: #29303f;
+	--color-text-muted: #6b7282;
+	--color-primary: #60669d;
+	--color-primary-hover: #484d7c;
+	--color-secondary: #4f747c;
+	--color-accent: #9878ad;
+	--color-border: #c6ccd8;
+	--color-inverse: #ffffff;
+	--color-focus: #75658f;
+	--color-shadow: rgb(74 85 117 / 13%);
+	--color-footer-muted: #c8d0dd;
+	--color-footer-border: #566170;
+	--color-footer-text: #f7f9fd;
+	--section-header-background: rgb(242 244 247 / 92%);
+	--section-home-background: #b9c4df;
+	--section-about-background: #e3e3f0;
+	--section-expertise-background: #d5e3e4;
+	--section-projects-background: #f8f9fc;
+	--section-cv-background: #f2f4f7;
+	--section-contact-background: #dacfe5;
+	--section-footer-background: #29303f;
+}
+
+/* Cyberpunk : nuit technique, cyan, magenta et jaune signal */
+html[data-theme='cyberpunk'] {
+	color-scheme: dark;
+	--font-heading: "Arial Black", Impact, "Helvetica Neue", Arial, sans-serif;
+	--font-body: "Courier New", Courier, monospace;
+	--letter-spacing-heading: -0.04em;
+	--radius-small: 0;
+	--radius-medium: 0;
+	--radius-large: 0;
+	--radius-pill: 0;
+	--color-page: #0b0d12;
+	--color-surface: #121722;
+	--color-surface-alt: #1b2230;
+	--color-text: #eef8f7;
+	--color-text-muted: #a8bdc3;
+	--color-primary: #00b8c4;
+	--color-primary-hover: #4cdae1;
+	--color-secondary: #ff3aa7;
+	--color-accent: #f1d84b;
+	--color-border: #344653;
+	--color-inverse: #061012;
+	--color-focus: #f1d84b;
+	--color-shadow: rgb(0 184 196 / 17%);
+	--color-footer-muted: #91a7ad;
+	--color-footer-border: #2e414d;
+	--color-footer-text: #eef8f7;
+	--section-header-background: rgb(11 13 18 / 94%);
+	--section-home-background: #00b8c4;
+	--section-about-background: #101f2a;
+	--section-expertise-background: #16152c;
+	--section-projects-background: #0e1118;
+	--section-cv-background: #0b0d12;
+	--section-contact-background: #2b1431;
+	--section-footer-background: #07090d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--duration-fast: 0s;
+		--duration-medium: 0s;
+		--duration-slow: 0s;
+		--duration-stagger: 0s;
+		--hover-lift: 0rem;
+		--image-hover-scale: 1;
+	}
+}

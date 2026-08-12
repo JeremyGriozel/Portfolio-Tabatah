@@ -1,0 +1,125 @@
+---
+import type { NavigationItem } from '../../data/navigation';
+
+interface Props {
+	items: NavigationItem[];
+	currentPath: string;
+	label?: string;
+}
+
+const { items, currentPath, label = 'Navigation principale' } = Astro.props;
+
+const normalizePath = (path: string) => path === '/' ? path : `${path.replace(/\/$/, '')}/`;
+const isCurrent = (href: string) => normalizePath(currentPath) === normalizePath(href);
+const isWithin = (href: string) => href !== '/' && normalizePath(currentPath).startsWith(normalizePath(href));
+---
+
+<nav class="navigation" aria-label={label} data-navigation>
+	<button
+		class="navigation__menu-toggle"
+		type="button"
+		aria-expanded="false"
+		aria-controls="main-navigation-list"
+		data-menu-toggle
+	>
+		<span>Menu</span>
+		<span class="navigation__menu-icon" aria-hidden="true"></span>
+	</button>
+
+	<ul class="navigation__list" id="main-navigation-list">
+		{items.map((item, index) => (
+			<li class:list={['navigation__item', item.children && 'navigation__item--has-children', isWithin(item.href) && 'navigation__item--active']}>
+				<div class="navigation__parent-row">
+					<a
+						class="navigation__link"
+						href={item.href}
+						aria-current={isCurrent(item.href) ? 'page' : undefined}
+					>
+						{item.label}
+					</a>
+					{item.children && (
+						<button
+							class="navigation__submenu-toggle"
+							type="button"
+							aria-expanded="false"
+							aria-controls={`navigation-submenu-${index}`}
+							aria-label={`Afficher le sous-menu ${item.label}`}
+							data-submenu-toggle
+						>
+							<span aria-hidden="true">⌄</span>
+						</button>
+					)}
+				</div>
+				{item.children && (
+					<ul class="navigation__submenu" id={`navigation-submenu-${index}`}>
+						{item.children.map((child) => (
+							<li>
+								<a class="navigation__submenu-link" href={child.href} aria-current={isCurrent(child.href) ? 'page' : undefined}>
+									{child.label}
+								</a>
+							</li>
+						))}
+					</ul>
+				)}
+			</li>
+		))}
+	</ul>
+</nav>
+
+<script>
+	document.querySelectorAll<HTMLElement>('[data-navigation]').forEach((navigation) => {
+		const menuToggle = navigation.querySelector<HTMLButtonElement>('[data-menu-toggle]');
+		const submenuToggles = navigation.querySelectorAll<HTMLButtonElement>('[data-submenu-toggle]');
+
+		const closeSubmenus = (except?: HTMLElement) => {
+			submenuToggles.forEach((toggle) => {
+				const item = toggle.closest<HTMLElement>('.navigation__item');
+				if (item !== except) {
+					item?.classList.remove('is-open');
+					toggle.setAttribute('aria-expanded', 'false');
+				}
+			});
+		};
+
+		menuToggle?.addEventListener('click', () => {
+			const isOpen = navigation.toggleAttribute('data-menu-open');
+			menuToggle.setAttribute('aria-expanded', String(isOpen));
+			if (!isOpen) closeSubmenus();
+		});
+
+		submenuToggles.forEach((toggle) => {
+			toggle.addEventListener('click', () => {
+				const item = toggle.closest<HTMLElement>('.navigation__item');
+				if (!item) return;
+				const willOpen = !item.classList.contains('is-open');
+				closeSubmenus(item);
+				item.classList.toggle('is-open', willOpen);
+				toggle.setAttribute('aria-expanded', String(willOpen));
+			});
+		});
+
+		navigation.addEventListener('keydown', (event) => {
+			if (event.key !== 'Escape') return;
+			const openSubmenu = navigation.querySelector<HTMLElement>('.navigation__item.is-open');
+			if (openSubmenu) {
+				const toggle = openSubmenu.querySelector<HTMLButtonElement>('[data-submenu-toggle]');
+				closeSubmenus();
+				toggle?.focus();
+				return;
+			}
+			if (navigation.hasAttribute('data-menu-open')) {
+				navigation.removeAttribute('data-menu-open');
+				menuToggle?.setAttribute('aria-expanded', 'false');
+				menuToggle?.focus();
+			}
+		});
+
+		document.addEventListener('click', (event) => {
+			if (event.target instanceof Node && !navigation.contains(event.target)) {
+				closeSubmenus();
+				navigation.removeAttribute('data-menu-open');
+				menuToggle?.setAttribute('aria-expanded', 'false');
+			}
+		});
+	});
+</script>

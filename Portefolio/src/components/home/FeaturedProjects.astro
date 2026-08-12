@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { PortfolioCategory } from '../../data/portfolio';
+import Button from '../ui/Button.astro';
+import SectionTitle from '../ui/SectionTitle.astro';
+import ProjectGrid from '../portfolio/ProjectGrid.astro';
+
+interface Props {
+	projects: CollectionEntry<'projects'>[];
+	categories: PortfolioCategory[];
+	copy: {
+		eyebrow: string;
+		title: string;
+		description: string;
+		emptyMessage: string;
+		link: { label: string; href: string };
+	};
+}
+
+const { projects, categories, copy } = Astro.props;
+---
+
+<section class="featured-projects section">
+	<div class="container">
+		<SectionTitle eyebrow={copy.eyebrow} title={copy.title} description={copy.description} />
+		<ProjectGrid projects={projects} categories={categories} emptyMessage={copy.emptyMessage} />
+		<div class="featured-projects__footer">
+			<Button href={copy.link.href} variant="secondary">{copy.link.label}</Button>
+		</div>
+	</div>
+</section>

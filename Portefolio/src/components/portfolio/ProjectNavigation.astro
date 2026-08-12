@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+	previousProject?: CollectionEntry<'projects'>;
+	nextProject?: CollectionEntry<'projects'>;
+	title: string;
+	previousLabel: string;
+	nextLabel: string;
+}
+
+const { previousProject, nextProject, title, previousLabel, nextLabel } = Astro.props;
+---
+
+{(previousProject || nextProject) && (
+	<nav class="project-navigation container" aria-labelledby="project-navigation-title">
+		<h2 id="project-navigation-title">{title}</h2>
+		<div class="project-navigation__links">
+			{previousProject && (
+				<a class="project-navigation__link" href={`/portfolio/${previousProject.data.slug}/`}>
+					<span class="eyebrow">← {previousLabel}</span>
+					<strong>{previousProject.data.title}</strong>
+				</a>
+			)}
+			{nextProject && (
+				<a class="project-navigation__link project-navigation__link--next" href={`/portfolio/${nextProject.data.slug}/`}>
+					<span class="eyebrow">{nextLabel} →</span>
+					<strong>{nextProject.data.title}</strong>
+				</a>
+			)}
+		</div>
+	</nav>
+)}

@@ -1,0 +1,37 @@
+---
+import Button from '../ui/Button.astro';
+import ImageFrame from '../ui/ImageFrame.astro';
+
+interface Props {
+	eyebrow: string;
+	name: string;
+	profession: string;
+	intro: string;
+	primaryAction: { label: string; href: string };
+	secondaryAction: { label: string; href: string };
+	image: { src: string; alt: string; caption?: string };
+}
+
+const { eyebrow, name, profession, intro, primaryAction, secondaryAction, image } = Astro.props;
+---
+
+<section class="hero">
+	<div class="hero__inner container">
+		<div class="hero__masthead flow">
+			<p class="eyebrow">{eyebrow}</p>
+			<h1 class="hero__title">{name}</h1>
+			<p class="hero__profession">{profession}</p>
+		</div>
+		<div class="hero__visual">
+			<ImageFrame src={image.src} alt={image.alt} aspect="portrait" loading="eager" />
+			{image.caption && <p class="hero__caption">{image.caption}</p>}
+		</div>
+		<div class="hero__copy flow">
+			<p class="hero__intro">{intro}</p>
+			<div class="hero__actions cluster">
+				<Button href={primaryAction.href} variant="text">{primaryAction.label} <span aria-hidden="true">↗</span></Button>
+				<Button href={secondaryAction.href} variant="text">{secondaryAction.label} <span aria-hidden="true">↗</span></Button>
+			</div>
+		</div>
+	</div>
+</section>

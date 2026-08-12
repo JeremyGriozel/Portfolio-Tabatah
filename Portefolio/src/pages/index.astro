@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import AboutPreview from '../components/home/AboutPreview.astro';
+import FeaturedProjects from '../components/home/FeaturedProjects.astro';
+import Hero from '../components/home/Hero.astro';
+import HomeCTA from '../components/home/HomeCTA.astro';
+import { homeContent } from '../data/home';
+import { portfolioCategories } from '../data/portfolio';
+import { siteConfig } from '../data/site';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const featuredProjects = (await getCollection('projects', ({ data }) => data.published && data.featured))
+	.sort((first, second) => first.data.order - second.data.order);
+---
+
+<BaseLayout>
+	<Hero {...homeContent.hero} name={siteConfig.name} profession={siteConfig.profession} />
+	<AboutPreview {...homeContent.about} />
+	<FeaturedProjects
+		projects={featuredProjects}
+		categories={portfolioCategories}
+		copy={homeContent.featured}
+	/>
+	<HomeCTA {...homeContent.cta} />
+</BaseLayout>

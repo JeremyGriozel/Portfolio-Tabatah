@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
+import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
+
+export async function getStaticPaths() {
+	const projects = (await getCollection('projects', ({ data }) => data.published))
+		.sort((first, second) => first.data.order - second.data.order);
+
+	return projects.map((project, index) => {
+		const hasOtherProjects = projects.length > 1;
+		const previousProject = hasOtherProjects
+			? projects[(index - 1 + projects.length) % projects.length]
+			: undefined;
+		const nextProject = hasOtherProjects
+			? projects[(index + 1) % projects.length]
+			: undefined;
+
+		return {
+			params: { slug: project.data.slug },
+			props: { project, previousProject, nextProject },
+		};
+	});
+}
+
+interface Props {
+	project: CollectionEntry<'projects'>;
+	previousProject?: CollectionEntry<'projects'>;
+	nextProject?: CollectionEntry<'projects'>;
+}
+
+const { project, previousProject, nextProject } = Astro.props;
+---
+
+<PortfolioLayout project={project} {previousProject} {nextProject} />

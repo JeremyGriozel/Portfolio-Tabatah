@@ -1,0 +1,23 @@
+---
+import Button from '../ui/Button.astro';
+
+interface Props {
+	eyebrow: string;
+	title: string;
+	paragraphs: readonly string[];
+	link: { label: string; href: string };
+}
+
+const { eyebrow, title, paragraphs, link } = Astro.props;
+---
+
+<section class="about-preview section">
+	<div class="about-preview__grid container">
+		<p class="eyebrow">{eyebrow}</p>
+		<div class="about-preview__content flow">
+			<h2>{title}</h2>
+			{paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+			<div><Button href={link.href} variant="secondary">{link.label}</Button></div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { PortfolioCategory } from '../../data/portfolio';
+import ProjectCard from './ProjectCard.astro';
+
+interface Props {
+	projects: CollectionEntry<'projects'>[];
+	categories?: PortfolioCategory[];
+	emptyMessage: string;
+}
+
+const { projects, categories = [], emptyMessage } = Astro.props;
+const sortedProjects = [...projects].sort((first, second) => first.data.order - second.data.order);
+const getCategoryLabel = (categorySlug: string) =>
+	categories.find((category) => category.slug === categorySlug)?.label ?? categorySlug;
+---
+
+{sortedProjects.length > 0 ? (
+	<div class="project-grid">
+		{sortedProjects.map((project) => (
+			<ProjectCard project={project} categoryLabel={getCategoryLabel(project.data.category)} />
+		))}
+	</div>
+) : (
+	<p class="project-grid__empty">{emptyMessage}</p>
+)}

@@ -1,0 +1,34 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { PortfolioCategory } from '../../data/portfolio';
+import Tag from '../ui/Tag.astro';
+
+interface Props {
+	project: CollectionEntry<'projects'>;
+	categories: PortfolioCategory[];
+	backLabel: string;
+}
+
+const { project, categories, backLabel } = Astro.props;
+const { title, shortDescription, category, date, tags } = project.data;
+const categoryLabel = categories.find((item) => item.slug === category)?.label ?? category;
+const formattedDate = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' }).format(date);
+---
+
+<header class="project-header container">
+	<a class="project-header__back" href="/portfolio/">← {backLabel}</a>
+	<div class="project-header__grid">
+		<div>
+			<p class="eyebrow">{categoryLabel}</p>
+			<h1 class="project-header__title">{title}</h1>
+			<p class="project-header__description">{shortDescription}</p>
+		</div>
+		<div>
+			<dl class="project-header__meta">
+				<div><dt>Date</dt><dd><time datetime={date.toISOString()}>{formattedDate}</time></dd></div>
+				<div><dt>Catégorie</dt><dd>{categoryLabel}</dd></div>
+			</dl>
+			{tags.length > 0 && <ul class="tag-list" aria-label="Mots-clés">{tags.map((tag) => <li><Tag label={tag} /></li>)}</ul>}
+		</div>
+	</div>
+</header>

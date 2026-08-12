@@ -1,0 +1,66 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { PortfolioCategory, PortfolioExpertiseContent } from '../../data/portfolio';
+import PortfolioExpertise from './PortfolioExpertise.astro';
+import ProjectGrid from './ProjectGrid.astro';
+import SectionTitle from '../ui/SectionTitle.astro';
+
+interface Props {
+	projects: CollectionEntry<'projects'>[];
+	categories: PortfolioCategory[];
+	title: string;
+	eyebrow: string;
+	description: string;
+	currentCategory?: string;
+	filtersLabel: string;
+	allProjectsLabel: string;
+	emptyMessage: string;
+	expertise?: PortfolioExpertiseContent;
+}
+
+const {
+	projects,
+	categories,
+	title,
+	eyebrow,
+	description,
+	currentCategory,
+	filtersLabel,
+	allProjectsLabel,
+	emptyMessage,
+	expertise,
+} = Astro.props;
+---
+
+<section class="archive-header container">
+	<SectionTitle title={title} eyebrow={eyebrow} description={description} headingLevel="h1" />
+</section>
+
+{expertise && <PortfolioExpertise {...expertise} />}
+
+<section class="portfolio-collection section" aria-labelledby="portfolio-filters">
+	<div class="container">
+		<nav class="archive-nav" aria-labelledby="portfolio-filters">
+			<p class="visually-hidden" id="portfolio-filters">{filtersLabel}</p>
+			<ul class="archive-nav__list">
+				<li>
+					<a class="archive-nav__link" href="/portfolio/" aria-current={!currentCategory ? 'page' : undefined}>
+						{allProjectsLabel}
+					</a>
+				</li>
+				{categories.map((category) => (
+					<li>
+						<a
+							class="archive-nav__link"
+							href={`/portfolio/${category.slug}/`}
+							aria-current={currentCategory === category.slug ? 'page' : undefined}
+						>
+							{category.label}
+						</a>
+					</li>
+				))}
+			</ul>
+		</nav>
+		<ProjectGrid projects={projects} categories={categories} emptyMessage={emptyMessage} />
+	</div>
+</section>

@@ -1,0 +1,29 @@
+---
+import type { PortfolioExpertiseContent } from '../../data/portfolio';
+
+const { eyebrow, title, introduction, items } = Astro.props as PortfolioExpertiseContent;
+---
+
+<section class="portfolio-expertise section" aria-labelledby="portfolio-expertise-title">
+	<div class="portfolio-expertise__inner container">
+		<header class="portfolio-expertise__header">
+			<p class="eyebrow">{eyebrow}</p>
+			<h2 id="portfolio-expertise-title">{title}</h2>
+			<p>{introduction}</p>
+		</header>
+
+		<ol class="portfolio-expertise__list">
+			{items.map((item, index) => (
+				<li class="portfolio-expertise__item">
+					<span class="portfolio-expertise__number" aria-hidden="true">
+						{String(index + 1).padStart(2, '0')}
+					</span>
+					<div>
+						<h3>{item.title}</h3>
+						<p>{item.description}</p>
+					</div>
+				</li>
+			))}
+		</ol>
+	</div>
+</section>

@@ -1,0 +1,49 @@
+---
+import Footer from '../components/layout/Footer.astro';
+import Header from '../components/layout/Header.astro';
+import { siteConfig, themeOptions } from '../data/site';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+	noIndex?: boolean;
+}
+
+const { title, description = siteConfig.metadata.defaultDescription, noIndex = false } = Astro.props;
+const pageTitle = title ? `${title} — ${siteConfig.name}` : siteConfig.metadata.defaultTitle;
+const availableThemes = themeOptions.map(({ value }) => value);
+const themeStorageKey = 'portfolio-theme';
+---
+
+<!doctype html>
+<html lang="fr" data-theme={siteConfig.theme}>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<script is:inline define:vars={{ availableThemes, configuredTheme: siteConfig.theme, themeStorageKey }}>
+			try {
+				const savedTheme = localStorage.getItem(themeStorageKey);
+				document.documentElement.dataset.theme = availableThemes.includes(savedTheme)
+					? savedTheme
+					: configuredTheme;
+			} catch {
+				document.documentElement.dataset.theme = configuredTheme;
+			}
+		</script>
+		{noIndex && <meta name="robots" content="noindex, nofollow" />}
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<title>{pageTitle}</title>
+	</head>
+	<body>
+		<a class="skip-link" href="#main-content">Aller au contenu</a>
+		<Header currentPath={Astro.url.pathname} />
+		<main id="main-content">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>
