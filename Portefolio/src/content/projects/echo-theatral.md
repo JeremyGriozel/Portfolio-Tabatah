@@ -15,8 +15,8 @@ cover:
     photo d'une jeune femme habillée dans un style gothique et un décor
     théâtral, dans une luminosité sombre et un éclairage violet.
   aspect: auto
-  width: 750
-  height: 500
+  width: 375
+  height: 250
 gallery:
   - src: /images/projects/echo-theatral/gallery/0/src.jpeg
     alt: ' '
