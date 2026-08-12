@@ -8,6 +8,7 @@ shortDescription: >-
 
   Le modèle avait pour intention de faire ressortir avec ce dernier une imagerie
   particulière, entre théâtre romanesque et roman inspiré du conte Dracula.
+detailedDescription: test
 cover:
   src: /images/projects/echo-theatral/cover/src.jpeg
   alt: >-
