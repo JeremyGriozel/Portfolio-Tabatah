@@ -1,5 +1,6 @@
 ---
 import { navigationItems } from '../../data/navigation';
+import { contactConfig } from '../../data/contact';
 import { siteConfig } from '../../data/site';
 
 const currentYear = new Date().getFullYear();
@@ -13,9 +14,9 @@ const footerLinks = navigationItems.flatMap((item) => [item, ...(item.children ?
 				<p class="site-footer__name">{siteConfig.name}</p>
 				<p class="site-footer__message">{siteConfig.footer.message}</p>
 				<p class="site-footer__heading">{siteConfig.footer.contactLabel}</p>
-				<a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
-				{siteConfig.showPhone && siteConfig.phone && (
-					<a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`}>{siteConfig.phone}</a>
+				<a href={`mailto:${contactConfig.publicEmail}`}>{contactConfig.publicEmail}</a>
+				{contactConfig.showPhone && contactConfig.phone && (
+					<a href={`tel:${contactConfig.phone.replace(/\s/g, '')}`}>{contactConfig.phone}</a>
 				)}
 			</div>
 			<nav aria-label={siteConfig.footer.navigationLabel}>
@@ -27,7 +28,7 @@ const footerLinks = navigationItems.flatMap((item) => [item, ...(item.children ?
 			<div>
 				<p class="site-footer__heading">{siteConfig.footer.socialsLabel}</p>
 				<ul class="site-footer__links">
-					{siteConfig.socials.map((social) => (
+					{contactConfig.socials.map((social) => (
 						<li><a href={social.href} target="_blank" rel="noreferrer">{social.label}</a></li>
 					))}
 				</ul>

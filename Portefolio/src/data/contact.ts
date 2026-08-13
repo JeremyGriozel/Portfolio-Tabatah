@@ -1,3 +1,19 @@
+import contactData from './contact.json';
+
+export interface ContactConfig {
+	publicEmail: string;
+	phone: string;
+	showPhone: boolean;
+	location: string;
+	socials: Array<{
+		label: string;
+		href: string;
+	}>;
+	formRecipient: string;
+}
+
+export const contactConfig: ContactConfig = contactData;
+
 export const contactContent = {
 	page: {
 		eyebrow: 'Contact',
@@ -22,9 +38,9 @@ export const contactContent = {
 		messageLabel: 'Message',
 		messagePlaceholder: 'Contexte, besoins, calendrier…',
 		submitLabel: 'Envoyer le message',
-		helpText:
-			"Formulaire non fonctionnel pour le moment. Veuillez me contacter directement par e-mail ou via les réseaux sociaux.",
-		successMessage:
-			'Merci pour votre message ! Je vous répondrai dans les plus brefs délais.',
+		helpText: 'Tous les champs sont obligatoires. Vos coordonnées servent uniquement à vous répondre.',
+		sendingMessage: 'Envoi en cours...',
+		successMessage: 'Votre message a bien été envoyé.',
+		errorMessage: 'Une erreur est survenue. Veuillez réessayer.',
 	},
 } as const;

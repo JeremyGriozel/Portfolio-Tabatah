@@ -1,4 +1,4 @@
-import { collection, config, fields } from '@keystatic/core';
+import { collection, config, fields, singleton } from '@keystatic/core';
 
 const useLocalStorage =
   import.meta.env.DEV &&
@@ -10,6 +10,11 @@ const storage = useLocalStorage
       kind: 'cloud',
       pathPrefix: 'Portefolio',
     } as const);
+
+const emailPattern = {
+	regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+	message: 'Saisissez une adresse e-mail valide.',
+};
 
 const imageAspects = [
 	{ label: 'Automatique', value: 'auto' },
@@ -52,6 +57,7 @@ export default config({
   	},
 	ui: {
 		brand: { name: 'Portfolio — Administration' },
+		navigation: ['projects', 'cv', 'contact'],
 	},
 	collections: {
 		projects: collection({
@@ -107,6 +113,54 @@ export default config({
 				order: fields.integer({ label: 'Ordre d’affichage', defaultValue: 0, validation: { min: 0 } }),
 				published: fields.checkbox({ label: 'Projet publié', defaultValue: true }),
 				_content: fields.emptyContent({ extension: 'md' }),
+			},
+		}),
+	},
+	singletons: {
+		cv: singleton({
+			label: 'CV',
+			path: 'src/data/cv',
+			format: 'json',
+			schema: {
+				cv: fields.file({
+					label: 'Fichier PDF du CV',
+					description: 'Sélectionnez un fichier PDF. Il remplacera le CV actuellement publié.',
+					directory: 'public/documents',
+					publicPath: '/documents/',
+					validation: { isRequired: true },
+				}),
+			},
+		}),
+		contact: singleton({
+			label: 'Contact',
+			path: 'src/data/contact',
+			format: 'json',
+			schema: {
+				publicEmail: fields.text({
+					label: 'Adresse e-mail affichée',
+					validation: { isRequired: true, pattern: emailPattern },
+				}),
+				phone: fields.text({ label: 'Numéro de téléphone' }),
+				showPhone: fields.checkbox({
+					label: 'Afficher le téléphone',
+					defaultValue: true,
+				}),
+				location: fields.text({ label: 'Localisation' }),
+				socials: fields.array(
+					fields.object({
+						label: fields.text({ label: 'Nom du réseau', validation: { isRequired: true } }),
+						href: fields.url({ label: 'Lien', validation: { isRequired: true } }),
+					}),
+					{
+						label: 'Réseaux sociaux',
+						itemLabel: ({ fields }) => fields.label.value || 'Nouveau réseau',
+					},
+				),
+				formRecipient: fields.text({
+					label: 'Adresse de réception du formulaire',
+					description: 'Cette adresse reste côté serveur et reçoit les messages envoyés depuis le site.',
+					validation: { isRequired: true, pattern: emailPattern },
+				}),
 			},
 		}),
 	},

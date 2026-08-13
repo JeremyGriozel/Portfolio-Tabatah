@@ -1,8 +1,3 @@
-export interface SocialLink {
-	label: string;
-	href: string;
-}
-
 export type SiteTheme =
 	| 'default'
 	| 'dark-academia'
@@ -37,12 +32,6 @@ export interface SiteConfig {
 	name: string;
 	profession: string;
 	description: string;
-	email: string;
-	phone?: string;
-	showPhone: boolean;
-	location: string;
-	socials: SocialLink[];
-	cvPath: string;
 	metadata: {
 		defaultTitle: string;
 		defaultDescription: string;
@@ -74,16 +63,6 @@ export const siteConfig = {
 	profession: 'Photographe indépendante & illustratrice digitale',
 	description:
 		"Directrice artistique à travers mes différents projets, j'explore de nouvelles idées ainsi que la création de visuels uniques.",
-	email: 'lux.tabatahpro@gmail.com',
-	phone: '+33 7 89 74 51 53',
-	showPhone: true,
-	location: 'Vaucluse, France',
-	socials: [
-		{ label: 'Instagram', href: 'https://www.instagram.com/' },
-		{ label: 'LinkedIn', href: 'https://www.linkedin.com/' },
-		{ label: 'Behance', href: 'https://www.behance.net/' },
-	],
-	cvPath: '/documents/cv.pdf',
 	metadata: {
 		defaultTitle: 'Tabatah Lux — Portfolio',
 		defaultDescription:

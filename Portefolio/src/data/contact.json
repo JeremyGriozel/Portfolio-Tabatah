@@ -1,0 +1,21 @@
+{
+	"publicEmail": "lux.tabatahpro@gmail.com",
+	"phone": "+33 7 89 74 51 53",
+	"showPhone": true,
+	"location": "Vaucluse, France",
+	"socials": [
+		{
+			"label": "Instagram",
+			"href": "https://www.instagram.com/"
+		},
+		{
+			"label": "LinkedIn",
+			"href": "https://www.linkedin.com/"
+		},
+		{
+			"label": "Behance",
+			"href": "https://www.behance.net/"
+		}
+	],
+	"formRecipient": "lux.tabatahpro@gmail.com"
+}
