@@ -46,7 +46,7 @@ const getCategoryLabel = (categorySlug: string) =>
 		</div>
 	</div>
 ) : sortedProjects.length > 0 ? (
-	<div class="project-grid">
+	<div class:list={['project-grid', sortedProjects.length === 1 && 'project-grid--single']}>
 		{sortedProjects.map((project, index) => (
 			<ProjectCard project={project} categoryLabel={getCategoryLabel(project.data.category)} revealIndex={index} />
 		))}

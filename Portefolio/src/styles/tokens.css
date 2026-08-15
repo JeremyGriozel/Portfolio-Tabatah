@@ -44,6 +44,7 @@
 	--hero-image-width: 32rem;
 	--about-profile-width: clamp(15rem, 32svh, 20rem);
 	--about-profile-max-height: clamp(18rem, 40svh, 25rem);
+	--profile-frame-accent-width: clamp(0.375rem, 0.7vw, 0.75rem);
 	--panel-compact-padding: clamp(0.75rem, 2svh, 1.5rem);
 	--home-carousel-height: calc(100svh - var(--header-height));
 	--home-carousel-height-mobile: clamp(13.5rem, 64vw, 22rem);
@@ -53,6 +54,10 @@
 	--featured-card-width: 23rem;
 	--featured-card-width-portrait: 18rem;
 	--featured-card-width-square: 20rem;
+	--portfolio-single-card-width: clamp(30rem, 64svh, 42rem);
+	--portfolio-eyebrow-size: clamp(1.5rem, 1.05rem + 2vw, 3rem);
+	--portfolio-title-size: clamp(3.5rem, 2.4rem + 4vw, 6.5rem);
+	--portfolio-description-size: clamp(1.05rem, 0.98rem + 0.35vw, 1.3rem);
 	--project-cover-width-landscape: clamp(21rem, 56svh, 40rem);
 	--project-cover-width-portrait: clamp(13rem, 34svh, 24rem);
 	--project-cover-width-square: clamp(16rem, 42svh, 30rem);
