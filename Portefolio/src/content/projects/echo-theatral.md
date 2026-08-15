@@ -13,7 +13,7 @@ detailedDescription: >
   Réalisée avec une amie comme modèle, cette série est née de l'envie de créer
   une atmosphère inspirée de l'imaginaire gothique et fantastique. L'objectif
   était de s'éloigner du portrait classique pour construire une véritable mise
-  en scène, dans laquelle le modèle semble appartenir à un autre univers.\n
+  en scène, dans laquelle le modèle semble appartenir à un autre univers.
 
 
   Le travail de la lumière occupe une place centrale dans la série. Très faible
@@ -23,7 +23,7 @@ detailedDescription: >
   que les violets renforcent le caractère étrange et irréel des images. Les
   zones laissées dans l'obscurité participent également à cette esthétique :
   elles dissimulent une partie de la scène, laissant volontairement place à
-  l'imagination pour ces dernières.\n
+  l'imagination pour ces dernières.
 
 
   La mise en scène et les attitudes du modèle empruntent au registre du théâtre.
@@ -52,21 +52,21 @@ cover:
     théâtral, dans une luminosité sombre et un éclairage violet.
   aspect: landscape
 gallery:
-  - /images/projects/echo-theatral/gallery/0/src.jpeg
-  - /images/projects/echo-theatral/gallery/1/src.jpeg
-  - /images/projects/echo-theatral/gallery/2/src.jpeg
-  - /images/projects/echo-theatral/gallery/3/src.jpeg
-  - /images/projects/echo-theatral/gallery/4/src.jpeg
-  - /images/projects/echo-theatral/gallery/5/src.jpeg
-  - /images/projects/echo-theatral/gallery/6/src.jpeg
-  - /images/projects/echo-theatral/gallery/7/src.jpeg
-  - /images/projects/echo-theatral/gallery/8/src.jpeg
-  - /images/projects/echo-theatral/gallery/9/src.jpeg
-  - /images/projects/echo-theatral/gallery/10/src.jpeg
-  - /images/projects/echo-theatral/gallery/11/src.jpeg
-  - /images/projects/echo-theatral/gallery/12/src.jpeg
-  - /images/projects/echo-theatral/gallery/13/src.jpeg
-  - /images/projects/echo-theatral/gallery/14/src.jpeg
+  - /images/projects/echo-theatral/gallery/0.jpeg
+  - /images/projects/echo-theatral/gallery/1.jpeg
+  - /images/projects/echo-theatral/gallery/2.jpeg
+  - /images/projects/echo-theatral/gallery/3.jpeg
+  - /images/projects/echo-theatral/gallery/4.jpeg
+  - /images/projects/echo-theatral/gallery/5.jpeg
+  - /images/projects/echo-theatral/gallery/6.jpeg
+  - /images/projects/echo-theatral/gallery/7.jpeg
+  - /images/projects/echo-theatral/gallery/8.jpeg
+  - /images/projects/echo-theatral/gallery/9.jpeg
+  - /images/projects/echo-theatral/gallery/10.jpeg
+  - /images/projects/echo-theatral/gallery/11.jpeg
+  - /images/projects/echo-theatral/gallery/12.jpeg
+  - /images/projects/echo-theatral/gallery/13.jpeg
+  - /images/projects/echo-theatral/gallery/14.jpeg
 tools:
   - Portrait
   - Éclairage artificiel
