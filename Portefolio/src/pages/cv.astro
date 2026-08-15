@@ -12,13 +12,11 @@ const cvPath = cvConfig.cv;
 <BaseLayout title={cv.title} description={cv.intro}>
 	<section class="archive-header container cv-page">
 		<SectionTitle title={cv.title} description={cv.intro} headingLevel="h1" />
-		<div class="cv-actions cluster" data-reveal style="--reveal-order: 1">
+		<nav class="cv-actions" aria-label="Actions du CV" data-reveal style="--reveal-order: 1">
 			<Button href={cvPath} target="_blank">{cv.openLabel}</Button>
 			<Button href={cvPath} variant="secondary" download>{cv.downloadLabel}</Button>
-		</div>
-		<nav class="cv-related-links cluster" aria-label="Liens complémentaires">
-			<a href={cv.portfolioLink.href}>{cv.portfolioLink.label}</a>
-			<a href={cv.contactLink.href}>{cv.contactLink.label}</a>
+			<Button href={cv.portfolioLink.href} variant="secondary">{cv.portfolioLink.label}</Button>
+			<Button href={cv.contactLink.href} variant="secondary">{cv.contactLink.label}</Button>
 		</nav>
 		<object class="cv-frame" data={cvPath} type="application/pdf" data-reveal="image">
 			<div class="cv-fallback flow">
@@ -28,10 +26,6 @@ const cvPath = cvConfig.cv;
 		</object>
 		<div class="cv-mobile-panel flow">
 			<p>{cv.mobileText}</p>
-			<div class="cluster">
-				<Button href={cvPath} target="_blank">{cv.openLabel}</Button>
-				<Button href={cvPath} variant="secondary" download>{cv.downloadLabel}</Button>
-			</div>
 		</div>
 	</section>
 </BaseLayout>

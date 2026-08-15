@@ -292,28 +292,32 @@ textarea {
 }
 .lightbox__surface {
 	position: relative;
-	display: grid;
-	place-items: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
 	height: 100dvh;
-	padding: var(--lightbox-block-gutter) var(--lightbox-inline-gutter);
+	padding: 0;
 	background: var(--color-lightbox-background);
 	overflow: hidden;
 }
 
 .lightbox__media {
-	display: grid;
-	place-items: center;
-	width: min(var(--lightbox-media-width), calc(100vw - (2 * var(--lightbox-inline-gutter))));
-	height: min(64rem, calc(100dvh - (2 * var(--lightbox-block-gutter))));
-	max-height: calc(100svh - (2 * var(--lightbox-block-gutter)));
+	position: absolute;
+	inset: var(--lightbox-block-gutter) var(--lightbox-inline-gutter);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 0;
+	min-height: 0;
 }
 
 .lightbox__media img {
+	display: block;
 	width: auto;
 	height: auto;
-	max-width: min(100%, calc(100vw - (2 * var(--lightbox-inline-gutter))));
-	max-height: min(100%, calc(100dvh - (2 * var(--lightbox-block-gutter))));
+	max-width: 100%;
+	max-height: 100%;
 	object-fit: contain;
 	object-position: center center;
 }
@@ -781,6 +785,7 @@ textarea {
 .about-preview__grid > .eyebrow { grid-column: 1 / 4; padding-top: var(--space-sm); border-top: var(--border-width) solid var(--color-text); }
 .about-preview__content { --flow-space: var(--space-lg); grid-column: 5 / 12; max-width: var(--content-width); }
 .about-preview__content p { max-width: 40rem; }
+.about-preview__action { display: flex; justify-content: center; padding-top: var(--space-sm); }
 
 .about-combined {
 	align-content: center;
@@ -849,6 +854,9 @@ textarea {
 .archive-header .section-title__description {
 	max-width: 48rem;
 	font-size: var(--portfolio-description-size);
+}
+.archive-header--portfolio .section-title h1 + .section-title__description {
+	margin-top: var(--portfolio-title-description-gap);
 }
 .portfolio-expertise {
 	border-top: var(--border-width) solid var(--color-border);
@@ -1111,8 +1119,15 @@ textarea {
 
 /* CV */
 .cv-page { background: var(--section-cv-background); }
-.cv-actions { margin-bottom: var(--space-lg); }
-.cv-related-links { margin-bottom: var(--space-xl); }
+.cv-page .section-title { margin-bottom: var(--space-lg); }
+.cv-actions {
+	display: flex;
+	align-items: stretch;
+	gap: var(--space-md);
+	flex-wrap: nowrap;
+	margin-bottom: clamp(var(--space-2xl), 5vw, var(--space-3xl));
+}
+.cv-actions .button { white-space: nowrap; }
 .cv-frame { width: 100%; min-height: 75vh; border: var(--border-width) solid var(--color-border); border-radius: var(--radius-small); background: var(--color-surface); }
 .cv-fallback { padding: var(--space-xl); }
 .cv-mobile-panel { display: none; padding: var(--space-xl); border-block: var(--border-width) solid var(--color-border); background: var(--color-surface); }
@@ -1321,18 +1336,17 @@ textarea {
 	.project-navigation__link + .project-navigation__link { border-top: var(--border-width) solid var(--color-border); border-left: 0; }
 	.project-navigation__link--next { text-align: left; }
 	.contact-form { padding: var(--space-xl) var(--space-lg); }
-	.cv-actions,
+	.cv-actions {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: var(--space-sm);
+		margin-bottom: var(--space-xl);
+	}
+	.cv-actions .button { width: 100%; white-space: normal; }
 	.cv-frame { display: none; }
 	.cv-mobile-panel { display: block; }
-	.lightbox__surface { padding: var(--lightbox-mobile-gutter); }
 	.lightbox__media {
-		width: calc(100vw - (2 * var(--lightbox-mobile-gutter)));
-		height: calc(100dvh - var(--lightbox-mobile-controls-space));
-		max-height: calc(100svh - var(--lightbox-mobile-controls-space));
-	}
-	.lightbox__media img {
-		max-width: calc(100vw - (2 * var(--lightbox-mobile-gutter)));
-		max-height: min(100%, calc(100dvh - var(--lightbox-mobile-controls-space)));
+		inset: var(--lightbox-mobile-block-gutter) var(--lightbox-mobile-gutter);
 	}
 	.lightbox__close {
 		top: max(var(--lightbox-mobile-gutter), env(safe-area-inset-top));

@@ -15,7 +15,7 @@ export const homeContent = {
 	},
 	about: {
 		...siteContent.home.about,
-		link: { label: siteContent.home.about.linkLabel, href: '/cv/' },
+		link: { label: 'Mes compétences', href: '/portfolio/#competences' },
 	},
 	featured: {
 		...siteContent.home.featured,

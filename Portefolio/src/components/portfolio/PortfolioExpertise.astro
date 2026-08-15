@@ -4,7 +4,7 @@ import type { PortfolioExpertiseContent } from '../../data/portfolio';
 const { eyebrow, title, introduction, items } = Astro.props as PortfolioExpertiseContent;
 ---
 
-<section class="portfolio-expertise section section-panel" aria-labelledby="portfolio-expertise-title" data-section-panel>
+<section id="competences" class="portfolio-expertise section section-panel" aria-labelledby="portfolio-expertise-title" data-section-panel>
 	<div class="portfolio-expertise__inner container">
 		<header class="portfolio-expertise__header">
 			<p class="eyebrow" data-reveal>{eyebrow}</p>
