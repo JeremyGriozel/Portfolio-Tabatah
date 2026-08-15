@@ -2,36 +2,47 @@
 import Footer from '../components/layout/Footer.astro';
 import Header from '../components/layout/Header.astro';
 import MotionController from '../components/ui/MotionController.astro';
-import { siteConfig, themeOptions } from '../data/site';
+import { siteConfig, themeOptions, type SiteTheme } from '../data/site';
 import '../styles/global.css';
 
 interface Props {
 	title?: string;
 	description?: string;
 	noIndex?: boolean;
+	initialTheme?: SiteTheme;
 }
 
-const { title, description = siteConfig.metadata.defaultDescription, noIndex = false } = Astro.props;
+const {
+	title,
+	description = siteConfig.metadata.defaultDescription,
+	noIndex = false,
+	initialTheme,
+} = Astro.props;
 const pageTitle = title ? `${title} — ${siteConfig.name}` : siteConfig.metadata.defaultTitle;
 const availableThemes = themeOptions.map(({ value }) => value);
 const themeStorageKey = 'portfolio-theme';
+const renderedTheme = initialTheme ?? siteConfig.theme;
 ---
 
 <!doctype html>
-<html lang="fr" data-theme={siteConfig.theme}>
+<html lang="fr" data-theme={renderedTheme} data-page-theme={initialTheme}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
-		<script is:inline define:vars={{ availableThemes, configuredTheme: siteConfig.theme, themeStorageKey }}>
+		<script is:inline define:vars={{ availableThemes, configuredTheme: siteConfig.theme, initialTheme, themeStorageKey }}>
 			try {
 				const savedTheme = localStorage.getItem(themeStorageKey);
-				document.documentElement.dataset.theme = availableThemes.includes(savedTheme)
-					? savedTheme
-					: configuredTheme;
+				document.documentElement.dataset.theme = availableThemes.includes(initialTheme)
+					? initialTheme
+					: availableThemes.includes(savedTheme)
+						? savedTheme
+						: configuredTheme;
 			} catch {
-				document.documentElement.dataset.theme = configuredTheme;
+				document.documentElement.dataset.theme = availableThemes.includes(initialTheme)
+					? initialTheme
+					: configuredTheme;
 			}
 		</script>
 		{noIndex && <meta name="robots" content="noindex, nofollow" />}

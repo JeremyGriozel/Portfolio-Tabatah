@@ -1,4 +1,5 @@
 import { collection, config, fields, singleton } from '@keystatic/core';
+import { siteConfig, themeOptions } from './src/data/site';
 
 const useLocalStorage =
   import.meta.env.DEV &&
@@ -93,6 +94,15 @@ export default config({
 					defaultValue: 'photographie',
 				}),
 				date: fields.date({ label: 'Date', validation: { isRequired: true } }),
+				defaultTheme: fields.select({
+					label: 'Thème par défaut',
+					description: "Thème appliqué à l’ouverture de la page projet. Le visiteur peut ensuite le changer.",
+					options: themeOptions.map(({ value, label }) => ({ value, label })),
+					defaultValue: siteConfig.theme,
+				}),
+				published: fields.checkbox({ label: 'Projet publié', defaultValue: true }),
+				featured: fields.checkbox({ label: 'Projet mis en avant', defaultValue: false }),
+				order: fields.integer({ label: 'Ordre d’affichage', defaultValue: 0, validation: { min: 0 } }),
 				shortDescription: fields.text({
 					label: 'Description courte',
 					multiline: true,
@@ -113,9 +123,6 @@ export default config({
 					label: 'Tags',
 					itemLabel: ({ value }) => value || 'Nouveau tag',
 				}),
-				featured: fields.checkbox({ label: 'Projet mis en avant', defaultValue: false }),
-				order: fields.integer({ label: 'Ordre d’affichage', defaultValue: 0, validation: { min: 0 } }),
-				published: fields.checkbox({ label: 'Projet publié', defaultValue: true }),
 				_content: fields.emptyContent({ extension: 'md' }),
 			},
 		}),

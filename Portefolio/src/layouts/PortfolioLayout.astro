@@ -17,6 +17,7 @@ interface Props {
 
 const { project, previousProject, nextProject } = Astro.props;
 const { title, shortDescription, detailedDescription, cover, gallery, tools } = project.data;
+const initialTheme = project.data.defaultTheme;
 const lightboxId = `project-${project.id}`;
 const normalizedGallery = gallery.map((galleryImage, index) => ({
 	src: typeof galleryImage === 'string' ? galleryImage : galleryImage.src,
@@ -27,7 +28,7 @@ const normalizedGallery = gallery.map((galleryImage, index) => ({
 const lightboxImages = [{ src: cover.src, alt: cover.alt }, ...normalizedGallery];
 ---
 
-<BaseLayout title={title} description={shortDescription}>
+<BaseLayout title={title} description={shortDescription} {initialTheme}>
 	<section class="project-hero-panel section-panel" data-section-panel>
 		<ProjectHeader
 			project={project}

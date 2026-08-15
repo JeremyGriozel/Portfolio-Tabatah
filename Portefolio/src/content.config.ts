@@ -1,6 +1,9 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { themeOptions, type SiteTheme } from './data/site';
+
+const projectThemeValues = themeOptions.map(({ value }) => value) as [SiteTheme, ...SiteTheme[]];
 
 const legacyProjectImage = z.object({
 	src: z.string(),
@@ -24,6 +27,7 @@ const projects = defineCollection({
 		title: z.string(),
 		category: z.string(),
 		date: z.coerce.date(),
+		defaultTheme: z.enum(projectThemeValues).optional(),
 		shortDescription: z.string(),
 		detailedDescription: z.string().optional(),
 		cover: projectCover,

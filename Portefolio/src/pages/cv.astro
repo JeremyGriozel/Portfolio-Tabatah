@@ -6,7 +6,8 @@ import { siteConfig } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const { cv } = siteConfig.pages;
-const cvPath = cvConfig.cv;
+const cvSourcePath = cvConfig.cv;
+const cvPath = `${cvSourcePath}?v=${__CV_REVISION__}`;
 ---
 
 <BaseLayout title={cv.title} description={cv.intro}>

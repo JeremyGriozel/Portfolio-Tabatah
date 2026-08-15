@@ -61,7 +61,7 @@ const configuredTheme = themeOptions.find(({ value }) => value === siteConfig.th
 			}
 		};
 
-		const applyTheme = (value: string) => {
+		const applyTheme = (value: string, persist = false) => {
 			const selectedOption = options.find((option) => option.dataset.themeValue === value);
 			if (!selectedOption) return;
 
@@ -71,10 +71,12 @@ const configuredTheme = themeOptions.find(({ value }) => value === siteConfig.th
 				option.setAttribute('aria-pressed', String(option === selectedOption));
 			});
 
-			try {
-				localStorage.setItem(themeStorageKey, value);
-			} catch {
-				// Le thème reste actif même si le stockage local est indisponible.
+			if (persist) {
+				try {
+					localStorage.setItem(themeStorageKey, value);
+				} catch {
+					// Le thème reste actif même si le stockage local est indisponible.
+				}
 			}
 		};
 
@@ -93,7 +95,7 @@ const configuredTheme = themeOptions.find(({ value }) => value === siteConfig.th
 
 		options.forEach((option) => {
 			option.addEventListener('click', () => {
-				applyTheme(option.dataset.themeValue ?? 'default');
+				applyTheme(option.dataset.themeValue ?? 'default', true);
 				closeMenu(true);
 			});
 		});
