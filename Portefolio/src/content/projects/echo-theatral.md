@@ -3,6 +3,10 @@ slug: Écho Théâtral
 title: Écho Théâtral
 category: photographie
 date: 2026-08-08
+defaultTheme: gothic
+published: true
+featured: true
+order: 1
 shortDescription: >-
   Cette série explore une esthétique nocturne et gothique, où la lumière rouge
   et violette crée une atmosphère à la fois théâtrale, sensuelle et mystérieuse.
@@ -80,7 +84,4 @@ tags:
   - Imaginaire
   - Étrange
   - Sensuel
-featured: true
-order: 1
-published: true
 ---
