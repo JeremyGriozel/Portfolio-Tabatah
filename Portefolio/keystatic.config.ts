@@ -24,7 +24,7 @@ const imageAspects = [
 	{ label: 'Panoramique', value: 'wide' },
 ] as const;
 
-const projectImage = (label: string) =>
+const projectCover =
 	fields.object(
 		{
 			src: fields.image({
@@ -38,17 +38,21 @@ const projectImage = (label: string) =>
 				description: "Décrivez brièvement l’image pour les personnes qui ne peuvent pas la voir.",
 				validation: { isRequired: true },
 			}),
-			caption: fields.text({ label: 'Légende' }),
 			aspect: fields.select({
 				label: 'Proportion d’affichage',
 				options: imageAspects,
-				defaultValue: 'auto',
+				defaultValue: 'landscape',
 			}),
-			width: fields.integer({ label: 'Largeur en pixels', validation: { min: 1 } }),
-			height: fields.integer({ label: 'Hauteur en pixels', validation: { min: 1 } }),
 		},
-		{ label },
+		{ label: 'Image de couverture' },
 	);
+
+const galleryImage = fields.image({
+	label: 'Image de galerie',
+	directory: 'public/images/projects',
+	publicPath: '/images/projects/',
+	validation: { isRequired: true },
+});
 
 export default config({
 	storage,
@@ -57,7 +61,7 @@ export default config({
   	},
 	ui: {
 		brand: { name: 'Portfolio — Administration' },
-		navigation: ['projects', 'cv', 'contact'],
+		navigation: ['projects', 'siteContent', 'cv', 'contact'],
 	},
 	collections: {
 		projects: collection({
@@ -95,11 +99,11 @@ export default config({
 					validation: { isRequired: true },
 				}),
 				detailedDescription: fields.text({ label: 'Description détaillée', multiline: true }),
-				cover: projectImage('Image de couverture'),
-				gallery: fields.array(projectImage('Image de galerie'), {
+				cover: projectCover,
+				gallery: fields.array(galleryImage, {
 					label: 'Galerie',
-					description: 'Ajoutez, supprimez ou réorganisez les images par glisser-déposer.',
-					itemLabel: ({ fields }) => fields.alt.value || 'Nouvelle image',
+					description: 'Ajoutez, supprimez ou réorganisez les images. Chaque image affiche son aperçu natif.',
+					itemLabel: ({ value }) => value?.split('/').at(-1) || 'Nouvelle image',
 				}),
 				tools: fields.array(fields.text({ label: 'Outil ou technique' }), {
 					label: 'Outils et techniques',
@@ -117,6 +121,161 @@ export default config({
 		}),
 	},
 	singletons: {
+		siteContent: singleton({
+			label: 'Contenus du site',
+			path: 'src/data/site-content',
+			format: 'json',
+			schema: {
+				profileImage: fields.image({
+					label: 'Photo de profil / photo principale',
+					directory: 'public/images/profile',
+					publicPath: '/images/profile/',
+					validation: { isRequired: true },
+				}),
+				profileImageAlt: fields.text({
+					label: 'Description accessible de la photo',
+					validation: { isRequired: true },
+				}),
+				profileImageCaption: fields.text({ label: 'Légende facultative de la photo' }),
+				home: fields.object(
+					{
+						hero: fields.object(
+							{
+								eyebrow: fields.text({ label: 'Petit titre', validation: { isRequired: true } }),
+								title: fields.text({ label: 'Prénom et nom', validation: { isRequired: true } }),
+								profession: fields.text({ label: 'Métier ou activité', validation: { isRequired: true } }),
+								intro: fields.text({ label: 'Introduction', multiline: true, validation: { isRequired: true } }),
+								primaryActionLabel: fields.text({ label: 'Libellé du lien Portfolio', validation: { isRequired: true } }),
+								secondaryActionLabel: fields.text({ label: 'Libellé du lien CV', validation: { isRequired: true } }),
+							},
+							{ label: 'Hero' },
+						),
+						about: fields.object(
+							{
+								eyebrow: fields.text({ label: 'Petit titre', validation: { isRequired: true } }),
+								title: fields.text({ label: 'Titre', validation: { isRequired: true } }),
+								paragraphs: fields.array(
+									fields.text({ label: 'Paragraphe', multiline: true, validation: { isRequired: true } }),
+									{ label: 'Paragraphes', itemLabel: ({ value }) => value || 'Nouveau paragraphe' },
+								),
+								linkLabel: fields.text({ label: 'Libellé du lien CV', validation: { isRequired: true } }),
+							},
+							{ label: 'Présentation' },
+						),
+						featured: fields.object(
+							{
+								eyebrow: fields.text({ label: 'Petit titre', validation: { isRequired: true } }),
+								title: fields.text({ label: 'Titre', validation: { isRequired: true } }),
+								description: fields.text({ label: 'Description', multiline: true }),
+								emptyMessage: fields.text({ label: 'Message sans projet', validation: { isRequired: true } }),
+								linkLabel: fields.text({ label: 'Libellé du lien Portfolio', validation: { isRequired: true } }),
+							},
+							{ label: 'Projets mis en avant' },
+						),
+						cta: fields.object(
+							{
+								eyebrow: fields.text({ label: 'Petit titre', validation: { isRequired: true } }),
+								title: fields.text({ label: 'Titre', validation: { isRequired: true } }),
+								text: fields.text({ label: 'Texte', multiline: true, validation: { isRequired: true } }),
+								primaryActionLabel: fields.text({ label: 'Libellé du lien Portfolio', validation: { isRequired: true } }),
+								secondaryActionLabel: fields.text({ label: 'Libellé du lien Contact', validation: { isRequired: true } }),
+							},
+							{ label: 'Appel final' },
+						),
+					},
+					{ label: 'Page Qui suis-je' },
+				),
+				portfolio: fields.object(
+					{
+						index: fields.object(
+							{
+								eyebrow: fields.text({ label: 'Petit titre', validation: { isRequired: true } }),
+								title: fields.text({ label: 'Titre', validation: { isRequired: true } }),
+								description: fields.text({ label: 'Introduction', multiline: true, validation: { isRequired: true } }),
+							},
+							{ label: 'Introduction du portfolio' },
+						),
+						expertise: fields.object(
+							{
+								eyebrow: fields.text({ label: 'Petit titre', validation: { isRequired: true } }),
+								title: fields.text({ label: 'Titre', validation: { isRequired: true } }),
+								introduction: fields.text({ label: 'Introduction', multiline: true, validation: { isRequired: true } }),
+								items: fields.array(
+									fields.object({
+										title: fields.text({ label: 'Titre', validation: { isRequired: true } }),
+										description: fields.text({ label: 'Description', multiline: true, validation: { isRequired: true } }),
+									}),
+									{ label: 'Compétences', itemLabel: ({ fields }) => fields.title.value || 'Nouvelle compétence' },
+								),
+							},
+							{ label: 'Compétences' },
+						),
+						categories: fields.object(
+							{
+								photography: fields.object({
+									label: fields.text({ label: 'Nom affiché', validation: { isRequired: true } }),
+									description: fields.text({ label: 'Description', multiline: true, validation: { isRequired: true } }),
+								}, { label: 'Photographie' }),
+								illustration: fields.object({
+									label: fields.text({ label: 'Nom affiché', validation: { isRequired: true } }),
+									description: fields.text({ label: 'Description', multiline: true, validation: { isRequired: true } }),
+								}, { label: 'Illustration numérique' }),
+								artDirection: fields.object({
+									label: fields.text({ label: 'Nom affiché', validation: { isRequired: true } }),
+									description: fields.text({ label: 'Description', multiline: true, validation: { isRequired: true } }),
+								}, { label: 'Direction artistique' }),
+							},
+							{ label: 'Catégories' },
+						),
+						filtersLabel: fields.text({ label: 'Libellé des filtres', validation: { isRequired: true } }),
+						allProjectsLabel: fields.text({ label: 'Libellé Tous les projets', validation: { isRequired: true } }),
+						emptyMessage: fields.text({ label: 'Message sans projet', validation: { isRequired: true } }),
+						project: fields.object({
+							backLabel: fields.text({ label: 'Retour au portfolio', validation: { isRequired: true } }),
+							detailsTitle: fields.text({ label: 'Titre de la description', validation: { isRequired: true } }),
+							toolsTitle: fields.text({ label: 'Titre des outils', validation: { isRequired: true } }),
+							galleryTitle: fields.text({ label: 'Titre de la galerie', validation: { isRequired: true } }),
+							navigationTitle: fields.text({ label: 'Titre de navigation', validation: { isRequired: true } }),
+							previousLabel: fields.text({ label: 'Projet précédent', validation: { isRequired: true } }),
+							nextLabel: fields.text({ label: 'Projet suivant', validation: { isRequired: true } }),
+						}, { label: 'Page projet' }),
+					},
+					{ label: 'Portfolio' },
+				),
+				contact: fields.object(
+					{
+						page: fields.object({
+							eyebrow: fields.text({ label: 'Petit titre', validation: { isRequired: true } }),
+							title: fields.text({ label: 'Titre', validation: { isRequired: true } }),
+							intro: fields.text({ label: 'Introduction', multiline: true, validation: { isRequired: true } }),
+						}, { label: 'Introduction' }),
+						info: fields.object({
+							title: fields.text({ label: 'Titre des coordonnées', validation: { isRequired: true } }),
+							emailLabel: fields.text({ label: 'Libellé e-mail', validation: { isRequired: true } }),
+							phoneLabel: fields.text({ label: 'Libellé téléphone', validation: { isRequired: true } }),
+							locationLabel: fields.text({ label: 'Libellé localisation', validation: { isRequired: true } }),
+							socialsLabel: fields.text({ label: 'Libellé réseaux', validation: { isRequired: true } }),
+						}, { label: 'Libellés des coordonnées' }),
+						form: fields.object({
+							nameLabel: fields.text({ label: 'Champ nom', validation: { isRequired: true } }),
+							namePlaceholder: fields.text({ label: 'Exemple du nom', validation: { isRequired: true } }),
+							emailLabel: fields.text({ label: 'Champ e-mail', validation: { isRequired: true } }),
+							emailPlaceholder: fields.text({ label: 'Exemple de l’e-mail', validation: { isRequired: true } }),
+							subjectLabel: fields.text({ label: 'Champ sujet', validation: { isRequired: true } }),
+							subjectPlaceholder: fields.text({ label: 'Exemple du sujet', validation: { isRequired: true } }),
+							messageLabel: fields.text({ label: 'Champ message', validation: { isRequired: true } }),
+							messagePlaceholder: fields.text({ label: 'Exemple du message', validation: { isRequired: true } }),
+							submitLabel: fields.text({ label: 'Bouton d’envoi', validation: { isRequired: true } }),
+							helpText: fields.text({ label: 'Texte d’aide', multiline: true, validation: { isRequired: true } }),
+							sendingMessage: fields.text({ label: 'Message pendant l’envoi', validation: { isRequired: true } }),
+							successMessage: fields.text({ label: 'Message de succès', validation: { isRequired: true } }),
+							errorMessage: fields.text({ label: 'Message d’erreur', validation: { isRequired: true } }),
+						}, { label: 'Formulaire' }),
+					},
+					{ label: 'Textes de Contact' },
+				),
+			},
+		}),
 		cv: singleton({
 			label: 'CV',
 			path: 'src/data/cv',

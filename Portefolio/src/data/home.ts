@@ -1,37 +1,28 @@
+import siteContent from './site-content.json';
+
 export const homeContent = {
 	hero: {
-		eyebrow: 'Qui suis-je ?',
-		intro:
-			"Directrice artistique à travers mes différents projets, j'explore de nouvelles idées ainsi que la création de visuels uniques.",
-		primaryAction: { label: 'Découvrir mes projets', href: '/portfolio/' },
-		secondaryAction: { label: 'Voir mon CV', href: '/cv/' },
+		...siteContent.home.hero,
+		name: siteContent.home.hero.title,
+		primaryAction: { label: siteContent.home.hero.primaryActionLabel, href: '/portfolio/' },
+		secondaryAction: { label: siteContent.home.hero.secondaryActionLabel, href: '/cv/' },
 		image: {
-			src: 'images/profile/Image_profil.jpeg',
-			alt: '',
-			caption: '',
+			src: siteContent.profileImage,
+			alt: siteContent.profileImageAlt,
+			caption: siteContent.profileImageCaption,
 		},
 	},
 	about: {
-		eyebrow: 'À propos',
-		title: 'Projets créatifs et collaborations',
-		paragraphs: [
-			"Je suis à la recherche d'opportunités professionnelles dans les domaines de la photographie et de l'illustration.",
-			"J'apprécie particulièrement créer des univers visuels uniques et singuliers, donnant vie à des idées.",
-		],
-		link: { label: 'Consulter le CV', href: '/cv/' },
+		...siteContent.home.about,
+		link: { label: siteContent.home.about.linkLabel, href: '/cv/' },
 	},
 	featured: {
-		eyebrow: 'Sélection',
-		title: 'Projets mis en avant',
-		description: '',
-		emptyMessage: "Aucun projet n'est actuellement mis en avant.",
-		link: { label: 'Voir tout le portfolio', href: '/portfolio/' },
+		...siteContent.home.featured,
+		link: { label: siteContent.home.featured.linkLabel, href: '/portfolio/' },
 	},
 	cta: {
-		eyebrow: 'Un projet en tête ?',
-		title: 'Parlon-en.',
-		text: "Une idée, une collaboration ou un projet créatif, tant en photographie qu'en illustration ? Contactez-moi pour échanger sur vos idées et vos besoins.",
-		primaryAction: { label: 'Explorer le portfolio', href: '/portfolio/' },
-		secondaryAction: { label: 'Démarrer une conversation', href: '/contact/' },
+		...siteContent.home.cta,
+		primaryAction: { label: siteContent.home.cta.primaryActionLabel, href: '/portfolio/' },
+		secondaryAction: { label: siteContent.home.cta.secondaryActionLabel, href: '/contact/' },
 	},
 } as const;

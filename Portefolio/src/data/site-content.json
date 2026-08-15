@@ -1,0 +1,131 @@
+{
+	"profileImage": "/images/profile/Image_profil.jpeg",
+	"profileImageAlt": "Portrait de Tabatah Lux.",
+	"profileImageCaption": "",
+	"home": {
+		"hero": {
+			"eyebrow": "Qui suis-je ?",
+			"title": "Tabatah Lux",
+			"profession": "Photographe indépendante & illustratrice digitale",
+			"intro": "Directrice artistique à travers mes différents projets, j'explore de nouvelles idées ainsi que la création de visuels uniques.",
+			"primaryActionLabel": "Découvrir mes projets",
+			"secondaryActionLabel": "Voir mon CV"
+		},
+		"about": {
+			"eyebrow": "À propos",
+			"title": "Projets créatifs et collaborations",
+			"paragraphs": [
+				"Je suis à la recherche d'opportunités professionnelles dans les domaines de la photographie et de l'illustration.",
+				"J'apprécie particulièrement créer des univers visuels uniques et singuliers, donnant vie à des idées."
+			],
+			"linkLabel": "Consulter le CV"
+		},
+		"featured": {
+			"eyebrow": "Sélection",
+			"title": "Projets mis en avant",
+			"description": "",
+			"emptyMessage": "Aucun projet n'est actuellement mis en avant.",
+			"linkLabel": "Voir tout le portfolio"
+		},
+		"cta": {
+			"eyebrow": "Un projet en tête ?",
+			"title": "Parlons-en.",
+			"text": "Une idée, une collaboration ou un projet créatif, tant en photographie qu'en illustration ? Contactez-moi pour échanger sur vos idées et vos besoins.",
+			"primaryActionLabel": "Explorer le portfolio",
+			"secondaryActionLabel": "Démarrer une conversation"
+		}
+	},
+	"portfolio": {
+		"index": {
+			"eyebrow": "Portfolio",
+			"title": "Galerie des projets",
+			"description": "Voici ci-dessous l’entièreté des projets finalisés, classés par catégorie. Chaque projet est accompagné d’une description détaillée de son contexte, de ses objectifs et des outils utilisés."
+		},
+		"expertise": {
+			"eyebrow": "Compétences",
+			"title": "Ce que j’apporte à vos projets",
+			"introduction": "Une pratique transversale, de la préparation d’un univers visuel à sa réalisation et à sa post-production.",
+			"items": [
+				{
+					"title": "Création de décors",
+					"description": "Conception et mise en place de décors adaptés à l’univers, aux contraintes et à l’intention visuelle de chaque projet."
+				},
+				{
+					"title": "Maquillage & stylisme",
+					"description": "Préparation et réalisation du maquillage, du stylisme et de la mise en scène pour chaque projet, en accord avec l’univers visuel souhaité."
+				},
+				{
+					"title": "Photographie professionnelle",
+					"description": "Préparation et réalisation des prises de vue : réglages ISO, choix des angles, composition, lumière et cohérence de série."
+				},
+				{
+					"title": "Retouche avec Lightroom",
+					"description": "Maîtrise d’Adobe Lightroom pour le développement, la colorimétrie, les corrections locales et l’harmonisation professionnelle des images."
+				},
+				{
+					"title": "Culture japonaise",
+					"description": "Étude et conseil pour les projets intégrant la culture japonaise, nourris par mes études en LLCER japonais et une attention particulière au contexte culturel."
+				},
+				{
+					"title": "Illustration digitale",
+					"description": "Maîtrise des ombrages, des couleurs et de la composition sur tablette graphique HUION Canva Pro 2 avec Clip Studio Paint."
+				}
+			]
+		},
+		"categories": {
+			"photography": {
+				"label": "Photographie",
+				"description": "Séries éditoriales, portraits et récits documentaires."
+			},
+			"illustration": {
+				"label": "Illustration numérique",
+				"description": "Images dessinées, systèmes graphiques et compositions narratives."
+			},
+			"artDirection": {
+				"label": "Direction artistique",
+				"description": "Identités visuelles et campagnes pensées comme des ensembles cohérents."
+			}
+		},
+		"filtersLabel": "Explorer par catégorie",
+		"allProjectsLabel": "Tous les projets",
+		"emptyMessage": "Aucun projet publié dans cette catégorie.",
+		"project": {
+			"backLabel": "Retour au portfolio",
+			"detailsTitle": "À propos du projet",
+			"toolsTitle": "Outils & techniques",
+			"galleryTitle": "Galerie",
+			"navigationTitle": "Continuer à explorer",
+			"previousLabel": "Projet précédent",
+			"nextLabel": "Projet suivant"
+		}
+	},
+	"contact": {
+		"page": {
+			"eyebrow": "Contact",
+			"title": "Parlons de votre prochain projet.",
+			"intro": "Pour une collaboration, une commande ou simplement une question, laissez un message."
+		},
+		"info": {
+			"title": "Coordonnées",
+			"emailLabel": "E-mail",
+			"phoneLabel": "Téléphone",
+			"locationLabel": "Localisation",
+			"socialsLabel": "Réseaux"
+		},
+		"form": {
+			"nameLabel": "Nom",
+			"namePlaceholder": "Votre nom",
+			"emailLabel": "E-mail",
+			"emailPlaceholder": "vous@exemple.fr",
+			"subjectLabel": "Sujet",
+			"subjectPlaceholder": "Votre projet en quelques mots",
+			"messageLabel": "Message",
+			"messagePlaceholder": "Contexte, besoins, calendrier…",
+			"submitLabel": "Envoyer le message",
+			"helpText": "Tous les champs sont obligatoires. Vos coordonnées servent uniquement à vous répondre.",
+			"sendingMessage": "Envoi en cours...",
+			"successMessage": "Votre message a bien été envoyé.",
+			"errorMessage": "Une erreur est survenue. Veuillez réessayer."
+		}
+	}
+}

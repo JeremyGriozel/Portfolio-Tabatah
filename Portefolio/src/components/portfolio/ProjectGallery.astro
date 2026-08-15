@@ -4,30 +4,30 @@ import ImageFrame from '../ui/ImageFrame.astro';
 interface GalleryImage {
 	src: string;
 	alt: string;
-	caption?: string;
-	aspect?: 'auto' | 'portrait' | 'landscape' | 'square' | 'wide';
-	width?: number;
-	height?: number;
 }
 
 interface Props {
 	images: GalleryImage[];
+	lightboxId: string;
+	startIndex?: number;
 }
 
-const { images } = Astro.props;
+const { images, lightboxId, startIndex = 0 } = Astro.props;
+const gallerySize = images.length === 1 ? 'single' : images.length === 2 ? 'double' : 'multiple';
 ---
 
-<div class:list={['project-gallery', images.length > 1 && 'project-gallery--split']}>
-	{images.map((image) => (
+<div class:list={['project-gallery', `project-gallery--${gallerySize}`]}>
+	{images.map((image, index) => (
 		<div class="project-gallery__item">
-			<ImageFrame
-				src={image.src}
-				alt={image.alt}
-				caption={image.caption}
-				aspect={image.aspect ?? 'auto'}
-				width={image.width}
-				height={image.height}
-			/>
+			<a
+				class="lightbox-trigger"
+				href={image.src}
+				aria-label={`Agrandir l’image ${index + 1} sur ${images.length}`}
+				data-lightbox-trigger={lightboxId}
+				data-lightbox-index={startIndex + index}
+			>
+				<ImageFrame src={image.src} alt={image.alt} aspect="landscape" />
+			</a>
 		</div>
 	))}
 </div>

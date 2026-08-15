@@ -1,3 +1,5 @@
+import siteContent from './site-content.json';
+
 export type SiteTheme =
 	| 'default'
 	| 'dark-academia'
@@ -30,8 +32,6 @@ export const themeOptions: ReadonlyArray<{ value: SiteTheme; label: string }> = 
 export interface SiteConfig {
 	theme: SiteTheme;
 	name: string;
-	profession: string;
-	description: string;
 	metadata: {
 		defaultTitle: string;
 		defaultDescription: string;
@@ -59,10 +59,7 @@ export interface SiteConfig {
 
 export const siteConfig = {
 	theme: 'dark-academia',
-	name: 'Tabatah Lux',
-	profession: 'Photographe indépendante & illustratrice digitale',
-	description:
-		"Directrice artistique à travers mes différents projets, j'explore de nouvelles idées ainsi que la création de visuels uniques.",
+	name: siteContent.home.hero.title,
 	metadata: {
 		defaultTitle: 'Tabatah Lux — Portfolio',
 		defaultDescription:

@@ -1,0 +1,154 @@
+---
+interface LightboxImage {
+	src: string;
+	alt: string;
+}
+
+interface Props {
+	id: string;
+	images: LightboxImage[];
+	label?: string;
+}
+
+const { id, images, label = 'Visionneuse d’images' } = Astro.props;
+---
+
+<dialog
+	class="lightbox"
+	aria-label={label}
+	aria-modal="true"
+	data-lightbox={id}
+	data-lightbox-images={JSON.stringify(images)}
+>
+	<div class="lightbox__surface">
+		<button class="lightbox__close" type="button" aria-label="Fermer la visionneuse" data-lightbox-close>
+			<span aria-hidden="true">×</span>
+		</button>
+		<div class="lightbox__media">
+			<img src={images[0].src} alt={images[0].alt} loading="lazy" data-lightbox-image />
+		</div>
+		<button class="lightbox__control lightbox__control--previous" type="button" aria-label="Image précédente" data-lightbox-previous>
+			<span aria-hidden="true">←</span>
+		</button>
+		<button class="lightbox__control lightbox__control--next" type="button" aria-label="Image suivante" data-lightbox-next>
+			<span aria-hidden="true">→</span>
+		</button>
+		<p class="lightbox__counter" aria-live="polite" data-lightbox-counter></p>
+	</div>
+</dialog>
+
+<script>
+	type LightboxImage = { src: string; alt: string };
+
+	document.querySelectorAll<HTMLDialogElement>('[data-lightbox]').forEach((dialog) => {
+		if (dialog.dataset.lightboxReady === 'true') return;
+		dialog.dataset.lightboxReady = 'true';
+
+		let images: LightboxImage[] = [];
+		try {
+			images = JSON.parse(dialog.dataset.lightboxImages ?? '[]');
+		} catch {
+			return;
+		}
+		if (images.length === 0) return;
+
+		const lightboxId = dialog.dataset.lightbox;
+		const image = dialog.querySelector<HTMLImageElement>('[data-lightbox-image]');
+		const counter = dialog.querySelector<HTMLElement>('[data-lightbox-counter]');
+		const closeButton = dialog.querySelector<HTMLButtonElement>('[data-lightbox-close]');
+		const previousButton = dialog.querySelector<HTMLButtonElement>('[data-lightbox-previous]');
+		const nextButton = dialog.querySelector<HTMLButtonElement>('[data-lightbox-next]');
+		const surface = dialog.querySelector<HTMLElement>('.lightbox__surface');
+		const media = dialog.querySelector<HTMLElement>('.lightbox__media');
+		const triggers = Array.from(document.querySelectorAll<HTMLAnchorElement>('[data-lightbox-trigger]'))
+			.filter((trigger) => trigger.dataset.lightboxTrigger === lightboxId);
+
+		let currentIndex = 0;
+		let opener: HTMLElement | null = null;
+		let pointerStartX: number | null = null;
+		let previousBodyOverflow = '';
+
+		const update = (nextIndex: number) => {
+			currentIndex = (nextIndex + images.length) % images.length;
+			const currentImage = images[currentIndex];
+			if (!image || !currentImage) return;
+			image.src = currentImage.src;
+			image.alt = currentImage.alt;
+			if (counter) counter.textContent = `${currentIndex + 1} / ${images.length}`;
+
+			[images[(currentIndex + 1) % images.length], images[(currentIndex - 1 + images.length) % images.length]]
+				.forEach((adjacentImage) => {
+					if (!adjacentImage || adjacentImage.src === currentImage.src) return;
+					const preload = new Image();
+					preload.src = adjacentImage.src;
+				});
+		};
+
+		const close = () => dialog.close();
+		const showPrevious = () => update(currentIndex - 1);
+		const showNext = () => update(currentIndex + 1);
+
+		if (images.length === 1) {
+			previousButton?.setAttribute('hidden', '');
+			nextButton?.setAttribute('hidden', '');
+		}
+
+		triggers.forEach((trigger) => {
+			trigger.addEventListener('click', (event) => {
+				if (typeof dialog.showModal !== 'function') return;
+				event.preventDefault();
+				opener = trigger;
+				previousBodyOverflow = document.body.style.overflow;
+				document.body.style.overflow = 'hidden';
+				update(Number(trigger.dataset.lightboxIndex ?? 0));
+				dialog.showModal();
+				closeButton?.focus();
+			});
+		});
+
+		closeButton?.addEventListener('click', close);
+		previousButton?.addEventListener('click', showPrevious);
+		nextButton?.addEventListener('click', showNext);
+		dialog.addEventListener('click', (event) => {
+			if (event.target === dialog || event.target === surface || event.target === media) close();
+		});
+		dialog.addEventListener('close', () => {
+			document.body.style.overflow = previousBodyOverflow;
+			opener?.focus();
+			opener = null;
+		});
+		dialog.addEventListener('keydown', (event) => {
+			if (event.key === 'ArrowLeft') {
+				event.preventDefault();
+				showPrevious();
+			}
+			if (event.key === 'ArrowRight') {
+				event.preventDefault();
+				showNext();
+			}
+			if (event.key !== 'Tab') return;
+
+			const focusable = Array.from(dialog.querySelectorAll<HTMLElement>('button:not([hidden]), [href], [tabindex]:not([tabindex="-1"])'));
+			const first = focusable.at(0);
+			const last = focusable.at(-1);
+			if (!first || !last) return;
+			if (event.shiftKey && document.activeElement === first) {
+				event.preventDefault();
+				last.focus();
+			} else if (!event.shiftKey && document.activeElement === last) {
+				event.preventDefault();
+				first.focus();
+			}
+		});
+		dialog.addEventListener('pointerdown', (event) => {
+			if (event.pointerType !== 'mouse') pointerStartX = event.clientX;
+		});
+		dialog.addEventListener('pointerup', (event) => {
+			if (pointerStartX === null) return;
+			const distance = event.clientX - pointerStartX;
+			pointerStartX = null;
+			if (Math.abs(distance) < 50) return;
+			distance > 0 ? showPrevious() : showNext();
+		});
+	});
+</script>

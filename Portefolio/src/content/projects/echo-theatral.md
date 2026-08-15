@@ -51,54 +51,22 @@ cover:
     photo d'une jeune femme habillée dans un style gothique et un décor
     théâtral, dans une luminosité sombre et un éclairage violet.
   aspect: landscape
-  width: 375
-  height: 250
 gallery:
-  - src: /images/projects/echo-theatral/gallery/0/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/1/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/2/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/3/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/4/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/5/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/6/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/7/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/8/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/9/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/10/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/11/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/12/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/13/src.jpeg
-    alt: ' '
-    aspect: auto
-  - src: /images/projects/echo-theatral/gallery/14/src.jpeg
-    alt: ' '
-    aspect: auto
+  - /images/projects/echo-theatral/gallery/0/src.jpeg
+  - /images/projects/echo-theatral/gallery/1/src.jpeg
+  - /images/projects/echo-theatral/gallery/2/src.jpeg
+  - /images/projects/echo-theatral/gallery/3/src.jpeg
+  - /images/projects/echo-theatral/gallery/4/src.jpeg
+  - /images/projects/echo-theatral/gallery/5/src.jpeg
+  - /images/projects/echo-theatral/gallery/6/src.jpeg
+  - /images/projects/echo-theatral/gallery/7/src.jpeg
+  - /images/projects/echo-theatral/gallery/8/src.jpeg
+  - /images/projects/echo-theatral/gallery/9/src.jpeg
+  - /images/projects/echo-theatral/gallery/10/src.jpeg
+  - /images/projects/echo-theatral/gallery/11/src.jpeg
+  - /images/projects/echo-theatral/gallery/12/src.jpeg
+  - /images/projects/echo-theatral/gallery/13/src.jpeg
+  - /images/projects/echo-theatral/gallery/14/src.jpeg
 tools:
   - Portrait
   - Éclairage artificiel

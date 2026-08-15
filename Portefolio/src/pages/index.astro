@@ -6,7 +6,6 @@ import Hero from '../components/home/Hero.astro';
 import HomeCTA from '../components/home/HomeCTA.astro';
 import { homeContent } from '../data/home';
 import { portfolioCategories } from '../data/portfolio';
-import { siteConfig } from '../data/site';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const featuredProjects = (await getCollection('projects', ({ data }) => data.published && data.featured))
@@ -14,7 +13,7 @@ const featuredProjects = (await getCollection('projects', ({ data }) => data.pub
 ---
 
 <BaseLayout>
-	<Hero {...homeContent.hero} name={siteConfig.name} profession={siteConfig.profession} />
+	<Hero {...homeContent.hero} />
 	<AboutPreview {...homeContent.about} />
 	<FeaturedProjects
 		projects={featuredProjects}

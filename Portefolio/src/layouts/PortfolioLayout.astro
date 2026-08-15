@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import ImageFrame from '../components/ui/ImageFrame.astro';
+import Lightbox from '../components/ui/Lightbox.astro';
 import Tag from '../components/ui/Tag.astro';
 import ProjectGallery from '../components/portfolio/ProjectGallery.astro';
 import ProjectHeader from '../components/portfolio/ProjectHeader.astro';
@@ -16,6 +17,14 @@ interface Props {
 
 const { project, previousProject, nextProject } = Astro.props;
 const { title, shortDescription, detailedDescription, cover, gallery, tools } = project.data;
+const lightboxId = `project-${project.id}`;
+const normalizedGallery = gallery.map((galleryImage, index) => ({
+	src: typeof galleryImage === 'string' ? galleryImage : galleryImage.src,
+	alt: typeof galleryImage === 'string'
+		? `${title} — photographie ${index + 1}`
+		: galleryImage.alt?.trim() || `${title} — photographie ${index + 1}`,
+}));
+const lightboxImages = [{ src: cover.src, alt: cover.alt }, ...normalizedGallery];
 ---
 
 <BaseLayout title={title} description={shortDescription}>
@@ -25,22 +34,23 @@ const { title, shortDescription, detailedDescription, cover, gallery, tools } = 
 		backLabel={portfolioContent.project.backLabel}
 	/>
 	<div class="project-cover container">
-		<ImageFrame
-			src={cover.src}
-			alt={cover.alt}
-			aspect={cover.aspect ?? 'wide'}
-			width={cover.width}
-			height={cover.height}
-			loading="eager"
-		/>
+		<a
+			class="lightbox-trigger"
+			href={cover.src}
+			aria-label={`Agrandir l’image de couverture du projet ${title}`}
+			data-lightbox-trigger={lightboxId}
+			data-lightbox-index="0"
+		>
+			<ImageFrame src={cover.src} alt={cover.alt} aspect={cover.aspect ?? 'wide'} loading="eager" />
+		</a>
 	</div>
 
 	{(detailedDescription || tools.length > 0) && (
-		<section class="section container project-details">
+		<section class="container project-details">
 			{detailedDescription && (
 				<div class="project-details__copy flow">
 					<h2>{portfolioContent.project.detailsTitle}</h2>
-					<p>{detailedDescription}</p>
+					<p class="project-details__description">{detailedDescription}</p>
 				</div>
 			)}
 			{tools.length > 0 && (
@@ -52,12 +62,14 @@ const { title, shortDescription, detailedDescription, cover, gallery, tools } = 
 		</section>
 	)}
 
-	{gallery.length > 0 && (
-		<section class="section container">
+	{normalizedGallery.length > 0 && (
+		<section class="container project-gallery-section">
 			<h2 class="section-title">{portfolioContent.project.galleryTitle}</h2>
-			<ProjectGallery images={gallery} />
+			<ProjectGallery images={normalizedGallery} {lightboxId} startIndex={1} />
 		</section>
 	)}
+
+	<Lightbox id={lightboxId} images={lightboxImages} label={`Galerie du projet ${title}`} />
 
 	<ProjectNavigation
 		{previousProject}

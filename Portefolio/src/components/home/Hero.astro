@@ -1,6 +1,7 @@
 ---
 import Button from '../ui/Button.astro';
 import ImageFrame from '../ui/ImageFrame.astro';
+import Lightbox from '../ui/Lightbox.astro';
 
 interface Props {
 	eyebrow: string;
@@ -23,7 +24,15 @@ const { eyebrow, name, profession, intro, primaryAction, secondaryAction, image 
 			<p class="hero__profession">{profession}</p>
 		</div>
 		<div class="hero__visual">
-			<ImageFrame src={image.src} alt={image.alt} aspect="portrait" loading="eager" />
+			<a
+				class="lightbox-trigger"
+				href={image.src}
+				aria-label="Agrandir la photographie de profil"
+				data-lightbox-trigger="profile-image"
+				data-lightbox-index="0"
+			>
+				<ImageFrame src={image.src} alt={image.alt} aspect="portrait" loading="eager" />
+			</a>
 			{image.caption && <p class="hero__caption">{image.caption}</p>}
 		</div>
 		<div class="hero__copy flow">
@@ -34,4 +43,5 @@ const { eyebrow, name, profession, intro, primaryAction, secondaryAction, image 
 			</div>
 		</div>
 	</div>
+	<Lightbox id="profile-image" images={[{ src: image.src, alt: image.alt }]} label="Photographie de profil" />
 </section>

@@ -2,14 +2,20 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
-const projectImage = z.object({
+const legacyProjectImage = z.object({
 	src: z.string(),
-	alt: z.string().min(1),
+	alt: z.string().optional(),
 	caption: z.string().optional(),
 	aspect: z.enum(['auto', 'portrait', 'landscape', 'square', 'wide']).optional(),
 	width: z.number().int().positive().optional(),
 	height: z.number().int().positive().optional(),
 });
+
+const projectCover = legacyProjectImage.extend({
+	alt: z.string().min(1),
+});
+
+const galleryImage = z.union([z.string(), legacyProjectImage]);
 
 const projects = defineCollection({
 	loader: glob({ base: './src/content/projects', pattern: '**/*.{md,mdx}' }),
@@ -20,8 +26,8 @@ const projects = defineCollection({
 		date: z.coerce.date(),
 		shortDescription: z.string(),
 		detailedDescription: z.string().optional(),
-		cover: projectImage,
-		gallery: z.array(projectImage).default([]),
+		cover: projectCover,
+		gallery: z.array(galleryImage).default([]),
 		tools: z.array(z.string()).default([]),
 		tags: z.array(z.string()).default([]),
 		featured: z.boolean().default(false),
