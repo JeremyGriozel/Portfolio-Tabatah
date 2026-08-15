@@ -74,6 +74,11 @@
 	--gallery-thumbnail-ratio: 4 / 3;
 	--lightbox-control-size: 3rem;
 	--lightbox-media-width: 92rem;
+	--lightbox-inline-gutter: clamp(4rem, 8vw, 7rem);
+	--lightbox-block-gutter: clamp(3rem, 8dvh, 5rem);
+	--lightbox-mobile-gutter: var(--space-sm);
+	--lightbox-mobile-controls-space: 5rem;
+	--title-reveal-descender-space: 0.16em;
 	--color-lightbox-background: rgb(8 7 6 / 97%);
 	--color-lightbox-text: #fcfbf7;
 	--color-lightbox-control: rgb(252 251 247 / 12%);
