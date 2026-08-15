@@ -137,18 +137,6 @@ export default config({
 					validation: { isRequired: true },
 				}),
 				profileImageCaption: fields.text({ label: 'Légende facultative de la photo' }),
-				footer: fields.object(
-					{
-						decorativeImage: fields.image({
-							label: 'Image décorative du footer',
-							description: 'Choisissez l’image qui accompagne la composition du pied de page.',
-							directory: 'public/images/footer',
-							publicPath: '/images/footer/',
-							validation: { isRequired: true },
-						}),
-					},
-					{ label: 'Footer' },
-				),
 				home: fields.object(
 					{
 						carousel: fields.object(

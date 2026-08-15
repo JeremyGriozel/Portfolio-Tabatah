@@ -42,7 +42,6 @@ export interface SiteConfig {
 		navigationLabel: string;
 		socialsLabel: string;
 		legal: string;
-		decorativeImage: string;
 	};
 	pages: {
 		cv: {
@@ -72,7 +71,6 @@ export const siteConfig = {
 		navigationLabel: 'Navigation',
 		socialsLabel: 'Réseaux',
 		legal: 'Tous droits réservés.',
-		decorativeImage: siteContent.footer.decorativeImage,
 	},
 	pages: {
 		cv: {
