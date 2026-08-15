@@ -13,7 +13,7 @@ detailedDescription: >
   Réalisée avec une amie comme modèle, cette série est née de l'envie de créer
   une atmosphère inspirée de l'imaginaire gothique et fantastique. L'objectif
   était de s'éloigner du portrait classique pour construire une véritable mise
-  en scène, dans laquelle le modèle semble appartenir à un autre univers.
+  en scène, dans laquelle le modèle semble appartenir à un autre univers.\n
 
 
   Le travail de la lumière occupe une place centrale dans la série. Très faible
@@ -23,7 +23,7 @@ detailedDescription: >
   que les violets renforcent le caractère étrange et irréel des images. Les
   zones laissées dans l'obscurité participent également à cette esthétique :
   elles dissimulent une partie de la scène, laissant volontairement place à
-  l'imagination pour ces dernières.
+  l'imagination pour ces dernières.\n
 
 
   La mise en scène et les attitudes du modèle empruntent au registre du théâtre.
