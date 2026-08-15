@@ -42,11 +42,16 @@
 	--project-narrow-width: 44rem;
 	--project-cover-width: 56rem;
 	--hero-image-width: 32rem;
-	--home-carousel-ratio: 2 / 1;
-	--home-carousel-ratio-mobile: 4 / 3;
+	--home-carousel-height: clamp(21rem, 42vw, 38rem);
+	--home-carousel-height-mobile: clamp(13.5rem, 64vw, 22rem);
 	--home-carousel-copy-width: 31rem;
 	--home-carousel-control-size: var(--control-height);
 	--home-carousel-image-scale: 1.018;
+	--footer-graphic-width: 36rem;
+	--footer-graphic-width-mobile: 20rem;
+	--footer-image-reveal-distance: 1.875rem;
+	--footer-image-reveal-rotation: -2deg;
+	--footer-image-blend-mode: screen;
 	--grid-min-width: 17rem;
 	--header-height: 4.75rem;
 	--header-height-mobile: 4.25rem;
@@ -61,6 +66,8 @@
 	--color-lightbox-border: rgb(252 251 247 / 38%);
 	--color-image-overlay: rgb(8 7 6 / 72%);
 	--color-image-overlay-text: #fcfbf7;
+	--color-carousel-copy-background: rgb(8 7 6 / 42%);
+	--shadow-carousel-text: 0 0.125rem 1rem rgb(0 0 0 / 45%);
 
 	/* Formes, lignes et profondeur */
 	--radius-small: 0.125rem;

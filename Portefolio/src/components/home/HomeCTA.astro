@@ -14,12 +14,12 @@ const { eyebrow, title, text, primaryAction, secondaryAction } = Astro.props;
 
 <section class="home-cta section">
 	<div class="home-cta__inner container">
-		<div class="home-cta__content flow" data-reveal>
-			<p class="eyebrow">{eyebrow}</p>
-			<h2>{title}</h2>
-			<p>{text}</p>
+		<div class="home-cta__content flow">
+			<p class="eyebrow" data-reveal>{eyebrow}</p>
+			<h2 data-reveal style="--reveal-order: 1">{title}</h2>
+			<p data-reveal style="--reveal-order: 2">{text}</p>
 		</div>
-		<div class="home-cta__actions cluster" data-reveal style="--reveal-order: 1">
+		<div class="home-cta__actions cluster" data-reveal style="--reveal-order: 3">
 			<Button href={primaryAction.href} variant="light">{primaryAction.label}</Button>
 			<Button href={secondaryAction.href} variant="light">{secondaryAction.label}</Button>
 		</div>

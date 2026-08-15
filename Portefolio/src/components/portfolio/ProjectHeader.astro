@@ -17,13 +17,13 @@ const formattedDate = new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'n
 
 <header class="project-header container">
 	<a class="project-header__back" href="/portfolio/">← {backLabel}</a>
-	<div class="project-header__grid" data-reveal>
+	<div class="project-header__grid">
 		<div>
-			<p class="eyebrow">{categoryLabel}</p>
-			<h1 class="project-header__title">{title}</h1>
-			<p class="project-header__description">{shortDescription}</p>
+			<p class="eyebrow" data-reveal>{categoryLabel}</p>
+			<h1 class="project-header__title" data-reveal style="--reveal-order: 1">{title}</h1>
+			<p class="project-header__description" data-reveal style="--reveal-order: 2">{shortDescription}</p>
 		</div>
-		<div>
+		<div data-reveal style="--reveal-order: 2">
 			<dl class="project-header__meta">
 				<div><dt>Date</dt><dd><time datetime={date.toISOString()}>{formattedDate}</time></dd></div>
 				<div><dt>Catégorie</dt><dd>{categoryLabel}</dd></div>

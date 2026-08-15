@@ -7,14 +7,14 @@ const { eyebrow, title, introduction, items } = Astro.props as PortfolioExpertis
 <section class="portfolio-expertise section" aria-labelledby="portfolio-expertise-title">
 	<div class="portfolio-expertise__inner container">
 		<header class="portfolio-expertise__header">
-			<p class="eyebrow">{eyebrow}</p>
-			<h2 id="portfolio-expertise-title">{title}</h2>
-			<p>{introduction}</p>
+			<p class="eyebrow" data-reveal>{eyebrow}</p>
+			<h2 id="portfolio-expertise-title" data-reveal style="--reveal-order: 1">{title}</h2>
+			<p data-reveal style="--reveal-order: 2">{introduction}</p>
 		</header>
 
 		<ol class="portfolio-expertise__list">
 			{items.map((item, index) => (
-				<li class="portfolio-expertise__item">
+				<li class="portfolio-expertise__item" data-reveal style={`--reveal-order: ${index % 4}`}>
 					<span class="portfolio-expertise__number" aria-hidden="true">
 						{String(index + 1).padStart(2, '0')}
 					</span>

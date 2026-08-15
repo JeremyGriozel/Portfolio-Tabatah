@@ -46,15 +46,15 @@ const lightboxImages = [{ src: cover.src, alt: cover.alt }, ...normalizedGallery
 	</div>
 
 	{(detailedDescription || tools.length > 0) && (
-		<section class="container project-details" data-reveal>
+		<section class="container project-details">
 			{detailedDescription && (
 				<div class="project-details__copy flow">
-					<h2>{portfolioContent.project.detailsTitle}</h2>
-					<p class="project-details__description">{detailedDescription}</p>
+					<h2 data-reveal>{portfolioContent.project.detailsTitle}</h2>
+					<p class="project-details__description" data-reveal style="--reveal-order: 1">{detailedDescription}</p>
 				</div>
 			)}
 			{tools.length > 0 && (
-				<aside class="project-details__aside flow">
+				<aside class="project-details__aside flow" data-reveal style="--reveal-order: 2">
 					<h3>{portfolioContent.project.toolsTitle}</h3>
 					<ul class="tag-list">{tools.map((tool) => <li><Tag label={tool} /></li>)}</ul>
 				</aside>

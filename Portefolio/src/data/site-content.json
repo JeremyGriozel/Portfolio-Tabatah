@@ -2,6 +2,9 @@
 	"profileImage": "/images/profile/Image_profil.jpeg",
 	"profileImageAlt": "Portrait de Tabatah Lux.",
 	"profileImageCaption": "",
+	"footer": {
+		"decorativeImage": "/images/footer/camera-editorial.jpg"
+	},
 	"home": {
 		"carousel": {
 			"title": "Photographe indépendante",

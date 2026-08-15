@@ -15,13 +15,13 @@ interface Props {
 const { contact, labels } = Astro.props;
 ---
 
-<aside class="contact-info flow" data-reveal>
-	<h2>{labels.title}</h2>
+<aside class="contact-info flow">
+	<h2 data-reveal>{labels.title}</h2>
 	<dl class="contact-info__list">
-		<div><dt>{labels.emailLabel}</dt><dd><a href={`mailto:${contact.publicEmail}`}>{contact.publicEmail}</a></dd></div>
-		{contact.showPhone && contact.phone && <div><dt>{labels.phoneLabel}</dt><dd><a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></dd></div>}
-		{contact.location && <div><dt>{labels.locationLabel}</dt><dd>{contact.location}</dd></div>}
-		<div>
+		<div data-reveal style="--reveal-order: 1"><dt>{labels.emailLabel}</dt><dd><a href={`mailto:${contact.publicEmail}`}>{contact.publicEmail}</a></dd></div>
+		{contact.showPhone && contact.phone && <div data-reveal style="--reveal-order: 2"><dt>{labels.phoneLabel}</dt><dd><a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></dd></div>}
+		{contact.location && <div data-reveal style="--reveal-order: 3"><dt>{labels.locationLabel}</dt><dd>{contact.location}</dd></div>}
+		<div data-reveal style="--reveal-order: 4">
 			<dt>{labels.socialsLabel}</dt>
 			<dd class="cluster">
 				{contact.socials.map((social) => <a href={social.href} target="_blank" rel="noreferrer">{social.label}</a>)}
