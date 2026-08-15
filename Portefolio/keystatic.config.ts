@@ -103,7 +103,7 @@ export default config({
 				gallery: fields.array(galleryImage, {
 					label: 'Galerie',
 					description: 'Ajoutez, supprimez ou réorganisez les images. Chaque image affiche son aperçu natif.',
-					itemLabel: ({ value }) => value?.split('/').at(-1) || 'Nouvelle image',
+					itemLabel: ({ value }) => value?.filename || 'Nouvelle image',
 				}),
 				tools: fields.array(fields.text({ label: 'Outil ou technique' }), {
 					label: 'Outils et techniques',
