@@ -1,31 +1,76 @@
 <script>
 	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 	const revealElements = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+	const sectionPanels = Array.from(document.querySelectorAll<HTMLElement>('[data-section-panel]'));
 
 	const reveal = (element: HTMLElement) => {
-		element.classList.remove('is-reveal-ready');
+		element.classList.add('is-reveal-ready');
 		element.classList.add('is-revealed');
 	};
 
 	if (reducedMotion.matches || typeof IntersectionObserver === 'undefined') {
-		revealElements.forEach(reveal);
+		revealElements.forEach((element) => {
+			element.classList.remove('is-reveal-ready');
+			element.classList.add('is-revealed');
+		});
 	} else {
 		const observer = new IntersectionObserver((entries) => {
 			entries.forEach((entry) => {
-				if (!entry.isIntersecting) return;
-			reveal(entry.target as HTMLElement);
-				observer.unobserve(entry.target);
+				entry.target.classList.toggle('is-revealed', entry.isIntersecting);
 			});
 		}, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
 
 		revealElements.forEach((element) => {
-			if (element.getBoundingClientRect().top <= window.innerHeight * 0.92) {
-				reveal(element);
-				return;
-			}
 			element.classList.add('is-reveal-ready');
+			if (element.getBoundingClientRect().top <= window.innerHeight * 0.92) reveal(element);
 			observer.observe(element);
 		});
+	}
+
+	if (!reducedMotion.matches && typeof IntersectionObserver !== 'undefined' && sectionPanels.length > 0) {
+		const PANEL_ROOT_MARGIN = '-16% 0px -16% 0px';
+		const PANEL_THRESHOLDS = [0, 0.15, 0.3, 0.5, 0.65, 0.8, 1];
+		const visibilityRatios = new Map<HTMLElement, number>(sectionPanels.map((panel) => [panel, 0]));
+
+		const activatePanel = (activePanel: HTMLElement) => {
+			const activeIndex = sectionPanels.indexOf(activePanel);
+			sectionPanels.forEach((panel, index) => {
+				panel.classList.toggle('is-active', panel === activePanel);
+				panel.classList.toggle('is-before', index < activeIndex);
+				panel.classList.toggle('is-after', index > activeIndex);
+			});
+		};
+
+		const closestPanelToViewportCenter = () => sectionPanels.reduce((closest, panel) => {
+			const panelRect = panel.getBoundingClientRect();
+			const closestRect = closest.getBoundingClientRect();
+			const viewportCenter = window.innerHeight / 2;
+			const panelDistance = Math.abs(panelRect.top + panelRect.height / 2 - viewportCenter);
+			const closestDistance = Math.abs(closestRect.top + closestRect.height / 2 - viewportCenter);
+			return panelDistance < closestDistance ? panel : closest;
+		});
+
+		const updateActivePanel = () => {
+			const visiblePanels = sectionPanels.filter((panel) => (visibilityRatios.get(panel) ?? 0) > 0);
+			const activePanel = visiblePanels.length > 0
+				? visiblePanels.reduce((mostVisible, panel) =>
+					(visibilityRatios.get(panel) ?? 0) > (visibilityRatios.get(mostVisible) ?? 0) ? panel : mostVisible)
+				: closestPanelToViewportCenter();
+			activatePanel(activePanel);
+		};
+
+		activatePanel(closestPanelToViewportCenter());
+		sectionPanels.forEach((panel) => panel.classList.add('is-panel-ready'));
+
+		const panelObserver = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => visibilityRatios.set(entry.target as HTMLElement, entry.intersectionRatio));
+			updateActivePanel();
+		}, {
+			rootMargin: PANEL_ROOT_MARGIN,
+			threshold: PANEL_THRESHOLDS,
+		});
+
+		sectionPanels.forEach((panel) => panelObserver.observe(panel));
 	}
 
 	const header = document.querySelector<HTMLElement>('[data-site-header]');

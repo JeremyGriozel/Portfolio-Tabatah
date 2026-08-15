@@ -13,9 +13,9 @@ const { previousProject, nextProject, title, previousLabel, nextLabel } = Astro.
 ---
 
 {(previousProject || nextProject) && (
-	<nav class="project-navigation container" aria-labelledby="project-navigation-title">
-		<h2 id="project-navigation-title">{title}</h2>
-		<div class="project-navigation__links">
+	<nav class="project-navigation container section-panel" aria-labelledby="project-navigation-title" data-section-panel>
+		<h2 id="project-navigation-title" data-reveal>{title}</h2>
+		<div class="project-navigation__links" data-reveal style="--reveal-order: 1">
 			{previousProject && (
 				<a class="project-navigation__link" href={`/portfolio/${previousProject.data.slug}/`}>
 					<span class="eyebrow">← {previousLabel}</span>

@@ -17,10 +17,11 @@ const hasMultipleSlides = slides.length > 1;
 
 {slides.length > 0 && (
 	<section
-		class="home-carousel"
+		class="home-carousel section-panel section-panel--hero"
 		aria-label={title}
 		aria-roledescription="carrousel"
 		data-home-carousel
+		data-section-panel
 		tabindex={hasMultipleSlides ? 0 : undefined}
 	>
 		<div class="home-carousel__frame">

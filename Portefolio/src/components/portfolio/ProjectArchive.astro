@@ -32,13 +32,13 @@ const {
 } = Astro.props;
 ---
 
-<section class="archive-header container">
+<section class="archive-header container section-panel" data-section-panel>
 	<SectionTitle title={title} eyebrow={eyebrow} description={description} headingLevel="h1" />
 </section>
 
 {expertise && <PortfolioExpertise {...expertise} />}
 
-<section class="portfolio-collection section" aria-labelledby="portfolio-filters">
+<section class="portfolio-collection section section-panel" aria-labelledby="portfolio-filters" data-section-panel>
 	<div class="container">
 		<nav class="archive-nav" aria-labelledby="portfolio-filters">
 			<p class="visually-hidden" id="portfolio-filters">{filtersLabel}</p>

@@ -20,7 +20,7 @@ interface Props {
 const { projects, categories, copy } = Astro.props;
 ---
 
-<section class="featured-projects section">
+<section class="featured-projects section section-panel" data-section-panel>
 	<div class="container">
 		<SectionTitle eyebrow={copy.eyebrow} title={copy.title} description={copy.description} />
 		<ProjectGrid

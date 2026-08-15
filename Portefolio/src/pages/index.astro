@@ -15,8 +15,10 @@ const featuredProjects = (await getCollection('projects', ({ data }) => data.pub
 
 <BaseLayout>
 	<HomeCarousel {...homeContent.carousel} />
-	<Hero {...homeContent.hero} />
-	<AboutPreview {...homeContent.about} />
+	<div class="section-panel" data-section-panel>
+		<Hero {...homeContent.hero} />
+		<AboutPreview {...homeContent.about} />
+	</div>
 	<FeaturedProjects
 		projects={featuredProjects}
 		categories={portfolioCategories}

@@ -7,10 +7,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title={contactContent.page.title} description={contactContent.page.intro}>
-	<section class="archive-header container">
+	<section class="archive-header container section-panel" data-section-panel>
 		<SectionTitle {...contactContent.page} headingLevel="h1" />
 	</section>
-	<section class="contact-section section">
+	<section class="contact-section section section-panel" data-section-panel>
 		<div class="container contact-layout">
 			<ContactInfo contact={contactConfig} labels={contactContent.info} />
 			<ContactForm copy={contactContent.form} />
