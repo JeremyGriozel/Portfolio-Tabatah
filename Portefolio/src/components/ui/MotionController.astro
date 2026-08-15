@@ -1,0 +1,45 @@
+<script>
+	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+	const revealElements = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
+
+	const reveal = (element: HTMLElement) => {
+		element.classList.remove('is-reveal-ready');
+		element.classList.add('is-revealed');
+	};
+
+	if (reducedMotion.matches || typeof IntersectionObserver === 'undefined') {
+		revealElements.forEach(reveal);
+	} else {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (!entry.isIntersecting) return;
+			reveal(entry.target as HTMLElement);
+				observer.unobserve(entry.target);
+			});
+		}, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+		revealElements.forEach((element) => {
+			if (element.getBoundingClientRect().top <= window.innerHeight * 0.92) {
+				reveal(element);
+				return;
+			}
+			element.classList.add('is-reveal-ready');
+			observer.observe(element);
+		});
+	}
+
+	const header = document.querySelector<HTMLElement>('[data-site-header]');
+	if (header) {
+		let frameRequested = false;
+		const updateHeader = () => {
+			header.classList.toggle('is-scrolled', window.scrollY > 24);
+			frameRequested = false;
+		};
+		updateHeader();
+		window.addEventListener('scroll', () => {
+			if (frameRequested) return;
+			frameRequested = true;
+			window.requestAnimationFrame(updateHeader);
+		}, { passive: true });
+	}
+</script>

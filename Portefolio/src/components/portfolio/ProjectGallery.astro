@@ -18,7 +18,7 @@ const gallerySize = images.length === 1 ? 'single' : images.length === 2 ? 'doub
 
 <div class:list={['project-gallery', `project-gallery--${gallerySize}`]}>
 	{images.map((image, index) => (
-		<div class="project-gallery__item">
+		<div class="project-gallery__item" data-reveal="image" style={`--reveal-order: ${index % 3}`}>
 			<a
 				class="lightbox-trigger"
 				href={image.src}

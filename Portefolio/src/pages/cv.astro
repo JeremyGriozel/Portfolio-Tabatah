@@ -12,7 +12,7 @@ const cvPath = cvConfig.cv;
 <BaseLayout title={cv.title} description={cv.intro}>
 	<section class="archive-header container cv-page">
 		<SectionTitle title={cv.title} description={cv.intro} headingLevel="h1" />
-		<div class="cv-actions cluster">
+		<div class="cv-actions cluster" data-reveal style="--reveal-order: 1">
 			<Button href={cvPath} target="_blank">{cv.openLabel}</Button>
 			<Button href={cvPath} variant="secondary" download>{cv.downloadLabel}</Button>
 		</div>
@@ -20,7 +20,7 @@ const cvPath = cvConfig.cv;
 			<a href={cv.portfolioLink.href}>{cv.portfolioLink.label}</a>
 			<a href={cv.contactLink.href}>{cv.contactLink.label}</a>
 		</nav>
-		<object class="cv-frame" data={cvPath} type="application/pdf">
+		<object class="cv-frame" data={cvPath} type="application/pdf" data-reveal="image">
 			<div class="cv-fallback flow">
 				<p>{cv.fallbackText}</p>
 				<p><a href={cvPath} target="_blank">{cv.openLabel}</a> · <a href={cvPath} download>{cv.downloadLabel}</a></p>

@@ -34,6 +34,9 @@ const footerLinks = navigationItems.flatMap((item) => [item, ...(item.children ?
 				</ul>
 			</div>
 		</div>
+		<div class="site-footer__graphic" aria-hidden="true" data-reveal="line">
+			<span>{siteConfig.name}</span>
+		</div>
 		<div class="site-footer__bottom">
 			<p>© {currentYear} {siteConfig.name}</p>
 			<p>{siteConfig.footer.legal}</p>

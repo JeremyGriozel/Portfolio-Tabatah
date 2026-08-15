@@ -3,6 +3,24 @@
 	"profileImageAlt": "Portrait de Tabatah Lux.",
 	"profileImageCaption": "",
 	"home": {
+		"carousel": {
+			"title": "Photographe indépendante",
+			"quote": "Phrase inspirante",
+			"images": [
+				{
+					"src": "/images/home/carousel/echo-theatral-01.jpeg",
+					"alt": "Portrait photographique dans une atmosphère théâtrale éclairée de rouge et de violet."
+				},
+				{
+					"src": "/images/home/carousel/echo-theatral-02.jpeg",
+					"alt": "Photographie de la série Écho théâtral dans une ambiance nocturne et gothique."
+				},
+				{
+					"src": "/images/home/carousel/echo-theatral-03.jpeg",
+					"alt": "Mise en scène photographique sombre aux lumières colorées."
+				}
+			]
+		},
 		"hero": {
 			"eyebrow": "Qui suis-je ?",
 			"title": "Tabatah Lux",

@@ -33,7 +33,7 @@ const lightboxImages = [{ src: cover.src, alt: cover.alt }, ...normalizedGallery
 		categories={portfolioCategories}
 		backLabel={portfolioContent.project.backLabel}
 	/>
-	<div class="project-cover container">
+	<div class="project-cover container" data-reveal="image">
 		<a
 			class="lightbox-trigger"
 			href={cover.src}
@@ -46,7 +46,7 @@ const lightboxImages = [{ src: cover.src, alt: cover.alt }, ...normalizedGallery
 	</div>
 
 	{(detailedDescription || tools.length > 0) && (
-		<section class="container project-details">
+		<section class="container project-details" data-reveal>
 			{detailedDescription && (
 				<div class="project-details__copy flow">
 					<h2>{portfolioContent.project.detailsTitle}</h2>
@@ -64,7 +64,7 @@ const lightboxImages = [{ src: cover.src, alt: cover.alt }, ...normalizedGallery
 
 	{normalizedGallery.length > 0 && (
 		<section class="container project-gallery-section">
-			<h2 class="section-title">{portfolioContent.project.galleryTitle}</h2>
+			<h2 class="section-title" data-reveal>{portfolioContent.project.galleryTitle}</h2>
 			<ProjectGallery images={normalizedGallery} {lightboxId} startIndex={1} />
 		</section>
 	)}

@@ -28,6 +28,8 @@ const { copy } = Astro.props;
 	action="/api/contact"
 	method="post"
 	data-contact-form
+	data-reveal
+	style="--reveal-order: 1"
 	data-sending-message={copy.sendingMessage}
 	data-success-message={copy.successMessage}
 	data-error-message={copy.errorMessage}

@@ -7,20 +7,89 @@ interface Props {
 	projects: CollectionEntry<'projects'>[];
 	categories?: PortfolioCategory[];
 	emptyMessage: string;
+	layout?: 'grid' | 'rail';
+	railId?: string;
+	railLabel?: string;
 }
 
-const { projects, categories = [], emptyMessage } = Astro.props;
+const {
+	projects,
+	categories = [],
+	emptyMessage,
+	layout = 'grid',
+	railId = 'project-rail',
+	railLabel = 'Projets mis en avant',
+} = Astro.props;
 const sortedProjects = [...projects].sort((first, second) => first.data.order - second.data.order);
 const getCategoryLabel = (categorySlug: string) =>
 	categories.find((category) => category.slug === categorySlug)?.label ?? categorySlug;
 ---
 
-{sortedProjects.length > 0 ? (
+{sortedProjects.length > 0 && layout === 'rail' ? (
+	<div class="project-rail" data-project-rail>
+		{sortedProjects.length > 1 && (
+			<div class="project-rail__controls" aria-label="Navigation des projets">
+				<button type="button" aria-label="Projet précédent" aria-controls={railId} data-rail-previous>←</button>
+				<button type="button" aria-label="Projet suivant" aria-controls={railId} data-rail-next>→</button>
+			</div>
+		)}
+		<div class="project-rail__viewport" id={railId} tabindex="0" aria-label={railLabel} data-rail-viewport>
+			<div class="project-rail__track">
+				{sortedProjects.map((project, index) => (
+					<ProjectCard
+						project={project}
+						categoryLabel={getCategoryLabel(project.data.category)}
+						revealIndex={index}
+					/>
+				))}
+			</div>
+		</div>
+	</div>
+) : sortedProjects.length > 0 ? (
 	<div class="project-grid">
-		{sortedProjects.map((project) => (
-			<ProjectCard project={project} categoryLabel={getCategoryLabel(project.data.category)} />
+		{sortedProjects.map((project, index) => (
+			<ProjectCard project={project} categoryLabel={getCategoryLabel(project.data.category)} revealIndex={index} />
 		))}
 	</div>
 ) : (
 	<p class="project-grid__empty">{emptyMessage}</p>
 )}
+
+<script>
+	document.querySelectorAll<HTMLElement>('[data-project-rail]').forEach((rail) => {
+		const viewport = rail.querySelector<HTMLElement>('[data-rail-viewport]');
+		const cards = Array.from(rail.querySelectorAll<HTMLElement>('.project-card'));
+		const previousButton = rail.querySelector<HTMLButtonElement>('[data-rail-previous]');
+		const nextButton = rail.querySelector<HTMLButtonElement>('[data-rail-next]');
+		if (!viewport || cards.length < 2) return;
+
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		const getClosestIndex = () => cards.reduce((closestIndex, card, index) => {
+			const currentDistance = Math.abs(card.offsetLeft - viewport.scrollLeft);
+			const closestDistance = Math.abs(cards[closestIndex].offsetLeft - viewport.scrollLeft);
+			return currentDistance < closestDistance ? index : closestIndex;
+		}, 0);
+
+		const move = (direction: -1 | 1) => {
+			const targetIndex = Math.max(0, Math.min(cards.length - 1, getClosestIndex() + direction));
+			cards[targetIndex].scrollIntoView({
+				behavior: reducedMotion.matches ? 'auto' : 'smooth',
+				block: 'nearest',
+				inline: 'start',
+			});
+		};
+
+		previousButton?.addEventListener('click', () => move(-1));
+		nextButton?.addEventListener('click', () => move(1));
+		viewport.addEventListener('keydown', (event) => {
+			if (event.key === 'ArrowLeft') {
+				event.preventDefault();
+				move(-1);
+			}
+			if (event.key === 'ArrowRight') {
+				event.preventDefault();
+				move(1);
+			}
+		});
+	});
+</script>

@@ -1,6 +1,7 @@
 import siteContent from './site-content.json';
 
 export const homeContent = {
+	carousel: siteContent.home.carousel,
 	hero: {
 		...siteContent.home.hero,
 		name: siteContent.home.hero.title,

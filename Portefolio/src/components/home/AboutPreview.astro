@@ -13,8 +13,8 @@ const { eyebrow, title, paragraphs, link } = Astro.props;
 
 <section class="about-preview section">
 	<div class="about-preview__grid container">
-		<p class="eyebrow">{eyebrow}</p>
-		<div class="about-preview__content flow">
+		<p class="eyebrow" data-reveal>{eyebrow}</p>
+		<div class="about-preview__content flow" data-reveal style="--reveal-order: 1">
 			<h2>{title}</h2>
 			{paragraphs.map((paragraph) => <p>{paragraph}</p>)}
 			<div><Button href={link.href} variant="secondary">{link.label}</Button></div>

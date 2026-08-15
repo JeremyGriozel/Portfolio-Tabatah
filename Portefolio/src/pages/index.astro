@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import AboutPreview from '../components/home/AboutPreview.astro';
 import FeaturedProjects from '../components/home/FeaturedProjects.astro';
 import Hero from '../components/home/Hero.astro';
+import HomeCarousel from '../components/home/HomeCarousel.astro';
 import HomeCTA from '../components/home/HomeCTA.astro';
 import { homeContent } from '../data/home';
 import { portfolioCategories } from '../data/portfolio';
@@ -13,6 +14,7 @@ const featuredProjects = (await getCollection('projects', ({ data }) => data.pub
 ---
 
 <BaseLayout>
+	<HomeCarousel {...homeContent.carousel} />
 	<Hero {...homeContent.hero} />
 	<AboutPreview {...homeContent.about} />
 	<FeaturedProjects

@@ -11,7 +11,7 @@ const { title, eyebrow, description, align = 'left', headingLevel = 'h2' } = Ast
 const Heading = headingLevel;
 ---
 
-<header class:list={['section-title', align === 'center' && 'section-title--center']}>
+<header class:list={['section-title', align === 'center' && 'section-title--center']} data-reveal>
 	{eyebrow && <p class="section-title__eyebrow">{eyebrow}</p>}
 	<Heading>{title}</Heading>
 	{description && <p class="section-title__description">{description}</p>}

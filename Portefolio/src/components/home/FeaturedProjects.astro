@@ -23,7 +23,14 @@ const { projects, categories, copy } = Astro.props;
 <section class="featured-projects section">
 	<div class="container">
 		<SectionTitle eyebrow={copy.eyebrow} title={copy.title} description={copy.description} />
-		<ProjectGrid projects={projects} categories={categories} emptyMessage={copy.emptyMessage} />
+		<ProjectGrid
+			projects={projects}
+			categories={categories}
+			emptyMessage={copy.emptyMessage}
+			layout="rail"
+			railId="featured-projects-rail"
+			railLabel={copy.title}
+		/>
 		<div class="featured-projects__footer">
 			<Button href={copy.link.href} variant="secondary">{copy.link.label}</Button>
 		</div>

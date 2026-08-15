@@ -5,9 +5,10 @@ import ImageFrame from '../ui/ImageFrame.astro';
 interface Props {
 	project: CollectionEntry<'projects'>;
 	categoryLabel?: string;
+	revealIndex?: number;
 }
 
-const { project, categoryLabel = project.data.category } = Astro.props;
+const { project, categoryLabel = project.data.category, revealIndex = 0 } = Astro.props;
 const { title, shortDescription, cover, date, slug } = project.data;
 const projectPath = `/portfolio/${slug}/`;
 const formattedYear = date
@@ -15,13 +16,21 @@ const formattedYear = date
 	: undefined;
 ---
 
-<article class:list={['project-card', `project-card--${cover.aspect ?? 'auto'}`]}>
+<article
+	class:list={['project-card', `project-card--${cover.aspect ?? 'auto'}`]}
+	data-reveal
+	style={`--reveal-order: ${Math.min(revealIndex, 4)}`}
+>
 	<a class="project-card__image-link" href={projectPath} aria-label={`Voir le projet ${title}`}>
 		<ImageFrame
 			src={cover.src}
 			alt={cover.alt}
 			aspect={cover.aspect ?? 'auto'}
 		/>
+		<span class="project-card__overlay" aria-hidden="true">
+			<span>{categoryLabel}</span>
+			<strong>{title}</strong>
+		</span>
 	</a>
 	<div class="project-card__meta">
 		<span>{categoryLabel}</span>

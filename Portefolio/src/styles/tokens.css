@@ -42,6 +42,11 @@
 	--project-narrow-width: 44rem;
 	--project-cover-width: 56rem;
 	--hero-image-width: 32rem;
+	--home-carousel-ratio: 2 / 1;
+	--home-carousel-ratio-mobile: 4 / 3;
+	--home-carousel-copy-width: 31rem;
+	--home-carousel-control-size: var(--control-height);
+	--home-carousel-image-scale: 1.018;
 	--grid-min-width: 17rem;
 	--header-height: 4.75rem;
 	--header-height-mobile: 4.25rem;
@@ -54,6 +59,8 @@
 	--color-lightbox-text: #fcfbf7;
 	--color-lightbox-control: rgb(252 251 247 / 12%);
 	--color-lightbox-border: rgb(252 251 247 / 38%);
+	--color-image-overlay: rgb(8 7 6 / 72%);
+	--color-image-overlay-text: #fcfbf7;
 
 	/* Formes, lignes et profondeur */
 	--radius-small: 0.125rem;
@@ -63,15 +70,23 @@
 	--border-width: 1px;
 	--focus-width: 3px;
 	--shadow-soft: 0 1.25rem 3.5rem var(--color-shadow);
+	--shadow-header: 0 0.75rem 2rem var(--color-shadow);
 	--header-blur: 0.85rem;
 
 	/* Mouvement */
-	--duration-fast: 180ms;
-	--duration-medium: 360ms;
-	--duration-slow: 700ms;
-	--duration-stagger: 70ms;
+	--motion-fast: 160ms;
+	--motion-normal: 320ms;
+	--motion-slow: 600ms;
+	--motion-stagger: 65ms;
 	--ease-standard: cubic-bezier(0.2, 0.65, 0.3, 1);
-	--image-hover-scale: 1.018;
+	--ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+	--reveal-distance: 1.125rem;
+	--reveal-distance-mobile: 0.625rem;
+	--duration-fast: var(--motion-fast);
+	--duration-medium: var(--motion-normal);
+	--duration-slow: var(--motion-slow);
+	--duration-stagger: var(--motion-stagger);
+	--image-hover-scale: 1.025;
 	--hover-lift: -0.125rem;
 
 	/* Alias sémantiques utilisés dans les composants */
@@ -514,6 +529,10 @@ html[data-theme='cyberpunk'] {
 		--duration-medium: 0s;
 		--duration-slow: 0s;
 		--duration-stagger: 0s;
+		--motion-fast: 0s;
+		--motion-normal: 0s;
+		--motion-slow: 0s;
+		--motion-stagger: 0s;
 		--hover-lift: 0rem;
 		--image-hover-scale: 1;
 	}

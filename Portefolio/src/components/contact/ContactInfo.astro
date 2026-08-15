@@ -15,7 +15,7 @@ interface Props {
 const { contact, labels } = Astro.props;
 ---
 
-<aside class="contact-info flow">
+<aside class="contact-info flow" data-reveal>
 	<h2>{labels.title}</h2>
 	<dl class="contact-info__list">
 		<div><dt>{labels.emailLabel}</dt><dd><a href={`mailto:${contact.publicEmail}`}>{contact.publicEmail}</a></dd></div>

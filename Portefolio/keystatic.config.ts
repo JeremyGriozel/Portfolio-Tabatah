@@ -139,6 +139,40 @@ export default config({
 				profileImageCaption: fields.text({ label: 'Légende facultative de la photo' }),
 				home: fields.object(
 					{
+						carousel: fields.object(
+							{
+								title: fields.text({
+									label: 'Titre du Hero',
+									validation: { isRequired: true },
+								}),
+								quote: fields.text({
+									label: 'Phrase inspirante',
+									multiline: true,
+									validation: { isRequired: true },
+								}),
+								images: fields.array(
+									fields.object({
+										src: fields.image({
+											label: 'Image',
+											directory: 'public/images/home/carousel',
+											publicPath: '/images/home/carousel/',
+											validation: { isRequired: true },
+										}),
+										alt: fields.text({
+											label: 'Texte alternatif',
+											description: 'Décrivez brièvement la photographie pour les personnes qui ne peuvent pas la voir.',
+											validation: { isRequired: true },
+										}),
+									}),
+									{
+										label: "Images du carousel d'accueil",
+										description: 'Ajoutez, supprimez ou réorganisez les images du Hero.',
+										itemLabel: ({ fields }) => fields.alt.value || 'Nouvelle image',
+									},
+								),
+							},
+							{ label: "Hero carousel" },
+						),
 						hero: fields.object(
 							{
 								eyebrow: fields.text({ label: 'Petit titre', validation: { isRequired: true } }),

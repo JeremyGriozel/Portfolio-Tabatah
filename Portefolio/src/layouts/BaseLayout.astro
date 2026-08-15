@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/layout/Footer.astro';
 import Header from '../components/layout/Header.astro';
+import MotionController from '../components/ui/MotionController.astro';
 import { siteConfig, themeOptions } from '../data/site';
 import '../styles/global.css';
 
@@ -45,5 +46,6 @@ const themeStorageKey = 'portfolio-theme';
 			<slot />
 		</main>
 		<Footer />
+		<MotionController />
 	</body>
 </html>

@@ -67,6 +67,7 @@ const { id, images, label = 'Visionneuse d’images' } = Astro.props;
 		let opener: HTMLElement | null = null;
 		let pointerStartX: number | null = null;
 		let previousBodyOverflow = '';
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 		const update = (nextIndex: number) => {
 			currentIndex = (nextIndex + images.length) % images.length;
@@ -74,6 +75,11 @@ const { id, images, label = 'Visionneuse d’images' } = Astro.props;
 			if (!image || !currentImage) return;
 			image.src = currentImage.src;
 			image.alt = currentImage.alt;
+			if (dialog.open && !reducedMotion.matches) {
+				image.classList.remove('is-changing');
+				void image.offsetWidth;
+				image.classList.add('is-changing');
+			}
 			if (counter) counter.textContent = `${currentIndex + 1} / ${images.length}`;
 
 			[images[(currentIndex + 1) % images.length], images[(currentIndex - 1 + images.length) % images.length]]
@@ -109,6 +115,7 @@ const { id, images, label = 'Visionneuse d’images' } = Astro.props;
 		closeButton?.addEventListener('click', close);
 		previousButton?.addEventListener('click', showPrevious);
 		nextButton?.addEventListener('click', showNext);
+		image?.addEventListener('animationend', () => image.classList.remove('is-changing'));
 		dialog.addEventListener('click', (event) => {
 			if (event.target === dialog || event.target === surface || event.target === media) close();
 		});

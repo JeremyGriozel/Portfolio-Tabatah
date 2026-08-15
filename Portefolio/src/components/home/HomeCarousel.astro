@@ -1,0 +1,187 @@
+---
+interface CarouselImage {
+	src: string;
+	alt: string;
+}
+
+interface Props {
+	title: string;
+	quote: string;
+	images: readonly CarouselImage[];
+}
+
+const { title, quote, images } = Astro.props;
+const slides = images.filter((image) => image.src);
+const hasMultipleSlides = slides.length > 1;
+---
+
+{slides.length > 0 && (
+	<section
+		class="home-carousel container"
+		aria-label={title}
+		aria-roledescription="carrousel"
+		data-home-carousel
+		tabindex={hasMultipleSlides ? 0 : undefined}
+	>
+		<div class="home-carousel__frame">
+			<div class="home-carousel__media" data-carousel-swipe-area>
+				{slides.map((image, index) => (
+					<figure
+						class:list={['home-carousel__slide', { 'is-active': index === 0 }]}
+						data-carousel-slide
+						role="group"
+						aria-roledescription="diapositive"
+						aria-label={`${index + 1} sur ${slides.length}`}
+						aria-hidden={index === 0 ? 'false' : 'true'}
+					>
+						<img
+							src={image.src}
+							alt={image.alt}
+							loading={index === 0 ? 'eager' : 'lazy'}
+							fetchpriority={index === 0 ? 'high' : 'auto'}
+							decoding="async"
+						/>
+					</figure>
+				))}
+
+				{hasMultipleSlides && (
+					<div class="home-carousel__controls">
+						<button type="button" aria-label="Image précédente" data-carousel-previous>
+							<span aria-hidden="true">←</span>
+						</button>
+						<p class="home-carousel__counter" aria-hidden="true">
+							<span data-carousel-current>1</span> / {slides.length}
+						</p>
+						<button type="button" aria-label="Mettre le carrousel en pause" data-carousel-pause>
+							<span aria-hidden="true" data-carousel-pause-icon>Ⅱ</span>
+						</button>
+						<button type="button" aria-label="Image suivante" data-carousel-next>
+							<span aria-hidden="true">→</span>
+						</button>
+					</div>
+				)}
+			</div>
+
+			<div class="home-carousel__copy">
+				<p class="home-carousel__title">{title}</p>
+				<p class="home-carousel__quote">{quote}</p>
+			</div>
+
+			<p class="visually-hidden" aria-live="polite" aria-atomic="true" data-carousel-status></p>
+		</div>
+	</section>
+)}
+
+<script>
+	const AUTOPLAY_DELAY = 10000;
+	const SWIPE_THRESHOLD = 48;
+
+	document.querySelectorAll<HTMLElement>('[data-home-carousel]').forEach((carousel) => {
+		const slides = Array.from(carousel.querySelectorAll<HTMLElement>('[data-carousel-slide]'));
+		if (slides.length < 2) return;
+
+		const previousButton = carousel.querySelector<HTMLButtonElement>('[data-carousel-previous]');
+		const nextButton = carousel.querySelector<HTMLButtonElement>('[data-carousel-next]');
+		const pauseButton = carousel.querySelector<HTMLButtonElement>('[data-carousel-pause]');
+		const pauseIcon = carousel.querySelector<HTMLElement>('[data-carousel-pause-icon]');
+		const currentLabel = carousel.querySelector<HTMLElement>('[data-carousel-current]');
+		const status = carousel.querySelector<HTMLElement>('[data-carousel-status]');
+		const swipeArea = carousel.querySelector<HTMLElement>('[data-carousel-swipe-area]');
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+		let currentIndex = 0;
+		let autoplayTimer: number | undefined;
+		let userPaused = false;
+		let isInViewport = true;
+		let pointerStartX: number | undefined;
+
+		const stopAutoplay = () => {
+			if (autoplayTimer !== undefined) window.clearInterval(autoplayTimer);
+			autoplayTimer = undefined;
+		};
+
+		const canAutoplay = () =>
+			!userPaused &&
+			!reducedMotion.matches &&
+			isInViewport &&
+			document.visibilityState === 'visible';
+
+		const showSlide = (nextIndex: number, announce = false) => {
+			currentIndex = (nextIndex + slides.length) % slides.length;
+
+			slides.forEach((slide, index) => {
+				const isActive = index === currentIndex;
+				slide.classList.toggle('is-active', isActive);
+				slide.setAttribute('aria-hidden', String(!isActive));
+			});
+
+			if (currentLabel) currentLabel.textContent = String(currentIndex + 1);
+			if (announce && status) status.textContent = `Image ${currentIndex + 1} sur ${slides.length}.`;
+		};
+
+		const startAutoplay = () => {
+			stopAutoplay();
+			if (!canAutoplay()) return;
+			autoplayTimer = window.setInterval(() => showSlide(currentIndex + 1), AUTOPLAY_DELAY);
+		};
+
+		const selectByUser = (nextIndex: number) => {
+			showSlide(nextIndex, true);
+			startAutoplay();
+		};
+
+		previousButton?.addEventListener('click', () => selectByUser(currentIndex - 1));
+		nextButton?.addEventListener('click', () => selectByUser(currentIndex + 1));
+
+		pauseButton?.addEventListener('click', () => {
+			userPaused = !userPaused;
+			pauseButton.setAttribute(
+				'aria-label',
+				userPaused ? 'Relancer le carrousel' : 'Mettre le carrousel en pause',
+			);
+			pauseButton.setAttribute('aria-pressed', String(userPaused));
+			if (pauseIcon) pauseIcon.textContent = userPaused ? '▶' : 'Ⅱ';
+			startAutoplay();
+		});
+
+		carousel.addEventListener('keydown', (event) => {
+			if (event.key === 'ArrowLeft') {
+				event.preventDefault();
+				selectByUser(currentIndex - 1);
+			}
+			if (event.key === 'ArrowRight') {
+				event.preventDefault();
+				selectByUser(currentIndex + 1);
+			}
+		});
+
+		swipeArea?.addEventListener('pointerdown', (event) => {
+			if (event.pointerType === 'touch' || event.pointerType === 'pen') pointerStartX = event.clientX;
+		});
+
+		swipeArea?.addEventListener('pointerup', (event) => {
+			if (pointerStartX === undefined) return;
+			const distance = event.clientX - pointerStartX;
+			pointerStartX = undefined;
+			if (Math.abs(distance) < SWIPE_THRESHOLD) return;
+			selectByUser(currentIndex + (distance < 0 ? 1 : -1));
+		});
+
+		swipeArea?.addEventListener('pointercancel', () => {
+			pointerStartX = undefined;
+		});
+
+		const visibilityObserver = new IntersectionObserver(
+			([entry]) => {
+				isInViewport = entry?.isIntersecting ?? true;
+				startAutoplay();
+			},
+			{ threshold: 0.15 },
+		);
+
+		visibilityObserver.observe(carousel);
+		document.addEventListener('visibilitychange', startAutoplay);
+		reducedMotion.addEventListener('change', startAutoplay);
+		startAutoplay();
+	});
+</script>
