@@ -28,23 +28,11 @@
         },
         {
           "src": "/images/home/carousel/home/carousel/images/5/src.jpeg",
-          "alt": "carousel-6"
-        },
-        {
-          "src": "/images/home/carousel/home/carousel/images/6/src.jpeg",
           "alt": "carousel-7"
         },
         {
-          "src": "/images/home/carousel/home/carousel/images/7/src.jpeg",
+          "src": "/images/home/carousel/home/carousel/images/6/src.jpeg",
           "alt": "carousel-8"
-        },
-        {
-          "src": "/images/home/carousel/home/carousel/images/8/src.jpeg",
-          "alt": "carousel-9"
-        },
-        {
-          "src": "/images/home/carousel/home/carousel/images/9/src.jpeg",
-          "alt": "carousel-10"
         }
       ]
     },
