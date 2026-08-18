@@ -53,6 +53,9 @@ gallery:
   - /images/projects/sous-une-pluie-de-neige/gallery/7.jpg
   - /images/projects/sous-une-pluie-de-neige/gallery/8.jpg
   - /images/projects/sous-une-pluie-de-neige/gallery/9.jpg
+  - /images/projects/sous-une-pluie-de-neige/gallery/10.jpg
+  - /images/projects/sous-une-pluie-de-neige/gallery/11.jpg
+  - /images/projects/sous-une-pluie-de-neige/gallery/12.jpg
 tools:
   - Profondeur de champ
   - Cadrage rapproché
