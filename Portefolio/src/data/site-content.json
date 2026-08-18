@@ -49,7 +49,7 @@
       "title": "Projets créatifs et collaborations",
       "paragraphs": [
         "Je suis à la recherche d'opportunités professionnelles dans les domaines de la photographie et de l'illustration.",
-        "J'apprécie particulièrement créer des univers visuels uniques et singuliers, donnant vie à des idées."
+        "Ma pratique s'articule autour du travail de la lumière, des couleurs et des ambiances, avec une volonté de développer une identité visuelle personnelle."
       ],
       "linkLabel": "Consulter le CV"
     },
@@ -107,15 +107,15 @@
     "categories": {
       "photography": {
         "label": "Photographie",
-        "description": "Séries éditoriales, portraits et récits documentaires."
+        "description": "Une sélection de séries éditoriales, de portraits et de projets photographiques explorant différentes approches de l’image."
       },
       "illustration": {
         "label": "Illustration numérique",
-        "description": "Images dessinées, systèmes graphiques et compositions narratives."
+        "description": "Une sélection d’illustrations et de projets graphiques explorant différentes approches du dessin et de la composition."
       },
       "artDirection": {
         "label": "Direction artistique",
-        "description": "Identités visuelles et campagnes pensées comme des ensembles cohérents."
+        "description": "Projets de direction artistique mêlant identité visuelle, composition et recherche graphique pour construire des univers cohérents."
       }
     },
     "filtersLabel": "Explorer par catégorie",
