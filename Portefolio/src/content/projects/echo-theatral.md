@@ -6,7 +6,7 @@ date: 2026-08-08
 defaultTheme: gothic
 published: true
 featured: true
-order: 1
+order: 3
 shortDescription: >-
   Cette série explore une esthétique nocturne et gothique, où la lumière rouge
   et violette crée une atmosphère à la fois théâtrale, sensuelle et mystérieuse.
