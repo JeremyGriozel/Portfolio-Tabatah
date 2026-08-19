@@ -127,3 +127,22 @@ connexion à Keystatic
 → rebuild Cloudflare
 → site public mis à jour
 ```
+
+## Google Search Console
+
+1. Ouvrir [Google Search Console](https://search.google.com/search-console/).
+2. Ajouter une propriété de type **Domaine**.
+3. Saisir `tabatah-lux.fr`.
+4. Copier l’enregistrement TXT fourni par Google.
+5. Dans Cloudflare, ouvrir `tabatah-lux.fr`, puis **DNS → Add record → TXT**.
+6. Coller exactement la valeur fournie par Google et enregistrer.
+7. Attendre la propagation DNS.
+8. Revenir dans Search Console et cliquer sur **Valider**.
+
+### Soumettre le sitemap
+
+Dans **Search Console → Sitemaps**, saisir `sitemap-index.xml`, puis cliquer sur **Envoyer**.
+
+### Demander une première indexation
+
+Dans **Inspection de l’URL**, saisir `https://tabatah-lux.fr/`, cliquer sur **Tester l’URL publiée**, puis sur **Demander une indexation**. Répéter si nécessaire pour `/portfolio/`, `/contact/` et quelques projets importants, sans automatiser ni multiplier les demandes.

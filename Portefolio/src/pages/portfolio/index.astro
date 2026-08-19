@@ -7,7 +7,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const projects = await getCollection('projects', ({ data }) => data.published);
 ---
 
-<BaseLayout title={portfolioContent.index.title} description={portfolioContent.index.description}>
+<BaseLayout title="Portfolio" description={portfolioContent.index.description}>
 	<ProjectArchive
 		projects={projects}
 		categories={portfolioCategories}

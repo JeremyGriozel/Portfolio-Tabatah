@@ -11,9 +11,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const featuredProjects = (await getCollection('projects', ({ data }) => data.published && data.featured))
 	.sort((first, second) => first.data.order - second.data.order);
+const siteUrl = Astro.site!;
+const personStructuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	'@id': new URL('/#person', siteUrl).href,
+	name: homeContent.hero.name,
+	url: new URL('/', siteUrl).href,
+	jobTitle: homeContent.hero.profession,
+	image: new URL(homeContent.hero.image.src, siteUrl).href,
+};
 ---
 
-<BaseLayout>
+<BaseLayout ogType="profile" structuredData={personStructuredData}>
 	<HomeCarousel {...homeContent.carousel} />
 	<div class="section-panel about-combined" data-section-panel>
 		<Hero {...homeContent.hero} />

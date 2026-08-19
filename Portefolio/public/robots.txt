@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /keystatic
+Disallow: /api/
+
+Sitemap: https://tabatah-lux.fr/sitemap-index.xml

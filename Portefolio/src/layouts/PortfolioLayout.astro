@@ -28,7 +28,14 @@ const normalizedGallery = gallery.map((galleryImage, index) => ({
 const lightboxImages = [{ src: cover.src, alt: cover.alt }, ...normalizedGallery];
 ---
 
-<BaseLayout title={title} description={shortDescription} {initialTheme}>
+<BaseLayout
+	title={title}
+	description={shortDescription}
+	image={cover.src}
+	imageAlt={cover.alt}
+	ogType="article"
+	{initialTheme}
+>
 	<section class="project-hero-panel section-panel" data-section-panel>
 		<ProjectHeader
 			project={project}

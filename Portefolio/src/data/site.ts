@@ -35,6 +35,8 @@ export interface SiteConfig {
 	metadata: {
 		defaultTitle: string;
 		defaultDescription: string;
+		defaultImage: string;
+		defaultImageAlt: string;
 	};
 	footer: {
 		message: string;
@@ -61,9 +63,11 @@ export const siteConfig = {
 	theme: 'dark-academia',
 	name: siteContent.home.hero.title,
 	metadata: {
-		defaultTitle: 'Tabatah Lux — Portfolio',
+		defaultTitle: 'Tabatah Lux — Photographe indépendante',
 		defaultDescription:
-			'Direction artistique, photographie et illustration : une sélection de projets créatifs.',
+			'Portfolio de Tabatah Lux, photographe indépendante. Découvrez ses projets photographiques, son univers artistique et ses créations.',
+		defaultImage: siteContent.home.carousel.images[0]?.src ?? siteContent.profileImage,
+		defaultImageAlt: 'Portfolio photographique de Tabatah Lux',
 	},
 	footer: {
 		message: 'Disponible pour des collaborations choisies.',

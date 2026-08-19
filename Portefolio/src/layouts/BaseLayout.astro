@@ -8,6 +8,12 @@ import '../styles/global.css';
 interface Props {
 	title?: string;
 	description?: string;
+	canonical?: string | URL;
+	image?: string;
+	imageAlt?: string;
+	robots?: string;
+	ogType?: 'website' | 'article' | 'profile';
+	structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 	noIndex?: boolean;
 	initialTheme?: SiteTheme;
 }
@@ -15,10 +21,28 @@ interface Props {
 const {
 	title,
 	description = siteConfig.metadata.defaultDescription,
+	canonical,
+	image = siteConfig.metadata.defaultImage,
+	imageAlt = siteConfig.metadata.defaultImageAlt,
+	robots = 'index, follow',
+	ogType = 'website',
+	structuredData,
 	noIndex = false,
 	initialTheme,
 } = Astro.props;
 const pageTitle = title ? `${title} — ${siteConfig.name}` : siteConfig.metadata.defaultTitle;
+const cleanDescription = description.replace(/\s+/g, ' ').trim();
+const metaDescription = cleanDescription.length <= 160
+	? cleanDescription
+	: `${cleanDescription.slice(0, 157).replace(/\s+\S*$/, '')}…`;
+if (!Astro.site) throw new Error('La propriété site doit être configurée dans astro.config.mjs.');
+const siteUrl = Astro.site;
+const canonicalUrl = new URL(canonical ?? Astro.url.pathname, siteUrl).href;
+const socialImageUrl = new URL(image, siteUrl).href;
+const robotsContent = noIndex ? 'noindex, nofollow' : robots;
+const structuredDataJson = structuredData
+	? JSON.stringify(structuredData).replace(/</g, '\\u003c')
+	: undefined;
 const availableThemes = themeOptions.map(({ value }) => value);
 const themeStorageKey = 'portfolio-theme';
 const renderedTheme = initialTheme ?? siteConfig.theme;
@@ -30,7 +54,22 @@ const renderedTheme = initialTheme ?? siteConfig.theme;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
+		<meta name="description" content={metaDescription} />
+		<meta name="robots" content={robotsContent} />
+		<link rel="canonical" href={canonicalUrl} />
+		<meta property="og:site_name" content={siteConfig.name} />
+		<meta property="og:locale" content="fr_FR" />
+		<meta property="og:type" content={ogType} />
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={metaDescription} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={socialImageUrl} />
+		<meta property="og:image:alt" content={imageAlt} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={metaDescription} />
+		<meta name="twitter:image" content={socialImageUrl} />
+		<meta name="twitter:image:alt" content={imageAlt} />
 		<script is:inline define:vars={{ availableThemes, configuredTheme: siteConfig.theme, initialTheme, themeStorageKey }}>
 			try {
 				const savedTheme = localStorage.getItem(themeStorageKey);
@@ -45,7 +84,7 @@ const renderedTheme = initialTheme ?? siteConfig.theme;
 					: configuredTheme;
 			}
 		</script>
-		{noIndex && <meta name="robots" content="noindex, nofollow" />}
+		{structuredDataJson && <script type="application/ld+json" set:html={structuredDataJson} />}
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<title>{pageTitle}</title>
