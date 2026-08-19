@@ -59,6 +59,13 @@ gallery:
   - /images/projects/sous-l-aiguille/gallery/6.jpg
   - /images/projects/sous-l-aiguille/gallery/7.jpg
   - /images/projects/sous-l-aiguille/gallery/8.jpg
+  - /images/projects/sous-l-aiguille/gallery/9.jpg
+  - /images/projects/sous-l-aiguille/gallery/10.jpg
+  - /images/projects/sous-l-aiguille/gallery/11.jpg
+  - /images/projects/sous-l-aiguille/gallery/12.jpg
+  - /images/projects/sous-l-aiguille/gallery/13.jpg
+  - /images/projects/sous-l-aiguille/gallery/14.jpg
+  - /images/projects/sous-l-aiguille/gallery/15.jpg
 tools:
   - Gros plan/Macro
   - Cadrage serré
