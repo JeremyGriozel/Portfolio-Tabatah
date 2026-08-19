@@ -5,8 +5,8 @@ category: photographie
 date: 2026-03-26
 defaultTheme: cottage-core
 published: true
-featured: false
-order: 0
+featured: true
+order: 1
 shortDescription: >-
   À Gex, dans l’Ain, l’hiver semble s’attarder alors que le printemps commence
   déjà à s’installer. Tandis que les cerisiers commencent à fleurir et que les
