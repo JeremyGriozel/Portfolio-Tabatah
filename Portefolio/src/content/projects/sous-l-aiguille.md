@@ -10,9 +10,9 @@ order: 0
 shortDescription: >-
   Ink’side est un atelier privé de tatouage situé en Ardèche, réunissant deux
   artistes aux pratiques complémentaires : Axxl, tatoueur traditionnel à la
-  machine, et Kik, tatoueuse spécialisée dans le handpoke. À l’occasion de leur
-  installation dans leur nouvel atelier, ils m’ont sollicitée pour réaliser une
-  série photographique autour de leur travail, de leurs gestes et de leur
+  machine, et MissKik, tatoueuse spécialisée dans le handpoke. À l’occasion de
+  leur installation dans leur nouvel atelier, ils m’ont sollicitée pour réaliser
+  une série photographique autour de leur travail, de leurs gestes et de leur
   univers artistique.
 detailedDescription: >-
   L’approche photographique de ce projet se concentre volontairement sur les
