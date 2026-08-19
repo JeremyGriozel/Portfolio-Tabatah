@@ -73,6 +73,8 @@ tools:
   - Photographie documentaire
   - Clair-obscur
   - Noir et blanc
+  - Lightroom V.11.1.1
+  - Canon EOS 2000D
 tags:
   - Processus créatif
   - Artisanat
