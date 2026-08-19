@@ -49,7 +49,16 @@ cover:
   src: /images/projects/sous-l-aiguille/cover/src.jpg
   alt: Machine de tatouage, sur le plan de travail, dans une esthétique sombre.
   aspect: landscape
-gallery: []
+gallery:
+  - /images/projects/sous-l-aiguille/gallery/0.jpg
+  - /images/projects/sous-l-aiguille/gallery/1.jpg
+  - /images/projects/sous-l-aiguille/gallery/2.jpg
+  - /images/projects/sous-l-aiguille/gallery/3.jpg
+  - /images/projects/sous-l-aiguille/gallery/4.jpg
+  - /images/projects/sous-l-aiguille/gallery/5.jpg
+  - /images/projects/sous-l-aiguille/gallery/6.jpg
+  - /images/projects/sous-l-aiguille/gallery/7.jpg
+  - /images/projects/sous-l-aiguille/gallery/8.jpg
 tools:
   - Gros plan/Macro
   - Cadrage serré
