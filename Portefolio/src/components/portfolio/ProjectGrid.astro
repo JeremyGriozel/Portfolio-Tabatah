@@ -28,7 +28,7 @@ const getCategoryLabel = (categorySlug: string) =>
 {sortedProjects.length > 0 && layout === 'rail' ? (
 	<div class="project-rail" data-project-rail>
 		{sortedProjects.length > 1 && (
-			<div class="project-rail__controls" aria-label="Navigation des projets">
+			<div class="project-rail__controls" aria-label="Navigation des projets" data-rail-controls>
 				<button type="button" aria-label="Projet précédent" aria-controls={railId} data-rail-previous>←</button>
 				<button type="button" aria-label="Projet suivant" aria-controls={railId} data-rail-next>→</button>
 			</div>
@@ -44,6 +44,7 @@ const getCategoryLabel = (categorySlug: string) =>
 				))}
 			</div>
 		</div>
+		<p class="visually-hidden" aria-live="polite" aria-atomic="true" data-rail-status></p>
 	</div>
 ) : sortedProjects.length > 0 ? (
 	<div class:list={['project-grid', sortedProjects.length === 1 && 'project-grid--single']}>
@@ -59,24 +60,35 @@ const getCategoryLabel = (categorySlug: string) =>
 	document.querySelectorAll<HTMLElement>('[data-project-rail]').forEach((rail) => {
 		const viewport = rail.querySelector<HTMLElement>('[data-rail-viewport]');
 		const cards = Array.from(rail.querySelectorAll<HTMLElement>('.project-card'));
+		const controls = rail.querySelector<HTMLElement>('[data-rail-controls]');
 		const previousButton = rail.querySelector<HTMLButtonElement>('[data-rail-previous]');
 		const nextButton = rail.querySelector<HTMLButtonElement>('[data-rail-next]');
+		const status = rail.querySelector<HTMLElement>('[data-rail-status]');
 		if (!viewport || cards.length < 2) return;
 
 		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		const getMaximumScroll = () => Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+		const getCardScrollPosition = (index: number) => Math.min(cards[index].offsetLeft, getMaximumScroll());
 		const getClosestIndex = () => cards.reduce((closestIndex, card, index) => {
-			const currentDistance = Math.abs(card.offsetLeft - viewport.scrollLeft);
-			const closestDistance = Math.abs(cards[closestIndex].offsetLeft - viewport.scrollLeft);
+			const currentDistance = Math.abs(getCardScrollPosition(index) - viewport.scrollLeft);
+			const closestDistance = Math.abs(getCardScrollPosition(closestIndex) - viewport.scrollLeft);
 			return currentDistance < closestDistance ? index : closestIndex;
 		}, 0);
+		const updateControls = () => {
+			const maximumScroll = getMaximumScroll();
+			const canScroll = maximumScroll > 1;
+			if (controls) controls.hidden = !canScroll;
+			if (previousButton) previousButton.disabled = !canScroll || viewport.scrollLeft <= 1;
+			if (nextButton) nextButton.disabled = !canScroll || viewport.scrollLeft >= maximumScroll - 1;
+		};
 
 		const move = (direction: -1 | 1) => {
 			const targetIndex = Math.max(0, Math.min(cards.length - 1, getClosestIndex() + direction));
-			cards[targetIndex].scrollIntoView({
+			viewport.scrollTo({
+				left: getCardScrollPosition(targetIndex),
 				behavior: reducedMotion.matches ? 'auto' : 'smooth',
-				block: 'nearest',
-				inline: 'start',
 			});
+			if (status) status.textContent = `Projet ${targetIndex + 1} sur ${cards.length}`;
 		};
 
 		previousButton?.addEventListener('click', () => move(-1));
@@ -90,6 +102,24 @@ const getCategoryLabel = (categorySlug: string) =>
 				event.preventDefault();
 				move(1);
 			}
+			if (event.key === 'Home') {
+				event.preventDefault();
+				viewport.scrollTo({ left: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+			}
+			if (event.key === 'End') {
+				event.preventDefault();
+				viewport.scrollTo({ left: getMaximumScroll(), behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+			}
 		});
+
+		let scrollFrame = 0;
+		viewport.addEventListener('scroll', () => {
+			cancelAnimationFrame(scrollFrame);
+			scrollFrame = requestAnimationFrame(updateControls);
+		}, { passive: true });
+
+		const resizeObserver = new ResizeObserver(updateControls);
+		resizeObserver.observe(viewport);
+		updateControls();
 	});
 </script>
