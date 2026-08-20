@@ -1340,10 +1340,33 @@ textarea {
 	.project-grid { grid-template-columns: 1fr; }
 	.project-card,
 	.project-card:nth-child(n) { grid-column: 1; padding-top: 0; }
+	.project-rail,
+	.project-rail__viewport,
+	.project-rail__track {
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+	}
 	.project-rail .project-card,
 	.project-rail .project-card--portrait,
 	.project-rail .project-card--square,
-	.project-rail .project-card:nth-child(n) { flex-basis: 100%; width: 100%; }
+	.project-rail .project-card:nth-child(n) {
+		flex: 0 0 100%;
+		width: 100%;
+		max-width: 100%;
+		min-width: 0;
+	}
+	.project-rail .project-card > *,
+	.project-rail .project-card__image-link,
+	.project-rail .image-frame,
+	.project-rail .image-frame__media,
+	.project-rail .image-frame__media img {
+		max-width: 100%;
+		min-width: 0;
+	}
+	.project-rail .project-card__title,
+	.project-rail .project-card__description,
+	.project-rail .project-card__meta { overflow-wrap: anywhere; }
 	.project-rail__track { gap: var(--space-md); }
 	.project-header__grid,
 	.project-details,
