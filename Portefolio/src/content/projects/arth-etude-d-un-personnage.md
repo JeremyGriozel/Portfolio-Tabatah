@@ -38,6 +38,19 @@ gallery:
   - /images/projects/arth-etude-d-un-personnage/gallery/4.jpeg
   - /images/projects/arth-etude-d-un-personnage/gallery/5.jpeg
   - /images/projects/arth-etude-d-un-personnage/gallery/6.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/7.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/8.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/9.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/10.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/11.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/12.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/13.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/14.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/15.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/16.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/17.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/18.jpeg
+  - /images/projects/arth-etude-d-un-personnage/gallery/19.jpeg
 tools:
   - Tablette HUION KAMVAS Pro 20
   - ClipStudioPaint
