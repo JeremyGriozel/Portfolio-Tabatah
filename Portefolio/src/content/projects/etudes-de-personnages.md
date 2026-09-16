@@ -6,7 +6,7 @@ date: 2025-10-15
 defaultTheme: vintage
 published: true
 featured: false
-order: 0
+order: 4
 shortDescription: >-
   Une série d’études et de réinterprétations de personnages existants, réalisées
   à partir de références variées et adaptées à ma propre approche graphique.
