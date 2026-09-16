@@ -6,7 +6,7 @@ date: 2024-09-12
 defaultTheme: cyberpunk
 published: true
 featured: false
-order: 0
+order: 6
 shortDescription: >-
   Une sélection d’illustrations réalisées à partir de tendances et de références
   graphiques populaires, réinterprétées à travers mon propre style et mes choix
