@@ -6,7 +6,7 @@ date: 2020-11-20
 defaultTheme: light-academia
 published: true
 featured: false
-order: 0
+order: 8
 shortDescription: >-
   Une série d’illustrations consacrée à un personnage original,  Evan Anderson,
   de mon projet ARTH trouvable dans la catégorie "illustration numérique" ainsi
