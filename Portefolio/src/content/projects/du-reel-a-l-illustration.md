@@ -6,7 +6,7 @@ date: 2025-01-21
 defaultTheme: old-money
 published: true
 featured: false
-order: 0
+order: 7
 shortDescription: >-
   Cette série rassemble différentes illustrations inspirées de personnes
   réelles, représentées à travers mon propre style graphique. Elle comprend
