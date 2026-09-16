@@ -6,7 +6,7 @@ date: 2025-07-01
 defaultTheme: ethereal
 published: true
 featured: false
-order: 0
+order: 1
 shortDescription: >-
   Une sélection d’illustrations réalisées pour et avec différents artistes, au
   fil de collaborations, d’échanges et de projets personnels, explorant
