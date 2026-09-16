@@ -1,7 +1,7 @@
 ---
 slug: Conception & création
 title: Conception & création
-category: illustration
+category: direction-artistique
 date: 2026-01-09
 defaultTheme: dark-academia
 published: true
