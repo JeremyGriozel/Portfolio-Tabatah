@@ -48,7 +48,7 @@ detailedDescription: >-
 cover:
   src: /images/projects/Entre Anime & Illustration/cover/src.jpeg
   alt: Illustration type anime.
-  aspect: auto
+  aspect: landscape
 gallery:
   - /images/projects/Entre Anime & Illustration/gallery/0.jpeg
   - /images/projects/Entre Anime & Illustration/gallery/1.jpeg
