@@ -6,7 +6,7 @@ date: 2025-07-15
 defaultTheme: downtown-girl
 published: true
 featured: false
-order: 0
+order: 9
 shortDescription: >-
   Une collection de petites illustrations de personnages réalisées dans un style
   chibi, privilégiant des formes simples, des expressions marquées et une
