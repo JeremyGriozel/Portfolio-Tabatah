@@ -6,7 +6,7 @@ date: 2026-05-20
 defaultTheme: y2k
 published: true
 featured: false
-order: 0
+order: 2
 shortDescription: >-
   Ce projet concerne ma création d'un Visual Novel, un jeu narratif à choix en
   cours de développement, réunissant la conception et l’illustration de ses
