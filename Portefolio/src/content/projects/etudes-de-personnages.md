@@ -10,24 +10,6 @@ order: 0
 shortDescription: >-
   Une série d’études et de réinterprétations de personnages existants, réalisées
   à partir de références variées et adaptées à ma propre approche graphique.
-
-  Les différentes références sont, dans l'ordre chronologique : 
-
-  - Sally Face (personnages issus du jeu vidéo indépendant du créateur
-  PortableMoose) + insertion d'un OC (original character) dans deux captures
-  d'écran du jeu, adapté au style de ce dernier.
-
-  - Randall Ivory (personnage issu de la bande-dessinée indépendante RANFREN, du
-  créateur CaptainHowdie)
-
-  - Sebastian Sallow (personnage issu du jeu vidéo Hogwarts Legacy, réalisé par
-  le studio Avalanche Software) 
-
-  - Suguru Geto (personnage issu du manga Jujutsu Kaisen, du créateur Gege
-  Akutami)
-
-  - Hisame Kitami (personnage du manga "Love Mission!" de la créatrice Ema
-  Toyama)
 detailedDescription: >-
   Cette série regroupe différentes illustrations réalisées à partir de
   références visuelles, principalement autour de personnages issus d’univers
@@ -41,6 +23,26 @@ detailedDescription: >-
   de mise en couleur. La diversité des personnages et des références m’a
   également permis d’explorer plusieurs approches graphiques et de développer
   progressivement ma maîtrise de l’illustration.
+
+
+  Les différentes références sont, dans l'ordre chronologique : 
+
+  - Sally Face (personnages issus du jeu vidéo indépendant du créateur
+  PortableMoose) + insertion d'un OC (original character) dans deux captures
+  d'écran du jeu, adapté au style de ce dernier, ainsi que les deux
+  illustrations.
+
+  - Randall Ivory (personnage issu de la bande-dessinée indépendante RANFREN, du
+  créateur CaptainHowdie)
+
+  - Sebastian Sallow (personnage issu du jeu vidéo Hogwarts Legacy, réalisé par
+  le studio Avalanche Software) 
+
+  - Suguru Geto (personnage issu du manga Jujutsu Kaisen, du créateur Gege
+  Akutami)
+
+  - Hisame Kitami (personnage du manga "Love Mission!" de la créatrice Ema
+  Toyama)
 cover:
   src: /images/projects/etudes-de-personnages/cover/src.jpeg
   alt: Illustration de sally face
