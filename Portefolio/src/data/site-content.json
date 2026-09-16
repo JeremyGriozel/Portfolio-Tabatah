@@ -3,7 +3,7 @@
   "profileImageAlt": "Portrait de Tabatah Lux.",
   "home": {
     "carousel": {
-      "title": "Photographe indépendante",
+      "title": "Photographe & Illustratrice indépendante",
       "quote": "De l'instant à l'éternel.",
       "images": [
         {
@@ -12,26 +12,18 @@
         },
         {
           "src": "/images/home/carousel/home/carousel/images/1/src.jpeg",
-          "alt": "carousel-2"
-        },
-        {
-          "src": "/images/home/carousel/home/carousel/images/2/src.jpeg",
           "alt": "carousel-3"
         },
         {
-          "src": "/images/home/carousel/home/carousel/images/3/src.jpeg",
-          "alt": "carousel-4"
-        },
-        {
-          "src": "/images/home/carousel/home/carousel/images/4/src.jpeg",
+          "src": "/images/home/carousel/home/carousel/images/2/src.jpeg",
           "alt": "carousel-5"
         },
         {
-          "src": "/images/home/carousel/home/carousel/images/5/src.jpeg",
+          "src": "/images/home/carousel/home/carousel/images/3/src.jpeg",
           "alt": "carousel-7"
         },
         {
-          "src": "/images/home/carousel/home/carousel/images/6/src.jpeg",
+          "src": "/images/home/carousel/home/carousel/images/4/src.jpeg",
           "alt": "carousel-8"
         }
       ]
