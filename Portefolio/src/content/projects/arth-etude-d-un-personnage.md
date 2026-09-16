@@ -1,7 +1,7 @@
 ---
 slug: ARTH — Étude d’un personnage
 title: ARTH — Étude d’un personnage
-category: photographie
+category: illustration
 date: 2020-11-20
 defaultTheme: light-academia
 published: true
