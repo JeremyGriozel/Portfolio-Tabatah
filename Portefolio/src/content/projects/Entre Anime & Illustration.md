@@ -56,6 +56,7 @@ gallery:
   - /images/projects/Entre Anime & Illustration/gallery/3.jpeg
   - /images/projects/Entre Anime & Illustration/gallery/4.jpeg
   - /images/projects/Entre Anime & Illustration/gallery/5.jpeg
+  - /images/projects/Entre Anime & Illustration/gallery/6.jpeg
 tools:
   - Illustration numérique
   - ClipStudioPaint
