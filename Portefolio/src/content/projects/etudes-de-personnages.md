@@ -57,6 +57,14 @@ gallery:
   - /images/projects/etudes-de-personnages/gallery/8.jpeg
   - /images/projects/etudes-de-personnages/gallery/9.jpeg
   - /images/projects/etudes-de-personnages/gallery/10.jpeg
+  - /images/projects/etudes-de-personnages/gallery/11.jpeg
+  - /images/projects/etudes-de-personnages/gallery/12.jpeg
+  - /images/projects/etudes-de-personnages/gallery/13.jpeg
+  - /images/projects/etudes-de-personnages/gallery/14.jpeg
+  - /images/projects/etudes-de-personnages/gallery/15.jpeg
+  - /images/projects/etudes-de-personnages/gallery/16.jpeg
+  - /images/projects/etudes-de-personnages/gallery/17.jpeg
+  - /images/projects/etudes-de-personnages/gallery/18.jpeg
 tools:
   - Tablette HUION KAMVAS Pro 20
   - Illustration numérique
