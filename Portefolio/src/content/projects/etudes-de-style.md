@@ -6,7 +6,7 @@ date: 2024-11-27
 defaultTheme: downtown-girl
 published: true
 featured: false
-order: 0
+order: 3
 shortDescription: >-
   Une série d’exercices graphiques réalisés pour explorer différentes approches
   de mise en couleur, de composition, de détail et de représentation des
