@@ -43,6 +43,18 @@ gallery:
   - /images/projects/Rencontres artistiques, et collaborations./gallery/6.jpeg
   - /images/projects/Rencontres artistiques, et collaborations./gallery/7.jpeg
   - /images/projects/Rencontres artistiques, et collaborations./gallery/8.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/9.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/10.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/11.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/12.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/13.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/14.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/15.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/16.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/17.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/18.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/19.jpeg
+  - /images/projects/Rencontres artistiques, et collaborations./gallery/20.jpeg
 tools:
   - Tablette HUION KAMVAS Pro 20
   - Illustration numérique
