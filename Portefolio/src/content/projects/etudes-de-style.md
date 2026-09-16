@@ -54,6 +54,11 @@ gallery:
   - /images/projects/etudes-de-style/gallery/16.jpeg
   - /images/projects/etudes-de-style/gallery/17.jpeg
   - /images/projects/etudes-de-style/gallery/18.jpeg
+  - /images/projects/etudes-de-style/gallery/19.jpeg
+  - /images/projects/etudes-de-style/gallery/20.jpeg
+  - /images/projects/etudes-de-style/gallery/21.jpeg
+  - /images/projects/etudes-de-style/gallery/22.jpeg
+  - /images/projects/etudes-de-style/gallery/23.jpeg
 tools:
   - Tablette HUION KAMVAS Pro 20
   - ClipStudioPaint
