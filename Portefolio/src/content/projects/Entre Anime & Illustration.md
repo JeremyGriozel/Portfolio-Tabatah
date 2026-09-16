@@ -6,7 +6,7 @@ date: 2024-08-21
 defaultTheme: dark-academia
 published: true
 featured: false
-order: 0
+order: 5
 shortDescription: >-
   Cette série d’illustrations est inspirées de l’esthétique des animes japonais,
   travaillant la composition, les expressions et les codes visuels propres à
