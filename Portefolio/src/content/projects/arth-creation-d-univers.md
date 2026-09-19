@@ -9,7 +9,7 @@ defaultTheme: cybercore-neofuturism
 published: true
 featured: false
 order: 0
-displayOrder: 0
+displayOrder: 18
 shortDescription: >-
   Projet de roman de science-fiction dystopique explorant l’identité, le libre
   arbitre et les dérives du contrôle technologique au sein d’une civilisation
