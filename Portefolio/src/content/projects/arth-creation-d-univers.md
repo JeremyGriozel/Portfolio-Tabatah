@@ -3,11 +3,13 @@ slug: ARTH - Création d'univers
 title: ARTH - Création d'univers
 categories:
   - direction-artistique
+  - illustration
 date: 2020-10-28
-defaultTheme: cyberpunk
+defaultTheme: cybercore-neofuturism
 published: true
 featured: false
 order: 0
+displayOrder: 0
 shortDescription: >-
   Projet de roman de science-fiction dystopique explorant l’identité, le libre
   arbitre et les dérives du contrôle technologique au sein d’une civilisation
