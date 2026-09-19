@@ -1,12 +1,14 @@
 ---
 slug: Le temps des Fleurs
 title: Le temps des Fleurs
-category: photographie
+categories:
+  - photographie
 date: 2026-04-25
 defaultTheme: soft-girl
 published: true
 featured: true
 order: 2
+displayOrder: 40
 shortDescription: >-
   Cette série comporte de portraits construits autour de l’interaction entre le
   sujet et son environnement. Chaque prise de vue s’appuie sur les
@@ -41,16 +43,16 @@ cover:
   alt: Jeune homme au milieu des fleurs.
   aspect: landscape
 gallery:
-  - /images/projects/le-temps-des-fleurs/gallery/0.jpg
-  - /images/projects/le-temps-des-fleurs/gallery/1.jpg
-  - /images/projects/le-temps-des-fleurs/gallery/2.jpg
-  - /images/projects/le-temps-des-fleurs/gallery/3.jpg
-  - /images/projects/le-temps-des-fleurs/gallery/4.jpg
-  - /images/projects/le-temps-des-fleurs/gallery/5.jpg
-  - /images/projects/le-temps-des-fleurs/gallery/6.jpg
-  - /images/projects/le-temps-des-fleurs/gallery/7.jpg
-  - /images/projects/le-temps-des-fleurs/gallery/8.jpg
-  - /images/projects/le-temps-des-fleurs/gallery/9.jpg
+  - src: /images/projects/le-temps-des-fleurs/gallery/0.jpg
+  - src: /images/projects/le-temps-des-fleurs/gallery/1.jpg
+  - src: /images/projects/le-temps-des-fleurs/gallery/2.jpg
+  - src: /images/projects/le-temps-des-fleurs/gallery/3.jpg
+  - src: /images/projects/le-temps-des-fleurs/gallery/4.jpg
+  - src: /images/projects/le-temps-des-fleurs/gallery/5.jpg
+  - src: /images/projects/le-temps-des-fleurs/gallery/6.jpg
+  - src: /images/projects/le-temps-des-fleurs/gallery/7.jpg
+  - src: /images/projects/le-temps-des-fleurs/gallery/8.jpg
+  - src: /images/projects/le-temps-des-fleurs/gallery/9.jpg
 tools:
   - Lumière naturelle
   - Profondeur de champ

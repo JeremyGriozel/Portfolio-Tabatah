@@ -2,8 +2,16 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { themeOptions, type SiteTheme } from './data/site';
+import {
+	galleryTagOptions,
+	projectCategoryValues,
+	type GalleryTagSlug,
+	type ProjectCategorySlug,
+} from './lib/project-taxonomy';
 
 const projectThemeValues = themeOptions.map(({ value }) => value) as [SiteTheme, ...SiteTheme[]];
+const projectCategorySchemaValues = projectCategoryValues as [ProjectCategorySlug, ...ProjectCategorySlug[]];
+const galleryTagSchemaValues = galleryTagOptions.map(({ value }) => value) as [GalleryTagSlug, ...GalleryTagSlug[]];
 
 const legacyProjectImage = z.object({
 	src: z.string(),
@@ -18,14 +26,20 @@ const projectCover = legacyProjectImage.extend({
 	alt: z.string().min(1),
 });
 
-const galleryImage = z.union([z.string(), legacyProjectImage]);
+const taggedGalleryImage = legacyProjectImage.extend({
+	tags: z.array(z.enum(galleryTagSchemaValues)).default([]),
+	primaryTag: z.union([z.enum(galleryTagSchemaValues), z.literal('')]).optional(),
+});
+
+const galleryImage = z.union([z.string(), taggedGalleryImage]);
 
 const projects = defineCollection({
 	loader: glob({ base: './src/content/projects', pattern: '**/*.{md,mdx}' }),
 	schema: z.object({
 		slug: z.string(),
 		title: z.string(),
-		category: z.string(),
+		category: z.string().optional(),
+		categories: z.array(z.enum(projectCategorySchemaValues)).default([]),
 		date: z.coerce.date(),
 		defaultTheme: z.enum(projectThemeValues).optional(),
 		shortDescription: z.string(),
@@ -36,6 +50,7 @@ const projects = defineCollection({
 		tags: z.array(z.string()).default([]),
 		featured: z.boolean().default(false),
 		order: z.number().int().default(0),
+		displayOrder: z.number().int().nonnegative().nullable().optional(),
 		published: z.boolean().default(true),
 	}),
 });

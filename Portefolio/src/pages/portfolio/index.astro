@@ -16,5 +16,6 @@ const projects = await getCollection('projects', ({ data }) => data.published);
 		allProjectsLabel={portfolioContent.allProjectsLabel}
 		emptyMessage={portfolioContent.emptyMessage}
 		expertise={portfolioContent.expertise}
+		sortMode="displayOrder"
 	/>
 </BaseLayout>

@@ -1,6 +1,10 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import type { PortfolioCategory } from '../../data/portfolio';
+import {
+	compareProjectsByDisplayOrder,
+	getProjectCategorySlugs,
+} from '../../lib/project-taxonomy';
 import ProjectCard from './ProjectCard.astro';
 
 interface Props {
@@ -10,6 +14,7 @@ interface Props {
 	layout?: 'grid' | 'rail';
 	railId?: string;
 	railLabel?: string;
+	sortMode?: 'order' | 'displayOrder';
 }
 
 const {
@@ -19,10 +24,18 @@ const {
 	layout = 'grid',
 	railId = 'project-rail',
 	railLabel = 'Projets mis en avant',
+	sortMode = 'order',
 } = Astro.props;
-const sortedProjects = [...projects].sort((first, second) => first.data.order - second.data.order);
-const getCategoryLabel = (categorySlug: string) =>
-	categories.find((category) => category.slug === categorySlug)?.label ?? categorySlug;
+const compareStable = (first: CollectionEntry<'projects'>, second: CollectionEntry<'projects'>) =>
+	first.data.title.localeCompare(second.data.title, 'fr', { sensitivity: 'base' })
+	|| first.data.slug.localeCompare(second.data.slug, 'fr', { sensitivity: 'base' });
+const sortedProjects = [...projects].sort((first, second) => sortMode === 'displayOrder'
+	? compareProjectsByDisplayOrder(first, second)
+	: first.data.order - second.data.order || compareStable(first, second));
+const getCategoryLabels = (project: CollectionEntry<'projects'>) =>
+	getProjectCategorySlugs(project.data).map((categorySlug) =>
+		categories.find((category) => category.slug === categorySlug)?.label ?? categorySlug,
+	);
 ---
 
 {sortedProjects.length > 0 && layout === 'rail' ? (
@@ -38,7 +51,7 @@ const getCategoryLabel = (categorySlug: string) =>
 				{sortedProjects.map((project, index) => (
 					<ProjectCard
 						project={project}
-						categoryLabel={getCategoryLabel(project.data.category)}
+						categoryLabels={getCategoryLabels(project)}
 						revealIndex={index}
 					/>
 				))}
@@ -49,7 +62,7 @@ const getCategoryLabel = (categorySlug: string) =>
 ) : sortedProjects.length > 0 ? (
 	<div class:list={['project-grid', sortedProjects.length === 1 && 'project-grid--single']}>
 		{sortedProjects.map((project, index) => (
-			<ProjectCard project={project} categoryLabel={getCategoryLabel(project.data.category)} revealIndex={index} />
+			<ProjectCard project={project} categoryLabels={getCategoryLabels(project)} revealIndex={index} />
 		))}
 	</div>
 ) : (

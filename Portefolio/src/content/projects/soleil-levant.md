@@ -1,12 +1,14 @@
 ---
 slug: Soleil Levant
 title: Soleil Levant
-category: photographie
+categories:
+  - photographie
 date: 2026-04-11
 defaultTheme: dark-academia
 published: true
 featured: false
 order: 0
+displayOrder: 10
 shortDescription: >-
   Entre ombres profondes et lumière dorée, les paysages deviennent presque
   irréels, comme des souvenirs à la frontière du rêve. Chaque image cherche à
@@ -49,18 +51,18 @@ cover:
   alt: Soleil se levant, tonalités chaudes, caché dans l'ombre des arbres.
   aspect: landscape
 gallery:
-  - /images/projects/soleil-levant/gallery/0.jpg
-  - /images/projects/soleil-levant/gallery/1.jpg
-  - /images/projects/soleil-levant/gallery/2.jpg
-  - /images/projects/soleil-levant/gallery/3.jpg
-  - /images/projects/soleil-levant/gallery/4.jpg
-  - /images/projects/soleil-levant/gallery/5.jpg
-  - /images/projects/soleil-levant/gallery/6.jpg
-  - /images/projects/soleil-levant/gallery/7.jpg
-  - /images/projects/soleil-levant/gallery/8.jpg
-  - /images/projects/soleil-levant/gallery/9.jpg
-  - /images/projects/soleil-levant/gallery/10.jpg
-  - /images/projects/soleil-levant/gallery/11.jpg
+  - src: /images/projects/soleil-levant/gallery/0.jpg
+  - src: /images/projects/soleil-levant/gallery/1.jpg
+  - src: /images/projects/soleil-levant/gallery/2.jpg
+  - src: /images/projects/soleil-levant/gallery/3.jpg
+  - src: /images/projects/soleil-levant/gallery/4.jpg
+  - src: /images/projects/soleil-levant/gallery/5.jpg
+  - src: /images/projects/soleil-levant/gallery/6.jpg
+  - src: /images/projects/soleil-levant/gallery/7.jpg
+  - src: /images/projects/soleil-levant/gallery/8.jpg
+  - src: /images/projects/soleil-levant/gallery/9.jpg
+  - src: /images/projects/soleil-levant/gallery/10.jpg
+  - src: /images/projects/soleil-levant/gallery/11.jpg
 tools:
   - Contre-jour
   - Grand angle

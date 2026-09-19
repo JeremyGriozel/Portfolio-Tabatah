@@ -44,13 +44,13 @@ const { id, images, label = 'Visionneuse d’images' } = Astro.props;
 		if (dialog.dataset.lightboxReady === 'true') return;
 		dialog.dataset.lightboxReady = 'true';
 
-		let images: LightboxImage[] = [];
+		let allImages: LightboxImage[] = [];
 		try {
-			images = JSON.parse(dialog.dataset.lightboxImages ?? '[]');
+			allImages = JSON.parse(dialog.dataset.lightboxImages ?? '[]');
 		} catch {
 			return;
 		}
-		if (images.length === 0) return;
+		if (allImages.length === 0) return;
 
 		const lightboxId = dialog.dataset.lightbox;
 		const image = dialog.querySelector<HTMLImageElement>('[data-lightbox-image]');
@@ -64,14 +64,15 @@ const { id, images, label = 'Visionneuse d’images' } = Astro.props;
 			.filter((trigger) => trigger.dataset.lightboxTrigger === lightboxId);
 
 		let currentIndex = 0;
+		let activeImages = allImages;
 		let opener: HTMLElement | null = null;
 		let pointerStartX: number | null = null;
 		let previousBodyOverflow = '';
 		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 		const update = (nextIndex: number) => {
-			currentIndex = (nextIndex + images.length) % images.length;
-			const currentImage = images[currentIndex];
+			currentIndex = (nextIndex + activeImages.length) % activeImages.length;
+			const currentImage = activeImages[currentIndex];
 			if (!image || !currentImage) return;
 			image.src = currentImage.src;
 			image.alt = currentImage.alt;
@@ -80,9 +81,9 @@ const { id, images, label = 'Visionneuse d’images' } = Astro.props;
 				void image.offsetWidth;
 				image.classList.add('is-changing');
 			}
-			if (counter) counter.textContent = `${currentIndex + 1} / ${images.length}`;
+			if (counter) counter.textContent = `${currentIndex + 1} / ${activeImages.length}`;
 
-			[images[(currentIndex + 1) % images.length], images[(currentIndex - 1 + images.length) % images.length]]
+			[activeImages[(currentIndex + 1) % activeImages.length], activeImages[(currentIndex - 1 + activeImages.length) % activeImages.length]]
 				.forEach((adjacentImage) => {
 					if (!adjacentImage || adjacentImage.src === currentImage.src) return;
 					const preload = new Image();
@@ -94,19 +95,23 @@ const { id, images, label = 'Visionneuse d’images' } = Astro.props;
 		const showPrevious = () => update(currentIndex - 1);
 		const showNext = () => update(currentIndex + 1);
 
-		if (images.length === 1) {
-			previousButton?.setAttribute('hidden', '');
-			nextButton?.setAttribute('hidden', '');
-		}
-
 		triggers.forEach((trigger) => {
 			trigger.addEventListener('click', (event) => {
 				if (typeof dialog.showModal !== 'function') return;
 				event.preventDefault();
+				const visibleTriggers = triggers.filter((candidate) => !candidate.closest('[hidden]'));
+				activeImages = visibleTriggers
+					.map((candidate) => allImages[Number(candidate.dataset.lightboxIndex ?? 0)])
+					.filter((candidate): candidate is LightboxImage => Boolean(candidate));
+				if (activeImages.length === 0) return;
+				const activeTriggerIndex = visibleTriggers.indexOf(trigger);
+				const hideControls = activeImages.length === 1;
+				previousButton?.toggleAttribute('hidden', hideControls);
+				nextButton?.toggleAttribute('hidden', hideControls);
 				opener = trigger;
 				previousBodyOverflow = document.body.style.overflow;
 				document.body.style.overflow = 'hidden';
-				update(Number(trigger.dataset.lightboxIndex ?? 0));
+				update(Math.max(0, activeTriggerIndex));
 				dialog.showModal();
 				closeButton?.focus();
 			});

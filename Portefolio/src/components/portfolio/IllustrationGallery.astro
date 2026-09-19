@@ -1,0 +1,90 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { galleryTagOptions, type IllustrationGalleryContent } from '../../data/portfolio';
+import { normalizeGalleryImage } from '../../lib/project-taxonomy';
+import Lightbox from '../ui/Lightbox.astro';
+import SectionTitle from '../ui/SectionTitle.astro';
+import ProjectGallery from './ProjectGallery.astro';
+
+interface Props {
+	projects: CollectionEntry<'projects'>[];
+	copy: IllustrationGalleryContent;
+}
+
+const { projects, copy } = Astro.props;
+const seenSources = new Set<string>();
+const illustrations = projects.flatMap((project) =>
+	project.data.gallery.map((image, index) => ({
+		...normalizeGalleryImage(image, project.data.title, index),
+		contextLabel: project.data.title,
+		contextHref: `/portfolio/${project.data.slug}/`,
+	})),
+).filter((image) => {
+	if (seenSources.has(image.src)) return false;
+	seenSources.add(image.src);
+	return true;
+});
+const lightboxId = 'illustrations-globales';
+---
+
+<section class="illustration-archive section" aria-labelledby="illustration-archive-title" data-illustration-gallery>
+	<div class="container">
+		<SectionTitle
+			eyebrow={copy.eyebrow}
+			title={copy.title}
+			description={copy.description}
+			headingLevel="h2"
+		/>
+		<div class="illustration-archive__filters" aria-label={copy.filtersLabel}>
+			<button type="button" aria-pressed="true" data-illustration-filter="all">{copy.allLabel}</button>
+			{galleryTagOptions.map((tag) => (
+				<button type="button" aria-pressed="false" data-illustration-filter={tag.value}>{tag.label}</button>
+			))}
+		</div>
+		{illustrations.length > 0 ? (
+			<>
+				<ProjectGallery images={illustrations} {lightboxId} />
+				<p class="visually-hidden" aria-live="polite" aria-atomic="true" data-illustration-status></p>
+				<p class="illustration-archive__empty" hidden data-illustration-empty>{copy.emptyMessage}</p>
+				<Lightbox id={lightboxId} images={illustrations} label="Toutes les illustrations" />
+			</>
+		) : (
+			<p class="illustration-archive__empty">{copy.emptyMessage}</p>
+		)}
+	</div>
+</section>
+
+<script>
+	import type { GalleryTagSlug } from '../../lib/project-taxonomy';
+
+	type IllustrationTag = GalleryTagSlug | 'all';
+
+	document.querySelectorAll<HTMLElement>('[data-illustration-gallery]').forEach((gallery) => {
+		const buttons = Array.from(gallery.querySelectorAll<HTMLButtonElement>('[data-illustration-filter]'));
+		const items = Array.from(gallery.querySelectorAll<HTMLElement>('.project-gallery__item'));
+		const status = gallery.querySelector<HTMLElement>('[data-illustration-status]');
+		const emptyMessage = gallery.querySelector<HTMLElement>('[data-illustration-empty]');
+		if (buttons.length === 0 || items.length === 0) return;
+
+		const applyFilter = (filter: IllustrationTag) => {
+			let visibleCount = 0;
+			items.forEach((item) => {
+				const tags = (item.dataset.galleryTags ?? '').split(' ').filter(Boolean);
+				const isVisible = filter === 'all' || tags.includes(filter);
+				item.hidden = !isVisible;
+				if (isVisible) visibleCount += 1;
+			});
+			buttons.forEach((button) => {
+				button.setAttribute('aria-pressed', String(button.dataset.illustrationFilter === filter));
+			});
+			if (emptyMessage) emptyMessage.hidden = visibleCount > 0;
+			if (status) status.textContent = `${visibleCount} illustration${visibleCount > 1 ? 's' : ''} affichée${visibleCount > 1 ? 's' : ''}.`;
+		};
+
+		buttons.forEach((button) => {
+			button.addEventListener('click', () => {
+				applyFilter((button.dataset.illustrationFilter ?? 'all') as IllustrationTag);
+			});
+		});
+	});
+</script>

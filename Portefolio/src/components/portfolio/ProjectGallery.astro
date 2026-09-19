@@ -4,6 +4,9 @@ import ImageFrame from '../ui/ImageFrame.astro';
 interface GalleryImage {
 	src: string;
 	alt: string;
+	tags?: readonly string[];
+	contextLabel?: string;
+	contextHref?: string;
 }
 
 interface Props {
@@ -18,7 +21,12 @@ const gallerySize = images.length === 1 ? 'single' : images.length === 2 ? 'doub
 
 <div class:list={['project-gallery', `project-gallery--${gallerySize}`]}>
 	{images.map((image, index) => (
-		<div class="project-gallery__item" data-reveal="image" style={`--reveal-order: ${index % 3}`}>
+		<div
+			class="project-gallery__item"
+			data-gallery-tags={image.tags?.join(' ') || undefined}
+			data-reveal="image"
+			style={`--reveal-order: ${index % 3}`}
+		>
 			<a
 				class="lightbox-trigger"
 				href={image.src}
@@ -28,6 +36,11 @@ const gallerySize = images.length === 1 ? 'single' : images.length === 2 ? 'doub
 			>
 				<ImageFrame src={image.src} alt={image.alt} aspect="landscape" />
 			</a>
+			{image.contextLabel && (
+				<p class="project-gallery__context">
+					{image.contextHref ? <a href={image.contextHref}>{image.contextLabel}</a> : image.contextLabel}
+				</p>
+			)}
 		</div>
 	))}
 </div>

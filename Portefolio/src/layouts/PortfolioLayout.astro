@@ -6,7 +6,8 @@ import Tag from '../components/ui/Tag.astro';
 import ProjectGallery from '../components/portfolio/ProjectGallery.astro';
 import ProjectHeader from '../components/portfolio/ProjectHeader.astro';
 import ProjectNavigation from '../components/portfolio/ProjectNavigation.astro';
-import { portfolioCategories, portfolioContent } from '../data/portfolio';
+import { galleryTagOptions, portfolioCategories, portfolioContent } from '../data/portfolio';
+import { normalizeGalleryImage } from '../lib/project-taxonomy';
 import BaseLayout from './BaseLayout.astro';
 
 interface Props {
@@ -19,13 +20,34 @@ const { project, previousProject, nextProject } = Astro.props;
 const { title, shortDescription, detailedDescription, cover, gallery, tools } = project.data;
 const initialTheme = project.data.defaultTheme;
 const lightboxId = `project-${project.id}`;
-const normalizedGallery = gallery.map((galleryImage, index) => ({
-	src: typeof galleryImage === 'string' ? galleryImage : galleryImage.src,
-	alt: typeof galleryImage === 'string'
-		? `${title} — photographie ${index + 1}`
-		: galleryImage.alt?.trim() || `${title} — photographie ${index + 1}`,
-}));
-const lightboxImages = [{ src: cover.src, alt: cover.alt }, ...normalizedGallery];
+const normalizedGallery = gallery.map((galleryImage, index) =>
+	normalizeGalleryImage(galleryImage, title, index));
+const hasTaggedImages = normalizedGallery.some((image) => image.tags.length > 0);
+const taggedGroups = galleryTagOptions
+	.map((tag) => ({
+		...tag,
+		images: normalizedGallery.filter((image) => image.primaryTag === tag.value),
+	}))
+	.filter((group) => group.images.length > 0);
+const untaggedImages = normalizedGallery.filter((image) => image.tags.length === 0);
+const galleryGroups = hasTaggedImages
+	? [
+		...taggedGroups,
+		...(untaggedImages.length > 0
+			? [{ value: 'untagged', label: 'Autres images', images: untaggedImages }]
+			: []),
+	]
+	: [];
+let nextGalleryIndex = 1;
+const indexedGalleryGroups = galleryGroups.map((group) => {
+	const startIndex = nextGalleryIndex;
+	nextGalleryIndex += group.images.length;
+	return { ...group, startIndex };
+});
+const orderedGallery = hasTaggedImages
+	? indexedGalleryGroups.flatMap((group) => group.images)
+	: normalizedGallery;
+const lightboxImages = [{ src: cover.src, alt: cover.alt }, ...orderedGallery];
 ---
 
 <BaseLayout
@@ -75,7 +97,20 @@ const lightboxImages = [{ src: cover.src, alt: cover.alt }, ...normalizedGallery
 	{normalizedGallery.length > 0 && (
 		<section class="container project-gallery-section section-panel" data-section-panel>
 			<h2 class="section-title" data-reveal>{portfolioContent.project.galleryTitle}</h2>
-			<ProjectGallery images={normalizedGallery} {lightboxId} startIndex={1} />
+			{hasTaggedImages ? (
+				<div class="project-gallery-groups">
+					{indexedGalleryGroups.map((group) => (
+						<section class="project-gallery-group" aria-labelledby={`${lightboxId}-${group.value}`}>
+							<h3 id={`${lightboxId}-${group.value}`} class="project-gallery-group__title" data-reveal>
+								{group.label}
+							</h3>
+							<ProjectGallery images={group.images} {lightboxId} startIndex={group.startIndex} />
+						</section>
+					))}
+				</div>
+			) : (
+				<ProjectGallery images={normalizedGallery} {lightboxId} startIndex={1} />
+			)}
 		</section>
 	)}
 

@@ -1,5 +1,6 @@
 import { collection, config, fields, singleton } from '@keystatic/core';
 import { siteConfig, themeOptions } from './src/data/site';
+import { galleryTagOptions, portfolioCategoryOptions } from './src/data/portfolio';
 
 const useLocalStorage =
   import.meta.env.DEV &&
@@ -48,12 +49,36 @@ const projectCover =
 		{ label: 'Image de couverture' },
 	);
 
-const galleryImage = fields.image({
-	label: 'Image de galerie',
-	directory: 'public/images/projects',
-	publicPath: '/images/projects/',
-	validation: { isRequired: true },
-});
+const galleryImage = fields.object(
+	{
+		src: fields.image({
+			label: 'Fichier image',
+			directory: 'public/images/projects',
+			publicPath: '/images/projects/',
+			validation: { isRequired: true },
+		}),
+		alt: fields.text({
+			label: 'Texte alternatif',
+			description: 'Décrivez brièvement l’image. Si le champ reste vide, un texte de remplacement sera généré.',
+		}),
+		tags: fields.multiselect({
+			label: 'Tags de l’image',
+			options: galleryTagOptions,
+			defaultValue: [],
+			description: 'Vous pouvez sélectionner zéro, un ou plusieurs tags.',
+		}),
+		primaryTag: fields.select({
+			label: 'Tag principal',
+			options: [
+				{ label: 'Aucun', value: '' },
+				...galleryTagOptions,
+			],
+			defaultValue: '',
+			description: 'Choisissez un tag également présent dans la liste ci-dessus. Sinon, le premier tag sélectionné sera utilisé.',
+		}),
+	},
+	{ label: 'Image de galerie' },
+);
 
 export default config({
 	storage,
@@ -69,7 +94,7 @@ export default config({
 			label: 'Projets',
 			path: 'src/content/projects/*',
 			slugField: 'slug',
-			columns: ['title', 'category', 'published', 'featured', 'order'],
+			columns: ['title', 'categories', 'published', 'featured', 'order', 'displayOrder'],
 			format: { contentField: '_content' },
 			schema: {
 				slug: fields.slug({
@@ -84,14 +109,11 @@ export default config({
 					},
 				}),
 				title: fields.text({ label: 'Titre', validation: { isRequired: true } }),
-				category: fields.select({
-					label: 'Catégorie',
-					options: [
-						{ label: 'Photographie', value: 'photographie' },
-						{ label: 'Illustration numérique', value: 'illustration' },
-						{ label: 'Direction artistique', value: 'direction-artistique' },
-					],
-					defaultValue: 'photographie',
+				categories: fields.multiselect({
+					label: 'Catégories',
+					options: portfolioCategoryOptions,
+					defaultValue: ['photographie'],
+					description: 'Un projet peut appartenir à plusieurs catégories.',
 				}),
 				date: fields.date({ label: 'Date', validation: { isRequired: true } }),
 				defaultTheme: fields.select({
@@ -102,7 +124,16 @@ export default config({
 				}),
 				published: fields.checkbox({ label: 'Projet publié', defaultValue: true }),
 				featured: fields.checkbox({ label: 'Projet mis en avant', defaultValue: false }),
-				order: fields.integer({ label: 'Ordre d’affichage', defaultValue: 0, validation: { min: 0 } }),
+				order: fields.integer({
+					label: 'Ordre des projets mis en avant',
+					defaultValue: 0,
+					validation: { min: 0 },
+				}),
+				displayOrder: fields.integer({
+					label: 'Ordre — Tous les projets',
+					description: 'Les valeurs les plus basses apparaissent en premier. Laissez vide pour utiliser le classement alphabétique.',
+					validation: { min: 0 },
+				}),
 				shortDescription: fields.text({
 					label: 'Description courte',
 					multiline: true,
@@ -112,8 +143,8 @@ export default config({
 				cover: projectCover,
 				gallery: fields.array(galleryImage, {
 					label: 'Galerie',
-					description: 'Ajoutez, supprimez ou réorganisez les images. Chaque image affiche son aperçu natif.',
-					itemLabel: ({ value }) => value?.filename || 'Nouvelle image',
+					description: 'Ajoutez, supprimez ou réorganisez les images, puis attribuez leurs tags.',
+					itemLabel: ({ fields }) => fields.alt.value || fields.src.value?.filename || 'Nouvelle image',
 				}),
 				tools: fields.array(fields.text({ label: 'Outil ou technique' }), {
 					label: 'Outils et techniques',

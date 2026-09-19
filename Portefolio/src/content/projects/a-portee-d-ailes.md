@@ -1,12 +1,14 @@
 ---
 slug: À portée d’ailes
 title: À portée d’ailes
-category: photographie
+categories:
+  - photographie
 date: 2026-04-25
 defaultTheme: cottage-core
 published: true
 featured: true
 order: 3
+displayOrder: 50
 shortDescription: >-
   Cette série photographique explore la diversité du monde végétal et les
   interactions entre les fleurs et les insectes qui les fréquentent. À travers
@@ -53,14 +55,14 @@ cover:
   alt: Petite abeille butinant une jolie fleur rose, dans un buisson de fleurs.
   aspect: landscape
 gallery:
-  - /images/projects/a-portee-d-ailes/gallery/0.jpg
-  - /images/projects/a-portee-d-ailes/gallery/1.jpg
-  - /images/projects/a-portee-d-ailes/gallery/2.jpg
-  - /images/projects/a-portee-d-ailes/gallery/3.jpg
-  - /images/projects/a-portee-d-ailes/gallery/4.jpg
-  - /images/projects/a-portee-d-ailes/gallery/5.jpg
-  - /images/projects/a-portee-d-ailes/gallery/6.jpg
-  - /images/projects/a-portee-d-ailes/gallery/7.jpg
+  - src: /images/projects/a-portee-d-ailes/gallery/0.jpg
+  - src: /images/projects/a-portee-d-ailes/gallery/1.jpg
+  - src: /images/projects/a-portee-d-ailes/gallery/2.jpg
+  - src: /images/projects/a-portee-d-ailes/gallery/3.jpg
+  - src: /images/projects/a-portee-d-ailes/gallery/4.jpg
+  - src: /images/projects/a-portee-d-ailes/gallery/5.jpg
+  - src: /images/projects/a-portee-d-ailes/gallery/6.jpg
+  - src: /images/projects/a-portee-d-ailes/gallery/7.jpg
 tools:
   - Profondeur de champ
   - Lumière naturelle

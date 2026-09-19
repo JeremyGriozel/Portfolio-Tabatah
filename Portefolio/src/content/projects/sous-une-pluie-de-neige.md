@@ -1,12 +1,14 @@
 ---
 slug: Sous une pluie de Neige
 title: Sous une pluie de Neige
-category: photographie
+categories:
+  - photographie
 date: 2026-03-26
 defaultTheme: cottage-core
 published: true
 featured: true
 order: 1
+displayOrder: 30
 shortDescription: >-
   À Gex, dans l’Ain, l’hiver semble s’attarder alors que le printemps commence
   déjà à s’installer. Tandis que les cerisiers commencent à fleurir et que les
@@ -43,18 +45,18 @@ cover:
   alt: Petit bourdon butinant entre cerisiers en fleurs et neige.
   aspect: landscape
 gallery:
-  - /images/projects/sous-une-pluie-de-neige/gallery/0.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/1.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/2.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/3.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/4.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/5.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/6.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/7.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/8.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/9.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/10.jpg
-  - /images/projects/sous-une-pluie-de-neige/gallery/11.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/0.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/1.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/2.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/3.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/4.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/5.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/6.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/7.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/8.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/9.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/10.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/11.jpg
 tools:
   - Profondeur de champ
   - Cadrage rapproché

@@ -1,12 +1,14 @@
 ---
 slug: Sous l’Aiguille
 title: Sous l’Aiguille
-category: photographie
+categories:
+  - photographie
 date: 2025-11-11
 defaultTheme: gothic
 published: true
 featured: false
 order: 0
+displayOrder: 20
 shortDescription: >-
   Ink’side est un atelier privé de tatouage situé en Ardèche, réunissant deux
   artistes aux pratiques complémentaires : Axxl, tatoueur traditionnel à la
@@ -50,22 +52,22 @@ cover:
   alt: Machine de tatouage, sur le plan de travail, dans une esthétique sombre.
   aspect: landscape
 gallery:
-  - /images/projects/sous-l-aiguille/gallery/0.jpg
-  - /images/projects/sous-l-aiguille/gallery/1.jpg
-  - /images/projects/sous-l-aiguille/gallery/2.jpg
-  - /images/projects/sous-l-aiguille/gallery/3.jpg
-  - /images/projects/sous-l-aiguille/gallery/4.jpg
-  - /images/projects/sous-l-aiguille/gallery/5.jpg
-  - /images/projects/sous-l-aiguille/gallery/6.jpg
-  - /images/projects/sous-l-aiguille/gallery/7.jpg
-  - /images/projects/sous-l-aiguille/gallery/8.jpg
-  - /images/projects/sous-l-aiguille/gallery/9.jpg
-  - /images/projects/sous-l-aiguille/gallery/10.jpg
-  - /images/projects/sous-l-aiguille/gallery/11.jpg
-  - /images/projects/sous-l-aiguille/gallery/12.jpg
-  - /images/projects/sous-l-aiguille/gallery/13.jpg
-  - /images/projects/sous-l-aiguille/gallery/14.jpg
-  - /images/projects/sous-l-aiguille/gallery/15.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/0.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/1.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/2.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/3.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/4.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/5.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/6.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/7.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/8.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/9.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/10.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/11.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/12.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/13.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/14.jpg
+  - src: /images/projects/sous-l-aiguille/gallery/15.jpg
 tools:
   - Gros plan/Macro
   - Cadrage serré

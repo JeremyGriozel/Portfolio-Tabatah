@@ -809,6 +809,34 @@ textarea {
 .featured-projects { overflow: clip; background: var(--section-projects-background); }
 .featured-projects.section-panel { padding-block: var(--panel-compact-padding); }
 .featured-projects .section-title { gap: var(--space-sm); margin-bottom: var(--space-md); }
+.featured-projects__categories {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-sm);
+	margin-bottom: var(--space-md);
+}
+.featured-projects__categories button,
+.illustration-archive__filters button {
+	min-height: var(--control-height-small);
+	padding: var(--space-xs) var(--space-md);
+	border: var(--border-width) solid var(--color-border);
+	border-radius: var(--radius-pill);
+	color: var(--color-text);
+	background: transparent;
+	font-size: var(--font-size-small);
+	font-weight: 700;
+	cursor: pointer;
+	transition: color var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+}
+.featured-projects__categories button:hover,
+.featured-projects__categories button[aria-selected='true'],
+.illustration-archive__filters button:hover,
+.illustration-archive__filters button[aria-pressed='true'] {
+	color: var(--color-inverse);
+	background: var(--color-primary);
+	border-color: var(--color-primary);
+}
+.featured-projects__panel[hidden] { display: none; }
 .featured-projects__footer { margin-top: var(--space-md); text-align: right; }
 
 .home-cta {
@@ -993,7 +1021,12 @@ textarea {
 }
 .project-card__title a { text-decoration: none; transition: color var(--transition-fast); }
 .project-card__title a:hover { color: var(--color-primary); }
-.project-card__description { max-width: 38rem; color: var(--color-text-muted); }
+.project-card__description {
+	max-width: 38rem;
+	color: var(--color-text-muted);
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
 .project-grid__empty { grid-column: 1 / -1; padding: var(--space-xl); border-block: var(--border-width) solid var(--color-border); text-align: center; color: var(--color-text-muted); }
 
 .project-rail {
@@ -1065,7 +1098,12 @@ textarea {
 .project-header__back { display: inline-flex; margin-bottom: var(--space-3xl); font-size: var(--font-size-small); font-weight: 700; }
 .project-header__grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(16rem, 0.6fr); gap: var(--space-3xl); align-items: end; }
 .project-header__title { max-width: 12ch; margin-block: var(--space-md); }
-.project-header__description { max-width: 44rem; color: var(--color-text-muted); }
+.project-header__description {
+	max-width: 44rem;
+	color: var(--color-text-muted);
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
 .project-header__meta { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); padding-block: var(--space-lg); border-block: var(--border-width) solid var(--color-border); }
 .project-header__meta dt { color: var(--color-text-muted); font-size: var(--font-size-label); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
 .project-header__meta dd { margin: var(--space-xs) 0 0; }
@@ -1098,6 +1136,39 @@ textarea {
 .project-gallery__item { min-width: 0; }
 .project-gallery .image-frame__media { aspect-ratio: var(--gallery-thumbnail-ratio); }
 .project-gallery .image-frame__media img { height: 100%; object-fit: cover; }
+.project-gallery__context {
+	padding-top: var(--space-sm);
+	color: var(--color-text-muted);
+	font-size: var(--font-size-small);
+}
+.project-gallery__context a { text-decoration: none; }
+.project-gallery__context a:hover { color: var(--color-primary); }
+.project-gallery-groups { display: grid; gap: var(--space-3xl); }
+.project-gallery-group { display: grid; gap: var(--space-lg); }
+.project-gallery-group__title {
+	padding-bottom: var(--space-sm);
+	border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.illustration-archive {
+	border-top: var(--border-width) solid var(--color-border);
+	background: var(--color-page);
+}
+.illustration-archive__filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--space-sm);
+	margin-bottom: var(--space-xl);
+}
+.illustration-archive .project-gallery {
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--grid-min-width)), 1fr));
+}
+.illustration-archive__empty {
+	padding: var(--space-xl);
+	border-block: var(--border-width) solid var(--color-border);
+	color: var(--color-text-muted);
+	text-align: center;
+}
 
 .project-navigation { padding-block: var(--space-3xl); border-top: var(--border-width) solid var(--color-border); }
 .project-navigation h2 { margin-bottom: var(--space-xl); }

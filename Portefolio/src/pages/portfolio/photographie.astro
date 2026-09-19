@@ -2,12 +2,13 @@
 import { getCollection } from 'astro:content';
 import ProjectArchive from '../../components/portfolio/ProjectArchive.astro';
 import { portfolioCategories, portfolioContent } from '../../data/portfolio';
+import { getProjectCategorySlugs } from '../../lib/project-taxonomy';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const category = portfolioCategories.find((item) => item.slug === 'photographie')!;
 const projects = await getCollection(
 	'projects',
-	({ data }) => data.published && data.category === category.slug,
+	({ data }) => data.published && getProjectCategorySlugs(data).includes(category.slug),
 );
 ---
 

@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import type { PortfolioCategory } from '../../data/portfolio';
+import { getProjectCategorySlugs } from '../../lib/project-taxonomy';
 import Button from '../ui/Button.astro';
 import SectionTitle from '../ui/SectionTitle.astro';
 import ProjectGrid from '../portfolio/ProjectGrid.astro';
@@ -18,21 +19,131 @@ interface Props {
 }
 
 const { projects, categories, copy } = Astro.props;
+const projectGroups = categories.map((category) => ({
+	category,
+	projects: projects.filter((project) => getProjectCategorySlugs(project.data).includes(category.slug)),
+}));
 ---
 
-<section class="featured-projects section section-panel" data-section-panel>
+<section class="featured-projects section section-panel" data-featured-projects data-section-panel>
 	<div class="container">
 		<SectionTitle eyebrow={copy.eyebrow} title={copy.title} description={copy.description} />
-		<ProjectGrid
-			projects={projects}
-			categories={categories}
-			emptyMessage={copy.emptyMessage}
-			layout="rail"
-			railId="featured-projects-rail"
-			railLabel={copy.title}
-		/>
+		<div class="featured-projects__categories" role="tablist" aria-label="Catégorie des projets mis en avant">
+			{projectGroups.map(({ category }, index) => (
+				<button
+					type="button"
+					role="tab"
+					id={`featured-tab-${category.slug}`}
+					aria-controls={`featured-panel-${category.slug}`}
+					aria-selected={index === 0 ? 'true' : 'false'}
+					tabindex={index === 0 ? 0 : -1}
+					data-featured-tab
+				>
+					{category.label}
+				</button>
+			))}
+		</div>
+		{projectGroups.map(({ category, projects: categoryProjects }, index) => (
+			<div
+				class="featured-projects__panel"
+				role="tabpanel"
+				id={`featured-panel-${category.slug}`}
+				aria-labelledby={`featured-tab-${category.slug}`}
+				hidden={index !== 0}
+				data-featured-panel
+			>
+				<ProjectGrid
+					projects={categoryProjects}
+					categories={categories}
+					emptyMessage={copy.emptyMessage}
+					layout="rail"
+					railId={`featured-projects-rail-${category.slug}`}
+					railLabel={`${copy.title} — ${category.label}`}
+				/>
+			</div>
+		))}
+		<p class="visually-hidden" aria-live="polite" aria-atomic="true" data-featured-status></p>
 		<div class="featured-projects__footer">
 			<Button href={copy.link.href} variant="secondary">{copy.link.label}</Button>
 		</div>
 	</div>
 </section>
+
+<script>
+	const FEATURED_CATEGORY_DELAY = 5000;
+
+	document.querySelectorAll<HTMLElement>('[data-featured-projects]').forEach((section) => {
+		const tabs = Array.from(section.querySelectorAll<HTMLButtonElement>('[data-featured-tab]'));
+		const panels = Array.from(section.querySelectorAll<HTMLElement>('[data-featured-panel]'));
+		const status = section.querySelector<HTMLElement>('[data-featured-status]');
+		if (tabs.length < 2 || tabs.length !== panels.length) return;
+
+		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+		let currentIndex = 0;
+		let rotationTimer: number | undefined;
+		let isInViewport = true;
+
+		const stopRotation = () => {
+			if (rotationTimer !== undefined) window.clearInterval(rotationTimer);
+			rotationTimer = undefined;
+		};
+
+		const canRotate = () =>
+			!reducedMotion.matches
+			&& isInViewport
+			&& document.visibilityState === 'visible';
+
+		const showCategory = (nextIndex: number, announce = false) => {
+			currentIndex = (nextIndex + tabs.length) % tabs.length;
+			tabs.forEach((tab, index) => {
+				const isActive = index === currentIndex;
+				tab.setAttribute('aria-selected', String(isActive));
+				tab.tabIndex = isActive ? 0 : -1;
+				panels[index].hidden = !isActive;
+			});
+
+			const activePanel = panels[currentIndex];
+			activePanel.querySelector<HTMLElement>('[data-rail-viewport]')?.scrollTo({ left: 0, behavior: 'auto' });
+			if (announce && status) status.textContent = `Catégorie affichée : ${tabs[currentIndex].textContent?.trim()}.`;
+		};
+
+		const startRotation = () => {
+			stopRotation();
+			if (!canRotate()) return;
+			rotationTimer = window.setTimeout(() => {
+				showCategory(currentIndex + 1);
+				startRotation();
+			}, FEATURED_CATEGORY_DELAY);
+		};
+
+		const selectByUser = (index: number) => {
+			showCategory(index, true);
+			startRotation();
+		};
+
+		tabs.forEach((tab, index) => {
+			tab.addEventListener('click', () => selectByUser(index));
+			tab.addEventListener('keydown', (event) => {
+				if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+				event.preventDefault();
+				const nextIndex = event.key === 'Home'
+					? 0
+					: event.key === 'End'
+						? tabs.length - 1
+						: currentIndex + (event.key === 'ArrowRight' ? 1 : -1);
+				selectByUser((nextIndex + tabs.length) % tabs.length);
+				tabs[(nextIndex + tabs.length) % tabs.length].focus();
+			});
+		});
+
+		const visibilityObserver = new IntersectionObserver(([entry]) => {
+			isInViewport = entry?.isIntersecting ?? true;
+			startRotation();
+		}, { threshold: 0.15 });
+
+		visibilityObserver.observe(section);
+		document.addEventListener('visibilitychange', startRotation);
+		reducedMotion.addEventListener('change', startRotation);
+		startRotation();
+	});
+</script>

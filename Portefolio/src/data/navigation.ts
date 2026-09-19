@@ -13,6 +13,7 @@ export const navigationItems: NavigationItem[] = [
 		children: [
 			{ label: 'Photographie', href: '/portfolio/photographie/' },
 			{ label: 'Illustration numérique', href: '/portfolio/illustration/' },
+			{ label: 'Direction artistique', href: '/portfolio/direction-artistique/' },
 		],
 	},
 	{ label: 'Contact', href: '/contact/' },

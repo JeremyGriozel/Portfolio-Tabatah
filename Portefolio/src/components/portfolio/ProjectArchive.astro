@@ -16,6 +16,7 @@ interface Props {
 	allProjectsLabel: string;
 	emptyMessage: string;
 	expertise?: PortfolioExpertiseContent;
+	sortMode?: 'order' | 'displayOrder';
 }
 
 const {
@@ -29,6 +30,7 @@ const {
 	allProjectsLabel,
 	emptyMessage,
 	expertise,
+	sortMode = 'order',
 } = Astro.props;
 ---
 
@@ -61,6 +63,6 @@ const {
 				))}
 			</ul>
 		</nav>
-		<ProjectGrid projects={projects} categories={categories} emptyMessage={emptyMessage} />
+		<ProjectGrid projects={projects} categories={categories} emptyMessage={emptyMessage} {sortMode} />
 	</div>
 </section>
