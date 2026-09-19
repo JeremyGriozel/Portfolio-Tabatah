@@ -1,20 +1,6 @@
 import siteContent from './site-content.json';
 
-export type SiteTheme =
-	| 'default'
-	| 'dark-academia'
-	| 'light-academia'
-	| 'downtown-girl'
-	| 'old-money'
-	| 'vintage'
-	| 'cottage-core'
-	| 'y2k'
-	| 'gothic'
-	| 'soft-girl'
-	| 'ethereal'
-	| 'cyberpunk';
-
-export const themeOptions: ReadonlyArray<{ value: SiteTheme; label: string }> = [
+export const themeOptions = [
 	{ value: 'default', label: 'Default' },
 	{ value: 'dark-academia', label: 'Dark Academia' },
 	{ value: 'light-academia', label: 'Light Academia' },
@@ -27,7 +13,20 @@ export const themeOptions: ReadonlyArray<{ value: SiteTheme; label: string }> = 
 	{ value: 'soft-girl', label: 'Soft Girl' },
 	{ value: 'ethereal', label: 'Ethereal' },
 	{ value: 'cyberpunk', label: 'Cyberpunk' },
-];
+	{ value: 'weirdcore', label: 'Weirdcore' },
+	{ value: 'backrooms', label: 'Backrooms' },
+	{ value: 'autumn-nostalgia', label: 'Autumn Nostalgia' },
+	{ value: 'nostalgic-2000s', label: 'Nostalgic 2000s' },
+	{ value: 'found-footage-crypticcore', label: 'Found Footage — Crypticcore' },
+	{ value: 'retro-analog-horror', label: 'Retro Analog Horror' },
+	{ value: 'pacific-northwest-35mm', label: 'Pacific Northwest — 35mm' },
+	{ value: 'oceancore-washed-out', label: 'Oceancore' },
+	{ value: '90s-indie-tumblr', label: '90s Indie Tumblr' },
+	{ value: 'cybercore-neofuturism', label: 'Cybercore Neofuturism' },
+	{ value: 'nautical-gothic', label: 'Nautical Gothic' },
+] as const satisfies ReadonlyArray<{ value: string; label: string }>;
+
+export type SiteTheme = (typeof themeOptions)[number]['value'];
 
 export interface SiteConfig {
 	theme: SiteTheme;

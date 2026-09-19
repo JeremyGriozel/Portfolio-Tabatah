@@ -26,6 +26,7 @@ const configuredTheme = themeOptions.find(({ value }) => value === siteConfig.th
 					data-theme-value={value}
 					data-theme-label={label}
 					aria-pressed={value === siteConfig.theme ? 'true' : 'false'}
+					title={label}
 				>
 					{label}
 				</button>
