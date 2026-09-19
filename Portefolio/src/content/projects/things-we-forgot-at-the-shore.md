@@ -13,8 +13,9 @@ displayOrder: 3
 shortDescription: >-
   Ce projet concerne ma création d'un Visual Novel, un jeu narratif à choix en
   cours de développement, réunissant la conception et l’illustration de ses
-  personnages à travers différentes tenues, expressions et mises en scène. Ces
-  créations comprennent également des illustrations narratives destinées à
+  personnages à travers différentes tenues, expressions et mises en scène. 
+
+  Ces créations comprennent également des illustrations narratives destinées à
   accompagner les cinématiques et les différents choix proposés au joueur.
 detailedDescription: >-
   Visual novel — Projet personnel
