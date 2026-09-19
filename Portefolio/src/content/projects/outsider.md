@@ -4,7 +4,7 @@ title: Outsider
 categories:
   - photographie
 date: 2024-11-12
-defaultTheme: vintage
+defaultTheme: backrooms
 published: true
 featured: false
 order: 0
@@ -148,11 +148,21 @@ cover:
   alt: Outsider.
   aspect: landscape
 gallery:
-  - src: /images/projects/outsider/gallery/0.jpg
-  - src: /images/projects/outsider/gallery/1.jpg
-  - src: /images/projects/outsider/gallery/2.jpg
-  - src: /images/projects/outsider/gallery/3.jpg
-  - src: /images/projects/outsider/gallery/4.jpg
+  - src: /images/projects/outsider/gallery/0/src.jpg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/outsider/gallery/1/src.jpg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/outsider/gallery/2/src.jpg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/outsider/gallery/3/src.jpg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/outsider/gallery/4/src.jpg
+    tags: []
+    primaryTag: ''
 tools:
   - Picsart
   - Réalisé au téléphone
