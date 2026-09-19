@@ -5,7 +5,7 @@ categories:
   - direction-artistique
   - illustration
 date: 2020-10-28
-defaultTheme: cybercore-neofuturism
+defaultTheme: cyberpunk
 published: true
 featured: false
 order: 0
