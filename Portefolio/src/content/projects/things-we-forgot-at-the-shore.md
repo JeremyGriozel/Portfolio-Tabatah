@@ -5,7 +5,7 @@ categories:
   - illustration
   - direction-artistique
 date: 2026-05-20
-defaultTheme: oceancore-washed-out
+defaultTheme: nautical-gothic
 published: true
 featured: true
 order: 1
