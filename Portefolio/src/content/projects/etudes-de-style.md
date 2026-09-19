@@ -6,8 +6,9 @@ categories:
 date: 2024-11-27
 defaultTheme: downtown-girl
 published: true
-featured: false
+featured: true
 order: 3
+displayOrder: 10
 shortDescription: >-
   Une série d’exercices graphiques réalisés pour explorer différentes approches
   de mise en couleur, de composition, de détail et de représentation des
@@ -36,30 +37,78 @@ cover:
   alt: Personnage haut en couleur.
   aspect: landscape
 gallery:
-  - src: /images/projects/etudes-de-style/gallery/0.jpeg
-  - src: /images/projects/etudes-de-style/gallery/1.jpeg
-  - src: /images/projects/etudes-de-style/gallery/2.jpeg
-  - src: /images/projects/etudes-de-style/gallery/3.jpeg
-  - src: /images/projects/etudes-de-style/gallery/4.jpeg
-  - src: /images/projects/etudes-de-style/gallery/5.jpeg
-  - src: /images/projects/etudes-de-style/gallery/6.jpeg
-  - src: /images/projects/etudes-de-style/gallery/7.jpeg
-  - src: /images/projects/etudes-de-style/gallery/8.jpeg
-  - src: /images/projects/etudes-de-style/gallery/9.jpeg
-  - src: /images/projects/etudes-de-style/gallery/10.jpeg
-  - src: /images/projects/etudes-de-style/gallery/11.jpeg
-  - src: /images/projects/etudes-de-style/gallery/12.jpeg
-  - src: /images/projects/etudes-de-style/gallery/13.jpeg
-  - src: /images/projects/etudes-de-style/gallery/14.jpeg
-  - src: /images/projects/etudes-de-style/gallery/15.jpeg
-  - src: /images/projects/etudes-de-style/gallery/16.jpeg
-  - src: /images/projects/etudes-de-style/gallery/17.jpeg
-  - src: /images/projects/etudes-de-style/gallery/18.jpeg
-  - src: /images/projects/etudes-de-style/gallery/19.jpeg
-  - src: /images/projects/etudes-de-style/gallery/20.jpeg
-  - src: /images/projects/etudes-de-style/gallery/21.jpeg
-  - src: /images/projects/etudes-de-style/gallery/22.jpeg
-  - src: /images/projects/etudes-de-style/gallery/23.jpeg
+  - src: /images/projects/etudes-de-style/gallery/0/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/1/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/2/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/3/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/4/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/5/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/6/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/7/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/8/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/9/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/10/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/11/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/12/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/13/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/14/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/15/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/16/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/17/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/18/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/19/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/20/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/21/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/22/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-style/gallery/23/src.jpeg
+    tags: []
+    primaryTag: ''
 tools:
   - Tablette HUION KAMVAS Pro 20
   - ClipStudioPaint
