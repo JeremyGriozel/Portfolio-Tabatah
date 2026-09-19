@@ -7,7 +7,7 @@ categories:
 date: 2026-05-20
 defaultTheme: oceancore-washed-out
 published: true
-featured: false
+featured: true
 order: 1
 displayOrder: 3
 shortDescription: >-
