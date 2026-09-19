@@ -1,7 +1,8 @@
 ---
 slug: ARTH — Étude d’un personnage
 title: ARTH — Étude d’un personnage
-category: illustration
+categories:
+  - illustration
 date: 2020-11-20
 defaultTheme: light-academia
 published: true
@@ -31,26 +32,26 @@ cover:
   alt: Evan, sketch.
   aspect: portrait
 gallery:
-  - /images/projects/arth-etude-d-un-personnage/gallery/0.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/1.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/2.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/3.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/4.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/5.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/6.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/7.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/8.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/9.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/10.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/11.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/12.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/13.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/14.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/15.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/16.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/17.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/18.jpeg
-  - /images/projects/arth-etude-d-un-personnage/gallery/19.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/0.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/1.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/2.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/3.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/4.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/5.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/6.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/7.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/8.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/9.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/10.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/11.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/12.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/13.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/14.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/15.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/16.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/17.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/18.jpeg
+  - src: /images/projects/arth-etude-d-un-personnage/gallery/19.jpeg
 tools:
   - Tablette HUION KAMVAS Pro 20
   - ClipStudioPaint

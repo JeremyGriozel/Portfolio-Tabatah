@@ -1,7 +1,8 @@
 ---
 slug: Du réel à l’illustration
 title: Du réel à l’illustration
-category: illustration
+categories:
+  - illustration
 date: 2025-01-21
 defaultTheme: old-money
 published: true
@@ -32,13 +33,13 @@ cover:
   alt: Self-insert avec mon conjoint.
   aspect: landscape
 gallery:
-  - /images/projects/du-reel-a-l-illustration/gallery/0.jpeg
-  - /images/projects/du-reel-a-l-illustration/gallery/1.jpeg
-  - /images/projects/du-reel-a-l-illustration/gallery/2.jpeg
-  - /images/projects/du-reel-a-l-illustration/gallery/3.jpeg
-  - /images/projects/du-reel-a-l-illustration/gallery/4.jpeg
-  - /images/projects/du-reel-a-l-illustration/gallery/5.jpeg
-  - /images/projects/du-reel-a-l-illustration/gallery/6.jpeg
+  - src: /images/projects/du-reel-a-l-illustration/gallery/0.jpeg
+  - src: /images/projects/du-reel-a-l-illustration/gallery/1.jpeg
+  - src: /images/projects/du-reel-a-l-illustration/gallery/2.jpeg
+  - src: /images/projects/du-reel-a-l-illustration/gallery/3.jpeg
+  - src: /images/projects/du-reel-a-l-illustration/gallery/4.jpeg
+  - src: /images/projects/du-reel-a-l-illustration/gallery/5.jpeg
+  - src: /images/projects/du-reel-a-l-illustration/gallery/6.jpeg
 tools:
   - Illustration numérique
   - Tablette HUION KAMVAS Pro 20

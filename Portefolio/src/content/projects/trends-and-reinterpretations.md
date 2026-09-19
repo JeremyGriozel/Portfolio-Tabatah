@@ -1,7 +1,8 @@
 ---
 slug: Trends & réinterprétations
 title: Trends & réinterprétations
-category: illustration
+categories:
+  - illustration
 date: 2024-09-12
 defaultTheme: cyberpunk
 published: true
@@ -36,13 +37,13 @@ cover:
   alt: Ayden
   aspect: portrait
 gallery:
-  - /images/projects/trends-and-reinterpretations/gallery/0.jpeg
-  - /images/projects/trends-and-reinterpretations/gallery/1.jpeg
-  - /images/projects/trends-and-reinterpretations/gallery/2.jpeg
-  - /images/projects/trends-and-reinterpretations/gallery/3.jpeg
-  - /images/projects/trends-and-reinterpretations/gallery/4.jpeg
-  - /images/projects/trends-and-reinterpretations/gallery/5.jpeg
-  - /images/projects/trends-and-reinterpretations/gallery/6.jpeg
+  - src: /images/projects/trends-and-reinterpretations/gallery/0.jpeg
+  - src: /images/projects/trends-and-reinterpretations/gallery/1.jpeg
+  - src: /images/projects/trends-and-reinterpretations/gallery/2.jpeg
+  - src: /images/projects/trends-and-reinterpretations/gallery/3.jpeg
+  - src: /images/projects/trends-and-reinterpretations/gallery/4.jpeg
+  - src: /images/projects/trends-and-reinterpretations/gallery/5.jpeg
+  - src: /images/projects/trends-and-reinterpretations/gallery/6.jpeg
 tools:
   - Tablette HUION KAMVAS Pro 20
   - ClipStudioPaint

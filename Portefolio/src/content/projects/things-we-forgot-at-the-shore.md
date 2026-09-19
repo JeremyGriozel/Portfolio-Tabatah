@@ -1,7 +1,8 @@
 ---
 slug: Things We Forgot At The Shore
 title: Things We Forgot At The Shore
-category: illustration
+categories:
+  - illustration
 date: 2026-05-20
 defaultTheme: y2k
 published: true

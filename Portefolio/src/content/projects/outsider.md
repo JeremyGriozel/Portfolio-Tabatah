@@ -1,7 +1,8 @@
 ---
 slug: Outsider
 title: Outsider
-category: photographie
+categories:
+  - photographie
 date: 2024-11-12
 defaultTheme: vintage
 published: true
@@ -147,11 +148,11 @@ cover:
   alt: Outsider.
   aspect: landscape
 gallery:
-  - /images/projects/outsider/gallery/0.jpg
-  - /images/projects/outsider/gallery/1.jpg
-  - /images/projects/outsider/gallery/2.jpg
-  - /images/projects/outsider/gallery/3.jpg
-  - /images/projects/outsider/gallery/4.jpg
+  - src: /images/projects/outsider/gallery/0.jpg
+  - src: /images/projects/outsider/gallery/1.jpg
+  - src: /images/projects/outsider/gallery/2.jpg
+  - src: /images/projects/outsider/gallery/3.jpg
+  - src: /images/projects/outsider/gallery/4.jpg
 tools:
   - Picsart
   - Réalisé au téléphone

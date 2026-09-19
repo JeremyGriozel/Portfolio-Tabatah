@@ -1,7 +1,8 @@
 ---
 slug: NO EXIT
 title: NO EXIT
-category: photographie
+categories:
+  - photographie
 date: 2026-01-04
 defaultTheme: cyberpunk
 published: true
@@ -53,18 +54,18 @@ cover:
   alt: Jeune homme d'un autre temps perdu dans une station essence de nuit.
   aspect: landscape
 gallery:
-  - /images/projects/no-exit/gallery/0.jpg
-  - /images/projects/no-exit/gallery/1.jpg
-  - /images/projects/no-exit/gallery/2.jpg
-  - /images/projects/no-exit/gallery/3.jpg
-  - /images/projects/no-exit/gallery/4.jpg
-  - /images/projects/no-exit/gallery/5.jpg
-  - /images/projects/no-exit/gallery/6.jpg
-  - /images/projects/no-exit/gallery/7.jpg
-  - /images/projects/no-exit/gallery/8.jpg
-  - /images/projects/no-exit/gallery/9.jpg
-  - /images/projects/no-exit/gallery/10.jpg
-  - /images/projects/no-exit/gallery/11.jpg
+  - src: /images/projects/no-exit/gallery/0.jpg
+  - src: /images/projects/no-exit/gallery/1.jpg
+  - src: /images/projects/no-exit/gallery/2.jpg
+  - src: /images/projects/no-exit/gallery/3.jpg
+  - src: /images/projects/no-exit/gallery/4.jpg
+  - src: /images/projects/no-exit/gallery/5.jpg
+  - src: /images/projects/no-exit/gallery/6.jpg
+  - src: /images/projects/no-exit/gallery/7.jpg
+  - src: /images/projects/no-exit/gallery/8.jpg
+  - src: /images/projects/no-exit/gallery/9.jpg
+  - src: /images/projects/no-exit/gallery/10.jpg
+  - src: /images/projects/no-exit/gallery/11.jpg
 tools:
   - Lumière artificielle
   - Sous-exposition

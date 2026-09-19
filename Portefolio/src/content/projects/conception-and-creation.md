@@ -1,7 +1,8 @@
 ---
 slug: Conception & création
 title: Conception & création
-category: direction-artistique
+categories:
+  - direction-artistique
 date: 2026-01-09
 defaultTheme: dark-academia
 published: true
@@ -28,12 +29,12 @@ cover:
   alt: Evan en feutrine
   aspect: portrait
 gallery:
-  - /images/projects/conception-and-creation/gallery/0.jpeg
-  - /images/projects/conception-and-creation/gallery/1.jpeg
-  - /images/projects/conception-and-creation/gallery/2.jpeg
-  - /images/projects/conception-and-creation/gallery/3.jpeg
-  - /images/projects/conception-and-creation/gallery/4.jpeg
-  - /images/projects/conception-and-creation/gallery/5.jpeg
+  - src: /images/projects/conception-and-creation/gallery/0.jpeg
+  - src: /images/projects/conception-and-creation/gallery/1.jpeg
+  - src: /images/projects/conception-and-creation/gallery/2.jpeg
+  - src: /images/projects/conception-and-creation/gallery/3.jpeg
+  - src: /images/projects/conception-and-creation/gallery/4.jpeg
+  - src: /images/projects/conception-and-creation/gallery/5.jpeg
 tools:
   - Character design
   - ClipStudioPaint

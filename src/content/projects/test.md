@@ -1,7 +1,8 @@
 ---
 slug: TEST
 title: PROJET TEST 1
-category: photographie
+categories:
+  - photographie
 date: 2026-08-12
 shortDescription: voici un projet test
 detailedDescription: test de la description détaillée

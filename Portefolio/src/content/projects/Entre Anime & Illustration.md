@@ -1,7 +1,8 @@
 ---
 slug: Entre Anime & Illustration
 title: Entre Anime & Illustration
-category: illustration
+categories:
+  - illustration
 date: 2024-08-21
 defaultTheme: dark-academia
 published: true
@@ -50,13 +51,13 @@ cover:
   alt: Illustration type anime.
   aspect: landscape
 gallery:
-  - /images/projects/Entre Anime & Illustration/gallery/0.jpeg
-  - /images/projects/Entre Anime & Illustration/gallery/1.jpeg
-  - /images/projects/Entre Anime & Illustration/gallery/2.jpeg
-  - /images/projects/Entre Anime & Illustration/gallery/3.jpeg
-  - /images/projects/Entre Anime & Illustration/gallery/4.jpeg
-  - /images/projects/Entre Anime & Illustration/gallery/5.jpeg
-  - /images/projects/Entre Anime & Illustration/gallery/6.jpeg
+  - src: /images/projects/Entre Anime & Illustration/gallery/0.jpeg
+  - src: /images/projects/Entre Anime & Illustration/gallery/1.jpeg
+  - src: /images/projects/Entre Anime & Illustration/gallery/2.jpeg
+  - src: /images/projects/Entre Anime & Illustration/gallery/3.jpeg
+  - src: /images/projects/Entre Anime & Illustration/gallery/4.jpeg
+  - src: /images/projects/Entre Anime & Illustration/gallery/5.jpeg
+  - src: /images/projects/Entre Anime & Illustration/gallery/6.jpeg
 tools:
   - Illustration numérique
   - ClipStudioPaint

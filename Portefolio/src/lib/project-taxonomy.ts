@@ -18,7 +18,6 @@ export type GalleryTagSlug = (typeof galleryTagOptions)[number]['value'];
 
 interface ProjectCategoryData {
 	categories?: readonly string[];
-	category?: string | null;
 }
 
 interface GalleryImageData {
@@ -43,10 +42,6 @@ export const isGalleryTagSlug = (value: string): value is GalleryTagSlug =>
 
 export const getProjectCategorySlugs = (data: ProjectCategoryData): ProjectCategorySlug[] => {
 	const categories = (data.categories ?? []).filter(isProjectCategorySlug);
-	if (categories.length === 0 && data.category && isProjectCategorySlug(data.category)) {
-		categories.push(data.category);
-	}
-
 	return [...new Set(categories)];
 };
 

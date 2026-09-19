@@ -1,7 +1,8 @@
 ---
 slug: ARTH - Création d'univers
 title: ARTH - Création d'univers
-category: direction-artistique
+categories:
+  - direction-artistique
 date: 2020-10-28
 defaultTheme: cyberpunk
 published: true

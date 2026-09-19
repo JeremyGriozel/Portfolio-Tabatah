@@ -1,7 +1,8 @@
 ---
 slug: Études de style
 title: Études de style
-category: illustration
+categories:
+  - illustration
 date: 2024-11-27
 defaultTheme: downtown-girl
 published: true
@@ -35,30 +36,30 @@ cover:
   alt: Personnage haut en couleur.
   aspect: landscape
 gallery:
-  - /images/projects/etudes-de-style/gallery/0.jpeg
-  - /images/projects/etudes-de-style/gallery/1.jpeg
-  - /images/projects/etudes-de-style/gallery/2.jpeg
-  - /images/projects/etudes-de-style/gallery/3.jpeg
-  - /images/projects/etudes-de-style/gallery/4.jpeg
-  - /images/projects/etudes-de-style/gallery/5.jpeg
-  - /images/projects/etudes-de-style/gallery/6.jpeg
-  - /images/projects/etudes-de-style/gallery/7.jpeg
-  - /images/projects/etudes-de-style/gallery/8.jpeg
-  - /images/projects/etudes-de-style/gallery/9.jpeg
-  - /images/projects/etudes-de-style/gallery/10.jpeg
-  - /images/projects/etudes-de-style/gallery/11.jpeg
-  - /images/projects/etudes-de-style/gallery/12.jpeg
-  - /images/projects/etudes-de-style/gallery/13.jpeg
-  - /images/projects/etudes-de-style/gallery/14.jpeg
-  - /images/projects/etudes-de-style/gallery/15.jpeg
-  - /images/projects/etudes-de-style/gallery/16.jpeg
-  - /images/projects/etudes-de-style/gallery/17.jpeg
-  - /images/projects/etudes-de-style/gallery/18.jpeg
-  - /images/projects/etudes-de-style/gallery/19.jpeg
-  - /images/projects/etudes-de-style/gallery/20.jpeg
-  - /images/projects/etudes-de-style/gallery/21.jpeg
-  - /images/projects/etudes-de-style/gallery/22.jpeg
-  - /images/projects/etudes-de-style/gallery/23.jpeg
+  - src: /images/projects/etudes-de-style/gallery/0.jpeg
+  - src: /images/projects/etudes-de-style/gallery/1.jpeg
+  - src: /images/projects/etudes-de-style/gallery/2.jpeg
+  - src: /images/projects/etudes-de-style/gallery/3.jpeg
+  - src: /images/projects/etudes-de-style/gallery/4.jpeg
+  - src: /images/projects/etudes-de-style/gallery/5.jpeg
+  - src: /images/projects/etudes-de-style/gallery/6.jpeg
+  - src: /images/projects/etudes-de-style/gallery/7.jpeg
+  - src: /images/projects/etudes-de-style/gallery/8.jpeg
+  - src: /images/projects/etudes-de-style/gallery/9.jpeg
+  - src: /images/projects/etudes-de-style/gallery/10.jpeg
+  - src: /images/projects/etudes-de-style/gallery/11.jpeg
+  - src: /images/projects/etudes-de-style/gallery/12.jpeg
+  - src: /images/projects/etudes-de-style/gallery/13.jpeg
+  - src: /images/projects/etudes-de-style/gallery/14.jpeg
+  - src: /images/projects/etudes-de-style/gallery/15.jpeg
+  - src: /images/projects/etudes-de-style/gallery/16.jpeg
+  - src: /images/projects/etudes-de-style/gallery/17.jpeg
+  - src: /images/projects/etudes-de-style/gallery/18.jpeg
+  - src: /images/projects/etudes-de-style/gallery/19.jpeg
+  - src: /images/projects/etudes-de-style/gallery/20.jpeg
+  - src: /images/projects/etudes-de-style/gallery/21.jpeg
+  - src: /images/projects/etudes-de-style/gallery/22.jpeg
+  - src: /images/projects/etudes-de-style/gallery/23.jpeg
 tools:
   - Tablette HUION KAMVAS Pro 20
   - ClipStudioPaint

@@ -1,7 +1,8 @@
 ---
 slug: Rencontres artistiques, et collaborations
 title: Rencontres artistiques, et collaborations
-category: illustration
+categories:
+  - illustration
 date: 2025-07-01
 defaultTheme: ethereal
 published: true
@@ -34,35 +35,35 @@ cover:
   alt: Illustration dans un style sombre.
   aspect: landscape
 gallery:
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/0.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/1.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/2.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/3.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/4.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/5.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/6.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/7.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/8.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/9.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/10.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/11.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/12.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/13.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/14.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/15.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/16.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/17.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/18.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/19.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/20.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/21.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/22.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/23.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/24.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/25.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/26.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/27.jpeg
-  - /images/projects/Rencontres artistiques, et collaborations/gallery/28.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/0.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/1.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/2.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/3.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/4.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/5.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/6.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/7.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/8.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/9.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/10.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/11.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/12.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/13.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/14.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/15.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/16.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/17.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/18.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/19.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/20.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/21.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/22.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/23.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/24.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/25.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/26.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/27.jpeg
+  - src: /images/projects/Rencontres artistiques, et collaborations/gallery/28.jpeg
 tools:
   - Tablette HUION KAMVAS Pro 20
   - Illustration numérique

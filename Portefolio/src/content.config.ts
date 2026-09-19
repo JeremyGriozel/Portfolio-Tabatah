@@ -38,7 +38,6 @@ const projects = defineCollection({
 	schema: z.object({
 		slug: z.string(),
 		title: z.string(),
-		category: z.string().optional(),
 		categories: z.array(z.enum(projectCategorySchemaValues)).default([]),
 		date: z.coerce.date(),
 		defaultTheme: z.enum(projectThemeValues).optional(),

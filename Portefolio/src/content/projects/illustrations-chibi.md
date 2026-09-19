@@ -1,7 +1,8 @@
 ---
 slug: Illustrations chibi
 title: Illustrations chibi
-category: illustration
+categories:
+  - illustration
 date: 2025-07-15
 defaultTheme: downtown-girl
 published: true
@@ -35,16 +36,16 @@ cover:
   alt: Collection de petits personnages, haut en couleurs.
   aspect: portrait
 gallery:
-  - /images/projects/illustrations-chibi/gallery/0.jpeg
-  - /images/projects/illustrations-chibi/gallery/1.jpeg
-  - /images/projects/illustrations-chibi/gallery/2.jpeg
-  - /images/projects/illustrations-chibi/gallery/3.jpeg
-  - /images/projects/illustrations-chibi/gallery/4.jpeg
-  - /images/projects/illustrations-chibi/gallery/5.jpeg
-  - /images/projects/illustrations-chibi/gallery/6.jpeg
-  - /images/projects/illustrations-chibi/gallery/7.jpeg
-  - /images/projects/illustrations-chibi/gallery/8.jpeg
-  - /images/projects/illustrations-chibi/gallery/9.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/0.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/1.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/2.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/3.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/4.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/5.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/6.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/7.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/8.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/9.jpeg
 tools:
   - Illustration numérique
   - Character design
