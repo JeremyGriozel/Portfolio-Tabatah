@@ -6,9 +6,9 @@ categories:
 date: 2026-08-08
 defaultTheme: gothic
 published: true
-featured: true
+featured: false
 order: 3
-displayOrder: 60
+displayOrder: 1
 shortDescription: >-
   Cette série explore une esthétique nocturne et gothique, où la lumière rouge
   et violette crée une atmosphère à la fois théâtrale, sensuelle et mystérieuse.
@@ -58,21 +58,51 @@ cover:
     théâtral, dans une luminosité sombre et un éclairage violet.
   aspect: landscape
 gallery:
-  - src: /images/projects/echo-theatral/gallery/0.jpeg
-  - src: /images/projects/echo-theatral/gallery/1.jpeg
-  - src: /images/projects/echo-theatral/gallery/2.jpeg
-  - src: /images/projects/echo-theatral/gallery/3.jpeg
-  - src: /images/projects/echo-theatral/gallery/4.jpeg
-  - src: /images/projects/echo-theatral/gallery/5.jpeg
-  - src: /images/projects/echo-theatral/gallery/6.jpeg
-  - src: /images/projects/echo-theatral/gallery/7.jpeg
-  - src: /images/projects/echo-theatral/gallery/8.jpeg
-  - src: /images/projects/echo-theatral/gallery/9.jpeg
-  - src: /images/projects/echo-theatral/gallery/10.jpeg
-  - src: /images/projects/echo-theatral/gallery/11.jpeg
-  - src: /images/projects/echo-theatral/gallery/12.jpeg
-  - src: /images/projects/echo-theatral/gallery/13.jpeg
-  - src: /images/projects/echo-theatral/gallery/14.jpeg
+  - src: /images/projects/echo-theatral/gallery/0/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/1/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/2/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/3/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/4/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/5/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/6/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/7/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/8/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/9/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/10/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/11/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/12/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/13/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/echo-theatral/gallery/14/src.jpeg
+    tags: []
+    primaryTag: ''
 tools:
   - Portrait
   - Éclairage artificiel
