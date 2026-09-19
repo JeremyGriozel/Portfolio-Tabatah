@@ -3,11 +3,13 @@ slug: Things We Forgot At The Shore
 title: Things We Forgot At The Shore
 categories:
   - illustration
+  - direction-artistique
 date: 2026-05-20
-defaultTheme: y2k
+defaultTheme: oceancore-washed-out
 published: true
 featured: false
-order: 2
+order: 1
+displayOrder: 3
 shortDescription: >-
   Ce projet concerne ma création d'un Visual Novel, un jeu narratif à choix en
   cours de développement, réunissant la conception et l’illustration de ses
@@ -103,7 +105,43 @@ cover:
   src: /images/projects/things-we-forgot-at-the-shore/cover/src.jpeg
   alt: 'MC du projet VISUAL NOVEL : Things We Forgot At The Shore.'
   aspect: portrait
-gallery: []
+gallery:
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/0/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/1/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/2/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/3/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/4/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/5/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/6/src.jpeg
+    tags:
+      - cg
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/7/src.jpeg
+    tags:
+      - cg
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/8/src.jpeg
+    tags:
+      - cg
+    primaryTag: ''
 tools:
   - Illustration numérique
   - Tablette HUION KAMVAS Pro 20
