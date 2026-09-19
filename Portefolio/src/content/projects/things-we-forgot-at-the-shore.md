@@ -25,25 +25,27 @@ detailedDescription: >-
   sur la mémoire, le passage à l’âge adulte et les choses que l’on emporte — ou
   que l’on laisse derrière soi — au fil des changements de la vie.
 
-  L’histoire se déroule sur la Golden Coast, une région balnéaire autrefois très
-  fréquentée. Au cours d’un trajet en bus, le personnage principal aperçoit au
-  loin les vestiges d’une ancienne station côtière : Morrow Bay. Contrairement
-  aux lieux touristiques animés de la côte voisine, la petite ville semble avoir
-  été laissée en retrait du temps. Les commerces se sont vidés, les maisons de
-  vacances restent inoccupées une grande partie de l’année et les habitants qui
-  sont restés semblent entretenir un rapport particulier avec ce lieu.
+  L’histoire se déroule sur Golden Coast, une région balnéaire très fréquentée.
+  Au cours de son trqjet en voiture en direction de cette dernière, le
+  personnage principal aperçoit au loin les vestiges d’une ancienne station
+  côtière : Morrow Bay. Contrairement aux lieux touristiques animés de la côte
+  voisine, la petite ville semble avoir été laissée en retrait du temps. Les
+  commerces se sont vidés, les maisons de vacances restent inoccupées une grande
+  partie de l’année et les habitants qui sont restés semblent entretenir un
+  rapport particulier avec ce lieu.
 
 
-  Intrigué·e, le personnage principal décide de s’y arrêter.
+  Intrigué·e, le personnage principal décide de s’y arrêter, peu après son
+  installation à Golden Coast.
 
 
   La découverte de Morrow Bay conduit bientôt à celle d’un endroit qui ne figure
-  sur aucune carte : Mirage Pier, une ancienne jetée abandonnée qui apparaît
-  uniquement durant la nuit. Derrière ses attractions étrangement préservées se
-  trouve un espace lié aux souvenirs, aux regrets et aux choses que chacun peine
-  à affronter. Les différentes attractions permettent de revisiter des fragments
-  du passé, tandis que les choix du joueur influencent la manière dont les
-  personnages évoluent et la conclusion de leur histoire.
+  sur aucune carte : Mirage Pier, une ancienne fête foraine abandonnée qui ne
+  s'éclaire uniquement la nuit. Derrière ses attractions étrangement préservées
+  se trouve un espace lié aux souvenirs, aux regrets et aux choses que chacun
+  peine à affronter. Les différentes attractions permettent de revisiter des
+  fragments du passé, tandis que les choix du joueur influencent la manière dont
+  les personnages évoluent et la conclusion de leur histoire.
 
   Le projet s’intéresse ainsi aux liens entre souvenirs, nostalgie, changement
   et peur de l’avenir, à travers une histoire intimiste ponctuée d’éléments
@@ -97,7 +99,7 @@ detailedDescription: >-
   Shore cherche à évoquer cette sensation particulière que certains lieux
   peuvent provoquer : celle d’un été que l’on aurait connu sans pouvoir
   réellement s’en souvenir, ou d’un endroit qui semble avoir conservé quelque
-  chose que l’on croyait perdu.
+  chose que l’on croyait perdu, basé sur la nostalgie de notre vécu.
 
   Le projet mêle ainsi illustration, narration et création d’univers, avec une
   volonté de construire des environnements capables de transmettre une émotion
