@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import type { PortfolioCategory, PortfolioExpertiseContent } from '../../data/portfolio';
+import type { ProjectCategorySlug } from '../../lib/project-taxonomy';
 import PortfolioExpertise from './PortfolioExpertise.astro';
 import ProjectGrid from './ProjectGrid.astro';
 import SectionTitle from '../ui/SectionTitle.astro';
@@ -11,12 +12,12 @@ interface Props {
 	title: string;
 	eyebrow: string;
 	description: string;
-	currentCategory?: string;
+	currentCategory?: ProjectCategorySlug;
 	filtersLabel: string;
 	allProjectsLabel: string;
 	emptyMessage: string;
 	expertise?: PortfolioExpertiseContent;
-	sortMode?: 'order' | 'displayOrder';
+	sortMode?: 'order' | 'displayOrder' | 'categoryOrder';
 }
 
 const {
@@ -63,6 +64,12 @@ const {
 				))}
 			</ul>
 		</nav>
-		<ProjectGrid projects={projects} categories={categories} emptyMessage={emptyMessage} {sortMode} />
+		<ProjectGrid
+			projects={projects}
+			categories={categories}
+			emptyMessage={emptyMessage}
+			{sortMode}
+			categorySlug={currentCategory}
+		/>
 	</div>
 </section>

@@ -3,6 +3,9 @@ slug: Le temps des Fleurs
 title: Le temps des Fleurs
 categories:
   - photographie
+categoryOrders:
+  - category: photographie
+    order: 2
 date: 2026-04-25
 defaultTheme: soft-girl
 published: true

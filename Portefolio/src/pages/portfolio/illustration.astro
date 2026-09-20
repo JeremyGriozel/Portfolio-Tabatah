@@ -28,6 +28,7 @@ const projects = await getCollection(
 		filtersLabel={portfolioContent.filtersLabel}
 		allProjectsLabel={portfolioContent.allProjectsLabel}
 		emptyMessage={portfolioContent.emptyMessage}
+		sortMode="categoryOrder"
 	/>
 	<IllustrationGallery projects={projects} copy={illustrationGalleryContent} />
 </BaseLayout>

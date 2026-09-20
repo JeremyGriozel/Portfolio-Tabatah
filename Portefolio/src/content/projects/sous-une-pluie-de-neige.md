@@ -3,6 +3,9 @@ slug: Sous une pluie de Neige
 title: Sous une pluie de Neige
 categories:
   - photographie
+categoryOrders:
+  - category: photographie
+    order: 1
 date: 2026-03-26
 defaultTheme: cottage-core
 published: true

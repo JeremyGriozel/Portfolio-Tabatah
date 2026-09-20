@@ -3,6 +3,9 @@ slug: Études de personnages
 title: Études de personnages
 categories:
   - illustration
+categoryOrders:
+  - category: illustration
+    order: 4
 date: 2025-10-15
 defaultTheme: vintage
 published: true

@@ -16,14 +16,12 @@ export const themeOptions = [
 	{ value: 'weirdcore', label: 'Weirdcore' },
 	{ value: 'backrooms', label: 'Backrooms' },
 	{ value: 'autumn-nostalgia', label: 'Autumn Nostalgia' },
-	{ value: 'nostalgic-2000s', label: 'Nostalgic 2000s' },
 	{ value: 'found-footage-crypticcore', label: 'Found Footage — Crypticcore' },
 	{ value: 'retro-analog-horror', label: 'Retro Analog Horror' },
-	{ value: 'pacific-northwest-35mm', label: 'Pacific Northwest — 35mm' },
-	{ value: 'oceancore-washed-out', label: 'Oceancore' },
-	{ value: '90s-indie-tumblr', label: '90s Indie Tumblr' },
-	{ value: 'cybercore-neofuturism', label: 'Cybercore Neofuturism' },
 	{ value: 'nautical-gothic', label: 'Nautical Gothic' },
+	{ value: 'dark-circus-core', label: 'Dark Circus Core' },
+	{ value: 'astrological-spacecore', label: 'Astrological Spacecore' },
+	{ value: 'cybersigilism', label: 'Cybersigilism' },
 ] as const satisfies ReadonlyArray<{ value: string; label: string }>;
 
 export type SiteTheme = (typeof themeOptions)[number]['value'];

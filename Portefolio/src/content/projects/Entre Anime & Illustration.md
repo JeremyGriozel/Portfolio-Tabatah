@@ -3,6 +3,9 @@ slug: Entre Anime & Illustration
 title: Entre Anime & Illustration
 categories:
   - illustration
+categoryOrders:
+  - category: illustration
+    order: 5
 date: 2024-08-21
 defaultTheme: dark-academia
 published: true

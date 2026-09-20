@@ -3,6 +3,9 @@ slug: Écho Théâtral
 title: Écho Théâtral
 categories:
   - photographie
+categoryOrders:
+  - category: photographie
+    order: 3
 date: 2026-08-08
 defaultTheme: gothic
 published: true

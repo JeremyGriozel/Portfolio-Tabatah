@@ -2,8 +2,10 @@
 import type { CollectionEntry } from 'astro:content';
 import type { PortfolioCategory } from '../../data/portfolio';
 import {
+	compareProjectsByCategoryOrder,
 	compareProjectsByDisplayOrder,
 	getProjectCategorySlugs,
+	type ProjectCategorySlug,
 } from '../../lib/project-taxonomy';
 import ProjectCard from './ProjectCard.astro';
 
@@ -14,7 +16,8 @@ interface Props {
 	layout?: 'grid' | 'rail';
 	railId?: string;
 	railLabel?: string;
-	sortMode?: 'order' | 'displayOrder';
+	sortMode?: 'order' | 'displayOrder' | 'categoryOrder';
+	categorySlug?: ProjectCategorySlug;
 }
 
 const {
@@ -25,13 +28,18 @@ const {
 	railId = 'project-rail',
 	railLabel = 'Projets mis en avant',
 	sortMode = 'order',
+	categorySlug,
 } = Astro.props;
 const compareStable = (first: CollectionEntry<'projects'>, second: CollectionEntry<'projects'>) =>
 	first.data.title.localeCompare(second.data.title, 'fr', { sensitivity: 'base' })
 	|| first.data.slug.localeCompare(second.data.slug, 'fr', { sensitivity: 'base' });
-const sortedProjects = [...projects].sort((first, second) => sortMode === 'displayOrder'
-	? compareProjectsByDisplayOrder(first, second)
-	: first.data.order - second.data.order || compareStable(first, second));
+const sortedProjects = [...projects].sort((first, second) => {
+	if (sortMode === 'displayOrder') return compareProjectsByDisplayOrder(first, second);
+	if (sortMode === 'categoryOrder' && categorySlug) {
+		return compareProjectsByCategoryOrder(first, second, categorySlug);
+	}
+	return first.data.order - second.data.order || compareStable(first, second);
+});
 const getCategoryLabels = (project: CollectionEntry<'projects'>) =>
 	getProjectCategorySlugs(project.data).map((categorySlug) =>
 		categories.find((category) => category.slug === categorySlug)?.label ?? categorySlug,

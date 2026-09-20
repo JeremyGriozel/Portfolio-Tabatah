@@ -3,6 +3,9 @@ slug: Trends & réinterprétations
 title: Trends & réinterprétations
 categories:
   - illustration
+categoryOrders:
+  - category: illustration
+    order: 6
 date: 2024-09-12
 defaultTheme: cyberpunk
 published: true

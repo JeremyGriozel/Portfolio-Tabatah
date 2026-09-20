@@ -3,6 +3,9 @@ slug: NO EXIT
 title: NO EXIT
 categories:
   - photographie
+categoryOrders:
+  - category: photographie
+    order: 0
 date: 2026-01-04
 defaultTheme: cyberpunk
 published: true

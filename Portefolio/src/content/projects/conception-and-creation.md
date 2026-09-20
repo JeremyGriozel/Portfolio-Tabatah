@@ -3,6 +3,9 @@ slug: Conception & création
 title: Conception & création
 categories:
   - direction-artistique
+categoryOrders:
+  - category: direction-artistique
+    order: 0
 date: 2026-01-09
 defaultTheme: dark-academia
 published: true

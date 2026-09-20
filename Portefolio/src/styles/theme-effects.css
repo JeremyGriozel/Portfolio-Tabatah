@@ -1,0 +1,253 @@
+/* Effets centralisés des thèmes à identité graphique renforcée. */
+
+/* Dark Circus Core */
+html[data-theme='dark-circus-core'] .section-panel {
+	background-image:
+		repeating-linear-gradient(
+			112deg,
+			transparent 0 4.5rem,
+			rgb(198 154 66 / 4%) 4.5rem 4.65rem,
+			transparent 4.65rem 9rem
+		),
+		radial-gradient(circle at 12% 16%, rgb(143 41 69 / 12%) 0 0.3rem, transparent 0.35rem);
+	background-size: auto, 7rem 7rem;
+}
+
+html[data-theme='dark-circus-core'] .site-header {
+	border-color: var(--color-primary);
+	border-style: double;
+	border-width: 0 0 0.25rem;
+}
+
+html[data-theme='dark-circus-core'] .site-footer {
+	border-color: var(--color-primary);
+	border-style: double;
+	border-width: 0.25rem 0 0;
+}
+
+html[data-theme='dark-circus-core'] :where(.section-title h1, .section-title h2, .hero__title) {
+	text-shadow: 0.08em 0.08em 0 var(--color-secondary);
+	text-transform: uppercase;
+}
+
+html[data-theme='dark-circus-core'] :where(
+	.button,
+	.theme-switcher__toggle,
+	.theme-switcher__option,
+	.featured-projects__categories button,
+	.illustration-archive__filters button,
+	.project-rail__controls button
+) {
+	border-color: var(--color-primary);
+	border-style: double;
+	border-width: 0.2rem;
+	box-shadow: inset 0 0 0 var(--border-width) rgb(241 225 199 / 16%);
+	letter-spacing: 0.045em;
+}
+
+html[data-theme='dark-circus-core'] :where(.image-frame__media, .project-card__image-link) {
+	border: 0.25rem double var(--color-primary);
+	box-shadow:
+		0 0 0 var(--border-width) var(--color-secondary),
+		0.6rem 0.6rem 0 var(--color-shadow);
+}
+
+html[data-theme='dark-circus-core'] .project-card {
+	transition: transform var(--motion-normal) var(--ease-emphasized);
+}
+
+html[data-theme='dark-circus-core'] .project-card__meta {
+	border-top-style: double;
+	border-top-width: 0.2rem;
+}
+
+html[data-theme='dark-circus-core'] .tag {
+	border-style: dashed;
+	background: rgb(143 41 69 / 13%);
+}
+
+/* Astrological Spacecore */
+html[data-theme='astrological-spacecore'] .section-panel {
+	background-image:
+		radial-gradient(circle at 12% 21%, rgb(241 237 255 / 60%) 0 0.07rem, transparent 0.1rem),
+		radial-gradient(circle at 73% 38%, rgb(198 179 111 / 55%) 0 0.08rem, transparent 0.12rem),
+		radial-gradient(circle at 42% 82%, rgb(101 184 195 / 38%) 0 0.06rem, transparent 0.1rem);
+	background-position: 0 0, 2rem 3rem, 5rem 1rem;
+	background-size: 9rem 9rem, 13rem 13rem, 17rem 17rem;
+}
+
+html[data-theme='astrological-spacecore'] :where(.section-title h1, .section-title h2, .hero__title) {
+	letter-spacing: 0.025em;
+	text-shadow: 0 0 1.15rem rgb(129 117 207 / 35%);
+}
+
+html[data-theme='astrological-spacecore'] :where(.section-title h1, .section-title h2)::after {
+	display: inline-block;
+	margin-left: 0.35em;
+	color: var(--color-primary);
+	font-size: 0.38em;
+	vertical-align: top;
+	content: '✦';
+}
+
+html[data-theme='astrological-spacecore'] :where(
+	.button,
+	.theme-switcher__toggle,
+	.featured-projects__categories button,
+	.illustration-archive__filters button,
+	.project-rail__controls button
+) {
+	box-shadow:
+		inset 0 0 0 var(--border-width) rgb(241 237 255 / 8%),
+		0 0 1rem rgb(101 184 195 / 10%);
+}
+
+html[data-theme='astrological-spacecore'] :where(.project-card__image-link, .image-frame__media) {
+	border: var(--border-width) solid var(--color-border);
+	box-shadow:
+		0 0 0 var(--space-xs) rgb(129 117 207 / 7%),
+		0 1.25rem 3rem var(--color-shadow);
+}
+
+html[data-theme='astrological-spacecore'] .project-card__image-link::after {
+	position: absolute;
+	inset: 9%;
+	z-index: 1;
+	border: var(--border-width) solid rgb(198 179 111 / 48%);
+	border-radius: 50%;
+	content: '';
+	pointer-events: none;
+	transform: rotate(-12deg) scaleY(0.52);
+	transition: transform var(--motion-slow) var(--ease-emphasized), opacity var(--motion-normal) var(--ease-standard);
+}
+
+html[data-theme='astrological-spacecore'] .project-card__overlay { z-index: 2; }
+html[data-theme='astrological-spacecore'] .project-card__meta { border-color: rgb(198 179 111 / 55%); }
+
+/* Cybersigilism */
+html[data-theme='cybersigilism'] .section-panel {
+	background-image:
+		repeating-linear-gradient(132deg, transparent 0 2.9rem, rgb(174 232 218 / 4%) 2.9rem 3rem),
+		repeating-linear-gradient(48deg, transparent 0 4.9rem, rgb(155 112 198 / 4%) 4.9rem 5rem);
+}
+
+html[data-theme='cybersigilism'] :where(.section-title h1, .section-title h2, .hero__title) {
+	font-stretch: condensed;
+	text-shadow:
+		0.04em 0 var(--color-secondary),
+		-0.04em 0 rgb(174 232 218 / 35%);
+	text-transform: uppercase;
+}
+
+html[data-theme='cybersigilism'] :where(
+	.button,
+	.theme-switcher__toggle,
+	.theme-switcher__option,
+	.featured-projects__categories button,
+	.illustration-archive__filters button,
+	.project-rail__controls button
+) {
+	border-color: var(--color-accent);
+	clip-path: polygon(0.55rem 0, 100% 0, 100% calc(100% - 0.55rem), calc(100% - 0.55rem) 100%, 0 100%, 0 0.55rem);
+	letter-spacing: 0.055em;
+	text-transform: uppercase;
+}
+
+html[data-theme='cybersigilism'] :where(.project-card__image-link, .image-frame__media) {
+	border: var(--border-width) solid var(--color-accent);
+	clip-path: polygon(1rem 0, 100% 0, 100% calc(100% - 1rem), calc(100% - 1rem) 100%, 0 100%, 0 1rem);
+	box-shadow: 0.55rem 0.55rem 0 rgb(155 112 198 / 13%);
+}
+
+html[data-theme='cybersigilism'] .project-card__image-link::after {
+	position: absolute;
+	inset: 13%;
+	z-index: 1;
+	border: var(--border-width) solid rgb(174 232 218 / 42%);
+	background:
+		linear-gradient(45deg, transparent 47%, rgb(174 232 218 / 28%) 48% 52%, transparent 53%),
+		linear-gradient(-45deg, transparent 47%, rgb(155 112 198 / 25%) 48% 52%, transparent 53%);
+	clip-path: polygon(50% 0, 62% 36%, 100% 50%, 62% 64%, 50% 100%, 38% 64%, 0 50%, 38% 36%);
+	content: '';
+	opacity: 0.42;
+	pointer-events: none;
+	transform: rotate(0deg) scale(0.88);
+	transition: opacity var(--motion-normal) var(--ease-standard), transform var(--motion-slow) var(--ease-emphasized);
+}
+
+html[data-theme='cybersigilism'] .project-card__overlay { z-index: 2; }
+html[data-theme='cybersigilism'] .project-card__meta { border-top-style: dashed; }
+html[data-theme='cybersigilism'] .tag { border-style: dashed; clip-path: polygon(0.35rem 0, 100% 0, calc(100% - 0.35rem) 100%, 0 100%); }
+
+html[data-theme='cybersigilism'] :focus-visible {
+	outline-style: dashed;
+	box-shadow: 0 0 0 var(--space-xs) rgb(155 112 198 / 22%);
+}
+
+@media (hover: hover) {
+	html[data-theme='dark-circus-core'] .project-card:hover {
+		transform: translateY(var(--hover-lift)) rotate(-0.32deg);
+	}
+
+	html[data-theme='dark-circus-core'] .project-card:nth-child(even):hover {
+		transform: translateY(var(--hover-lift)) rotate(0.32deg);
+	}
+
+	html[data-theme='dark-circus-core'] .project-card:hover .project-card__title {
+		animation: dark-circus-waver 420ms var(--ease-emphasized) both;
+	}
+
+	html[data-theme='astrological-spacecore'] .project-card__image-link:hover::after,
+	html[data-theme='astrological-spacecore'] .project-card__image-link:focus-visible::after {
+		opacity: 0.9;
+		transform: rotate(16deg) scaleY(0.56);
+	}
+
+	html[data-theme='astrological-spacecore'] :where(.button, .project-rail__controls button):hover {
+		box-shadow: 0 0 1.4rem rgb(101 184 195 / 22%);
+	}
+
+	html[data-theme='cybersigilism'] .project-card__image-link:hover::after,
+	html[data-theme='cybersigilism'] .project-card__image-link:focus-visible::after {
+		opacity: 0.78;
+		transform: rotate(45deg) scale(0.95);
+	}
+
+	html[data-theme='cybersigilism'] :where(.button, .project-card__title a):hover {
+		animation: cybersigil-shift 360ms steps(2, end) both;
+	}
+}
+
+@keyframes dark-circus-waver {
+	0%, 100% { letter-spacing: normal; transform: translateX(0); }
+	45% { letter-spacing: 0.025em; transform: translateX(0.12rem); }
+}
+
+@keyframes cybersigil-shift {
+	0%, 100% { transform: translate(0); }
+	35% { transform: translate(0.12rem, -0.04rem); }
+	70% { transform: translate(-0.08rem, 0.04rem); }
+}
+
+@media (max-width: 48rem) {
+	html[data-theme='dark-circus-core'] :where(.image-frame__media, .project-card__image-link) {
+		box-shadow: 0.35rem 0.35rem 0 var(--color-shadow);
+	}
+
+	html[data-theme='astrological-spacecore'] .section-panel {
+		background-size: 7rem 7rem, 10rem 10rem, 13rem 13rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html[data-theme='dark-circus-core'] .project-card,
+	html[data-theme='dark-circus-core'] .project-card:hover,
+	html[data-theme='dark-circus-core'] .project-card:nth-child(even):hover,
+	html[data-theme='astrological-spacecore'] .project-card__image-link::after,
+	html[data-theme='cybersigilism'] .project-card__image-link::after,
+	html[data-theme='cybersigilism'] :where(.button, .project-card__title a):hover {
+		animation: none;
+		transform: none;
+		transition: none;
+	}
+}

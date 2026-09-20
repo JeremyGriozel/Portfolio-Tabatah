@@ -3,6 +3,9 @@ slug: Soleil Levant
 title: Soleil Levant
 categories:
   - photographie
+categoryOrders:
+  - category: photographie
+    order: 0
 date: 2026-04-11
 defaultTheme: dark-academia
 published: true

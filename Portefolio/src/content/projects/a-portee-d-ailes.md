@@ -3,6 +3,9 @@ slug: À portée d’ailes
 title: À portée d’ailes
 categories:
   - photographie
+categoryOrders:
+  - category: photographie
+    order: 3
 date: 2026-04-25
 defaultTheme: cottage-core
 published: true

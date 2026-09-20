@@ -31,6 +31,11 @@ const taggedGalleryImage = legacyProjectImage.extend({
 	primaryTag: z.union([z.enum(galleryTagSchemaValues), z.literal('')]).optional(),
 });
 
+const projectCategoryOrder = z.object({
+	category: z.enum(projectCategorySchemaValues),
+	order: z.number().int().nonnegative(),
+});
+
 const galleryImage = z.union([z.string(), taggedGalleryImage]);
 
 const projects = defineCollection({
@@ -39,6 +44,7 @@ const projects = defineCollection({
 		slug: z.string(),
 		title: z.string(),
 		categories: z.array(z.enum(projectCategorySchemaValues)).default([]),
+		categoryOrders: z.array(projectCategoryOrder).default([]),
 		date: z.coerce.date(),
 		defaultTheme: z.enum(projectThemeValues).optional(),
 		shortDescription: z.string(),

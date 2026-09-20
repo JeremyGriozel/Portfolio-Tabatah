@@ -3,6 +3,9 @@ slug: Sous l’Aiguille
 title: Sous l’Aiguille
 categories:
   - photographie
+categoryOrders:
+  - category: photographie
+    order: 0
 date: 2025-11-11
 defaultTheme: gothic
 published: true

@@ -3,6 +3,9 @@ slug: Études de style
 title: Études de style
 categories:
   - illustration
+categoryOrders:
+  - category: illustration
+    order: 3
 date: 2024-11-27
 defaultTheme: downtown-girl
 published: true

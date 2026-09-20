@@ -3,6 +3,9 @@ slug: Du réel à l’illustration
 title: Du réel à l’illustration
 categories:
   - illustration
+categoryOrders:
+  - category: illustration
+    order: 7
 date: 2025-01-21
 defaultTheme: old-money
 published: true

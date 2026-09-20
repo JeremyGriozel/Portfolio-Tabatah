@@ -663,41 +663,6 @@ html[data-theme='autumn-nostalgia'] {
 	--section-footer-background: #432c21;
 }
 
-/* Nostalgic 2000s : bleu écran, argent doux et rose numérique */
-html[data-theme='nostalgic-2000s'] {
-	color-scheme: light;
-	--font-heading: "Arial Black", "Helvetica Neue", Arial, sans-serif;
-	--font-body: Verdana, Geneva, sans-serif;
-	--letter-spacing-heading: -0.05em;
-	--radius-small: 0.45rem;
-	--radius-medium: 0.9rem;
-	--radius-large: 1.65rem;
-	--radius-pill: 999px;
-	--color-page: #dce4ef;
-	--color-surface: #f3f6fb;
-	--color-surface-alt: #c5d0e2;
-	--color-text: #172341;
-	--color-text-muted: #5a6781;
-	--color-primary: #3155a6;
-	--color-primary-hover: #233e7d;
-	--color-secondary: #7655a5;
-	--color-accent: #d05d91;
-	--color-border: #a8b5cb;
-	--color-inverse: #ffffff;
-	--color-focus: #9b3f79;
-	--color-shadow: rgb(41 70 128 / 17%);
-	--color-footer-muted: #c8d0df;
-	--color-footer-border: #53627d;
-	--color-footer-text: #f6f8fd;
-	--section-header-background: rgb(220 228 239 / 94%);
-	--section-home-background: #95abd3;
-	--section-about-background: #d0d8e8;
-	--section-expertise-background: #c7bddd;
-	--section-projects-background: #eaf0f7;
-	--section-cv-background: #dce4ef;
-	--section-contact-background: #d7acc6;
-	--section-footer-background: #1d2944;
-}
 
 /* Found Footage — Crypticcore : nuit vidéo, vert phosphore et signal usé */
 html[data-theme='found-footage-crypticcore'] {
@@ -771,150 +736,6 @@ html[data-theme='retro-analog-horror'] {
 	--section-footer-background: #0c0908;
 }
 
-/* Pacific Northwest — 35mm : forêt humide, brume et émulsion chaude */
-html[data-theme='pacific-northwest-35mm'] {
-	color-scheme: light;
-	--font-heading: "Iowan Old Style", Palatino, Georgia, serif;
-	--font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	--letter-spacing-heading: -0.03em;
-	--radius-small: 0.15rem;
-	--radius-medium: 0.4rem;
-	--radius-large: 0.8rem;
-	--radius-pill: 0.35rem;
-	--color-page: #d9ddd3;
-	--color-surface: #edf0e8;
-	--color-surface-alt: #bdc7b8;
-	--color-text: #26352f;
-	--color-text-muted: #607068;
-	--color-primary: #315b4b;
-	--color-primary-hover: #244437;
-	--color-secondary: #53677a;
-	--color-accent: #a66b43;
-	--color-border: #a5b1a4;
-	--color-inverse: #f4f2e8;
-	--color-focus: #8a5535;
-	--color-shadow: rgb(35 57 48 / 16%);
-	--color-footer-muted: #c1ccc3;
-	--color-footer-border: #4a6258;
-	--color-footer-text: #f1f3ed;
-	--section-header-background: rgb(217 221 211 / 94%);
-	--section-home-background: #799084;
-	--section-about-background: #c4cdc0;
-	--section-expertise-background: #b9c3b1;
-	--section-projects-background: #e3e7de;
-	--section-cv-background: #d9ddd3;
-	--section-contact-background: #c69b79;
-	--section-footer-background: #23372f;
-}
-
-/* Oceancore : bleus délavés, verre de mer et sable froid */
-html[data-theme='oceancore-washed-out'] {
-	color-scheme: light;
-	--font-heading: Palatino, "Palatino Linotype", Georgia, serif;
-	--font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	--letter-spacing-heading: -0.035em;
-	--radius-small: 0.35rem;
-	--radius-medium: 0.8rem;
-	--radius-large: 1.6rem;
-	--radius-pill: 999px;
-	--color-page: #dfe9e8;
-	--color-surface: #f1f6f4;
-	--color-surface-alt: #c2d6d4;
-	--color-text: #28434a;
-	--color-text-muted: #657d81;
-	--color-primary: #397887;
-	--color-primary-hover: #2b5c68;
-	--color-secondary: #557f79;
-	--color-accent: #b77d68;
-	--color-border: #a9c2c1;
-	--color-inverse: #f5fbfa;
-	--color-focus: #306c79;
-	--color-shadow: rgb(45 91 99 / 13%);
-	--color-footer-muted: #bdd0d0;
-	--color-footer-border: #4b7075;
-	--color-footer-text: #f2f8f7;
-	--section-header-background: rgb(223 233 232 / 93%);
-	--section-home-background: #8db5b8;
-	--section-about-background: #cfdfdc;
-	--section-expertise-background: #bed5d1;
-	--section-projects-background: #eaf1ef;
-	--section-cv-background: #dfe9e8;
-	--section-contact-background: #c8b5a3;
-	--section-footer-background: #294950;
-}
-
-/* 90s Indie Tumblr : gris photo, denim, bordeaux et papier mat */
-html[data-theme='90s-indie-tumblr'] {
-	color-scheme: light;
-	--font-heading: "Arial Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	--font-body: Georgia, "Times New Roman", serif;
-	--letter-spacing-heading: -0.045em;
-	--radius-small: 0;
-	--radius-medium: 0.2rem;
-	--radius-large: 0.4rem;
-	--radius-pill: 0.2rem;
-	--color-page: #d9d7d2;
-	--color-surface: #efede8;
-	--color-surface-alt: #c4c1bb;
-	--color-text: #242326;
-	--color-text-muted: #666268;
-	--color-primary: #743943;
-	--color-primary-hover: #552931;
-	--color-secondary: #435a68;
-	--color-accent: #9a6a45;
-	--color-border: #aaa6a0;
-	--color-inverse: #f6f3ed;
-	--color-focus: #38576a;
-	--color-shadow: rgb(31 29 31 / 17%);
-	--color-footer-muted: #c6c2bd;
-	--color-footer-border: #555259;
-	--color-footer-text: #f0eeea;
-	--section-header-background: rgb(217 215 210 / 95%);
-	--section-home-background: #7a858c;
-	--section-about-background: #c9c6c0;
-	--section-expertise-background: #b9b1ab;
-	--section-projects-background: #e3e0db;
-	--section-cv-background: #d9d7d2;
-	--section-contact-background: #b8878e;
-	--section-footer-background: #28272b;
-}
-
-/* Cybercore Neofuturism : graphite, bleu spectral et signal violet */
-html[data-theme='cybercore-neofuturism'] {
-	color-scheme: dark;
-	--font-heading: "Arial Black", Impact, "Helvetica Neue", Arial, sans-serif;
-	--font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	--letter-spacing-heading: -0.055em;
-	--radius-small: 0.15rem;
-	--radius-medium: 0.35rem;
-	--radius-large: 0.65rem;
-	--radius-pill: 0.25rem;
-	--color-page: #080d19;
-	--color-surface: #10182a;
-	--color-surface-alt: #192541;
-	--color-text: #e8f1ff;
-	--color-text-muted: #9dadc8;
-	--color-primary: #4c8fe8;
-	--color-primary-hover: #75adf1;
-	--color-secondary: #8a67d4;
-	--color-accent: #45c7bd;
-	--color-border: #304363;
-	--color-inverse: #07101c;
-	--color-focus: #72d9d0;
-	--color-shadow: rgb(2 7 20 / 48%);
-	--color-footer-muted: #91a2bf;
-	--color-footer-border: #2b3d5d;
-	--color-footer-text: #edf4ff;
-	--section-header-background: rgb(8 13 25 / 95%);
-	--section-home-background: #17315a;
-	--section-about-background: #111f35;
-	--section-expertise-background: #211d43;
-	--section-projects-background: #0b1220;
-	--section-cv-background: #080d19;
-	--section-contact-background: #163d45;
-	--section-footer-background: #050912;
-}
-
 /* Nautical Gothic : marine profond, laiton froid et ivoire salin */
 html[data-theme='nautical-gothic'] {
 	color-scheme: dark;
@@ -949,6 +770,114 @@ html[data-theme='nautical-gothic'] {
 	--section-cv-background: #0c1820;
 	--section-contact-background: #35262b;
 	--section-footer-background: #071016;
+}
+
+/* Dark Circus Core : velours, affiche ancienne, laiton et vert de scène */
+html[data-theme='dark-circus-core'] {
+	color-scheme: dark;
+	--font-heading: Copperplate, "Copperplate Gothic Light", Baskerville, Georgia, serif;
+	--font-body: "Gill Sans", "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+	--letter-spacing-heading: -0.015em;
+	--radius-small: 0.15rem;
+	--radius-medium: 0.3rem;
+	--radius-large: 0.6rem;
+	--radius-pill: 0.25rem;
+	--color-page: #150d15;
+	--color-surface: #241522;
+	--color-surface-alt: #35202e;
+	--color-text: #f1e1c7;
+	--color-text-muted: #c1a989;
+	--color-primary: #c69a42;
+	--color-primary-hover: #e0bd68;
+	--color-secondary: #8f2945;
+	--color-accent: #4f8b78;
+	--color-border: #72543e;
+	--color-inverse: #1b1018;
+	--color-focus: #f0cb73;
+	--color-shadow: rgb(2 0 3 / 55%);
+	--color-footer-muted: #bba587;
+	--color-footer-border: #644833;
+	--color-footer-text: #f4e6cf;
+	--section-header-background: rgb(21 13 21 / 96%);
+	--section-home-background: #4b1728;
+	--section-about-background: #291824;
+	--section-expertise-background: #352019;
+	--section-projects-background: #1a1019;
+	--section-cv-background: #150d15;
+	--section-contact-background: #3b1728;
+	--section-footer-background: #0b070b;
+}
+
+/* Astrological Spacecore : carte céleste, encre nocturne, or et lumière lunaire */
+html[data-theme='astrological-spacecore'] {
+	color-scheme: dark;
+	--font-heading: Didot, "Bodoni MT", "Iowan Old Style", Georgia, serif;
+	--font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--letter-spacing-heading: 0.015em;
+	--radius-small: 0.45rem;
+	--radius-medium: 1rem;
+	--radius-large: 2rem;
+	--radius-pill: 999px;
+	--color-page: #090b20;
+	--color-surface: #12152e;
+	--color-surface-alt: #202348;
+	--color-text: #f1edff;
+	--color-text-muted: #aaa7c6;
+	--color-primary: #c6b36f;
+	--color-primary-hover: #e0cf8d;
+	--color-secondary: #8175cf;
+	--color-accent: #65b8c3;
+	--color-border: #45476f;
+	--color-inverse: #0d1024;
+	--color-focus: #e5d58e;
+	--color-shadow: rgb(1 2 16 / 52%);
+	--color-footer-muted: #9c9ab9;
+	--color-footer-border: #3e4065;
+	--color-footer-text: #f3efff;
+	--section-header-background: rgb(9 11 32 / 94%);
+	--section-home-background: #191d46;
+	--section-about-background: #141936;
+	--section-expertise-background: #242044;
+	--section-projects-background: #0d1028;
+	--section-cv-background: #090b20;
+	--section-contact-background: #272147;
+	--section-footer-background: #050615;
+}
+
+/* Cybersigilism : graphite, métal froid, violet spectral et lignes incisives */
+html[data-theme='cybersigilism'] {
+	color-scheme: dark;
+	--font-heading: "Arial Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	--font-body: "Courier New", Courier, monospace;
+	--letter-spacing-heading: -0.055em;
+	--radius-small: 0;
+	--radius-medium: 0;
+	--radius-large: 0;
+	--radius-pill: 0;
+	--color-page: #080a0f;
+	--color-surface: #11151d;
+	--color-surface-alt: #1b212b;
+	--color-text: #e8edf0;
+	--color-text-muted: #9ca7ae;
+	--color-primary: #aee8da;
+	--color-primary-hover: #d0fff3;
+	--color-secondary: #9b70c6;
+	--color-accent: #8ea5b5;
+	--color-border: #3b4650;
+	--color-inverse: #080c10;
+	--color-focus: #c9f8ec;
+	--color-shadow: rgb(0 0 0 / 60%);
+	--color-footer-muted: #929da5;
+	--color-footer-border: #343e47;
+	--color-footer-text: #edf2f4;
+	--section-header-background: rgb(8 10 15 / 97%);
+	--section-home-background: #18222a;
+	--section-about-background: #131820;
+	--section-expertise-background: #20182a;
+	--section-projects-background: #0b0e13;
+	--section-cv-background: #080a0f;
+	--section-contact-background: #1c1523;
+	--section-footer-background: #040609;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -3,6 +3,9 @@ slug: Outsider
 title: Outsider
 categories:
   - photographie
+categoryOrders:
+  - category: photographie
+    order: 0
 date: 2024-11-12
 defaultTheme: backrooms
 published: true

@@ -115,6 +115,30 @@ export default config({
 					defaultValue: ['photographie'],
 					description: 'Un projet peut appartenir à plusieurs catégories.',
 				}),
+				categoryOrders: fields.array(
+					fields.object({
+						category: fields.select({
+							label: 'Catégorie',
+							options: portfolioCategoryOptions,
+							defaultValue: 'photographie',
+						}),
+						order: fields.integer({
+							label: 'Position dans cette catégorie',
+							defaultValue: 0,
+							validation: { min: 0 },
+						}),
+					}),
+					{
+						label: 'Ordre par catégorie',
+						description: 'Ajoutez une ligne pour chaque catégorie sélectionnée ci-dessus. Les valeurs les plus basses apparaissent en premier.',
+						itemLabel: ({ fields }) => {
+							const categoryLabel = portfolioCategoryOptions.find(
+								({ value }) => value === fields.category.value,
+							)?.label ?? fields.category.value;
+							return `${categoryLabel} — position ${fields.order.value}`;
+						},
+					},
+				),
 				date: fields.date({ label: 'Date', validation: { isRequired: true } }),
 				defaultTheme: fields.select({
 					label: 'Thème par défaut',

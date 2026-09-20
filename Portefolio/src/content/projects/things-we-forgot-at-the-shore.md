@@ -3,7 +3,13 @@ slug: Things We Forgot At The Shore
 title: Things We Forgot At The Shore
 categories:
   - illustration
+<<<<<<< Updated upstream
   - direction-artistique
+=======
+categoryOrders:
+  - category: illustration
+    order: 2
+>>>>>>> Stashed changes
 date: 2026-05-20
 defaultTheme: nautical-gothic
 published: true

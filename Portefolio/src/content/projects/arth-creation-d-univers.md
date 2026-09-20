@@ -3,7 +3,13 @@ slug: ARTH - Création d'univers
 title: ARTH - Création d'univers
 categories:
   - direction-artistique
+<<<<<<< Updated upstream
   - illustration
+=======
+categoryOrders:
+  - category: direction-artistique
+    order: 0
+>>>>>>> Stashed changes
 date: 2020-10-28
 defaultTheme: cyberpunk
 published: true

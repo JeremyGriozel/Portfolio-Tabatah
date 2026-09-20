@@ -59,6 +59,8 @@ const projectGroups = categories.map((category) => ({
 					layout="rail"
 					railId={`featured-projects-rail-${category.slug}`}
 					railLabel={`${copy.title} — ${category.label}`}
+					sortMode="categoryOrder"
+					categorySlug={category.slug}
 				/>
 			</div>
 		))}
@@ -70,28 +72,13 @@ const projectGroups = categories.map((category) => ({
 </section>
 
 <script>
-	const FEATURED_CATEGORY_DELAY = 5000;
-
 	document.querySelectorAll<HTMLElement>('[data-featured-projects]').forEach((section) => {
 		const tabs = Array.from(section.querySelectorAll<HTMLButtonElement>('[data-featured-tab]'));
 		const panels = Array.from(section.querySelectorAll<HTMLElement>('[data-featured-panel]'));
 		const status = section.querySelector<HTMLElement>('[data-featured-status]');
-		if (tabs.length < 2 || tabs.length !== panels.length) return;
+		if (tabs.length === 0 || tabs.length !== panels.length) return;
 
-		const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 		let currentIndex = 0;
-		let rotationTimer: number | undefined;
-		let isInViewport = true;
-
-		const stopRotation = () => {
-			if (rotationTimer !== undefined) window.clearInterval(rotationTimer);
-			rotationTimer = undefined;
-		};
-
-		const canRotate = () =>
-			!reducedMotion.matches
-			&& isInViewport
-			&& document.visibilityState === 'visible';
 
 		const showCategory = (nextIndex: number, announce = false) => {
 			currentIndex = (nextIndex + tabs.length) % tabs.length;
@@ -107,22 +94,8 @@ const projectGroups = categories.map((category) => ({
 			if (announce && status) status.textContent = `Catégorie affichée : ${tabs[currentIndex].textContent?.trim()}.`;
 		};
 
-		const startRotation = () => {
-			stopRotation();
-			if (!canRotate()) return;
-			rotationTimer = window.setTimeout(() => {
-				showCategory(currentIndex + 1);
-				startRotation();
-			}, FEATURED_CATEGORY_DELAY);
-		};
-
-		const selectByUser = (index: number) => {
-			showCategory(index, true);
-			startRotation();
-		};
-
 		tabs.forEach((tab, index) => {
-			tab.addEventListener('click', () => selectByUser(index));
+			tab.addEventListener('click', () => showCategory(index, true));
 			tab.addEventListener('keydown', (event) => {
 				if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
 				event.preventDefault();
@@ -131,19 +104,9 @@ const projectGroups = categories.map((category) => ({
 					: event.key === 'End'
 						? tabs.length - 1
 						: currentIndex + (event.key === 'ArrowRight' ? 1 : -1);
-				selectByUser((nextIndex + tabs.length) % tabs.length);
+				showCategory((nextIndex + tabs.length) % tabs.length, true);
 				tabs[(nextIndex + tabs.length) % tabs.length].focus();
 			});
 		});
-
-		const visibilityObserver = new IntersectionObserver(([entry]) => {
-			isInViewport = entry?.isIntersecting ?? true;
-			startRotation();
-		}, { threshold: 0.15 });
-
-		visibilityObserver.observe(section);
-		document.addEventListener('visibilitychange', startRotation);
-		reducedMotion.addEventListener('change', startRotation);
-		startRotation();
 	});
 </script>

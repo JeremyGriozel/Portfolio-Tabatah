@@ -3,6 +3,9 @@ slug: Illustrations chibi
 title: Illustrations chibi
 categories:
   - illustration
+categoryOrders:
+  - category: illustration
+    order: 9
 date: 2025-07-15
 defaultTheme: downtown-girl
 published: true
