@@ -1,5 +1,998 @@
 /* Effets centralisés des thèmes à identité graphique renforcée. */
 
+/* Backrooms — architecture liminale, lumière fluorescente et profondeur impossible */
+html[data-theme='backrooms'] body::before {
+	position: fixed;
+	inset: 0;
+	z-index: 45;
+	background:
+		repeating-linear-gradient(90deg, transparent 0 14rem, var(--theme-backrooms-line) 14rem 14.08rem),
+		repeating-linear-gradient(0deg, transparent 0 9rem, var(--theme-backrooms-line) 9rem 9.08rem),
+		repeating-linear-gradient(90deg, transparent 0 7rem, var(--theme-backrooms-fluorescent) 7rem 10rem, transparent 10rem 21rem);
+	background-position: center top;
+	background-size: auto, auto, 100% 1.15rem;
+	background-repeat: repeat, repeat, repeat-y;
+	content: '';
+	mix-blend-mode: soft-light;
+	opacity: 0.36;
+	pointer-events: none;
+	animation: backrooms-fluorescent 13s steps(1, end) infinite;
+}
+
+html[data-theme='backrooms'] .section-panel {
+	background-image:
+		repeating-linear-gradient(90deg, transparent 0 11rem, var(--theme-backrooms-line) 11rem 11.06rem),
+		linear-gradient(180deg, var(--theme-backrooms-light), transparent 18%, transparent 74%, var(--theme-backrooms-depth));
+}
+
+html[data-theme='backrooms'] .site-header {
+	border-bottom: 0.32rem solid var(--theme-backrooms-wall-dark);
+	box-shadow:
+		inset 0 -0.08rem 0 var(--theme-backrooms-fluorescent),
+		0 0.65rem 1.7rem var(--theme-backrooms-shadow);
+}
+
+html[data-theme='backrooms'] :where(.section-title h1, .section-title h2, .hero__title, .project-header__title, .home-carousel__title) {
+	font-stretch: condensed;
+	font-weight: 700;
+	letter-spacing: 0.015em;
+	text-shadow: 0.08em 0.08em 0 var(--theme-backrooms-light);
+	text-transform: uppercase;
+}
+
+html[data-theme='backrooms'] :where(.section-title__eyebrow, .eyebrow) {
+	font-family: var(--font-body);
+	letter-spacing: 0.18em;
+}
+
+html[data-theme='backrooms'] .navigation__link {
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+html[data-theme='backrooms'] .navigation__link::after {
+	height: 0.28rem;
+	background: var(--theme-backrooms-fluorescent);
+	box-shadow: 0 0 0.7rem var(--theme-backrooms-fluorescent);
+}
+
+html[data-theme='backrooms'] :where(
+	.button,
+	.theme-switcher__toggle,
+	.theme-switcher__option,
+	.featured-projects__categories button,
+	.illustration-archive__filters button,
+	.project-rail__controls button
+) {
+	border: 0.16rem solid var(--theme-backrooms-wall-dark);
+	border-radius: 0;
+	box-shadow:
+		inset 0.25rem 0.25rem 0 var(--theme-backrooms-light),
+		inset -0.25rem -0.25rem 0 var(--theme-backrooms-depth);
+	font-family: var(--font-body);
+	text-transform: uppercase;
+}
+
+html[data-theme='backrooms'] :where(.project-grid, .project-rail__track) {
+	counter-reset: backrooms-door;
+	perspective: 70rem;
+}
+
+html[data-theme='backrooms'] .project-card {
+	counter-increment: backrooms-door;
+}
+
+html[data-theme='backrooms'] .project-card__image-link {
+	border: 0.7rem solid var(--theme-backrooms-wall-dark);
+	background: var(--theme-backrooms-wall);
+	box-shadow:
+		inset 0 0 0 0.28rem var(--theme-backrooms-wall),
+		inset 0 -1.1rem 1.6rem var(--theme-backrooms-depth),
+		0.7rem 0.9rem 0 var(--theme-backrooms-shadow);
+	transform-origin: center;
+	transition: transform var(--motion-slow) var(--ease-emphasized), filter var(--motion-normal) var(--ease-standard);
+	isolation: isolate;
+}
+
+html[data-theme='backrooms'] .project-card__image-link::before {
+	position: absolute;
+	inset: 5%;
+	z-index: 1;
+	border: 0.3rem solid var(--theme-backrooms-light);
+	box-shadow:
+		inset 0 0 0 0.45rem var(--theme-backrooms-depth),
+		inset 0 0 0 0.62rem var(--theme-backrooms-wall),
+		inset 0 0 2.2rem var(--theme-backrooms-depth);
+	content: '';
+	pointer-events: none;
+	transition: inset var(--motion-slow) var(--ease-emphasized), box-shadow var(--motion-slow) var(--ease-standard);
+}
+
+html[data-theme='backrooms'] .project-card__image-link::after {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 2;
+	padding: 0.25rem 0.42rem;
+	color: var(--color-text);
+	background: var(--theme-backrooms-ceiling);
+	box-shadow: 0 0 1rem var(--theme-backrooms-light);
+	font-size: 0.55rem;
+	font-variant-numeric: tabular-nums;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	content: 'LEVEL 0 / HALL ' counter(backrooms-door, decimal-leading-zero);
+	pointer-events: none;
+}
+
+html[data-theme='backrooms'] .project-card__overlay {
+	z-index: 3;
+	border: var(--border-width) solid var(--theme-backrooms-ceiling);
+	background: var(--theme-backrooms-depth);
+}
+
+html[data-theme='backrooms'] .project-card__meta {
+	padding: var(--space-sm);
+	border: 0;
+	color: var(--color-text);
+	background: var(--theme-backrooms-wall-dark);
+}
+
+html[data-theme='backrooms'] :where(.project-cover .image-frame__media, .project-gallery .image-frame__media, .hero__visual .image-frame__media) {
+	border: 0.48rem solid var(--theme-backrooms-wall-dark);
+	box-shadow:
+		inset 0 0 0 0.18rem var(--theme-backrooms-light),
+		0.75rem 0.9rem 0 var(--theme-backrooms-shadow);
+}
+
+html[data-theme='backrooms'] .home-carousel__frame {
+	box-shadow: inset 0 0 5rem var(--theme-backrooms-depth);
+}
+
+html[data-theme='backrooms'] .home-carousel__frame::before {
+	position: absolute;
+	top: 0;
+	right: 11%;
+	left: 11%;
+	z-index: 4;
+	height: 0.65rem;
+	background: var(--theme-backrooms-fluorescent);
+	box-shadow: 0 0 2rem var(--theme-backrooms-fluorescent);
+	content: '';
+	pointer-events: none;
+	animation: backrooms-fluorescent 13s steps(1, end) infinite;
+}
+
+html[data-theme='backrooms'] .home-carousel__copy {
+	border: 0.45rem solid var(--theme-backrooms-wall-dark);
+	color: var(--color-text);
+	background: var(--theme-backrooms-wall);
+	box-shadow:
+		inset 0 0 0 0.18rem var(--theme-backrooms-light),
+		0.7rem 0.85rem 0 var(--theme-backrooms-shadow);
+	text-shadow: none;
+}
+
+html[data-theme='backrooms'] :focus-visible {
+	outline: 0.22rem solid var(--color-focus);
+	box-shadow: 0 0 0 0.28rem var(--theme-backrooms-fluorescent);
+}
+
+/* Weirdcore — rêve numérique incohérent et vieux web psychologique */
+html[data-theme='weirdcore'] body::before {
+	position: fixed;
+	right: -2.8rem;
+	bottom: 12%;
+	z-index: 45;
+	width: clamp(8rem, 18vw, 14rem);
+	aspect-ratio: 2 / 1;
+	border: 0.22rem solid var(--theme-weird-white);
+	border-radius: 50%;
+	background:
+		radial-gradient(circle, var(--theme-weird-lime) 0 7%, var(--theme-weird-shadow) 8% 16%, var(--theme-weird-white) 17% 30%, transparent 31%),
+		var(--theme-weird-panel);
+	box-shadow: 0.7rem 0.8rem 0 var(--theme-weird-pink);
+	content: '';
+	opacity: 0.24;
+	pointer-events: none;
+	transform: rotate(-8deg);
+	animation: weirdcore-watch 11s steps(1, end) infinite;
+}
+
+html[data-theme='weirdcore'] body::after {
+	position: fixed;
+	left: var(--space-lg);
+	bottom: var(--space-lg);
+	z-index: 45;
+	max-width: 18rem;
+	color: var(--theme-weird-lime);
+	font-family: var(--font-body);
+	font-size: 0.62rem;
+	letter-spacing: 0.12em;
+	content: 'THIS PAGE REMEMBERS YOU / ?';
+	opacity: 0.55;
+	pointer-events: none;
+	transform: rotate(-2deg);
+}
+
+html[data-theme='weirdcore'] .section-panel {
+	background-image:
+		radial-gradient(circle at 17% 23%, var(--theme-weird-screen) 0 0.3rem, transparent 0.34rem),
+		radial-gradient(circle at 81% 68%, var(--theme-weird-noise) 0 0.12rem, transparent 0.16rem),
+		repeating-linear-gradient(123deg, transparent 0 5.8rem, var(--theme-weird-screen) 5.8rem 5.95rem);
+	background-size: 8rem 8rem, 5rem 5rem, auto;
+}
+
+html[data-theme='weirdcore'] .site-header {
+	border-bottom: 0.22rem dotted var(--theme-weird-lime);
+	box-shadow: 0.38rem 0.48rem 0 var(--theme-weird-pink);
+}
+
+html[data-theme='weirdcore'] .site-header__brand::after {
+	margin-left: 0.6rem;
+	color: var(--theme-weird-lime);
+	font-family: var(--font-body);
+	font-size: 0.58rem;
+	letter-spacing: 0.08em;
+	content: '[ home? ]';
+}
+
+html[data-theme='weirdcore'] :where(.section-title h1, .section-title h2, .hero__title, .project-header__title, .home-carousel__title) {
+	font-weight: 800;
+	text-shadow:
+		0.07em 0.06em 0 var(--theme-weird-pink),
+		-0.04em -0.03em 0 var(--theme-weird-cyan);
+	transform: skewX(-1.5deg);
+}
+
+html[data-theme='weirdcore'] :where(.section-title h1, .section-title h2, .hero__title)::first-letter {
+	color: var(--theme-weird-lime);
+	font-family: Georgia, "Times New Roman", serif;
+	font-style: italic;
+}
+
+html[data-theme='weirdcore'] :where(.section-title__eyebrow, .eyebrow) {
+	color: var(--theme-weird-lime);
+	letter-spacing: 0.21em;
+}
+
+html[data-theme='weirdcore'] .navigation__link::before {
+	position: absolute;
+	top: -0.55em;
+	left: -0.7em;
+	color: var(--theme-weird-pink);
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 0.72em;
+	font-style: italic;
+	content: '?';
+	opacity: 0;
+	transform: rotate(-12deg);
+	transition: opacity var(--motion-fast) steps(2, end);
+}
+
+html[data-theme='weirdcore'] .navigation__link:hover::before,
+html[data-theme='weirdcore'] .navigation__link[aria-current='page']::before {
+	opacity: 1;
+}
+
+html[data-theme='weirdcore'] :where(
+	.button,
+	.theme-switcher__toggle,
+	.featured-projects__categories button,
+	.illustration-archive__filters button,
+	.project-rail__controls button
+) {
+	border: 0.18rem outset var(--theme-weird-violet);
+	border-radius: 0;
+	box-shadow: 0.28rem 0.32rem 0 var(--theme-weird-shadow);
+	font-family: var(--font-body);
+	letter-spacing: 0.06em;
+}
+
+html[data-theme='weirdcore'] :where(.project-grid, .project-rail__track) {
+	counter-reset: weird-window;
+}
+
+html[data-theme='weirdcore'] .project-card {
+	--weird-turn: -0.45deg;
+	counter-increment: weird-window;
+	transform: translateX(0.18rem) rotate(var(--weird-turn));
+	transition: transform var(--motion-normal) steps(2, end);
+}
+
+html[data-theme='weirdcore'] .project-card:nth-child(even) {
+	--weird-turn: 0.65deg;
+	transform: translateX(-0.24rem) rotate(var(--weird-turn));
+}
+
+html[data-theme='weirdcore'] .project-card__image-link {
+	border: 0.26rem ridge var(--theme-weird-violet);
+	box-shadow:
+		0.55rem 0.65rem 0 var(--theme-weird-shadow),
+		-0.22rem -0.22rem 0 var(--theme-weird-pink);
+	isolation: isolate;
+}
+
+html[data-theme='weirdcore'] .project-card__image-link::before {
+	position: absolute;
+	top: 8%;
+	right: 7%;
+	z-index: 2;
+	width: clamp(2.6rem, 8vw, 4.8rem);
+	aspect-ratio: 2 / 1;
+	border: var(--border-width) solid var(--theme-weird-white);
+	border-radius: 50%;
+	background: radial-gradient(circle, var(--theme-weird-lime) 0 9%, var(--theme-weird-shadow) 10% 19%, var(--theme-weird-white) 20% 33%, transparent 34%);
+	content: '';
+	opacity: 0.38;
+	pointer-events: none;
+	transform: rotate(7deg) scaleY(0.86);
+	transition: opacity var(--motion-normal) steps(2, end), transform var(--motion-normal) steps(2, end);
+}
+
+html[data-theme='weirdcore'] .project-card__image-link::after {
+	position: absolute;
+	left: 6%;
+	bottom: 7%;
+	z-index: 2;
+	padding: 0.25rem 0.4rem;
+	border: var(--border-width) dotted var(--theme-weird-lime);
+	color: var(--theme-weird-lime);
+	background: var(--theme-weird-panel);
+	font-size: 0.58rem;
+	letter-spacing: 0.09em;
+	content: 'WINDOW_' counter(weird-window, decimal-leading-zero) ' / IS THIS YOURS?';
+	opacity: 0;
+	pointer-events: none;
+	transform: translate(0.35rem, 0.2rem) rotate(-2deg);
+	transition: opacity var(--motion-fast) steps(2, end), transform var(--motion-fast) steps(2, end);
+}
+
+html[data-theme='weirdcore'] .project-card__overlay {
+	z-index: 3;
+	border: var(--border-width) dashed var(--theme-weird-lime);
+	background: var(--theme-weird-panel);
+}
+
+html[data-theme='weirdcore'] .project-card__meta {
+	border-top-style: dotted;
+	border-top-width: 0.2rem;
+}
+
+html[data-theme='weirdcore'] .home-carousel__copy {
+	left: 43%;
+	border: 0.22rem ridge var(--theme-weird-violet);
+	color: var(--color-text);
+	background: var(--theme-weird-panel);
+	box-shadow:
+		0.55rem 0.65rem 0 var(--theme-weird-pink),
+		-0.25rem -0.25rem 0 var(--theme-weird-lime);
+	text-align: left;
+	text-shadow: none;
+	transform: translate(-50%, -50%) rotate(-1deg);
+}
+
+html[data-theme='weirdcore'] .home-carousel__copy::before {
+	display: block;
+	margin-bottom: var(--space-xs);
+	color: var(--theme-weird-lime);
+	font-size: 0.58rem;
+	letter-spacing: 0.14em;
+	content: '[ DREAM CACHE RESTORED ]';
+}
+
+html[data-theme='weirdcore'] :focus-visible {
+	outline: 0.2rem dotted var(--theme-weird-lime);
+	box-shadow: 0.28rem 0.28rem 0 var(--theme-weird-pink);
+}
+
+/* Vintage — papier imprimé, édition et tirages photographiques */
+html[data-theme='vintage'] body::before {
+	position: fixed;
+	inset: 0;
+	z-index: 45;
+	background:
+		radial-gradient(circle at 20% 30%, var(--theme-vintage-fiber) 0 0.06rem, transparent 0.09rem),
+		radial-gradient(circle at 70% 68%, var(--theme-vintage-fiber) 0 0.04rem, transparent 0.08rem);
+	background-size: 3.7rem 4.1rem, 5.3rem 4.7rem;
+	content: '';
+	mix-blend-mode: multiply;
+	opacity: 0.72;
+	pointer-events: none;
+}
+
+html[data-theme='vintage'] .section-panel {
+	background-image:
+		repeating-linear-gradient(0deg, transparent 0 2.9rem, var(--theme-vintage-fiber) 2.9rem 2.96rem),
+		linear-gradient(105deg, var(--theme-vintage-light), transparent 34%);
+}
+
+html[data-theme='vintage'] .site-header {
+	border-bottom: 0.24rem double var(--theme-vintage-rule);
+	box-shadow: 0 0.45rem 1.2rem var(--theme-vintage-shadow);
+}
+
+html[data-theme='vintage'] :where(.section-title, .project-header__grid) {
+	border-top: 0.24rem double var(--theme-vintage-rule);
+	padding-top: var(--space-md);
+}
+
+html[data-theme='vintage'] :where(.section-title h1, .section-title h2, .hero__title, .project-header__title, .home-carousel__title) {
+	font-weight: 600;
+	letter-spacing: -0.012em;
+}
+
+html[data-theme='vintage'] :where(.section-title__eyebrow, .eyebrow, .project-card__meta) {
+	font-variant-caps: all-small-caps;
+	letter-spacing: 0.16em;
+}
+
+html[data-theme='vintage'] .navigation__link {
+	font-family: var(--font-heading);
+	font-variant-caps: all-small-caps;
+	letter-spacing: 0.09em;
+}
+
+html[data-theme='vintage'] :where(
+	.button,
+	.theme-switcher__toggle,
+	.featured-projects__categories button,
+	.illustration-archive__filters button,
+	.project-rail__controls button
+) {
+	border: 0.16rem double var(--theme-vintage-rule);
+	border-radius: 0;
+	box-shadow: 0.22rem 0.25rem 0 var(--theme-vintage-shadow);
+	font-variant-caps: all-small-caps;
+	letter-spacing: 0.08em;
+}
+
+html[data-theme='vintage'] :where(.project-grid, .project-rail__track) {
+	counter-reset: vintage-folio;
+}
+
+html[data-theme='vintage'] .project-card {
+	--vintage-turn: -0.3deg;
+	counter-increment: vintage-folio;
+	padding: var(--space-xl) var(--space-lg) var(--space-lg);
+	border: var(--border-width) solid var(--theme-vintage-rule);
+	background: var(--theme-vintage-paper);
+	box-shadow: 0.55rem 0.7rem 1.25rem var(--theme-vintage-shadow);
+	transform: rotate(var(--vintage-turn));
+	transition: transform var(--motion-normal) var(--ease-emphasized), box-shadow var(--motion-normal) var(--ease-standard);
+}
+
+html[data-theme='vintage'] .project-rail .project-card {
+	padding: var(--space-xl) var(--space-lg) var(--space-lg);
+}
+
+html[data-theme='vintage'] .project-card:nth-child(even) { --vintage-turn: 0.24deg; }
+
+html[data-theme='vintage'] .project-card::before {
+	color: var(--color-primary);
+	font-size: 0.62rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	content: 'FOLIO ' counter(vintage-folio, decimal-leading-zero) '  •  EDITION TABATAH';
+}
+
+html[data-theme='vintage'] .project-card__image-link {
+	border: 0.18rem solid var(--theme-vintage-ink);
+	box-shadow: inset 0 0 0 var(--border-width) var(--theme-vintage-light);
+	isolation: isolate;
+}
+
+html[data-theme='vintage'] .project-card__image-link::after {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	background: radial-gradient(circle, var(--theme-vintage-halftone) 0 0.06rem, transparent 0.08rem);
+	background-size: 0.34rem 0.34rem;
+	content: '';
+	mix-blend-mode: multiply;
+	opacity: 0.26;
+	pointer-events: none;
+	transition: opacity var(--motion-normal) var(--ease-standard);
+}
+
+html[data-theme='vintage'] .project-card__overlay {
+	z-index: 2;
+	color: var(--theme-vintage-ink);
+	background: var(--theme-vintage-paper);
+	box-shadow: inset 0.2rem 0 0 var(--color-primary);
+}
+
+html[data-theme='vintage'] .project-card__meta {
+	border-top: 0.18rem double var(--theme-vintage-rule);
+}
+
+html[data-theme='vintage'] :where(.project-cover .image-frame__media, .project-gallery__item, .hero__visual .image-frame__media) {
+	padding: var(--space-sm);
+	border: var(--border-width) solid var(--theme-vintage-rule);
+	background: var(--theme-vintage-paper);
+	box-shadow: 0.55rem 0.7rem 1.3rem var(--theme-vintage-shadow);
+}
+
+html[data-theme='vintage'] :where(.project-card__image-link, .project-cover, .project-gallery, .hero__visual) img {
+	filter: sepia(0.05) saturate(0.92) contrast(1.02);
+}
+
+html[data-theme='vintage'] .home-carousel__copy {
+	border: 0.2rem double var(--theme-vintage-rule);
+	color: var(--theme-vintage-ink);
+	background: var(--theme-vintage-paper);
+	box-shadow: 0.55rem 0.7rem 0 var(--theme-vintage-shadow);
+	text-align: left;
+	text-shadow: none;
+}
+
+html[data-theme='vintage'] .home-carousel__copy::before {
+	display: block;
+	margin-bottom: var(--space-xs);
+	color: var(--color-primary);
+	font-size: 0.6rem;
+	font-variant-caps: all-small-caps;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+	content: 'Photographic review • Volume I';
+}
+
+html[data-theme='vintage'] .site-footer {
+	border-top: 0.25rem double var(--color-footer-border);
+}
+
+html[data-theme='vintage'] :focus-visible {
+	outline: 0.2rem double var(--color-focus);
+	outline-offset: 0.28rem;
+}
+
+/* Cottage Core — herbier, papier artisanal et gestes organiques */
+html[data-theme='cottage-core'] body::before {
+	position: fixed;
+	inset: 0;
+	z-index: 45;
+	background:
+		radial-gradient(ellipse at 16% 24%, var(--theme-cottage-fiber) 0 0.08rem, transparent 0.11rem),
+		radial-gradient(ellipse at 76% 68%, var(--theme-cottage-fiber) 0 0.06rem, transparent 0.1rem);
+	background-size: 4.5rem 3.8rem, 5.8rem 5.1rem;
+	content: '';
+	mix-blend-mode: multiply;
+	opacity: 0.72;
+	pointer-events: none;
+}
+
+html[data-theme='cottage-core'] .section-panel {
+	background-image:
+		radial-gradient(circle at 88% 14%, var(--theme-cottage-sun) 0 2%, transparent 24%),
+		linear-gradient(118deg, transparent 0 72%, var(--theme-cottage-leaf-light) 130%);
+}
+
+html[data-theme='cottage-core'] .site-header {
+	border-bottom: 0.2rem solid var(--theme-cottage-wood);
+	box-shadow: 0 0.55rem 1.5rem var(--theme-cottage-shadow);
+}
+
+html[data-theme='cottage-core'] :where(.section-title h1, .section-title h2, .hero__title, .project-header__title, .home-carousel__title) {
+	font-weight: 500;
+	text-shadow: 0.05em 0.06em 0 var(--theme-cottage-sun);
+}
+
+html[data-theme='cottage-core'] :where(.section-title h1, .section-title h2)::after {
+	display: inline-block;
+	width: 4.8rem;
+	height: 1rem;
+	margin-left: 0.45em;
+	background:
+		radial-gradient(ellipse at 22% 34%, var(--theme-cottage-leaf) 0 14%, transparent 15%),
+		radial-gradient(ellipse at 48% 70%, var(--theme-cottage-leaf) 0 13%, transparent 14%),
+		radial-gradient(circle at 76% 30%, var(--theme-cottage-petal) 0 9%, transparent 10%),
+		linear-gradient(164deg, transparent 46%, var(--theme-cottage-wood) 47% 51%, transparent 52%);
+	content: '';
+	vertical-align: middle;
+	transform: rotate(-4deg);
+}
+
+html[data-theme='cottage-core'] .navigation__link::after {
+	height: 0.16rem;
+	border-radius: var(--radius-pill);
+	background: var(--theme-cottage-leaf);
+}
+
+html[data-theme='cottage-core'] :where(
+	.button,
+	.theme-switcher__toggle,
+	.featured-projects__categories button,
+	.illustration-archive__filters button,
+	.project-rail__controls button
+) {
+	border: 0.14rem solid var(--theme-cottage-wood);
+	background-color: var(--theme-cottage-paper);
+	box-shadow:
+		inset 0 0 0 0.16rem var(--theme-cottage-paper-alt),
+		0 0.35rem 0.8rem var(--theme-cottage-shadow);
+}
+
+html[data-theme='cottage-core'] :where(
+	.button--primary,
+	.theme-switcher__option[aria-pressed='true'],
+	.featured-projects__categories button[aria-selected='true'],
+	.illustration-archive__filters button[aria-pressed='true']
+) {
+	color: var(--color-inverse);
+	background: var(--color-primary);
+}
+
+html[data-theme='cottage-core'] :where(.project-grid, .project-rail__track) {
+	counter-reset: cottage-specimen;
+}
+
+html[data-theme='cottage-core'] .project-card {
+	--cottage-turn: -0.22deg;
+	counter-increment: cottage-specimen;
+	padding: var(--space-lg);
+	border: var(--border-width) solid var(--theme-cottage-paper-alt);
+	border-radius: var(--radius-medium);
+	background: var(--theme-cottage-paper);
+	box-shadow: 0.55rem 0.75rem 1.45rem var(--theme-cottage-shadow);
+	transform: rotate(var(--cottage-turn));
+	transition: transform var(--motion-slow) var(--ease-emphasized), box-shadow var(--motion-normal) var(--ease-standard);
+}
+
+html[data-theme='cottage-core'] .project-rail .project-card { padding: var(--space-lg); }
+html[data-theme='cottage-core'] .project-card:nth-child(even) { --cottage-turn: 0.22deg; }
+
+html[data-theme='cottage-core'] .project-card__image-link {
+	border: 0.22rem solid var(--theme-cottage-wood);
+	border-radius: var(--radius-small);
+	box-shadow: inset 0 0 0 var(--border-width) var(--theme-cottage-paper-alt);
+	isolation: isolate;
+}
+
+html[data-theme='cottage-core'] .project-card__image-link::before {
+	position: absolute;
+	top: -0.4rem;
+	right: -0.25rem;
+	z-index: 2;
+	width: 4.6rem;
+	height: 3.2rem;
+	background:
+		radial-gradient(ellipse at 25% 65%, var(--theme-cottage-leaf) 0 16%, transparent 17%),
+		radial-gradient(ellipse at 53% 35%, var(--theme-cottage-leaf) 0 14%, transparent 15%),
+		radial-gradient(circle at 78% 72%, var(--theme-cottage-petal) 0 10%, transparent 11%),
+		linear-gradient(132deg, transparent 47%, var(--theme-cottage-wood) 48% 51%, transparent 52%);
+	content: '';
+	opacity: 0.72;
+	pointer-events: none;
+	transform-origin: 80% 80%;
+	transition: transform var(--motion-slow) var(--ease-emphasized);
+}
+
+html[data-theme='cottage-core'] .project-card__image-link::after {
+	position: absolute;
+	left: var(--space-sm);
+	bottom: var(--space-sm);
+	z-index: 2;
+	padding: 0.24rem 0.42rem;
+	border: var(--border-width) solid var(--theme-cottage-wood);
+	color: var(--color-text);
+	background: var(--theme-cottage-paper);
+	font-size: 0.58rem;
+	font-style: italic;
+	content: 'Specimen ' counter(cottage-specimen, decimal-leading-zero);
+	pointer-events: none;
+}
+
+html[data-theme='cottage-core'] .project-card__overlay {
+	z-index: 3;
+	border-radius: var(--radius-medium);
+	background: var(--theme-cottage-paper);
+	color: var(--color-text);
+}
+
+html[data-theme='cottage-core'] .project-card__meta {
+	border-top: 0.14rem dotted var(--theme-cottage-leaf);
+}
+
+html[data-theme='cottage-core'] :where(.project-card__image-link, .project-cover, .project-gallery, .hero__visual) img {
+	filter: saturate(0.96) contrast(0.99) brightness(1.02);
+}
+
+html[data-theme='cottage-core'] :where(.project-cover .image-frame__media, .project-gallery__item, .hero__visual .image-frame__media) {
+	padding: var(--space-xs);
+	border: var(--border-width) solid var(--theme-cottage-wood);
+	border-radius: var(--radius-medium);
+	background: var(--theme-cottage-paper);
+	box-shadow: 0.5rem 0.7rem 1.3rem var(--theme-cottage-shadow);
+}
+
+html[data-theme='cottage-core'] .home-carousel__copy {
+	border: 0.16rem solid var(--theme-cottage-wood);
+	border-radius: 2.2rem 3.4rem 2.5rem 3.1rem / 1.2rem 1.6rem 1.1rem 1.5rem;
+	color: var(--color-text);
+	background: var(--theme-cottage-paper);
+	box-shadow: 0.55rem 0.75rem 1.5rem var(--theme-cottage-shadow);
+	text-shadow: none;
+}
+
+html[data-theme='cottage-core'] :focus-visible {
+	outline: 0.18rem solid var(--theme-cottage-wood);
+	box-shadow: 0 0 0 0.3rem var(--theme-cottage-leaf-light);
+}
+
+/* Downtown Girl — collage urbain, zine et photographie de rue */
+html[data-theme='downtown-girl'] body::before {
+	position: fixed;
+	inset: 0;
+	z-index: 45;
+	background:
+		linear-gradient(76deg, transparent 0 8%, var(--theme-downtown-poster) 8% 12%, transparent 12% 68%, var(--theme-downtown-newsprint) 68% 74%, transparent 74%),
+		repeating-linear-gradient(0deg, transparent 0 6rem, var(--theme-downtown-newsprint) 6rem 6.08rem);
+	content: '';
+	mix-blend-mode: multiply;
+	opacity: 0.62;
+	pointer-events: none;
+}
+
+html[data-theme='downtown-girl'] .section-panel {
+	background-image:
+		linear-gradient(112deg, transparent 0 76%, var(--theme-downtown-poster) 76% 80%, transparent 80%),
+		repeating-linear-gradient(0deg, transparent 0 5.5rem, var(--theme-downtown-newsprint) 5.5rem 5.56rem);
+}
+
+html[data-theme='downtown-girl'] .site-header {
+	border-bottom: 0.35rem solid var(--theme-downtown-ink);
+	box-shadow: 0 0.35rem 0 var(--theme-downtown-red);
+}
+
+html[data-theme='downtown-girl'] .site-header__brand {
+	font-weight: 900;
+	letter-spacing: -0.045em;
+	text-transform: uppercase;
+}
+
+html[data-theme='downtown-girl'] :where(.section-title h1, .section-title h2, .hero__title, .project-header__title, .home-carousel__title) {
+	font-weight: 900;
+	letter-spacing: -0.045em;
+	text-shadow: 0.07em 0.07em 0 var(--theme-downtown-white);
+	text-transform: uppercase;
+}
+
+html[data-theme='downtown-girl'] :where(.section-title__eyebrow, .eyebrow) {
+	width: fit-content;
+	padding: 0.2rem 0.42rem;
+	color: var(--color-inverse);
+	background: var(--theme-downtown-red);
+	letter-spacing: 0.14em;
+	transform: rotate(-1deg);
+}
+
+html[data-theme='downtown-girl'] .navigation__link {
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+html[data-theme='downtown-girl'] .navigation__link::after {
+	height: 0.3rem;
+	background: var(--theme-downtown-red);
+}
+
+html[data-theme='downtown-girl'] :where(
+	.button,
+	.theme-switcher__toggle,
+	.featured-projects__categories button,
+	.illustration-archive__filters button,
+	.project-rail__controls button
+) {
+	border: 0.16rem solid var(--theme-downtown-ink);
+	border-radius: 0;
+	box-shadow: 0.3rem 0.34rem 0 var(--theme-downtown-red);
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+html[data-theme='downtown-girl'] :where(.project-grid, .project-rail__track) {
+	counter-reset: downtown-frame;
+}
+
+html[data-theme='downtown-girl'] .project-card {
+	--downtown-turn: -0.38deg;
+	counter-increment: downtown-frame;
+	padding: var(--space-lg);
+	background: var(--theme-downtown-paper);
+	box-shadow:
+		0.65rem 0.78rem 0 var(--theme-downtown-ink),
+		0.9rem 1rem 0 var(--theme-downtown-red);
+	transform: rotate(var(--downtown-turn));
+	transition: transform var(--motion-normal) var(--ease-emphasized), box-shadow var(--motion-normal) var(--ease-standard);
+}
+
+html[data-theme='downtown-girl'] .project-rail .project-card { padding: var(--space-lg); }
+html[data-theme='downtown-girl'] .project-card:nth-child(even) { --downtown-turn: 0.42deg; }
+
+html[data-theme='downtown-girl'] .project-card__image-link {
+	border: 0.3rem solid var(--theme-downtown-ink);
+	box-shadow: inset 0 0 0 var(--border-width) var(--theme-downtown-white);
+	isolation: isolate;
+}
+
+html[data-theme='downtown-girl'] .project-card__image-link::before {
+	position: absolute;
+	top: -0.28rem;
+	left: 50%;
+	z-index: 2;
+	width: 5.5rem;
+	height: 1.15rem;
+	background: var(--theme-downtown-tape);
+	content: '';
+	opacity: 0.86;
+	pointer-events: none;
+	transform: translateX(-50%) rotate(-2deg);
+	transition: transform var(--motion-normal) var(--ease-emphasized);
+}
+
+html[data-theme='downtown-girl'] .project-card__image-link::after {
+	position: absolute;
+	right: var(--space-sm);
+	bottom: var(--space-sm);
+	z-index: 2;
+	padding: 0.28rem 0.48rem;
+	color: var(--color-inverse);
+	background: var(--theme-downtown-red);
+	font-size: 0.58rem;
+	font-weight: 800;
+	letter-spacing: 0.09em;
+	content: 'CITY FRAME / ' counter(downtown-frame, decimal-leading-zero);
+	pointer-events: none;
+	transform: rotate(1deg);
+}
+
+html[data-theme='downtown-girl'] .project-card__overlay {
+	z-index: 3;
+	border-left: 0.28rem solid var(--theme-downtown-red);
+	color: var(--theme-downtown-ink);
+	background: var(--theme-downtown-white);
+}
+
+html[data-theme='downtown-girl'] .project-card__meta {
+	padding: var(--space-sm);
+	border: 0;
+	color: var(--color-inverse);
+	background: var(--theme-downtown-red);
+}
+
+html[data-theme='downtown-girl'] :where(.project-cover .image-frame__media, .project-gallery__item, .hero__visual .image-frame__media) {
+	padding: var(--space-xs);
+	border: 0.2rem solid var(--theme-downtown-ink);
+	background: var(--theme-downtown-paper);
+	box-shadow:
+		0.55rem 0.65rem 0 var(--theme-downtown-shadow),
+		0.75rem 0.82rem 0 var(--theme-downtown-red);
+}
+
+html[data-theme='downtown-girl'] .project-gallery__item:nth-child(3n + 1) { transform: rotate(-0.2deg); }
+html[data-theme='downtown-girl'] .project-gallery__item:nth-child(3n + 2) { transform: rotate(0.22deg); }
+
+html[data-theme='downtown-girl'] .home-carousel__copy {
+	border: 0.28rem solid var(--theme-downtown-ink);
+	color: var(--theme-downtown-ink);
+	background: var(--theme-downtown-white);
+	box-shadow:
+		0.65rem 0.72rem 0 var(--theme-downtown-ink),
+		0.9rem 0.95rem 0 var(--theme-downtown-red);
+	text-align: left;
+	text-shadow: none;
+	transform: translate(-50%, -50%) rotate(-0.7deg);
+}
+
+html[data-theme='downtown-girl'] .home-carousel__copy::before {
+	display: block;
+	margin-bottom: var(--space-xs);
+	color: var(--theme-downtown-red);
+	font-size: 0.58rem;
+	font-weight: 800;
+	letter-spacing: 0.14em;
+	content: 'DOWNTOWN NOTES / ISSUE 01';
+}
+
+html[data-theme='downtown-girl'] .archive-nav__link[aria-current='page'] {
+	color: var(--color-inverse);
+	background: var(--theme-downtown-ink);
+	box-shadow: 0.22rem 0.25rem 0 var(--theme-downtown-red);
+}
+
+html[data-theme='downtown-girl'] :focus-visible {
+	outline: 0.2rem solid var(--theme-downtown-red);
+	box-shadow: 0.28rem 0.28rem 0 var(--theme-downtown-ink);
+}
+
+@media (hover: hover) {
+	html[data-theme='backrooms'] .project-card__image-link:hover,
+	html[data-theme='backrooms'] .project-card__image-link:focus-visible {
+		filter: brightness(1.035);
+		transform: perspective(70rem) translateZ(-1.2rem) scale(0.982);
+	}
+
+	html[data-theme='backrooms'] .project-card__image-link:hover::before,
+	html[data-theme='backrooms'] .project-card__image-link:focus-visible::before {
+		inset: 8%;
+		box-shadow:
+			inset 0 0 0 0.62rem var(--theme-backrooms-depth),
+			inset 0 0 0 0.82rem var(--theme-backrooms-wall),
+			inset 0 0 2.8rem var(--theme-backrooms-depth);
+	}
+
+	html[data-theme='weirdcore'] .project-card:hover {
+		transform: translate(0.16rem, -0.12rem) rotate(calc(0deg - var(--weird-turn)));
+	}
+
+	html[data-theme='weirdcore'] .project-card__image-link:hover::before,
+	html[data-theme='weirdcore'] .project-card__image-link:focus-visible::before {
+		opacity: 0.72;
+		transform: rotate(-4deg) scaleY(0.2);
+	}
+
+	html[data-theme='weirdcore'] .project-card__image-link:hover::after,
+	html[data-theme='weirdcore'] .project-card__image-link:focus-visible::after {
+		opacity: 1;
+		transform: translate(0, 0) rotate(1deg);
+	}
+
+	html[data-theme='weirdcore'] :where(.button, .project-rail__controls button):hover {
+		border-style: inset;
+		transform: translate(0.12rem, 0.1rem);
+	}
+
+	html[data-theme='vintage'] .project-card:hover {
+		box-shadow: 0.8rem 1rem 1.6rem var(--theme-vintage-shadow);
+		transform: translateY(var(--hover-lift)) rotate(0);
+	}
+
+	html[data-theme='vintage'] .project-card__image-link:hover::after,
+	html[data-theme='vintage'] .project-card__image-link:focus-visible::after {
+		opacity: 0.08;
+	}
+
+	html[data-theme='cottage-core'] .project-card:hover {
+		box-shadow: 0.7rem 0.95rem 1.65rem var(--theme-cottage-shadow);
+		transform: translateY(var(--hover-lift)) rotate(0);
+	}
+
+	html[data-theme='cottage-core'] .project-card__image-link:hover::before,
+	html[data-theme='cottage-core'] .project-card__image-link:focus-visible::before {
+		transform: rotate(6deg) translateY(-0.12rem);
+	}
+
+	html[data-theme='downtown-girl'] .project-card:hover {
+		box-shadow:
+			0.82rem 0.95rem 0 var(--theme-downtown-ink),
+			1.12rem 1.22rem 0 var(--theme-downtown-red);
+		transform: translate(-0.18rem, var(--hover-lift)) rotate(0);
+	}
+
+	html[data-theme='downtown-girl'] .project-card__image-link:hover::before,
+	html[data-theme='downtown-girl'] .project-card__image-link:focus-visible::before {
+		transform: translateX(-50%) rotate(3deg) translateY(-0.14rem);
+	}
+
+	html[data-theme='downtown-girl'] .project-card__image-link:hover img,
+	html[data-theme='downtown-girl'] .project-card__image-link:focus-visible img {
+		transform: translate(0.16rem, -0.12rem) scale(var(--image-hover-scale));
+	}
+}
+
+@keyframes backrooms-fluorescent {
+	0%, 72%, 76%, 100% { opacity: 0.36; }
+	74% { opacity: 0.31; }
+	75% { opacity: 0.355; }
+}
+
+@keyframes weirdcore-watch {
+	0%, 61%, 65%, 100% { transform: rotate(-8deg) scaleY(1); }
+	63% { transform: rotate(-8deg) scaleY(0.08); }
+}
+
 /* Retro Analog Horror — signal CRT, monitoring et cassette altérée */
 html[data-theme='retro-analog-horror'] body::before,
 html[data-theme='retro-analog-horror'] body::after {
@@ -1111,7 +2104,84 @@ html[data-theme='cybersigilism'] :focus-visible {
 	70% { transform: translate(-0.08rem, 0.04rem); }
 }
 
+@media (min-width: 48.0625rem) {
+	html[data-theme='vintage'] .home-carousel__copy {
+		top: auto;
+		bottom: 8%;
+		left: 7%;
+		width: min(38rem, 58vw);
+		transform: rotate(-0.45deg);
+	}
+
+	html[data-theme='downtown-girl'] .home-carousel__copy {
+		top: auto;
+		bottom: 10%;
+		left: 8%;
+		width: min(36rem, 56vw);
+		transform: rotate(-0.7deg);
+	}
+}
+
 @media (max-width: 48rem) {
+	html[data-theme='backrooms'] body::before {
+		opacity: 0.24;
+	}
+
+	html[data-theme='backrooms'] .project-card__image-link {
+		border-width: 0.42rem;
+		box-shadow:
+			inset 0 0 0 0.18rem var(--theme-backrooms-wall),
+			inset 0 -0.7rem 1rem var(--theme-backrooms-depth),
+			0.35rem 0.42rem 0 var(--theme-backrooms-shadow);
+	}
+
+	html[data-theme='weirdcore'] body::before {
+		right: -3.5rem;
+		bottom: 8%;
+		opacity: 0.16;
+	}
+
+	html[data-theme='weirdcore'] body::after,
+	html[data-theme='weirdcore'] .site-header__brand::after {
+		display: none;
+	}
+
+	html[data-theme='weirdcore'] :where(.project-card, .project-card:nth-child(even)) {
+		transform: none;
+	}
+
+	html[data-theme='vintage'] .project-card,
+	html[data-theme='vintage'] .project-rail .project-card {
+		padding: var(--space-lg) var(--space-md) var(--space-md);
+		transform: none;
+	}
+
+	html[data-theme='cottage-core'] .project-card,
+	html[data-theme='cottage-core'] .project-rail .project-card {
+		padding: var(--space-md);
+		transform: none;
+	}
+
+	html[data-theme='cottage-core'] :where(.section-title h1, .section-title h2)::after {
+		width: 3.6rem;
+	}
+
+	html[data-theme='downtown-girl'] :where(
+		.project-card,
+		.project-card:nth-child(even),
+		.project-gallery__item:nth-child(n)
+	) {
+		transform: none;
+	}
+
+	html[data-theme='downtown-girl'] .project-card,
+	html[data-theme='downtown-girl'] .project-rail .project-card {
+		padding: var(--space-md);
+		box-shadow:
+			0.38rem 0.45rem 0 var(--theme-downtown-ink),
+			0.56rem 0.62rem 0 var(--theme-downtown-red);
+	}
+
 	html[data-theme='retro-analog-horror'] .site-header__brand::after,
 	html[data-theme='found-footage-crypticcore'] .site-header__brand::after {
 		display: none;
@@ -1174,6 +2244,35 @@ html[data-theme='cybersigilism'] :focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+	html[data-theme='backrooms'] body::before,
+	html[data-theme='backrooms'] .home-carousel__frame::before,
+	html[data-theme='weirdcore'] body::before {
+		animation: none;
+	}
+
+	html[data-theme='backrooms'] .project-card__image-link,
+	html[data-theme='backrooms'] .project-card__image-link::before,
+	html[data-theme='weirdcore'] .project-card,
+	html[data-theme='weirdcore'] .project-card__image-link::before,
+	html[data-theme='weirdcore'] .project-card__image-link::after,
+	html[data-theme='vintage'] .project-card,
+	html[data-theme='vintage'] .project-card__image-link::after,
+	html[data-theme='cottage-core'] .project-card,
+	html[data-theme='cottage-core'] .project-card__image-link::before,
+	html[data-theme='downtown-girl'] .project-card,
+	html[data-theme='downtown-girl'] .project-card__image-link::before,
+	html[data-theme='downtown-girl'] .project-card__image-link img {
+		transition: none;
+	}
+
+	html[data-theme='backrooms'] .project-card__image-link:hover,
+	html[data-theme='weirdcore'] .project-card:hover,
+	html[data-theme='vintage'] .project-card:hover,
+	html[data-theme='cottage-core'] .project-card:hover,
+	html[data-theme='downtown-girl'] .project-card:hover {
+		transform: none;
+	}
+
 	html[data-theme='retro-analog-horror'] body::after,
 	html[data-theme='retro-analog-horror'] .project-card__image-link:hover img,
 	html[data-theme='retro-analog-horror'] .project-card__image-link:focus-visible img,
