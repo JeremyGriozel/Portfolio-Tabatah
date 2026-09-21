@@ -8,7 +8,7 @@ categoryOrders:
   - category: direction-artistique
     order: 1
 date: 2020-10-28
-defaultTheme: cyberpunk
+defaultTheme: weirdcore
 published: true
 featured: false
 order: 0
