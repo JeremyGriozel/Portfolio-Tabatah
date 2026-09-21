@@ -7,7 +7,7 @@ categoryOrders:
   - category: illustration
     order: 9
 date: 2025-07-15
-defaultTheme: downtown-girl
+defaultTheme: y2k
 published: true
 featured: false
 order: 9
@@ -39,16 +39,36 @@ cover:
   alt: Collection de petits personnages, haut en couleurs.
   aspect: portrait
 gallery:
-  - src: /images/projects/illustrations-chibi/gallery/0.jpeg
-  - src: /images/projects/illustrations-chibi/gallery/1.jpeg
-  - src: /images/projects/illustrations-chibi/gallery/2.jpeg
-  - src: /images/projects/illustrations-chibi/gallery/3.jpeg
-  - src: /images/projects/illustrations-chibi/gallery/4.jpeg
-  - src: /images/projects/illustrations-chibi/gallery/5.jpeg
-  - src: /images/projects/illustrations-chibi/gallery/6.jpeg
-  - src: /images/projects/illustrations-chibi/gallery/7.jpeg
-  - src: /images/projects/illustrations-chibi/gallery/8.jpeg
-  - src: /images/projects/illustrations-chibi/gallery/9.jpeg
+  - src: /images/projects/illustrations-chibi/gallery/0/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/illustrations-chibi/gallery/1/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/illustrations-chibi/gallery/2/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/illustrations-chibi/gallery/3/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/illustrations-chibi/gallery/4/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/illustrations-chibi/gallery/5/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/illustrations-chibi/gallery/6/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/illustrations-chibi/gallery/7/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/illustrations-chibi/gallery/8/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/illustrations-chibi/gallery/9/src.jpeg
+    tags: []
+    primaryTag: ''
 tools:
   - Illustration numérique
   - Character design
