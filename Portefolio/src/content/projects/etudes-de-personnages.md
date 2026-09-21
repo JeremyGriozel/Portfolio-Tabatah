@@ -7,7 +7,7 @@ categoryOrders:
   - category: illustration
     order: 4
 date: 2025-10-15
-defaultTheme: vintage
+defaultTheme: cybersigilism
 published: true
 featured: false
 order: 4
@@ -52,25 +52,63 @@ cover:
   alt: Illustration de sally face
   aspect: portrait
 gallery:
-  - src: /images/projects/etudes-de-personnages/gallery/0.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/1.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/2.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/3.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/4.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/5.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/6.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/7.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/8.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/9.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/10.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/11.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/12.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/13.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/14.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/15.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/16.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/17.jpeg
-  - src: /images/projects/etudes-de-personnages/gallery/18.jpeg
+  - src: /images/projects/etudes-de-personnages/gallery/0/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/1/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/2/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/3/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/4/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/5/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/6/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/7/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/8/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/9/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/10/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/11/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/12/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/13/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/14/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/15/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/16/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/17/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/etudes-de-personnages/gallery/18/src.jpeg
+    tags: []
+    primaryTag: ''
 tools:
   - Tablette HUION KAMVAS Pro 20
   - Illustration numérique
