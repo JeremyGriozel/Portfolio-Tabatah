@@ -7,7 +7,7 @@ categoryOrders:
   - category: illustration
     order: 3
 date: 2024-11-27
-defaultTheme: downtown-girl
+defaultTheme: y2k
 published: true
 featured: true
 order: 3
