@@ -6,7 +6,7 @@ categories:
   - illustration
 categoryOrders:
   - category: direction-artistique
-    order: 0
+    order: 1
 date: 2020-10-28
 defaultTheme: cyberpunk
 published: true
@@ -94,7 +94,7 @@ detailedDescription: >-
 
 
   Autour de lui gravitent notamment Evan et Ian, ses deux proches amis, ainsi
-  que Shun Moriarty, son frère, et plusieurs personnages appartenant aux
+  que Shun Moriarty, son frère, et plusieurs autres personnages appartenant aux
   organisations qui contrôlent le Dôme ou évoluent dans ses réseaux clandestins.
 
 
