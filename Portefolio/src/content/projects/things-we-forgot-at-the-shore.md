@@ -262,6 +262,62 @@ gallery:
     tags:
       - personnages
     primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/37/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/38/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/39/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/40/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/41/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/42/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/43/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/44/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/45/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/46/src.jpeg
+    tags:
+      - illustrations-supplementaires
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/47/src.jpeg
+    tags:
+      - illustrations-supplementaires
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/48/src.jpeg
+    tags:
+      - mc
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/49/src.jpeg
+    tags:
+      - mc
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/50/src.jpeg
+    tags:
+      - mc
+    primaryTag: ''
 tools:
   - Illustration numérique
   - Tablette HUION KAMVAS Pro 20
