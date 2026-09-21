@@ -7,7 +7,7 @@ categoryOrders:
   - category: illustration
     order: 1
 date: 2025-07-01
-defaultTheme: ethereal
+defaultTheme: downtown-girl
 published: true
 featured: true
 order: 1
