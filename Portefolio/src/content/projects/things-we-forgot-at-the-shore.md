@@ -7,8 +7,10 @@ categories:
 categoryOrders:
   - category: illustration
     order: 2
+  - category: direction-artistique
+    order: 3
 date: 2026-05-20
-defaultTheme: nautical-gothic
+defaultTheme: found-footage-crypticcore
 published: true
 featured: true
 order: 1
@@ -159,6 +161,46 @@ gallery:
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/11/src.jpeg
     tags:
       - cg
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/12/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/13/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/14/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/15/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/16/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/17/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/18/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/19/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/20/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/21/src.jpeg
+    tags:
+      - personnages
     primaryTag: ''
 tools:
   - Illustration numérique
