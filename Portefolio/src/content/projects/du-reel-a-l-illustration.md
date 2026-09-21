@@ -7,7 +7,7 @@ categoryOrders:
   - category: illustration
     order: 7
 date: 2025-01-21
-defaultTheme: old-money
+defaultTheme: cottage-core
 published: true
 featured: false
 order: 7
@@ -36,13 +36,27 @@ cover:
   alt: Self-insert avec mon conjoint.
   aspect: landscape
 gallery:
-  - src: /images/projects/du-reel-a-l-illustration/gallery/0.jpeg
-  - src: /images/projects/du-reel-a-l-illustration/gallery/1.jpeg
-  - src: /images/projects/du-reel-a-l-illustration/gallery/2.jpeg
-  - src: /images/projects/du-reel-a-l-illustration/gallery/3.jpeg
-  - src: /images/projects/du-reel-a-l-illustration/gallery/4.jpeg
-  - src: /images/projects/du-reel-a-l-illustration/gallery/5.jpeg
-  - src: /images/projects/du-reel-a-l-illustration/gallery/6.jpeg
+  - src: /images/projects/du-reel-a-l-illustration/gallery/0/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/du-reel-a-l-illustration/gallery/1/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/du-reel-a-l-illustration/gallery/2/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/du-reel-a-l-illustration/gallery/3/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/du-reel-a-l-illustration/gallery/4/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/du-reel-a-l-illustration/gallery/5/src.jpeg
+    tags: []
+    primaryTag: ''
+  - src: /images/projects/du-reel-a-l-illustration/gallery/6/src.jpeg
+    tags: []
+    primaryTag: ''
 tools:
   - Illustration numérique
   - Tablette HUION KAMVAS Pro 20
