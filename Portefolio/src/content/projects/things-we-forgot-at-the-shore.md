@@ -202,6 +202,22 @@ gallery:
     tags:
       - personnages
     primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/22/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/23/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/24/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
+  - src: /images/projects/things-we-forgot-at-the-shore/gallery/25/src.jpeg
+    tags:
+      - personnages
+    primaryTag: ''
 tools:
   - Illustration numérique
   - Tablette HUION KAMVAS Pro 20
