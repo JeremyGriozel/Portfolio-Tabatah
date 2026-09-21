@@ -7,7 +7,7 @@ categoryOrders:
   - category: photographie
     order: 3
 date: 2026-08-08
-defaultTheme: gothic
+defaultTheme: dark-circus-core
 published: true
 featured: false
 order: 3
