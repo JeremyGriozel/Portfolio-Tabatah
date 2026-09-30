@@ -6,8 +6,8 @@ import Tag from '../components/ui/Tag.astro';
 import ProjectGallery from '../components/portfolio/ProjectGallery.astro';
 import ProjectHeader from '../components/portfolio/ProjectHeader.astro';
 import ProjectNavigation from '../components/portfolio/ProjectNavigation.astro';
-import { galleryTagOptions, portfolioCategories, portfolioContent } from '../data/portfolio';
-import { normalizeGalleryImage } from '../lib/project-taxonomy';
+import { portfolioCategories, portfolioContent } from '../data/portfolio';
+import { getGalleryTags, normalizeGalleryImage } from '../lib/project-taxonomy';
 import BaseLayout from './BaseLayout.astro';
 
 interface Props {
@@ -23,10 +23,11 @@ const lightboxId = `project-${project.id}`;
 const normalizedGallery = gallery.map((galleryImage, index) =>
 	normalizeGalleryImage(galleryImage, title, index));
 const hasTaggedImages = normalizedGallery.some((image) => image.tags.length > 0);
-const taggedGroups = galleryTagOptions
+const taggedGroups = getGalleryTags(normalizedGallery)
 	.map((tag) => ({
-		...tag,
-		images: normalizedGallery.filter((image) => image.primaryTag === tag.value),
+		value: tag.key,
+		label: tag.label,
+		images: normalizedGallery.filter((image) => image.primaryTag?.key === tag.key),
 	}))
 	.filter((group) => group.images.length > 0);
 const untaggedImages = normalizedGallery.filter((image) => image.tags.length === 0);

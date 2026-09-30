@@ -3,15 +3,12 @@ import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { themeOptions, type SiteTheme } from './data/site';
 import {
-	galleryTagOptions,
 	projectCategoryValues,
-	type GalleryTagSlug,
 	type ProjectCategorySlug,
 } from './lib/project-taxonomy';
 
 const projectThemeValues = themeOptions.map(({ value }) => value) as [SiteTheme, ...SiteTheme[]];
 const projectCategorySchemaValues = projectCategoryValues as [ProjectCategorySlug, ...ProjectCategorySlug[]];
-const galleryTagSchemaValues = galleryTagOptions.map(({ value }) => value) as [GalleryTagSlug, ...GalleryTagSlug[]];
 
 const legacyProjectImage = z.object({
 	src: z.string(),
@@ -27,8 +24,8 @@ const projectCover = legacyProjectImage.extend({
 });
 
 const taggedGalleryImage = legacyProjectImage.extend({
-	tags: z.array(z.enum(galleryTagSchemaValues)).default([]),
-	primaryTag: z.union([z.enum(galleryTagSchemaValues), z.literal('')]).optional(),
+	tags: z.array(z.string()).default([]),
+	primaryTag: z.string().optional(),
 });
 
 const projectCategoryOrder = z.object({

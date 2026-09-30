@@ -1,6 +1,6 @@
 import { collection, config, fields, singleton } from '@keystatic/core';
 import { siteConfig, themeOptions } from './src/data/site';
-import { galleryTagOptions, portfolioCategoryOptions } from './src/data/portfolio';
+import { portfolioCategoryOptions } from './src/data/portfolio';
 
 const useLocalStorage =
   import.meta.env.DEV &&
@@ -61,20 +61,14 @@ const galleryImage = fields.object(
 			label: 'Texte alternatif',
 			description: 'Décrivez brièvement l’image. Si le champ reste vide, un texte de remplacement sera généré.',
 		}),
-		tags: fields.multiselect({
+		tags: fields.array(fields.text({ label: 'Tag libre' }), {
 			label: 'Tags de l’image',
-			options: galleryTagOptions,
-			defaultValue: [],
-			description: 'Vous pouvez sélectionner zéro, un ou plusieurs tags.',
+			itemLabel: ({ value }) => value || 'Nouveau tag',
+			description: 'Saisissez librement zéro, un ou plusieurs tags. Les majuscules et accents du libellé sont conservés.',
 		}),
-		primaryTag: fields.select({
+		primaryTag: fields.text({
 			label: 'Tag principal',
-			options: [
-				{ label: 'Aucun', value: '' },
-				...galleryTagOptions,
-			],
-			defaultValue: '',
-			description: 'Choisissez un tag également présent dans la liste ci-dessus. Sinon, le premier tag sélectionné sera utilisé.',
+			description: 'Recopiez l’un des tags ci-dessus. S’il est absent ou différent, le premier tag de la liste sera utilisé.',
 		}),
 	},
 	{ label: 'Image de galerie' },

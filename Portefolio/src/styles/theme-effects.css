@@ -2,9 +2,12 @@
 
 /* Backrooms — architecture liminale, lumière fluorescente et profondeur impossible */
 html[data-theme='backrooms'] body::before {
+	--backrooms-flicker-high: 0.36;
+	--backrooms-flicker-low: 0.31;
+	--backrooms-flicker-mid: 0.355;
 	position: fixed;
 	inset: 0;
-	z-index: 45;
+	z-index: 0;
 	background:
 		repeating-linear-gradient(90deg, transparent 0 14rem, var(--theme-backrooms-line) 14rem 14.08rem),
 		repeating-linear-gradient(0deg, transparent 0 9rem, var(--theme-backrooms-line) 9rem 9.08rem),
@@ -19,7 +22,18 @@ html[data-theme='backrooms'] body::before {
 	animation: backrooms-fluorescent 13s steps(1, end) infinite;
 }
 
+html[data-theme='backrooms'] body {
+	isolation: isolate;
+	overflow-x: clip;
+}
+
+html[data-theme='backrooms'] :where(main, .site-footer) {
+	position: relative;
+	z-index: 1;
+}
+
 html[data-theme='backrooms'] .section-panel {
+	overflow: clip;
 	background-image:
 		repeating-linear-gradient(90deg, transparent 0 11rem, var(--theme-backrooms-line) 11rem 11.06rem),
 		linear-gradient(180deg, var(--theme-backrooms-light), transparent 18%, transparent 74%, var(--theme-backrooms-depth));
@@ -79,10 +93,13 @@ html[data-theme='backrooms'] :where(.project-grid, .project-rail__track) {
 }
 
 html[data-theme='backrooms'] .project-card {
+	min-width: 0;
+	max-width: 100%;
 	counter-increment: backrooms-door;
 }
 
 html[data-theme='backrooms'] .project-card__image-link {
+	max-width: 100%;
 	border: 0.7rem solid var(--theme-backrooms-wall-dark);
 	background: var(--theme-backrooms-wall);
 	box-shadow:
@@ -121,6 +138,10 @@ html[data-theme='backrooms'] .project-card__image-link::after {
 	font-variant-numeric: tabular-nums;
 	font-weight: 700;
 	letter-spacing: 0.1em;
+	max-width: calc(100% - 2rem);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 	content: 'LEVEL 0 / HALL ' counter(backrooms-door, decimal-leading-zero);
 	pointer-events: none;
 }
@@ -150,6 +171,9 @@ html[data-theme='backrooms'] .home-carousel__frame {
 }
 
 html[data-theme='backrooms'] .home-carousel__frame::before {
+	--backrooms-flicker-high: 0.92;
+	--backrooms-flicker-low: 0.78;
+	--backrooms-flicker-mid: 0.88;
 	position: absolute;
 	top: 0;
 	right: 11%;
@@ -983,9 +1007,9 @@ html[data-theme='downtown-girl'] :focus-visible {
 }
 
 @keyframes backrooms-fluorescent {
-	0%, 72%, 76%, 100% { opacity: 0.36; }
-	74% { opacity: 0.31; }
-	75% { opacity: 0.355; }
+	0%, 72%, 76%, 100% { opacity: var(--backrooms-flicker-high); }
+	74% { opacity: var(--backrooms-flicker-low); }
+	75% { opacity: var(--backrooms-flicker-mid); }
 }
 
 @keyframes weirdcore-watch {
@@ -1875,6 +1899,272 @@ html[data-theme='y2k'] :focus-visible {
 	to { opacity: 0.58; transform: scaleY(0.58) rotate(7deg); }
 }
 
+/* Nautical Gothic — carte bathymétrique, navigation astronomique et profondeur */
+html[data-theme='nautical-gothic'] body {
+	background-color: var(--color-page);
+	background-image:
+		repeating-linear-gradient(90deg, transparent 0 5.95rem, var(--theme-nautical-grid) 6rem 6.05rem),
+		repeating-linear-gradient(0deg, transparent 0 5.95rem, var(--theme-nautical-grid) 6rem 6.05rem);
+}
+
+html[data-theme='nautical-gothic'] .section-panel {
+	background-image:
+		repeating-radial-gradient(ellipse at 12% 28%, transparent 0 2.4rem, var(--theme-nautical-contour) 2.46rem 2.53rem, transparent 2.59rem 4.8rem),
+		repeating-radial-gradient(ellipse at 92% 76%, transparent 0 3.8rem, var(--theme-nautical-contour) 3.88rem 3.95rem, transparent 4.02rem 7.6rem),
+		repeating-linear-gradient(90deg, transparent 0 7.95rem, var(--theme-nautical-grid) 8rem 8.05rem),
+		linear-gradient(148deg, transparent 38%, var(--theme-nautical-depth));
+	background-position: 0 0, 100% 100%, center, center;
+	background-size: 38rem 28rem, 52rem 38rem, auto, auto;
+	animation: nautical-chart-drift 32s ease-in-out infinite alternate;
+}
+
+html[data-theme='nautical-gothic'] .site-header {
+	border-bottom: 0.22rem double var(--theme-nautical-brass);
+	background-image: repeating-linear-gradient(90deg, transparent 0 2rem, var(--theme-nautical-grid) 2rem 2.05rem);
+	box-shadow: 0 0.7rem 1.8rem var(--theme-nautical-depth);
+}
+
+html[data-theme='nautical-gothic'] .site-header__brand {
+	letter-spacing: 0.035em;
+	text-transform: uppercase;
+}
+
+html[data-theme='nautical-gothic'] .site-header__brand::after {
+	display: inline-block;
+	margin-left: var(--space-sm);
+	color: var(--theme-nautical-chart-muted);
+	font-family: var(--font-body);
+	font-size: 0.52rem;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.18em;
+	content: 'N 48° · W 02° / CHART 01';
+	vertical-align: middle;
+}
+
+html[data-theme='nautical-gothic'] .site-footer {
+	border-top: 0.22rem double var(--theme-nautical-brass);
+	background-image: repeating-linear-gradient(90deg, transparent 0 4rem, var(--theme-nautical-grid) 4rem 4.05rem);
+}
+
+html[data-theme='nautical-gothic'] :where(.section-title h1, .section-title h2, .hero__title, .project-header__title, .home-carousel__title) {
+	font-variant-caps: small-caps;
+	font-weight: 500;
+	letter-spacing: 0.035em;
+	text-shadow: 0.05em 0.07em 0 var(--theme-nautical-depth);
+}
+
+html[data-theme='nautical-gothic'] :where(.section-title h1, .section-title h2, .project-header__title)::after {
+	display: inline-block;
+	margin-left: 0.45em;
+	color: var(--theme-nautical-brass);
+	font-size: 0.42em;
+	line-height: 1;
+	content: '✦';
+	transform: rotate(22.5deg);
+	vertical-align: super;
+}
+
+html[data-theme='nautical-gothic'] :where(.section-title__eyebrow, .eyebrow) {
+	color: var(--theme-nautical-chart-muted);
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+}
+
+html[data-theme='nautical-gothic'] .navigation__link {
+	letter-spacing: 0.055em;
+}
+
+html[data-theme='nautical-gothic'] .navigation__link::after {
+	height: 0.18rem;
+	background: var(--theme-nautical-brass);
+	box-shadow: 0 0 0.7rem var(--theme-nautical-brass-soft);
+}
+
+html[data-theme='nautical-gothic'] :where(
+	.button,
+	.theme-switcher__toggle,
+	.theme-switcher__option,
+	.featured-projects__categories button,
+	.illustration-archive__filters button,
+	.project-rail__controls button,
+	.archive-nav__link
+) {
+	border: 0.14rem double var(--theme-nautical-brass);
+	border-radius: 0;
+	background-image:
+		linear-gradient(90deg, var(--theme-nautical-brass-soft) 0 0.18rem, transparent 0.18rem calc(100% - 0.18rem), var(--theme-nautical-brass-soft) calc(100% - 0.18rem)),
+		linear-gradient(0deg, var(--theme-nautical-grid), transparent 42%);
+	box-shadow: inset 0 0 0 var(--border-width) var(--theme-nautical-grid);
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+}
+
+html[data-theme='nautical-gothic'] :where(.project-grid, .project-rail__track) {
+	counter-reset: nautical-chart;
+}
+
+html[data-theme='nautical-gothic'] .project-card {
+	min-width: 0;
+	counter-increment: nautical-chart;
+	transition: transform var(--motion-slow) var(--ease-emphasized);
+}
+
+html[data-theme='nautical-gothic'] .project-card__image-link {
+	border: 0.28rem double var(--theme-nautical-brass);
+	background: var(--theme-nautical-ink);
+	box-shadow:
+		inset 0 0 0 0.2rem var(--theme-nautical-grid),
+		0.65rem 0.85rem 1.7rem var(--theme-nautical-depth);
+	isolation: isolate;
+}
+
+html[data-theme='nautical-gothic'] .project-card__image-link::before {
+	position: absolute;
+	inset: clamp(0.75rem, 4%, 1.4rem);
+	z-index: 1;
+	border: var(--border-width) solid var(--theme-nautical-chart-muted);
+	background:
+		linear-gradient(90deg, transparent calc(50% - 0.04rem), var(--theme-nautical-chart-muted) calc(50% - 0.04rem) calc(50% + 0.04rem), transparent calc(50% + 0.04rem)),
+		linear-gradient(0deg, transparent calc(50% - 0.04rem), var(--theme-nautical-chart-muted) calc(50% - 0.04rem) calc(50% + 0.04rem), transparent calc(50% + 0.04rem)),
+		radial-gradient(circle, transparent 0 16%, var(--theme-nautical-chart-muted) 16.5% 17.3%, transparent 17.8%);
+	content: '';
+	opacity: 0.48;
+	pointer-events: none;
+	transform: rotate(-0.6deg);
+	transition: inset var(--motion-slow) var(--ease-emphasized), opacity var(--motion-normal) var(--ease-standard), transform var(--motion-slow) var(--ease-emphasized);
+}
+
+html[data-theme='nautical-gothic'] .project-card__image-link::after {
+	position: absolute;
+	right: clamp(0.75rem, 4%, 1.4rem);
+	bottom: clamp(0.75rem, 4%, 1.4rem);
+	z-index: 2;
+	padding: 0.28rem 0.42rem;
+	border-left: var(--border-width) solid var(--theme-nautical-brass);
+	color: var(--theme-nautical-chart);
+	background: var(--theme-nautical-depth);
+	font-size: 0.52rem;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.12em;
+	content: 'SOUNDING / 0' counter(nautical-chart);
+	pointer-events: none;
+}
+
+html[data-theme='nautical-gothic'] .project-card__overlay {
+	z-index: 3;
+	border: var(--border-width) solid var(--theme-nautical-brass);
+	background: var(--theme-nautical-panel);
+}
+
+html[data-theme='nautical-gothic'] .project-card__meta {
+	padding-top: var(--space-sm);
+	border-top: 0.2rem double var(--theme-nautical-brass);
+	color: var(--theme-nautical-chart-muted);
+	font-variant-numeric: tabular-nums;
+}
+
+html[data-theme='nautical-gothic'] :where(.project-cover .image-frame__media, .project-gallery .image-frame__media, .hero__visual .image-frame__media) {
+	border: 0.25rem double var(--theme-nautical-brass);
+	border-radius: 0;
+	box-shadow:
+		0 0 0 var(--space-xs) var(--theme-nautical-grid),
+		0.8rem 1rem 2rem var(--theme-nautical-depth);
+}
+
+html[data-theme='nautical-gothic'] .project-gallery-group__title {
+	border-bottom: 0.2rem double var(--theme-nautical-brass);
+	color: var(--theme-nautical-chart);
+	font-variant-caps: small-caps;
+	letter-spacing: 0.08em;
+}
+
+html[data-theme='nautical-gothic'] .tag {
+	border: var(--border-width) solid var(--theme-nautical-brass);
+	border-radius: 0;
+	background: var(--theme-nautical-panel);
+}
+
+html[data-theme='nautical-gothic'] .home-carousel__frame {
+	box-shadow: inset 0 -5rem 8rem var(--theme-nautical-depth);
+	isolation: isolate;
+}
+
+html[data-theme='nautical-gothic'] .home-carousel__frame::after {
+	position: absolute;
+	top: 50%;
+	right: clamp(1rem, 6vw, 7rem);
+	z-index: 2;
+	width: clamp(8rem, 21vw, 17rem);
+	aspect-ratio: 1;
+	border: 0.16rem solid var(--theme-nautical-chart-muted);
+	border-radius: 50%;
+	background:
+		radial-gradient(circle, transparent 0 13%, var(--theme-nautical-chart-muted) 13.5% 14.2%, transparent 14.8% 31%, var(--theme-nautical-chart-muted) 31.5% 32.2%, transparent 32.8%),
+		conic-gradient(from 0deg, transparent 0 11deg, var(--theme-nautical-chart-muted) 11.5deg 12.5deg, transparent 13deg 33deg, var(--theme-nautical-brass) 33.5deg 34.5deg, transparent 35deg 56deg, var(--theme-nautical-chart-muted) 56.5deg 57.5deg, transparent 58deg 90deg);
+	box-shadow: inset 0 0 0 var(--space-xs) var(--theme-nautical-grid), 0 0 2.5rem var(--theme-nautical-depth);
+	content: '';
+	opacity: 0.68;
+	pointer-events: none;
+	transform: translateY(-50%) rotate(-7deg);
+	animation: nautical-bearing 36s ease-in-out infinite alternate;
+}
+
+html[data-theme='nautical-gothic'] .home-carousel__copy {
+	z-index: 4;
+	border: 0.25rem double var(--theme-nautical-brass);
+	color: var(--theme-nautical-chart);
+	background: var(--theme-nautical-panel);
+	box-shadow: inset 0 0 0 var(--space-xs) var(--theme-nautical-grid), 0.8rem 1rem 2rem var(--theme-nautical-depth);
+	text-shadow: none;
+}
+
+html[data-theme='nautical-gothic'] .home-carousel__copy::before {
+	display: block;
+	margin-bottom: var(--space-sm);
+	color: var(--theme-nautical-chart-muted);
+	font-size: 0.52rem;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.2em;
+	content: 'CELESTIAL FIX · DEPTH UNKNOWN';
+}
+
+html[data-theme='nautical-gothic'] .home-carousel__controls {
+	z-index: 5;
+}
+
+html[data-theme='nautical-gothic'] :focus-visible {
+	outline: 0.18rem double var(--theme-nautical-chart);
+	box-shadow: 0 0 0 0.28rem var(--theme-nautical-brass-soft);
+}
+
+@media (hover: hover) {
+	html[data-theme='nautical-gothic'] .project-card:hover {
+		transform: translateY(var(--hover-lift)) rotate(-0.18deg);
+	}
+
+	html[data-theme='nautical-gothic'] .project-card:nth-child(even):hover {
+		transform: translateY(var(--hover-lift)) rotate(0.18deg);
+	}
+
+	html[data-theme='nautical-gothic'] .project-card__image-link:hover::before,
+	html[data-theme='nautical-gothic'] .project-card__image-link:focus-visible::before {
+		inset: clamp(0.9rem, 6%, 1.8rem);
+		opacity: 0.72;
+		transform: rotate(1.2deg);
+	}
+}
+
+@keyframes nautical-chart-drift {
+	from { background-position: 0 0, 100% 100%, center, center; }
+	to { background-position: 0.8rem -0.45rem, calc(100% - 0.7rem) calc(100% + 0.5rem), center, center; }
+}
+
+@keyframes nautical-bearing {
+	from { transform: translateY(-50%) rotate(-7deg); }
+	to { transform: translateY(-50%) rotate(7deg); }
+}
+
 /* Dark Circus Core */
 html[data-theme='dark-circus-core'] .section-panel {
 	background-image:
@@ -2124,7 +2414,9 @@ html[data-theme='cybersigilism'] :focus-visible {
 
 @media (max-width: 48rem) {
 	html[data-theme='backrooms'] body::before {
-		opacity: 0.24;
+		--backrooms-flicker-high: 0.24;
+		--backrooms-flicker-low: 0.2;
+		--backrooms-flicker-mid: 0.23;
 	}
 
 	html[data-theme='backrooms'] .project-card__image-link {
@@ -2241,6 +2533,31 @@ html[data-theme='cybersigilism'] :focus-visible {
 	html[data-theme='astrological-spacecore'] .section-panel {
 		background-size: 7rem 7rem, 10rem 10rem, 13rem 13rem;
 	}
+
+	html[data-theme='nautical-gothic'] .site-header__brand::after {
+		display: none;
+	}
+
+	html[data-theme='nautical-gothic'] .section-panel {
+		background-size: 27rem 22rem, 34rem 28rem, auto, auto;
+	}
+
+	html[data-theme='nautical-gothic'] .project-card__image-link {
+		border-width: 0.2rem;
+		box-shadow:
+			inset 0 0 0 0.12rem var(--theme-nautical-grid),
+			0.35rem 0.45rem 1rem var(--theme-nautical-depth);
+	}
+
+	html[data-theme='nautical-gothic'] .project-card__image-link::after {
+		font-size: 0.46rem;
+	}
+
+	html[data-theme='nautical-gothic'] .home-carousel__frame::after {
+		right: -1.8rem;
+		width: clamp(7rem, 34vw, 10rem);
+		opacity: 0.46;
+	}
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2305,6 +2622,19 @@ html[data-theme='cybersigilism'] :focus-visible {
 	html[data-theme='cybersigilism'] .project-card__image-link::after,
 	html[data-theme='cybersigilism'] :where(.button, .project-card__title a):hover {
 		animation: none;
+		transform: none;
+		transition: none;
+	}
+
+	html[data-theme='nautical-gothic'] .section-panel,
+	html[data-theme='nautical-gothic'] .home-carousel__frame::after {
+		animation: none;
+	}
+
+	html[data-theme='nautical-gothic'] .project-card,
+	html[data-theme='nautical-gothic'] .project-card:hover,
+	html[data-theme='nautical-gothic'] .project-card:nth-child(even):hover,
+	html[data-theme='nautical-gothic'] .project-card__image-link::before {
 		transform: none;
 		transition: none;
 	}

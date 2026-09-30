@@ -116,51 +116,51 @@ cover:
 gallery:
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/0/src.jpeg
     tags:
-      - personnages
+      - Personnages
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/1/src.jpeg
     tags:
-      - personnages
+      - Personnages
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/2/src.jpeg
     tags:
-      - personnages
+      - Personnages
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/3/src.jpeg
     tags:
-      - personnages
+      - Personnages
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/4/src.jpeg
     tags:
-      - personnages
+      - Personnages
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/5/src.jpeg
     tags:
-      - personnages
+      - Personnages
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/6/src.jpeg
     tags:
-      - cg
+      - CG
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/7/src.jpeg
     tags:
-      - cg
+      - CG
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/8/src.jpeg
     tags:
-      - cg
+      - CG
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/9/src.jpeg
     tags:
-      - cg
+      - CG
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/10/src.jpeg
     tags:
-      - cg
+      - CG
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/11/src.jpeg
     tags:
-      - cg
+      - CG
     primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/12/src.jpeg
     tags:

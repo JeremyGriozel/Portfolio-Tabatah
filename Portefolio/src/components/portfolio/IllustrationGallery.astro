@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { galleryTagOptions, type IllustrationGalleryContent } from '../../data/portfolio';
-import { normalizeGalleryImage } from '../../lib/project-taxonomy';
+import type { IllustrationGalleryContent } from '../../data/portfolio';
+import { getGalleryTags, normalizeGalleryImage } from '../../lib/project-taxonomy';
 import Lightbox from '../ui/Lightbox.astro';
 import SectionTitle from '../ui/SectionTitle.astro';
 import ProjectGallery from './ProjectGallery.astro';
@@ -24,6 +24,7 @@ const illustrations = projects.flatMap((project) =>
 	seenSources.add(image.src);
 	return true;
 });
+const galleryTags = getGalleryTags(illustrations);
 const lightboxId = 'illustrations-globales';
 ---
 
@@ -37,8 +38,8 @@ const lightboxId = 'illustrations-globales';
 		/>
 		<div class="illustration-archive__filters" aria-label={copy.filtersLabel}>
 			<button type="button" aria-pressed="true" data-illustration-filter="all">{copy.allLabel}</button>
-			{galleryTagOptions.map((tag) => (
-				<button type="button" aria-pressed="false" data-illustration-filter={tag.value}>{tag.label}</button>
+			{galleryTags.map((tag) => (
+				<button type="button" aria-pressed="false" data-illustration-filter={tag.key}>{tag.label}</button>
 			))}
 		</div>
 		{illustrations.length > 0 ? (
@@ -55,9 +56,7 @@ const lightboxId = 'illustrations-globales';
 </section>
 
 <script>
-	import type { GalleryTagSlug } from '../../lib/project-taxonomy';
-
-	type IllustrationTag = GalleryTagSlug | 'all';
+	type IllustrationTag = string | 'all';
 
 	document.querySelectorAll<HTMLElement>('[data-illustration-gallery]').forEach((gallery) => {
 		const buttons = Array.from(gallery.querySelectorAll<HTMLButtonElement>('[data-illustration-filter]'));

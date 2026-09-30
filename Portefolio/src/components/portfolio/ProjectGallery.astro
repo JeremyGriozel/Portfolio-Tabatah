@@ -1,10 +1,11 @@
 ---
 import ImageFrame from '../ui/ImageFrame.astro';
+import type { GalleryTag } from '../../lib/project-taxonomy';
 
 interface GalleryImage {
 	src: string;
 	alt: string;
-	tags?: readonly string[];
+	tags?: readonly GalleryTag[];
 	contextLabel?: string;
 	contextHref?: string;
 }
@@ -23,7 +24,7 @@ const gallerySize = images.length === 1 ? 'single' : images.length === 2 ? 'doub
 	{images.map((image, index) => (
 		<div
 			class="project-gallery__item"
-			data-gallery-tags={image.tags?.join(' ') || undefined}
+			data-gallery-tags={image.tags?.map((tag) => tag.key).join(' ') || undefined}
 			data-reveal="image"
 			style={`--reveal-order: ${index % 3}`}
 		>

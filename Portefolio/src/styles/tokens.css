@@ -849,6 +849,17 @@ html[data-theme='nautical-gothic'] {
 	--section-cv-background: #0c1820;
 	--section-contact-background: #35262b;
 	--section-footer-background: #071016;
+	--theme-nautical-ink: #050d12;
+	--theme-nautical-chart: #d8d1b9;
+	--theme-nautical-chart-muted: rgb(216 209 185 / 58%);
+	--theme-nautical-brass: #b7965a;
+	--theme-nautical-brass-soft: rgb(183 150 90 / 34%);
+	--theme-nautical-petrol: #1c4a51;
+	--theme-nautical-depth: rgb(2 10 15 / 72%);
+	--theme-nautical-contour: rgb(110 146 152 / 17%);
+	--theme-nautical-grid: rgb(216 209 185 / 9%);
+	--theme-nautical-panel: rgb(7 22 29 / 91%);
+	--theme-nautical-wake: rgb(110 146 152 / 28%);
 }
 
 /* Dark Circus Core : velours, affiche ancienne, laiton et vert de scène */

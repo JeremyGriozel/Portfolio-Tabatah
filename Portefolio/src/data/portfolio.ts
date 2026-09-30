@@ -1,6 +1,5 @@
 import siteContent from './site-content.json';
 import {
-	galleryTagOptions,
 	projectCategoryValues,
 	type ProjectCategorySlug,
 } from '../lib/project-taxonomy';
@@ -38,8 +37,6 @@ export const portfolioCategoryOptions = portfolioCategories.map(({ slug, label }
 	value: slug,
 	label,
 }));
-
-export { galleryTagOptions };
 
 export const illustrationGalleryContent = {
 	eyebrow: 'Illustrations',

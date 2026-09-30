@@ -6,18 +6,6 @@ export const projectCategoryValues = [
 
 export type ProjectCategorySlug = (typeof projectCategoryValues)[number];
 
-export const galleryTagOptions = [
-	{ value: 'personnages', label: 'Personnages' },
-	{ value: 'cg', label: 'CG' },
-	{ value: 'backgrounds', label: 'Backgrounds' },
-	{ value: 'details', label: 'Détails' },
-	{ value: 'logos', label: 'Logos' },
-	{ value: 'illustrations-supplementaires', label: 'Illustrations supplémentaires' },
-	{ value: 'mc', label: 'MC' },
-] as const;
-
-export type GalleryTagSlug = (typeof galleryTagOptions)[number]['value'];
-
 interface ProjectCategoryData {
 	categories?: readonly string[];
 	categoryOrders?: readonly {
@@ -36,15 +24,51 @@ interface GalleryImageData {
 export interface NormalizedGalleryImage {
 	src: string;
 	alt: string;
-	tags: GalleryTagSlug[];
-	primaryTag?: GalleryTagSlug;
+	tags: GalleryTag[];
+	primaryTag?: GalleryTag;
+}
+
+export interface GalleryTag {
+	key: string;
+	label: string;
 }
 
 export const isProjectCategorySlug = (value: string): value is ProjectCategorySlug =>
 	projectCategoryValues.includes(value as ProjectCategorySlug);
 
-export const isGalleryTagSlug = (value: string): value is GalleryTagSlug =>
-	galleryTagOptions.some((tag) => tag.value === value);
+export const normalizeGalleryTagKey = (value: string): string => value
+	.normalize('NFKD')
+	.replace(/\p{Mark}/gu, '')
+	.toLocaleLowerCase('fr')
+	.replace(/[’']/g, '-')
+	.replace(/[^\p{Letter}\p{Number}]+/gu, '-')
+	.replace(/^-+|-+$/g, '');
+
+const normalizeGalleryTagLabel = (value: string): string => value.trim().replace(/\s+/g, ' ');
+
+const normalizeGalleryTags = (values: readonly string[]): GalleryTag[] => {
+	const tags = new Map<string, GalleryTag>();
+
+	values.forEach((value) => {
+		const label = normalizeGalleryTagLabel(value);
+		const key = normalizeGalleryTagKey(label);
+		if (key && !tags.has(key)) tags.set(key, { key, label });
+	});
+
+	return [...tags.values()];
+};
+
+export const getGalleryTags = (
+	images: readonly Pick<NormalizedGalleryImage, 'tags'>[],
+): GalleryTag[] => {
+	const tags = new Map<string, GalleryTag>();
+	images.forEach((image) => {
+		image.tags.forEach((tag) => {
+			if (!tags.has(tag.key)) tags.set(tag.key, tag);
+		});
+	});
+	return [...tags.values()];
+};
 
 export const getProjectCategorySlugs = (data: ProjectCategoryData): ProjectCategorySlug[] => {
 	const categories = (data.categories ?? []).filter(isProjectCategorySlug);
@@ -76,10 +100,9 @@ export const normalizeGalleryImage = (
 		};
 	}
 
-	const tags = [...new Set((image.tags ?? []).filter(isGalleryTagSlug))];
-	const primaryTag = image.primaryTag && tags.includes(image.primaryTag as GalleryTagSlug)
-		? image.primaryTag as GalleryTagSlug
-		: tags[0];
+	const tags = normalizeGalleryTags(image.tags ?? []);
+	const primaryTagKey = image.primaryTag ? normalizeGalleryTagKey(image.primaryTag) : '';
+	const primaryTag = tags.find((tag) => tag.key === primaryTagKey) ?? tags[0];
 
 	return {
 		src: image.src,
