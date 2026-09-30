@@ -10,7 +10,7 @@ categoryOrders:
   - category: direction-artistique
     order: 3
 date: 2026-05-20
-defaultTheme: found-footage-crypticcore
+defaultTheme: nautical-gothic
 published: true
 featured: true
 order: 1
@@ -116,208 +116,157 @@ cover:
 gallery:
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/0/src.jpeg
     tags:
-      - Personnages
-    primaryTag: ''
+      - personnages
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/1/src.jpeg
     tags:
-      - Personnages
-    primaryTag: ''
+      - personnages
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/2/src.jpeg
     tags:
-      - Personnages
-    primaryTag: ''
+      - personnages
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/3/src.jpeg
     tags:
-      - Personnages
-    primaryTag: ''
+      - personnages
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/4/src.jpeg
     tags:
-      - Personnages
-    primaryTag: ''
+      - personnages
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/5/src.jpeg
     tags:
-      - Personnages
-    primaryTag: ''
+      - personnages
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/6/src.jpeg
     tags:
-      - CG
-    primaryTag: ''
+      - cg
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/7/src.jpeg
     tags:
-      - CG
-    primaryTag: ''
+      - cg
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/8/src.jpeg
     tags:
-      - CG
-    primaryTag: ''
+      - cg
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/9/src.jpeg
     tags:
-      - CG
-    primaryTag: ''
+      - cg
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/10/src.jpeg
     tags:
-      - CG
-    primaryTag: ''
+      - cg
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/11/src.jpeg
     tags:
-      - CG
-    primaryTag: ''
+      - cg
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/12/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/13/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/14/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/15/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/16/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/17/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/18/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/19/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/20/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/21/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/22/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/23/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/24/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/25/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/26/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/27/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/28/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/29/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/30/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/31/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/32/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/33/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/34/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/35/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/36/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/37/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/38/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/39/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/40/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/41/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/42/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/43/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/44/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/45/src.jpeg
     tags:
       - personnages
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/46/src.jpeg
     tags:
       - illustrations-supplementaires
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/47/src.jpeg
     tags:
       - illustrations-supplementaires
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/48/src.jpeg
     tags:
       - mc
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/49/src.jpeg
     tags:
       - mc
-    primaryTag: ''
   - src: /images/projects/things-we-forgot-at-the-shore/gallery/50/src.jpeg
     tags:
       - mc
-    primaryTag: ''
 tools:
   - Illustration numérique
   - Tablette HUION KAMVAS Pro 20
