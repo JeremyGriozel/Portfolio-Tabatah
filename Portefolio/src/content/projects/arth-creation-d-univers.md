@@ -25,10 +25,11 @@ detailedDescription: >-
   illustration numérique
 
 
-  ARTH est un projet de roman de science-fiction se déroulant dans un futur où
-  l’humanité a été contrainte de se réfugier sous un immense Dôme artificiel,
-  après plusieurs siècles de conflits, de crises environnementales et
-  d’effondrement des infrastructures terrestres.
+  ARTH est un projet de bande-dessiné s'étant au fur et à mesure de sa création
+  transformé en un roman finalement de science-fiction se déroulant dans un
+  futur où l’humanité a été contrainte de se réfugier sous un immense Dôme
+  artificiel, après plusieurs siècles de conflits, de crises environnementales
+  et d’effondrement des infrastructures terrestres.
 
 
   À l’intérieur du Dôme, une nouvelle civilisation s’est progressivement
