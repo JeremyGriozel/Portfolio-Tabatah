@@ -3,9 +3,12 @@ slug: Écho Théâtral
 title: Écho Théâtral
 categories:
   - photographie
+  - direction-artistique
 categoryOrders:
   - category: photographie
     order: 3
+  - category: direction-artistique
+    order: 1
 date: 2026-08-08
 defaultTheme: dark-circus-core
 published: true
