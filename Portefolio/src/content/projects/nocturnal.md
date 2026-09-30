@@ -11,7 +11,7 @@ defaultTheme: astrological-spacecore
 published: true
 featured: false
 order: 0
-displayOrder: 6
+displayOrder: 1
 shortDescription: >-
   Série de portraits réalisés de nuit, travaillant le flash direct, les
   contrastes marqués et une esthétique monochrome inspirée de la photographie de
@@ -33,6 +33,9 @@ detailedDescription: >-
   La série s'intéresse ainsi avant tout à la présence du modèle, à la lumière
   artificielle et à la construction d'une image nocturne, plutôt qu'à une
   narration particulière.
+
+
+  Modèle : @Candice Wolff
 cover:
   src: /images/projects/nocturnal/cover/src.jpeg
   alt: Modèle au clair de lune, tons violacés
@@ -52,6 +55,51 @@ gallery:
     primaryTag: ''
   - src: /images/projects/nocturnal/gallery/4/src.jpeg
     tags: *ref_0
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/5/src.jpeg
+    tags: &ref_1 []
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/6/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/7/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/8/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/9/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/10/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/11/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/12/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/13/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/14/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/15/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/16/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/17/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/18/src.jpeg
+    tags: *ref_1
+    primaryTag: ''
+  - src: /images/projects/nocturnal/gallery/19/src.jpeg
+    tags: *ref_1
     primaryTag: ''
 tools:
   - flash direct
