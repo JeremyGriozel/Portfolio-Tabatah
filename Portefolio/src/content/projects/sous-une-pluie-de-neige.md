@@ -114,8 +114,6 @@ gallery:
     tags: []
   - src: /images/projects/sous-une-pluie-de-neige/gallery/32/src.jpeg
     tags: []
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/33/src.jpeg
-    tags: []
 tools:
   - Profondeur de champ
   - Cadrage rapproché
