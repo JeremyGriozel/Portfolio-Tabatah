@@ -177,6 +177,60 @@ gallery:
   - src: /images/projects/arth-creation-d-univers/gallery/8/src.jpeg
     tags:
       - PERSONNAGES - KAITLYN
+  - src: /images/projects/arth-creation-d-univers/gallery/9/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/10/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/11/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/12/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/13/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/14/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/15/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/16/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/17/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/18/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/19/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/20/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/21/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/22/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/23/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/24/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/25/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/26/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
 tools:
   - Illustration numérique
   - Tablette HUION KAMVAS Pro 20
