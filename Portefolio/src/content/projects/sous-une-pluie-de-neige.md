@@ -48,18 +48,74 @@ cover:
   alt: Petit bourdon butinant entre cerisiers en fleurs et neige.
   aspect: landscape
 gallery:
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/0.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/1.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/2.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/3.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/4.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/5.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/6.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/7.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/8.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/9.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/10.jpg
-  - src: /images/projects/sous-une-pluie-de-neige/gallery/11.jpg
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/0/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/1/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/2/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/3/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/4/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/5/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/6/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/7/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/8/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/9/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/10/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/11/src.jpg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/12/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/13/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/14/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/15/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/16/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/17/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/18/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/19/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/20/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/21/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/22/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/23/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/24/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/25/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/26/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/27/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/28/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/29/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/30/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/31/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/32/src.jpeg
+    tags: []
+  - src: /images/projects/sous-une-pluie-de-neige/gallery/33/src.jpeg
+    tags: []
 tools:
   - Profondeur de champ
   - Cadrage rapproché
