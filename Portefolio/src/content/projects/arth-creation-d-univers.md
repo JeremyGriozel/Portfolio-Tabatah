@@ -148,7 +148,7 @@ detailedDescription: >-
 cover:
   src: /images/projects/arth-creation-d-univers/cover/src.jpeg
   alt: Ayden's Cover
-  aspect: portrait
+  aspect: square
 gallery:
   - src: /images/projects/arth-creation-d-univers/gallery/0/src.jpeg
     tags:
