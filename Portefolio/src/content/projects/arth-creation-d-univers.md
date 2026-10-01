@@ -149,7 +149,34 @@ cover:
   src: /images/projects/arth-creation-d-univers/cover/src.jpeg
   alt: Ayden's Cover
   aspect: portrait
-gallery: []
+gallery:
+  - src: /images/projects/arth-creation-d-univers/gallery/0/src.jpeg
+    tags:
+      - PERSONNAGES - TRIO CENTRAL
+  - src: /images/projects/arth-creation-d-univers/gallery/1/src.jpeg
+    tags:
+      - PERSONNAGES - TRIO CENTRAL
+  - src: /images/projects/arth-creation-d-univers/gallery/2/src.jpeg
+    tags:
+      - PERSONNAGES - TRIO CENTRAL
+  - src: /images/projects/arth-creation-d-univers/gallery/3/src.jpeg
+    tags:
+      - PERSONNAGES - TRIO CENTRAL
+  - src: /images/projects/arth-creation-d-univers/gallery/4/src.jpeg
+    tags:
+      - PERSONNAGES - KAITLYN
+  - src: /images/projects/arth-creation-d-univers/gallery/5/src.jpeg
+    tags:
+      - PERSONNAGES - KAITLYN
+  - src: /images/projects/arth-creation-d-univers/gallery/6/src.jpeg
+    tags:
+      - PERSONNAGES - KAITLYN
+  - src: /images/projects/arth-creation-d-univers/gallery/7/src.jpeg
+    tags:
+      - PERSONNAGES - KAITLYN
+  - src: /images/projects/arth-creation-d-univers/gallery/8/src.jpeg
+    tags:
+      - PERSONNAGES - KAITLYN
 tools:
   - Illustration numérique
   - Tablette HUION KAMVAS Pro 20
