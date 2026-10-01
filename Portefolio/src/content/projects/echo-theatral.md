@@ -12,7 +12,7 @@ categoryOrders:
 date: 2026-08-08
 defaultTheme: dark-circus-core
 published: true
-featured: false
+featured: true
 order: 3
 displayOrder: 1
 shortDescription: >-
@@ -66,49 +66,34 @@ cover:
 gallery:
   - src: /images/projects/echo-theatral/gallery/0/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/1/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/2/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/3/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/4/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/5/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/6/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/7/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/8/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/9/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/10/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/11/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/12/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/13/src.jpeg
     tags: []
-    primaryTag: ''
   - src: /images/projects/echo-theatral/gallery/14/src.jpeg
     tags: []
-    primaryTag: ''
 tools:
   - Portrait
   - Éclairage artificiel
