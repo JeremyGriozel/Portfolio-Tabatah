@@ -291,6 +291,84 @@ gallery:
   - src: /images/projects/arth-creation-d-univers/gallery/46/src.jpeg
     tags:
       - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/47/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/48/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/49/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/50/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/51/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/52/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/53/src.jpeg
+    tags:
+      - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/54/src.jpeg
+    tags:
+      - PERSONNAGES - AYDEN
+  - src: /images/projects/arth-creation-d-univers/gallery/55/src.jpeg
+    tags:
+      - PERSONNAGES - AYDEN
+  - src: /images/projects/arth-creation-d-univers/gallery/56/src.jpeg
+    tags:
+      - PERSONNAGES - AYDEN
+  - src: /images/projects/arth-creation-d-univers/gallery/57/src.jpeg
+    tags:
+      - PERSONNAGES - AYDEN
+  - src: /images/projects/arth-creation-d-univers/gallery/58/src.jpeg
+    tags:
+      - PERSONNAGES - AYDEN
+  - src: /images/projects/arth-creation-d-univers/gallery/59/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/60/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/61/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/62/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/63/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/64/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/65/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/66/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/67/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/68/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/69/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/70/src.jpeg
+    tags:
+      - ARTH BOOK COVER
+  - src: /images/projects/arth-creation-d-univers/gallery/71/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/72/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
 tools:
   - Illustration numérique
   - Tablette HUION KAMVAS Pro 20
