@@ -231,6 +231,66 @@ gallery:
   - src: /images/projects/arth-creation-d-univers/gallery/26/src.jpeg
     tags:
       - PERSONNAGES - EVAN
+  - src: /images/projects/arth-creation-d-univers/gallery/27/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/28/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/29/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/30/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/31/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/32/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/33/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/34/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/35/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/36/src.jpeg
+    tags:
+      - PERSONNAGES - HARRY & LUCIA
+  - src: /images/projects/arth-creation-d-univers/gallery/37/src.jpeg
+    tags:
+      - PERSONNAGES - IAN & NORA
+  - src: /images/projects/arth-creation-d-univers/gallery/38/src.jpeg
+    tags:
+      - PERSONNAGES - IAN & NORA
+  - src: /images/projects/arth-creation-d-univers/gallery/39/src.jpeg
+    tags:
+      - PERSONNAGES - IAN & NORA
+  - src: /images/projects/arth-creation-d-univers/gallery/40/src.jpeg
+    tags:
+      - PERSONNAGES - IAN & NORA
+  - src: /images/projects/arth-creation-d-univers/gallery/41/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/42/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/43/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/44/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/45/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
+  - src: /images/projects/arth-creation-d-univers/gallery/46/src.jpeg
+    tags:
+      - PERSONNAGES - CURTIS & ASHLEY
 tools:
   - Illustration numérique
   - Tablette HUION KAMVAS Pro 20
